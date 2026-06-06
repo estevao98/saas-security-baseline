@@ -274,3 +274,29 @@ Exceção não significa `continue-on-error: true` permanente. Deve ter risco, d
 ## Fontes
 
 As fontes oficiais, datas de acesso e decisões deste chunk estão registradas em `research/sources/chunk-07.md`.
+
+## Observação operacional sobre este repositório-base
+
+Este repositório é um baseline/template documental, não um SaaS executável.
+
+Por isso, workflows que dependem de stack real, licença, plano GitHub, ambiente efêmero, aplicação em execução ou code scanning privado devem ficar como exemplos em:
+
+- `examples/github-workflows/codeql.yml`
+- `examples/github-workflows/dependency-review.yml`
+- `examples/github-workflows/zap-baseline.yml`
+- `examples/github-workflows/basic-pr.yml`
+- `examples/github-workflows/security-weekly.yml`
+- `examples/github-workflows/secret-scan.yml`
+- `examples/github-workflows/semgrep.yml`
+- `examples/github-workflows/python-audit.yml`
+- `examples/github-workflows/node-audit.yml`
+- `examples/github-workflows/container-audit.yml`
+- `examples/github-workflows/sbom.yml`
+- `examples/github-workflows/accessibility-audit.yml`
+- `examples/github-workflows/release-checklist.yml`
+
+O único workflow ativo por padrão neste repositório-base deve ser:
+
+- `.github/workflows/security.yml`
+
+Em um SaaS real, copie o workflow aplicável para `.github/workflows/`, valide plano/licença, stack, permissões, secrets, artifacts e gates antes de torná-lo obrigatório.
