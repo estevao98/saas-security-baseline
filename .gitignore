@@ -1,0 +1,56 @@
+# Environment / secrets
+.env
+*.env
+.env.*
+!.env.example
+
+# Raw security reports / sensitive artifacts
+reports/raw/
+*.sarif
+*gitleaks*.json
+*secrets*.json
+*detect-secrets*.json
+*semgrep*.json
+*bandit*.json
+*pip-audit*.json
+*trivy*.json
+*grype*.json
+zap-report.html
+zap-report.json
+
+# Infrastructure sensitive files
+terraform.tfstate
+terraform.tfstate.*
+*.tfplan
+plan.json
+
+# Frappe / ERPNext sensitive configs
+site_config.json
+common_site_config.json
+sites/*/site_config.json
+sites/*/private/
+private/
+
+# Dumps / backups
+*.sql
+*.dump
+*.bak
+*.backup
+*.tar
+*.tar.gz
+*.zip
+*.7z
+
+# Logs
+*.log
+logs/
+*.out
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local Codex config, if any
+.codex/
