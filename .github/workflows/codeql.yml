@@ -1,15 +1,52 @@
-# Placeholder seguro do Chunk 2. Implementacao reservada ao Chunk 7.
-name: Placeholder - Codeql
+name: CodeQL
 
 on:
+  pull_request:
+    paths:
+      - '**/*.py'
+      - '**/*.js'
+      - '**/*.jsx'
+      - '**/*.ts'
+      - '**/*.tsx'
+      - '.github/workflows/codeql.yml'
+  push:
+    branches: [main]
+    paths:
+      - '**/*.py'
+      - '**/*.js'
+      - '**/*.jsx'
+      - '**/*.ts'
+      - '**/*.tsx'
+      - '.github/workflows/codeql.yml'
+  schedule:
+    - cron: '37 3 * * 3'
   workflow_dispatch:
 
 permissions:
   contents: read
+  security-events: write
 
 jobs:
-  placeholder:
+  analyze:
+    name: analyze-${{ matrix.language }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [javascript-typescript, python]
     steps:
-      - name: Informar estado
-        run: echo "Workflow ainda nao implementado; consulte o Chunk 7."
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: ${{ matrix.language }}
+
+      - name: Analyze
+        uses: github/codeql-action/analyze@v4
+
+# Code scanning em repositorio privado depende da licenca/configuracao aplicavel.
+# Ajuste as linguagens e fixe as actions por SHA antes de tornar o check obrigatorio.

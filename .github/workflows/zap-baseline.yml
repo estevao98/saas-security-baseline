@@ -1,5 +1,4 @@
-# Placeholder seguro do Chunk 2. Implementacao reservada ao Chunk 7.
-name: Placeholder - Zap Baseline
+name: ZAP Baseline
 
 on:
   workflow_dispatch:
@@ -8,8 +7,38 @@ permissions:
   contents: read
 
 jobs:
-  placeholder:
+  baseline-example:
+    name: baseline-loopback-example
     runs-on: ubuntu-latest
     steps:
-      - name: Informar estado
-        run: echo "Workflow ainda nao implementado; consulte o Chunk 7."
+      - name: Create non-sensitive loopback target
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/zap-target reports/raw
+          printf '%s\n' '<!doctype html><title>Local ZAP target</title>' > /tmp/zap-target/index.html
+          python3 -m http.server 8000 --directory /tmp/zap-target >/tmp/zap-http.log 2>&1 &
+          curl --fail --retry 10 --retry-delay 1 http://127.0.0.1:8000/
+
+      - name: Run passive baseline against loopback
+        shell: bash
+        run: |
+          set +e
+          docker run --rm --network host \
+            -v "$PWD/reports/raw:/zap/wrk:rw" \
+            -t ghcr.io/zaproxy/zaproxy:stable \
+            zap-baseline.py -t http://127.0.0.1:8000 \
+            -J zap-baseline.json -r zap-baseline.html
+          status=$?
+          echo "ZAP baseline terminou com status $status; este exemplo e alert-only."
+          exit 0
+
+      - name: Confirm expected reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s reports/raw/zap-baseline.json
+          test -s reports/raw/zap-baseline.html
+
+# Este exemplo nao publica artifacts e nao aceita URL como input. Para um SaaS,
+# substitua o alvo por ambiente efemero autorizado e fixe a imagem por digest.

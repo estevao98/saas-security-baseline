@@ -10,7 +10,7 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 6 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+Progresso: 7 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [ ] README consolidado
 - [ ] Auditoria de cobertura
 - [x] Repositório enviado para GitHub privado
@@ -24,7 +24,7 @@ Progresso: 6 de 21 chunks de execução concluídos; o Chunk 0 registra o contex
 - [x] Chunk 4 — Tipos de auditoria para SaaS
 - [x] Chunk 5 — Matriz de auditorias por cenário
 - [x] Chunk 6 — Ferramentas recomendadas e comandos
-- [ ] Chunk 7 — GitHub Actions e CI/CD
+- [x] Chunk 7 — GitHub Actions e CI/CD
 - [ ] Chunk 8 — Frappe, ERPNext, Frappe LMS e Python
 - [ ] Chunk 9 — LGPD e privacidade para SaaS
 - [ ] Chunk 10 — Acessibilidade para SaaS web
@@ -99,4 +99,14 @@ Progresso: 6 de 21 chunks de execução concluídos; o Chunk 0 registra o contex
 - Mantidos os workflows completos para o Chunk 7 e os scripts para o Chunk 16; os snippets são somente orientação documental.
 - Registradas fontes oficiais, decisões e incertezas em `research/sources/chunk-06.md`, incluindo limites atuais de Safety, CodeQL privado, Dredd/OpenAPI 3, Newman v3, tfsec, ORT e CycloneDX.
 - Reforçada a separação entre `reports/raw/` fora do Git e resumos revisados em `reports/sanitized/`.
+- Nenhum outro chunk foi executado.
+
+### 2026-06-06 — Chunk 7
+
+- Criado `docs/github-actions-strategy.md` com os 13 workflows solicitados, gatilhos, ferramentas, saídas, permissões, gates, riscos de logs/artifacts e maturidade recomendada.
+- Definidas políticas de falha, artifacts, logs, permissões, secrets, branch protection, matriz por fase e matriz de gates por severidade.
+- Substituídos os placeholders de `security.yml`, `dependency-review.yml`, `codeql.yml` e `zap-baseline.yml` por exemplos mínimos sem secrets ou URLs privadas.
+- O exemplo ZAP usa somente alvo fictício em loopback, não aceita URL arbitrária e não publica relatório; Dependency Review e CodeQL registram dependência de plano/licença em repositório privado.
+- Registradas fontes oficiais e incertezas em `research/sources/chunk-07.md`, incluindo o incidente da cadeia do Trivy em março de 2026.
+- Os demais workflows permanecem documentais e os scripts completos continuam reservados ao Chunk 16.
 - Nenhum outro chunk foi executado.
