@@ -101,14 +101,14 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 7 - GitHub Actions e CI/CD
 
 - **Arquivo principal esperado:** `docs/github-actions-strategy.md`
-- **Status:** pendente
+- **Status:** concluído em 2026-06-06
 - **Critérios de aceite:**
-  - [ ] Definir todos os workflows solicitados, seus gatilhos, ferramentas e saídas.
-  - [ ] Incluir exemplos mínimos de YAML sem segredos reais.
-  - [ ] Definir bloqueio ou alerta, política de artifacts e cuidados com logs.
-  - [ ] Recomendar checks de branch protection para as três fases de maturidade.
-  - [ ] Incluir a seção "Estratégia de falha: quando o CI deve quebrar?".
-  - [ ] Registrar fontes em `research/sources/chunk-07.md` e atualizar o progresso.
+  - [x] Definir todos os workflows solicitados, seus gatilhos, ferramentas e saídas.
+  - [x] Incluir exemplos mínimos de YAML sem segredos reais.
+  - [x] Definir bloqueio ou alerta, política de artifacts e cuidados com logs.
+  - [x] Recomendar checks de branch protection para as três fases de maturidade.
+  - [x] Incluir a seção "Estratégia de falha: quando o CI deve quebrar?".
+  - [x] Registrar fontes em `research/sources/chunk-07.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(ci): define GitHub Actions strategy"`
 
 ## Chunk 8 - Frappe, ERPNext, Frappe LMS e Python

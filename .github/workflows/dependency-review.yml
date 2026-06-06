@@ -1,15 +1,25 @@
-# Placeholder seguro do Chunk 2. Implementacao reservada ao Chunk 7.
-name: Placeholder - Dependency Review
+name: Dependency Review
 
 on:
-  workflow_dispatch:
+  pull_request:
 
 permissions:
   contents: read
 
 jobs:
-  placeholder:
+  dependency-review:
+    name: dependency-review
     runs-on: ubuntu-latest
     steps:
-      - name: Informar estado
-        run: echo "Workflow ainda nao implementado; consulte o Chunk 7."
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Review dependency changes
+        uses: actions/dependency-review-action@v5
+        with:
+          fail-on-severity: high
+
+# Em repositorio privado, este workflow depende da licenca e configuracao
+# GitHub aplicavel. Fixe as actions por SHA completo antes de usa-lo como gate.

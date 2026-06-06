@@ -1,15 +1,47 @@
-# Placeholder seguro do Chunk 2. Implementacao reservada ao Chunk 7.
-name: Placeholder - Security
+name: Repository Security Controls
 
 on:
+  pull_request:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  placeholder:
+  repository-policy:
+    name: repository-policy
     runs-on: ubuntu-latest
     steps:
-      - name: Informar estado
-        run: echo "Workflow ainda nao implementado; consulte o Chunk 7."
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Reject tracked raw reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          tracked="$(git ls-files -- reports/raw '*.sarif' '*gitleaks*.json' '*semgrep*.json' '*zap*.html')"
+          if [[ -n "$tracked" ]]; then
+            printf '%s\n' "Arquivos sensiveis rastreados:" "$tracked"
+            exit 1
+          fi
+
+      - name: Reject dangerous workflow patterns
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -R -n -E '^[[:space:]]*pull_request_target:' .github/workflows --include='*.yml'; then
+            echo "pull_request_target exige revisao de risco e nao e permitido no baseline."
+            exit 1
+          fi
+          if grep -R -n -E '^[[:space:]]*permissions:[[:space:]]*write-all' .github/workflows --include='*.yml'; then
+            echo "permissions: write-all nao e permitido."
+            exit 1
+          fi
+          if grep -R -n -E '^[[:space:]]*path:[[:space:]]*\.[[:space:]]*$' .github/workflows --include='*.yml'; then
+            echo "upload-artifact com path: . nao e permitido."
+            exit 1
+          fi
