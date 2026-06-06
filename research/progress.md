@@ -10,7 +10,7 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 9 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+Progresso: 10 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [ ] README consolidado
 - [ ] Auditoria de cobertura
 - [x] Repositório enviado para GitHub privado
@@ -27,7 +27,7 @@ Progresso: 9 de 21 chunks de execução concluídos; o Chunk 0 registra o contex
 - [x] Chunk 7 — GitHub Actions e CI/CD
 - [x] Chunk 8 — Frappe, ERPNext, Frappe LMS e Python
 - [x] Chunk 9 — LGPD e privacidade para SaaS
-- [ ] Chunk 10 — Acessibilidade para SaaS web
+- [x] Chunk 10 — Acessibilidade para SaaS web
 - [ ] Chunk 11 — Relatórios, evidências e política de artifacts
 - [ ] Chunk 12 — Modelo final de relatório de auditoria
 - [ ] Chunk 13 — Priorização de vulnerabilidades e matriz de severidade
@@ -127,4 +127,16 @@ Progresso: 9 de 21 chunks de execução concluídos; o Chunk 0 registra o contex
 - Diferenciadas orientação técnica e validação jurídica, com incertezas regulatórias explícitas para RIPD, direitos, pequeno porte, transferências e comunicação de incidentes.
 - Registradas fontes oficiais da LGPD e ANPD em `research/sources/chunk-09.md`.
 - Nenhum template completo do Chunk 17, script do Chunk 16 ou checklist final do Chunk 15 foi criado.
+- Nenhum outro chunk foi executado.
+
+### 2026-06-06 — Chunk 10
+
+- Criado `docs/accessibility-program.md` como programa prático para produto, design, frontend, conteúdo, QA, suporte, auditoria e CI/CD de SaaS web.
+- Cobertos WCAG 2.2 AA, princípios e níveis, critérios prioritários, limites da automação, política, responsabilidades, fluxos críticos, checklists e roteiro manual.
+- Documentadas a ABNT NBR 17225:2025 e a aplicabilidade condicional da ABNT NBR 17060:2022, com incertezas e necessidade de reconfirmação no Catálogo ABNT para uso formal.
+- Reutilizados somente os comandos de axe, Lighthouse e Pa11y já validados em `docs/security-tools-catalog.md`.
+- Definidos proteção de evidências, redaction, gates de release, backlog/SLA, diferenças entre tipos de avaliação e relações com LGPD, design system, Frappe/LMS e multi-tenant.
+- Registradas fontes oficiais e institucionais em `research/sources/chunk-10.md`.
+- Mantido `docs/accessibility-audit.md` como placeholder; foi incluída apenas sua estrutura sugerida, sem antecipar o template completo do Chunk 17.
+- Nenhum script do Chunk 16, checklist final do Chunk 15 ou workflow novo foi criado.
 - Nenhum outro chunk foi executado.
