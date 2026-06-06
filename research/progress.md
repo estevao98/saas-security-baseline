@@ -10,7 +10,7 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 4 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+Progresso: 5 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [ ] README consolidado
 - [ ] Auditoria de cobertura
 - [ ] Repositório enviado para GitHub privado
@@ -22,7 +22,7 @@ Progresso: 4 de 21 chunks de execução concluídos; o Chunk 0 registra o contex
 - [x] Chunk 2 — Estrutura completa do repositório
 - [x] Chunk 3 — Roadmap de implantação por fases
 - [x] Chunk 4 — Tipos de auditoria para SaaS
-- [ ] Chunk 5 — Matriz de auditorias por cenário
+- [x] Chunk 5 — Matriz de auditorias por cenário
 - [ ] Chunk 6 — Ferramentas recomendadas e comandos
 - [ ] Chunk 7 — GitHub Actions e CI/CD
 - [ ] Chunk 8 — Frappe, ERPNext, Frappe LMS e Python
@@ -81,4 +81,13 @@ Progresso: 4 de 21 chunks de execução concluídos; o Chunk 0 registra o contex
 - Incluída a seção "Quais auditorias bloqueiam release?", com classificação baseada em aplicabilidade, validação e severidade.
 - Diferenciados SCA e dependency scanning e registrados os limites de scanners, automação e evidência de ausência de achados.
 - Registradas fontes oficiais e incertezas em `research/sources/chunk-04.md`, sem antecipar comandos ou versões do Chunk 6.
+- Nenhum outro chunk foi executado.
+
+### 2026-06-06 — Chunk 5
+
+- Criado `docs/audit-trigger-matrix.md` com os 21 cenários de evento e periodicidade definidos no prompt.
+- Classificadas auditorias obrigatórias, desejáveis e melhorias futuras por cenário, com riscos, evidências, revisores e critérios de Go/No-Go.
+- Consolidada tabela operacional dos 23 tipos do Chunk 4 com frequência mínima e ideal, bloqueio, ferramentas e relatório esperado.
+- Alinhadas as decisões às fases MVP seguro, SaaS vendável para empresas e SaaS maduro, sem alterar os gates do Chunk 4.
+- Reconfirmadas fontes oficiais sobre SSDF, threat modeling, resposta a incidentes, RIPD e comunicação de incidente; incertezas foram registradas em `research/sources/chunk-05.md`.
 - Nenhum outro chunk foi executado.

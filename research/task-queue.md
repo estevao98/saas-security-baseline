@@ -76,13 +76,13 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 5 - Matriz de auditorias por cenário
 
 - **Arquivo principal esperado:** `docs/audit-trigger-matrix.md`
-- **Status:** pendente
+- **Status:** concluído em 2026-06-06
 - **Critérios de aceite:**
-  - [ ] Cobrir todos os cenários de evento e periodicidade definidos no prompt.
-  - [ ] Classificar auditorias obrigatórias, desejáveis e futuras por cenário.
-  - [ ] Informar riscos, evidências, revisor e critério de Go/No-Go.
-  - [ ] Incluir tabela-resumo por auditoria com frequência, bloqueio, ferramentas e relatório.
-  - [ ] Registrar fontes em `research/sources/chunk-05.md` e atualizar o progresso.
+  - [x] Cobrir todos os cenários de evento e periodicidade definidos no prompt.
+  - [x] Classificar auditorias obrigatórias, desejáveis e futuras por cenário.
+  - [x] Informar riscos, evidências, revisor e critério de Go/No-Go.
+  - [x] Incluir tabela-resumo por auditoria com frequência, bloqueio, ferramentas e relatório.
+  - [x] Registrar fontes em `research/sources/chunk-05.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(audit): add audit trigger matrix"`
 
 ## Chunk 6 - Ferramentas recomendadas e comandos
