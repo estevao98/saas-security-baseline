@@ -88,14 +88,14 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 6 - Ferramentas recomendadas e comandos
 
 - **Arquivo principal esperado:** `docs/security-tools-catalog.md`
-- **Status:** pendente
+- **Status:** concluído em 2026-06-06
 - **Critérios de aceite:**
-  - [ ] Cobrir todas as categorias e ferramentas listadas no prompt.
-  - [ ] Documentar finalidade, ecossistema, limites, falsos positivos, saída e política de bloqueio.
-  - [ ] Incluir apenas comandos Linux confirmados em documentação oficial.
-  - [ ] Explicar integração com GitHub Actions e riscos de exposição em relatórios.
-  - [ ] Sinalizar explicitamente comandos ou versões que exijam validação posterior.
-  - [ ] Registrar fontes em `research/sources/chunk-06.md` e atualizar o progresso.
+  - [x] Cobrir todas as categorias e ferramentas listadas no prompt.
+  - [x] Documentar finalidade, ecossistema, limites, falsos positivos, saída e política de bloqueio.
+  - [x] Incluir apenas comandos Linux confirmados em documentação oficial.
+  - [x] Explicar integração com GitHub Actions e riscos de exposição em relatórios.
+  - [x] Sinalizar explicitamente comandos ou versões que exijam validação posterior.
+  - [x] Registrar fontes em `research/sources/chunk-06.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(tooling): add security tools catalog"`
 
 ## Chunk 7 - GitHub Actions e CI/CD
