@@ -165,14 +165,14 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 12 - Modelo final de relatório de auditoria
 
 - **Arquivo principal esperado:** `docs/security-audit-baseline.md`
-- **Status:** pendente
+- **Status:** concluído em 2026-06-06
 - **Critérios de aceite:**
-  - [ ] Incluir todas as seções obrigatórias de escopo, execução, achados, riscos e remediação.
-  - [ ] Usar tabelas para achados, riscos, plano e mapeamentos.
-  - [ ] Incluir comentários Markdown internos e avisos contra conteúdo sensível.
-  - [ ] Incluir critérios explícitos de aprovação e reprovação.
-  - [ ] Produzir um modelo reutilizável, sem dados reais ou payloads exploráveis.
-  - [ ] Registrar fontes em `research/sources/chunk-12.md` e atualizar o progresso.
+  - [x] Incluir todas as seções obrigatórias de escopo, execução, achados, riscos e remediação.
+  - [x] Usar tabelas para achados, riscos, plano e mapeamentos.
+  - [x] Incluir comentários Markdown internos e avisos contra conteúdo sensível.
+  - [x] Incluir critérios explícitos de aprovação e reprovação.
+  - [x] Produzir um modelo reutilizável, sem dados reais ou payloads exploráveis.
+  - [x] Registrar fontes em `research/sources/chunk-12.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(audit): add security audit report template"`
 
 ## Chunk 13 - Priorização de vulnerabilidades e matriz de severidade
