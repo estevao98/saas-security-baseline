@@ -51,14 +51,14 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 3 - Roadmap de implantação por fases
 
 - **Arquivo principal esperado:** `docs/security-roadmap.md`
-- **Status:** pendente
+- **Status:** concluído em 2026-06-06
 - **Critérios de aceite:**
-  - [ ] Cobrir MVP seguro, SaaS vendável para empresas e SaaS maduro.
-  - [ ] Mapear normas e referências indicadas para cada fase.
-  - [ ] Incluir objetivos, documentos, automações, riscos, evidências e critérios de avanço e bloqueio.
-  - [ ] Incluir planos de 30, 60, 90 e 180 dias.
-  - [ ] Diferenciar obrigatório, desejável, melhoria futura e práticas para empresas maiores.
-  - [ ] Registrar fontes em `research/sources/chunk-03.md` e atualizar o progresso.
+  - [x] Cobrir MVP seguro, SaaS vendável para empresas e SaaS maduro.
+  - [x] Mapear normas e referências indicadas para cada fase.
+  - [x] Incluir objetivos, documentos, automações, riscos, evidências e critérios de avanço e bloqueio.
+  - [x] Incluir planos de 30, 60, 90 e 180 dias.
+  - [x] Diferenciar obrigatório, desejável, melhoria futura e práticas para empresas maiores.
+  - [x] Registrar fontes em `research/sources/chunk-03.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(roadmap): add security maturity phases"`
 
 ## Chunk 4 - Tipos de auditoria para SaaS
