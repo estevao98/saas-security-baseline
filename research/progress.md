@@ -10,7 +10,7 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 10 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+Progresso: 11 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [ ] README consolidado
 - [ ] Auditoria de cobertura
 - [x] Repositório enviado para GitHub privado
@@ -28,7 +28,7 @@ Progresso: 10 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Chunk 8 — Frappe, ERPNext, Frappe LMS e Python
 - [x] Chunk 9 — LGPD e privacidade para SaaS
 - [x] Chunk 10 — Acessibilidade para SaaS web
-- [ ] Chunk 11 — Relatórios, evidências e política de artifacts
+- [x] Chunk 11 — Relatórios, evidências e política de artifacts
 - [ ] Chunk 12 — Modelo final de relatório de auditoria
 - [ ] Chunk 13 — Priorização de vulnerabilidades e matriz de severidade
 - [ ] Chunk 14 — Política de branches, commits, issues e PRs
@@ -140,3 +140,13 @@ Progresso: 10 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Mantido `docs/accessibility-audit.md` como placeholder; foi incluída apenas sua estrutura sugerida, sem antecipar o template completo do Chunk 17.
 - Nenhum script do Chunk 16, checklist final do Chunk 15 ou workflow novo foi criado.
 - Nenhum outro chunk foi executado.
+
+### 2026-06-06 — Chunk 11
+
+- Criado `docs/evidence-and-reporting-policy.md` com classificação, ciclo de vida, acesso, redaction, retenção e descarte de evidências de auditoria de SaaS.
+- Classificados todos os tipos solicitados e os 13 relatórios do prompt original quanto a Git, `reports/raw/`, `reports/sanitized/`, exposição, criptografia, CI artifact e evidência mínima.
+- Definidas políticas específicas para vulnerabilidades, segredos, dados pessoais, SBOM/supply chain, acessibilidade, testes com usuários, incidentes, Frappe/Frappe LMS e clientes enterprise.
+- Incluídos checklists antes de commit, upload em CI/CD e abertura de issue/PR, além de revisão por formato e exemplos de nomes seguros/proibidos.
+- Confirmado que `reports/raw/` já está protegido por `.gitignore`; o arquivo não foi alterado e nenhum relatório cru foi criado ou movido.
+- Registradas fontes oficiais e incertezas em `research/sources/chunk-11.md`, incluindo retenção do GitHub Actions e o mínimo de cinco anos para registros de incidentes com dados pessoais segundo a Resolução CD/ANPD nº 15/2024.
+- Nenhum workflow, script ou template completo foi criado; nenhum outro chunk foi executado.

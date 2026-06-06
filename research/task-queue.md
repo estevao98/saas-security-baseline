@@ -153,13 +153,13 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 11 - Relatórios, evidências e política de segurança dos artifacts
 
 - **Arquivo principal esperado:** `docs/evidence-and-reporting-policy.md`
-- **Status:** pendente
+- **Status:** concluído em 2026-06-06
 - **Critérios de aceite:**
-  - [ ] Classificar todos os relatórios listados quanto a exposição, Git, criptografia, redaction e retenção.
-  - [ ] Definir políticas para logs, screenshots, SBOM, vulnerabilidades, segredos e dados pessoais.
-  - [ ] Preservar `reports/raw/` fora do Git e limitar o Git a material sanitizado.
-  - [ ] Incluir as seções de redaction e checklist antes de commitar evidências.
-  - [ ] Registrar fontes em `research/sources/chunk-11.md` e atualizar o progresso.
+  - [x] Classificar todos os relatórios listados quanto a exposição, Git, criptografia, redaction e retenção.
+  - [x] Definir políticas para logs, screenshots, SBOM, vulnerabilidades, segredos e dados pessoais.
+  - [x] Preservar `reports/raw/` fora do Git e limitar o Git a material sanitizado.
+  - [x] Incluir as seções de redaction e checklist antes de commitar evidências.
+  - [x] Registrar fontes em `research/sources/chunk-11.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(evidence): define reporting and artifact policy"`
 
 ## Chunk 12 - Modelo final de relatório de auditoria
