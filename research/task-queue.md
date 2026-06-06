@@ -114,14 +114,14 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 8 - Frappe, ERPNext, Frappe LMS e Python
 
 - **Arquivo principal esperado:** `docs/frappe-python-security-audit.md`
-- **Status:** pendente
+- **Status:** concluído em 2026-06-06
 - **Critérios de aceite:**
-  - [ ] Cobrir todos os padrões, permissões, integrações e fluxos Frappe listados.
-  - [ ] Incluir checklist manual, comandos `rg`, padrões suspeitos e falsos positivos.
-  - [ ] Incluir regras Semgrep simples somente quando tecnicamente válidas.
-  - [ ] Definir riscos críticos, evidências, bloqueios de release e adaptação multi-tenant.
-  - [ ] Sinalizar dependências de versão e não inventar APIs do Frappe.
-  - [ ] Registrar fontes em `research/sources/chunk-08.md` e atualizar o progresso.
+  - [x] Cobrir todos os padrões, permissões, integrações e fluxos Frappe listados.
+  - [x] Incluir checklist manual, comandos `rg`, padrões suspeitos e falsos positivos.
+  - [x] Incluir regras Semgrep simples somente quando tecnicamente válidas.
+  - [x] Definir riscos críticos, evidências, bloqueios de release e adaptação multi-tenant.
+  - [x] Sinalizar dependências de versão e não inventar APIs do Frappe.
+  - [x] Registrar fontes em `research/sources/chunk-08.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(frappe): add Python security audit guide"`
 
 ## Chunk 9 - LGPD e privacidade para SaaS

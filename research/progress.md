@@ -10,7 +10,7 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 7 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+Progresso: 8 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [ ] README consolidado
 - [ ] Auditoria de cobertura
 - [x] Repositório enviado para GitHub privado
@@ -25,7 +25,7 @@ Progresso: 7 de 21 chunks de execução concluídos; o Chunk 0 registra o contex
 - [x] Chunk 5 — Matriz de auditorias por cenário
 - [x] Chunk 6 — Ferramentas recomendadas e comandos
 - [x] Chunk 7 — GitHub Actions e CI/CD
-- [ ] Chunk 8 — Frappe, ERPNext, Frappe LMS e Python
+- [x] Chunk 8 — Frappe, ERPNext, Frappe LMS e Python
 - [ ] Chunk 9 — LGPD e privacidade para SaaS
 - [ ] Chunk 10 — Acessibilidade para SaaS web
 - [ ] Chunk 11 — Relatórios, evidências e política de artifacts
@@ -109,4 +109,13 @@ Progresso: 7 de 21 chunks de execução concluídos; o Chunk 0 registra o contex
 - O exemplo ZAP usa somente alvo fictício em loopback, não aceita URL arbitrária e não publica relatório; Dependency Review e CodeQL registram dependência de plano/licença em repositório privado.
 - Registradas fontes oficiais e incertezas em `research/sources/chunk-07.md`, incluindo o incidente da cadeia do Trivy em março de 2026.
 - Os demais workflows permanecem documentais e os scripts completos continuam reservados ao Chunk 16.
+- Nenhum outro chunk foi executado.
+
+### 2026-06-06 — Chunk 8
+
+- Criado `docs/frappe-python-security-audit.md` com guia prático para Frappe Framework, ERPNext, Frappe Learning e Python.
+- Cobertos estrutura de app, permissões, roles/profiles, customizações, APIs, ORM/SQL, jobs, scheduler, hooks, scripts, arquivos, autenticação, integrações, pagamentos, multi-tenant, logs, segredos e dependências.
+- Incluídos checklist manual, comandos `rg`, padrões perigosos, falsos positivos, regras Semgrep simples, evidências, riscos críticos e bloqueios de release.
+- Registradas fontes oficiais e incertezas de versão em `research/sources/chunk-08.md`, incluindo mudanças documentadas no Frappe v16 e limites de validação de CSRF/rate limiting por versão.
+- Nenhum script do Chunk 16 nem workflow adicional do Chunk 7 foi criado ou alterado.
 - Nenhum outro chunk foi executado.
