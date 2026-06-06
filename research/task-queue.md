@@ -127,14 +127,14 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 9 - LGPD e privacidade para SaaS
 
 - **Arquivo principal esperado:** `docs/lgpd-privacy-program.md`
-- **Status:** pendente
+- **Status:** concluído em 2026-06-06
 - **Critérios de aceite:**
-  - [ ] Cobrir o ciclo de tratamento, direitos, papéis, terceiros, incidentes e privacy by design.
-  - [ ] Explicar cada documento de privacidade solicitado, seus campos, revisão e evidências.
-  - [ ] Incluir matriz LGPD prática para SaaS.
-  - [ ] Diferenciar orientação técnica de validação jurídica.
-  - [ ] Citar LGPD e fontes oficiais da ANPD.
-  - [ ] Registrar fontes em `research/sources/chunk-09.md` e atualizar o progresso.
+  - [x] Cobrir o ciclo de tratamento, direitos, papéis, terceiros, incidentes e privacy by design.
+  - [x] Explicar cada documento de privacidade solicitado, seus campos, revisão e evidências.
+  - [x] Incluir matriz LGPD prática para SaaS.
+  - [x] Diferenciar orientação técnica de validação jurídica.
+  - [x] Citar LGPD e fontes oficiais da ANPD.
+  - [x] Registrar fontes em `research/sources/chunk-09.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(lgpd): add SaaS privacy program"`
 
 ## Chunk 10 - Acessibilidade para SaaS web

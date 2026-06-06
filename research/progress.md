@@ -10,7 +10,7 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 8 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+Progresso: 9 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [ ] README consolidado
 - [ ] Auditoria de cobertura
 - [x] Repositório enviado para GitHub privado
@@ -26,7 +26,7 @@ Progresso: 8 de 21 chunks de execução concluídos; o Chunk 0 registra o contex
 - [x] Chunk 6 — Ferramentas recomendadas e comandos
 - [x] Chunk 7 — GitHub Actions e CI/CD
 - [x] Chunk 8 — Frappe, ERPNext, Frappe LMS e Python
-- [ ] Chunk 9 — LGPD e privacidade para SaaS
+- [x] Chunk 9 — LGPD e privacidade para SaaS
 - [ ] Chunk 10 — Acessibilidade para SaaS web
 - [ ] Chunk 11 — Relatórios, evidências e política de artifacts
 - [ ] Chunk 12 — Modelo final de relatório de auditoria
@@ -118,4 +118,13 @@ Progresso: 8 de 21 chunks de execução concluídos; o Chunk 0 registra o contex
 - Incluídos checklist manual, comandos `rg`, padrões perigosos, falsos positivos, regras Semgrep simples, evidências, riscos críticos e bloqueios de release.
 - Registradas fontes oficiais e incertezas de versão em `research/sources/chunk-08.md`, incluindo mudanças documentadas no Frappe v16 e limites de validação de CSRF/rate limiting por versão.
 - Nenhum script do Chunk 16 nem workflow adicional do Chunk 7 foi criado ou alterado.
+- Nenhum outro chunk foi executado.
+
+### 2026-06-06 — Chunk 9
+
+- Criado `docs/lgpd-privacy-program.md` como programa prático de LGPD e privacidade para produto, engenharia, operação, governança, fornecedores, evidências e auditoria de SaaS.
+- Cobertos ciclo de vida, papéis, bases legais, direitos, documentos, privacy by design/default, terceiros, transferências internacionais, incidentes, matriz operacional, checklist e gates de release.
+- Diferenciadas orientação técnica e validação jurídica, com incertezas regulatórias explícitas para RIPD, direitos, pequeno porte, transferências e comunicação de incidentes.
+- Registradas fontes oficiais da LGPD e ANPD em `research/sources/chunk-09.md`.
+- Nenhum template completo do Chunk 17, script do Chunk 16 ou checklist final do Chunk 15 foi criado.
 - Nenhum outro chunk foi executado.
