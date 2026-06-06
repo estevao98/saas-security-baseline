@@ -10,7 +10,7 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 11 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+Progresso: 12 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [ ] README consolidado
 - [ ] Auditoria de cobertura
 - [x] Repositório enviado para GitHub privado
@@ -29,7 +29,7 @@ Progresso: 11 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Chunk 9 — LGPD e privacidade para SaaS
 - [x] Chunk 10 — Acessibilidade para SaaS web
 - [x] Chunk 11 — Relatórios, evidências e política de artifacts
-- [ ] Chunk 12 — Modelo final de relatório de auditoria
+- [x] Chunk 12 — Modelo final de relatório de auditoria
 - [ ] Chunk 13 — Priorização de vulnerabilidades e matriz de severidade
 - [ ] Chunk 14 — Política de branches, commits, issues e PRs
 - [ ] Chunk 15 — Checklists principais
@@ -150,3 +150,12 @@ Progresso: 11 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Confirmado que `reports/raw/` já está protegido por `.gitignore`; o arquivo não foi alterado e nenhum relatório cru foi criado ou movido.
 - Registradas fontes oficiais e incertezas em `research/sources/chunk-11.md`, incluindo retenção do GitHub Actions e o mínimo de cinco anos para registros de incidentes com dados pessoais segundo a Resolução CD/ANPD nº 15/2024.
 - Nenhum workflow, script ou template completo foi criado; nenhum outro chunk foi executado.
+
+### 2026-06-06 — Chunk 12
+
+- Substituido o placeholder de `docs/security-audit-baseline.md` por um modelo preenchivel de relatorio final de auditoria de seguranca para SaaS.
+- Incluidas capa, sumario executivo, controle de versao, classificacao, escopo, metodologia, ferramentas, execucao, achados, riscos, remediacao, gates, dominios, mapeamentos, evidencias, limitacoes, proximas auditorias e declaracao final.
+- Incluidos comentarios Markdown e avisos para impedir segredos, credenciais, dados pessoais, URLs privadas, payloads, requests/responses, logs crus e evidencias sensiveis.
+- Mantida a separacao entre `reports/raw/` fora do Git e `reports/sanitized/` revisado, com referencia opaca, redaction e cadeia de custodia quando aplicavel.
+- Registradas fontes internas e oficiais de apoio em `research/sources/chunk-12.md`, sem introduzir novas versoes, comandos ou requisitos.
+- Nenhum relatorio cru, script, workflow ou template do Chunk 17 foi criado; nenhum outro chunk foi executado.
