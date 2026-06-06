@@ -140,14 +140,14 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 10 - Acessibilidade para SaaS web
 
 - **Arquivo principal esperado:** `docs/accessibility-program.md`
-- **Status:** pendente
+- **Status:** concluído em 2026-06-06
 - **Critérios de aceite:**
-  - [ ] Cobrir WCAG 2.2 AA e as normas ABNT aplicáveis sem reproduzir texto integral.
-  - [ ] Incluir política, checklists, roteiro manual e fluxos críticos.
-  - [ ] Explicar uso de axe-core, Lighthouse e Pa11y com comandos validados.
-  - [ ] Definir evidências, falhas que bloqueiam release e melhorias não bloqueantes.
-  - [ ] Incluir exemplo de estrutura para `docs/accessibility-audit.md`.
-  - [ ] Registrar fontes em `research/sources/chunk-10.md` e atualizar o progresso.
+  - [x] Cobrir WCAG 2.2 AA e as normas ABNT aplicáveis sem reproduzir texto integral.
+  - [x] Incluir política, checklists, roteiro manual e fluxos críticos.
+  - [x] Explicar uso de axe-core, Lighthouse e Pa11y com comandos validados.
+  - [x] Definir evidências, falhas que bloqueiam release e melhorias não bloqueantes.
+  - [x] Incluir exemplo de estrutura para `docs/accessibility-audit.md`.
+  - [x] Registrar fontes em `research/sources/chunk-10.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(accessibility): add SaaS accessibility program"`
 
 ## Chunk 11 - Relatórios, evidências e política de segurança dos artifacts
