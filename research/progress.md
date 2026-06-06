@@ -10,7 +10,7 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 3 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+Progresso: 4 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [ ] README consolidado
 - [ ] Auditoria de cobertura
 - [ ] Repositório enviado para GitHub privado
@@ -21,7 +21,7 @@ Progresso: 3 de 21 chunks de execução concluídos; o Chunk 0 registra o contex
 - [x] Chunk 1 — Matriz de normas, frameworks e referências
 - [x] Chunk 2 — Estrutura completa do repositório
 - [x] Chunk 3 — Roadmap de implantação por fases
-- [ ] Chunk 4 — Tipos de auditoria para SaaS
+- [x] Chunk 4 — Tipos de auditoria para SaaS
 - [ ] Chunk 5 — Matriz de auditorias por cenário
 - [ ] Chunk 6 — Ferramentas recomendadas e comandos
 - [ ] Chunk 7 — GitHub Actions e CI/CD
@@ -72,4 +72,13 @@ Progresso: 3 de 21 chunks de execução concluídos; o Chunk 0 registra o contex
 - Incluídos planos cumulativos de 30, 60, 90 e 180 dias e a separação entre obrigatório, desejável, melhoria futura e práticas para empresas maiores.
 - Mantidas as edições e incertezas da matriz do Chunk 1, sem antecipar comandos ou configurações dos chunks de ferramentas e CI/CD.
 - Registradas fontes oficiais e limites em `research/sources/chunk-03.md`.
+- Nenhum outro chunk foi executado.
+
+### 2026-06-06 — Chunk 4
+
+- Criado `docs/audit-types.md` cobrindo os 23 tipos de auditoria solicitados.
+- Para cada tipo foram documentados objetivo, gatilhos, frequência recomendada, ferramentas, relatórios, riscos, limitações, falsos positivos, evidências e exemplo de SaaS.
+- Incluída a seção "Quais auditorias bloqueiam release?", com classificação baseada em aplicabilidade, validação e severidade.
+- Diferenciados SCA e dependency scanning e registrados os limites de scanners, automação e evidência de ausência de achados.
+- Registradas fontes oficiais e incertezas em `research/sources/chunk-04.md`, sem antecipar comandos ou versões do Chunk 6.
 - Nenhum outro chunk foi executado.

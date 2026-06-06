@@ -64,13 +64,13 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 4 - Tipos de auditoria para SaaS
 
 - **Arquivo principal esperado:** `docs/audit-types.md`
-- **Status:** pendente
+- **Status:** concluído em 2026-06-06
 - **Critérios de aceite:**
-  - [ ] Cobrir todos os tipos de auditoria listados no prompt.
-  - [ ] Para cada tipo, documentar uso, frequência, ferramentas, riscos, limitações e evidências.
-  - [ ] Incluir falsos positivos e exemplo prático de SaaS.
-  - [ ] Classificar auditorias na seção "Quais auditorias bloqueiam release?".
-  - [ ] Registrar fontes em `research/sources/chunk-04.md` e atualizar o progresso.
+  - [x] Cobrir todos os tipos de auditoria listados no prompt.
+  - [x] Para cada tipo, documentar uso, frequência, ferramentas, riscos, limitações e evidências.
+  - [x] Incluir falsos positivos e exemplo prático de SaaS.
+  - [x] Classificar auditorias na seção "Quais auditorias bloqueiam release?".
+  - [x] Registrar fontes em `research/sources/chunk-04.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(audit): document SaaS audit types"`
 
 ## Chunk 5 - Matriz de auditorias por cenário
