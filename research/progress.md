@@ -10,7 +10,7 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 1 de 21 chunks concluídos.
+Progresso: 2 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [ ] README consolidado
 - [ ] Auditoria de cobertura
 - [ ] Repositório enviado para GitHub privado
@@ -19,7 +19,7 @@ Progresso: 1 de 21 chunks concluídos.
 
 - [x] Chunk 0 — Contexto-mestre
 - [x] Chunk 1 — Matriz de normas, frameworks e referências
-- [ ] Chunk 2 — Estrutura completa do repositório
+- [x] Chunk 2 — Estrutura completa do repositório
 - [ ] Chunk 3 — Roadmap de implantação por fases
 - [ ] Chunk 4 — Tipos de auditoria para SaaS
 - [ ] Chunk 5 — Matriz de auditorias por cenário
@@ -54,4 +54,13 @@ Progresso: 1 de 21 chunks concluídos.
 - Registradas fontes oficiais e incertezas em `research/sources/chunk-01.md`.
 - Validada a atualização para OWASP Top 10 2025 e ISO/IEC/IEEE 12207:2026.
 - Mantida pendente a confirmação, no Catálogo ABNT, da equivalência exata de edições brasileiras quando os metadados públicos foram insuficientes.
+- Nenhum outro chunk foi executado.
+
+### 2026-06-06 — Chunk 2
+
+- Criado `docs/repository-architecture.md` com nome, árvore-alvo, responsabilidades, classificação dos artefatos e estratégia de reutilização.
+- Verificada a árvore local contra os caminhos obrigatórios do prompt.
+- Criados placeholders seguros para `.gitleaks.toml`, `.secrets.baseline`, oito scripts de auditoria e workflows do Chunk 7.
+- Os scripts permanecem inertes até o Chunk 16; os workflows aceitam somente disparo manual e não executam scanners.
+- Registrado em `research/sources/chunk-02.md` que nenhuma fonte externa foi necessária.
 - Nenhum outro chunk foi executado.
