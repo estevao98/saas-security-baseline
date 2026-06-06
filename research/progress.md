@@ -5,7 +5,8 @@
 - [x] Repositório local criado
 - [x] `.gitignore` inicial criado
 - [x] `AGENTS.md` criado
-- [ ] Prompts importados
+- [x] Fila de tarefas dos chunks 0 a 20 criada
+- [x] Prompts importados
 - [ ] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados
 - [ ] README consolidado
