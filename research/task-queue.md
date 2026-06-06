@@ -38,14 +38,14 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 2 - Estrutura completa do repositório
 
 - **Arquivo principal esperado:** `docs/repository-architecture.md`
-- **Status:** pendente
+- **Status:** concluído em 2026-06-06
 - **Critérios de aceite:**
-  - [ ] Propor nome principal, alternativas e justificativa.
-  - [ ] Incluir a árvore completa com todas as pastas e arquivos obrigatórios do prompt.
-  - [ ] Explicar pastas e arquivos principais em tabelas.
-  - [ ] Identificar templates, checklists, políticas, relatórios e arquivos que não recebem dados reais.
-  - [ ] Explicar a reutilização em diferentes SaaS.
-  - [ ] Registrar fontes em `research/sources/chunk-02.md` e atualizar o progresso.
+  - [x] Propor nome principal, alternativas e justificativa.
+  - [x] Incluir a árvore completa com todas as pastas e arquivos obrigatórios do prompt.
+  - [x] Explicar pastas e arquivos principais em tabelas.
+  - [x] Identificar templates, checklists, políticas, relatórios e arquivos que não recebem dados reais.
+  - [x] Explicar a reutilização em diferentes SaaS.
+  - [x] Registrar fontes em `research/sources/chunk-02.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(architecture): define repository structure"`
 
 ## Chunk 3 - Roadmap de implantação por fases

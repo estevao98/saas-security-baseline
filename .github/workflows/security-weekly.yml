@@ -1,0 +1,15 @@
+# Placeholder seguro do Chunk 2. Implementacao reservada ao Chunk 7.
+name: Placeholder - Security Weekly
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Informar estado
+        run: echo "Workflow ainda nao implementado; consulte o Chunk 7."
