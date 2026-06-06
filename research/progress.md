@@ -7,7 +7,7 @@
 - [x] `AGENTS.md` criado
 - [x] Fila de tarefas dos chunks 0 a 20 criada
 - [x] Prompts importados
-- [ ] Estrutura inicial gerada pelo Codex
+- [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados
 - [ ] README consolidado
 - [ ] Auditoria de cobertura
