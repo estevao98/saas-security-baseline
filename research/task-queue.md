@@ -26,13 +26,13 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 1 - Matriz de normas, frameworks e referências
 
 - **Arquivo principal esperado:** `docs/standards-and-frameworks-matrix.md`
-- **Status:** pendente
+- **Status:** concluído em 2026-06-06
 - **Critérios de aceite:**
-  - [ ] Cobrir todas as normas, leis, frameworks e referências listadas no prompt.
-  - [ ] Informar versão ou edição somente quando validada, indicando incertezas.
-  - [ ] Mapear objetivo, aplicação em SaaS, fase, documentos, ferramentas e certificação.
-  - [ ] Incluir a seção "Como usar esta matriz no repositório".
-  - [ ] Registrar fontes oficiais em `research/sources/chunk-01.md` e atualizar o progresso.
+  - [x] Cobrir todas as normas, leis, frameworks e referências listadas no prompt.
+  - [x] Informar versão ou edição somente quando validada, indicando incertezas.
+  - [x] Mapear objetivo, aplicação em SaaS, fase, documentos, ferramentas e certificação.
+  - [x] Incluir a seção "Como usar esta matriz no repositório".
+  - [x] Registrar fontes oficiais em `research/sources/chunk-01.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(standards): add frameworks matrix"`
 
 ## Chunk 2 - Estrutura completa do repositório
