@@ -10,7 +10,7 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 2 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+Progresso: 3 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [ ] README consolidado
 - [ ] Auditoria de cobertura
 - [ ] Repositório enviado para GitHub privado
@@ -20,7 +20,7 @@ Progresso: 2 de 21 chunks de execução concluídos; o Chunk 0 registra o contex
 - [x] Chunk 0 — Contexto-mestre
 - [x] Chunk 1 — Matriz de normas, frameworks e referências
 - [x] Chunk 2 — Estrutura completa do repositório
-- [ ] Chunk 3 — Roadmap de implantação por fases
+- [x] Chunk 3 — Roadmap de implantação por fases
 - [ ] Chunk 4 — Tipos de auditoria para SaaS
 - [ ] Chunk 5 — Matriz de auditorias por cenário
 - [ ] Chunk 6 — Ferramentas recomendadas e comandos
@@ -63,4 +63,13 @@ Progresso: 2 de 21 chunks de execução concluídos; o Chunk 0 registra o contex
 - Criados placeholders seguros para `.gitleaks.toml`, `.secrets.baseline`, oito scripts de auditoria e workflows do Chunk 7.
 - Os scripts permanecem inertes até o Chunk 16; os workflows aceitam somente disparo manual e não executam scanners.
 - Registrado em `research/sources/chunk-02.md` que nenhuma fonte externa foi necessária.
+- Nenhum outro chunk foi executado.
+
+### 2026-06-06 — Chunk 3
+
+- Criado `docs/security-roadmap.md` com as fases MVP seguro, SaaS vendável para empresas e SaaS maduro.
+- Mapeados objetivos, prioridades, documentos, automações, riscos, evidências, gates de avanço e critérios de bloqueio para cada fase.
+- Incluídos planos cumulativos de 30, 60, 90 e 180 dias e a separação entre obrigatório, desejável, melhoria futura e práticas para empresas maiores.
+- Mantidas as edições e incertezas da matriz do Chunk 1, sem antecipar comandos ou configurações dos chunks de ferramentas e CI/CD.
+- Registradas fontes oficiais e limites em `research/sources/chunk-03.md`.
 - Nenhum outro chunk foi executado.
