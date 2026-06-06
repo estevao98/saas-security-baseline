@@ -10,10 +10,10 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 5 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+Progresso: 6 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [ ] README consolidado
 - [ ] Auditoria de cobertura
-- [ ] Repositório enviado para GitHub privado
+- [x] Repositório enviado para GitHub privado
 
 ## Chunks
 
@@ -23,7 +23,7 @@ Progresso: 5 de 21 chunks de execução concluídos; o Chunk 0 registra o contex
 - [x] Chunk 3 — Roadmap de implantação por fases
 - [x] Chunk 4 — Tipos de auditoria para SaaS
 - [x] Chunk 5 — Matriz de auditorias por cenário
-- [ ] Chunk 6 — Ferramentas recomendadas e comandos
+- [x] Chunk 6 — Ferramentas recomendadas e comandos
 - [ ] Chunk 7 — GitHub Actions e CI/CD
 - [ ] Chunk 8 — Frappe, ERPNext, Frappe LMS e Python
 - [ ] Chunk 9 — LGPD e privacidade para SaaS
@@ -90,4 +90,13 @@ Progresso: 5 de 21 chunks de execução concluídos; o Chunk 0 registra o contex
 - Consolidada tabela operacional dos 23 tipos do Chunk 4 com frequência mínima e ideal, bloqueio, ferramentas e relatório esperado.
 - Alinhadas as decisões às fases MVP seguro, SaaS vendável para empresas e SaaS maduro, sem alterar os gates do Chunk 4.
 - Reconfirmadas fontes oficiais sobre SSDF, threat modeling, resposta a incidentes, RIPD e comunicação de incidente; incertezas foram registradas em `research/sources/chunk-05.md`.
+- Nenhum outro chunk foi executado.
+
+### 2026-06-06 — Chunk 6
+
+- Substituído o placeholder de `docs/security-tools-catalog.md` por um catálogo operacional cobrindo secret scanning, Python, JavaScript/TypeScript, SAST, DAST, SCA, containers, IaC, SBOM, licenças, acessibilidade, API testing, CI/CD, gestão de risco, threat modeling e LGPD/privacy.
+- Para cada ferramenta ou modelo foram registrados finalidade, ecossistema, forças, limitações, falsos positivos, comando validado quando aplicável, integração mínima com GitHub Actions, risco de exposição, gate e caminhos de relatório.
+- Mantidos os workflows completos para o Chunk 7 e os scripts para o Chunk 16; os snippets são somente orientação documental.
+- Registradas fontes oficiais, decisões e incertezas em `research/sources/chunk-06.md`, incluindo limites atuais de Safety, CodeQL privado, Dredd/OpenAPI 3, Newman v3, tfsec, ORT e CycloneDX.
+- Reforçada a separação entre `reports/raw/` fora do Git e resumos revisados em `reports/sanitized/`.
 - Nenhum outro chunk foi executado.
