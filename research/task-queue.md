@@ -255,14 +255,14 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 19 - Auditoria de cobertura
 
 - **Arquivo principal esperado:** `research/coverage-audit.md` (nome operacional derivado do objetivo do prompt)
-- **Status:** pendente
+- **Status:** concluido em 2026-06-07
 - **Critérios de aceite:**
-  - [ ] Avaliar os 25 pontos de cobertura definidos no prompt.
-  - [ ] Classificar cada item como Sim, Parcial ou Não, com lacuna, gravidade e correção.
-  - [ ] Atribuir notas de 0 a 10 para os seis critérios solicitados.
-  - [ ] Gerar lista final de pendências no formato de issues GitHub.
-  - [ ] Não ocultar lacunas nem marcar como completo conteúdo sem evidência.
-  - [ ] Registrar fontes em `research/sources/chunk-19.md` e atualizar o progresso.
+  - [x] Avaliar os 25 pontos de cobertura definidos no prompt.
+  - [x] Classificar cada item como Sim, Parcial ou Não, com lacuna, gravidade e correção.
+  - [x] Atribuir notas de 0 a 10 para os seis critérios solicitados.
+  - [x] Gerar lista final de pendências no formato de issues GitHub.
+  - [x] Não ocultar lacunas nem marcar como completo conteúdo sem evidência.
+  - [x] Registrar fontes em `research/sources/chunk-19.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(research): audit baseline coverage"`
 
 ## Chunk 20 - Plano de execução para Codex
