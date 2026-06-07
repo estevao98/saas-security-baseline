@@ -243,13 +243,13 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 18 - Consolidação do README
 
 - **Arquivo principal esperado:** `README.md` (derivado do prompt, que não usa o campo "Arquivo sugerido")
-- **Status:** pendente
+- **Status:** concluído em 2026-06-07
 - **Critérios de aceite:**
-  - [ ] Executar somente depois da geração e revisão dos chunks anteriores aplicáveis.
-  - [ ] Cobrir as 23 seções obrigatórias definidas no prompt.
-  - [ ] Manter o README objetivo e apontar para documentos existentes sem duplicá-los.
-  - [ ] Não inventar arquivos nem incluir dados sensíveis ou trechos longos de normas.
-  - [ ] Registrar fontes em `research/sources/chunk-18.md` e atualizar o progresso.
+  - [x] Executar somente depois da geração e revisão dos chunks anteriores aplicáveis.
+  - [x] Cobrir as 23 seções obrigatórias definidas no prompt.
+  - [x] Manter o README objetivo e apontar para documentos existentes sem duplicá-los.
+  - [x] Não inventar arquivos nem incluir dados sensíveis ou trechos longos de normas.
+  - [x] Registrar fontes em `research/sources/chunk-18.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(readme): consolidate repository guidance"`
 
 ## Chunk 19 - Auditoria de cobertura
