@@ -10,9 +10,9 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 18 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+Progresso: 19 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [x] README consolidado
-- [ ] Auditoria de cobertura
+- [x] Auditoria de cobertura
 - [x] Repositório enviado para GitHub privado
 
 ## Chunks
@@ -36,7 +36,7 @@ Progresso: 18 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Chunk 16 — Scripts locais de auditoria
 - [x] Chunk 17 — Templates de documentos
 - [x] Chunk 18 — Consolidação README
-- [ ] Chunk 19 — Auditoria de cobertura
+- [x] Chunk 19 — Auditoria de cobertura
 - [ ] Chunk 20 — Plano para Codex/agente de código
 
 ## Registro de execução
@@ -215,3 +215,12 @@ Progresso: 18 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Registradas fontes internas, referencias herdadas e incertezas preexistentes em `research/sources/chunk-18.md`.
 - Nenhum script do Chunk 16, template do Chunk 17, checklist do Chunk 15 ou workflow do Chunk 7 foi alterado.
 - Nenhuma auditoria de cobertura do Chunk 19 ou plano Codex do Chunk 20 foi criado; nenhum outro chunk foi executado.
+
+### 2026-06-07 — Chunk 19
+
+- Criado `research/coverage-audit.md` com avaliacao honesta dos 25 pontos, classificacao Sim/Parcial/Nao, evidencias, lacunas, gravidade, correcoes, prioridades e impacto no uso.
+- Atribuidas notas aos seis criterios do prompt e criada lista de pendencias em formato de issues, separada por criticidade.
+- Confirmadas divergencias relevantes: checklists do Chunk 15 ainda sao placeholders, falta `research/sources/chunk-15.md`, dez workflows de exemplo continuam inertes e varios artefatos auxiliares/arquivos raiz nao estao prontos para uso operacional.
+- Nao foram encontrados links Markdown locais quebrados, relatorios crus rastreados ou padroes evidentes de credenciais reais na busca limitada; os oito scripts passaram em `bash -n`, sem execucao dos scanners.
+- Registradas somente fontes internas e limites em `research/sources/chunk-19.md`.
+- Nenhuma lacuna foi corrigida, nenhum documento fora de `research/` foi alterado e o Chunk 20 nao foi executado.
