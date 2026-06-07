@@ -37,7 +37,31 @@ O quinto PR e limitado aos checklists de operacao, terceiros, IA e pagamentos:
 - `checklists/third-party-risk.md`;
 - `checklists/ai-governance.md`.
 
-O pacote completo do Chunk 15 ainda nao foi reconciliado. `research/progress.md`, `research/task-queue.md`, indices, scripts, workflows, templates e demais checklists nao foram alterados nestes cinco PRs.
+O pacote completo do Chunk 15 foi reconciliado no fechamento corretivo do Lote 3. O fechamento alterou somente `checklists/README.md`, `checklists/index.md`, `research/sources/chunk-15.md`, `research/progress.md` e `research/task-queue.md`.
+
+## Fechamento corretivo do Lote 3
+
+### Verificacao realizada
+
+- Foram verificados os 15 checklists listados no prompt do Chunk 15 e o checklist adicional `checklists/owasp-top-10.md`, ja referenciado pelo README principal.
+- Todos os checklists principais existem, possuem secoes de objetivo, momento de uso, revisor, evidencias, itens marcaveis, criterios de aprovacao/reprovacao ou bloqueio e cuidados contra vazamento.
+- A busca por placeholders encontrou apenas `checklists/README.md` e `checklists/index.md` como remanescentes de navegacao; ambos foram substituidos por conteudo operacional neste fechamento.
+- O uso da palavra "placeholder" em `checklists/accessibility-wcag-22-aa.md` permanece intencional no item que alerta que placeholder de formulario nao substitui label acessivel.
+
+### Decisoes do fechamento
+
+- `checklists/index.md` passou a listar os checklists por fase, AppSec, aplicacao, plataforma, operacao, governanca, privacidade e acessibilidade.
+- `checklists/README.md` passou a explicar visao geral, forma de uso, limites e politica de evidencias dos checklists.
+- `checklists/owasp-top-10.md` foi mantido como checklist principal adicional, por estar substantivo e coerente com OWASP Top 10:2025 e com o README principal.
+- Nenhum checklist individual foi alterado, pois nao foi identificado erro de link ou indice que exigisse edicao fora do escopo permitido.
+- `research/progress.md` e `research/task-queue.md` foram reconciliados para registrar o Lote 3 como concluido apos verificacao real, sem reabrir ou executar outro lote.
+
+### Incertezas e pendencias fora do Lote 3
+
+- A conclusao do Lote 3 nao corrige divergencias de inventario, arquitetura, documentos auxiliares, politicas, workflows, scripts, templates ou automacoes fora do escopo deste fechamento.
+- O proximo lote corretivo indicado permanece o **Lote 1 - Estrutura inicial**, conforme a ordem de `research/codex-execution-plan.md`, para reconciliar inventario e estado declarado do repositorio.
+- Avaliacoes juridicas, contratuais, enterprise, de acessibilidade, Frappe, cloud, ferramentas, versoes e certificacoes continuam contextuais e pendentes quando aplicaveis.
+- Nenhum checklist preenchido de produto real foi criado; material real deve permanecer em local autorizado e classificado.
 
 ## Fontes internas consultadas
 
@@ -48,8 +72,8 @@ O pacote completo do Chunk 15 ainda nao foi reconciliado. `research/progress.md`
 | `research/codex-execution-plan.md` | Escopo do Lote 3, ordem por PR, critérios de aceite e proibição de reconciliar status antes do pacote completo. |
 | `research/coverage-audit.md` | Confirmação de que os checklists eram placeholders e de que `research/sources/chunk-15.md` estava ausente. |
 | `research/prompts.md` | Requisitos originais do Chunk 15 e categorias esperadas. |
-| `research/task-queue.md` | Estado declarado e critérios históricos, consultados sem alteração. |
-| `research/progress.md` | Divergência histórica do Chunk 15, consultada sem reconciliação neste PR. |
+| `research/task-queue.md` | Estado declarado e critérios históricos; reconciliado somente no fechamento corretivo do Lote 3. |
+| `research/progress.md` | Divergência histórica do Chunk 15; reconciliada somente no fechamento corretivo do Lote 3. |
 | `docs/security-roadmap.md` | Fases MVP seguro e SaaS vendável para empresas, evidências, gates e critérios de não avançar. |
 | `docs/standards-and-frameworks-matrix.md` | Versões internas adotadas: OWASP Top 10:2025, API Security Top 10:2023 e ASVS 5.0.0; limites de uso e certificação. |
 | `docs/audit-types.md` | Combinação de revisão manual, testes de autenticação/autorização e ferramentas como evidência parcial. |
@@ -59,7 +83,7 @@ O pacote completo do Chunk 15 ainda nao foi reconciliado. `research/progress.md`
 | `docs/security-audit-baseline.md` | Estrutura de evidência, findings, risco, reteste e critérios de decisão. |
 | `docs/git-security-workflow.md` | Gates de release, revisão independente, IDs opacos e proibição de evidência crua em Git, issues e PRs. |
 | `risk/severity-and-prioritization.md` | Severidade, aceite, reteste e condições de bloqueio de release. |
-| `checklists/index.md` | Contexto do conjunto de checklists; permaneceu inalterado por pertencer à reconciliação posterior. |
+| `checklists/index.md` | Contexto do conjunto de checklists; atualizado somente no fechamento corretivo do Lote 3. |
 | `docs/lgpd-privacy-program.md` | Ciclo de vida, papeis, bases legais, direitos, fornecedores, RIPD, incidentes, privacy by design e limites de orientacao juridica. |
 | `docs/accessibility-program.md` | WCAG 2.2 AA, processos completos, avaliacao manual, tecnologias assistivas, limites da automacao, evidencias e gates. |
 | `docs/frappe-python-security-audit.md` | Superficies Frappe, ERPNext e Frappe Learning; dependencia de versao; DocTypes, roles, permissions, whitelisted methods, jobs, hooks, arquivos, integracoes, logs e multi-tenant. |
