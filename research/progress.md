@@ -10,7 +10,7 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 12 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+Progresso: 13 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [ ] README consolidado
 - [ ] Auditoria de cobertura
 - [x] Repositório enviado para GitHub privado
@@ -30,7 +30,7 @@ Progresso: 12 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Chunk 10 — Acessibilidade para SaaS web
 - [x] Chunk 11 — Relatórios, evidências e política de artifacts
 - [x] Chunk 12 — Modelo final de relatório de auditoria
-- [ ] Chunk 13 — Priorização de vulnerabilidades e matriz de severidade
+- [x] Chunk 13 — Priorização de vulnerabilidades e matriz de severidade
 - [ ] Chunk 14 — Política de branches, commits, issues e PRs
 - [ ] Chunk 15 — Checklists principais
 - [ ] Chunk 16 — Scripts locais de auditoria
@@ -159,3 +159,12 @@ Progresso: 12 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Mantida a separacao entre `reports/raw/` fora do Git e `reports/sanitized/` revisado, com referencia opaca, redaction e cadeia de custodia quando aplicavel.
 - Registradas fontes internas e oficiais de apoio em `research/sources/chunk-12.md`, sem introduzir novas versoes, comandos ou requisitos.
 - Nenhum relatorio cru, script, workflow ou template do Chunk 17 foi criado; nenhum outro chunk foi executado.
+
+### 2026-06-07 — Chunk 13
+
+- Substituído o placeholder de `risk/severity-and-prioritization.md` por uma matriz prática de severidade, prioridade, risco, SLA, gates de release, tratamento, aceite, issues, backlog e reteste para SaaS.
+- Definidos os níveis crítico, alto, médio, baixo e informativo, com impacto técnico/de negócio, explorabilidade, exposição, dados, LGPD, acessibilidade, disponibilidade, financeiro, reputação e alcance multi-tenant.
+- Documentado o uso complementar e não automático de CVSS v4.0, CISA KEV, SSVC, EPSS, OWASP e contexto de negócio.
+- Incluídos SLAs internos ajustáveis, regras de exceção/reabertura/expiração, matriz por tipo de finding, exemplos fictícios e checklists de triagem, reclassificação e fechamento.
+- Registradas fontes oficiais, decisões e incertezas em `research/sources/chunk-13.md`.
+- Nenhum workflow do Chunk 7, script do Chunk 16 ou template completo do Chunk 17 foi criado ou alterado; nenhum outro chunk foi executado.

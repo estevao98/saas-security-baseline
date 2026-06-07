@@ -178,14 +178,14 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 13 - Priorização de vulnerabilidades e matriz de severidade
 
 - **Arquivo principal esperado:** `risk/severity-and-prioritization.md`
-- **Status:** pendente
+- **Status:** concluído em 2026-06-07
 - **Critérios de aceite:**
-  - [ ] Definir níveis crítico, alto, médio e baixo com os exemplos solicitados.
-  - [ ] Incluir matrizes de severidade e SLA.
-  - [ ] Incorporar impacto, probabilidade, exploração, exposição, dados e controles compensatórios.
-  - [ ] Explicar uso apropriado de CISA KEV, CVSS e SSVC.
-  - [ ] Definir bloqueio de release, aceite formal de risco, issues e backlog.
-  - [ ] Registrar fontes em `research/sources/chunk-13.md` e atualizar o progresso.
+  - [x] Definir níveis crítico, alto, médio e baixo com os exemplos solicitados.
+  - [x] Incluir matrizes de severidade e SLA.
+  - [x] Incorporar impacto, probabilidade, exploração, exposição, dados e controles compensatórios.
+  - [x] Explicar uso apropriado de CISA KEV, CVSS e SSVC.
+  - [x] Definir bloqueio de release, aceite formal de risco, issues e backlog.
+  - [x] Registrar fontes em `research/sources/chunk-13.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(risk): add severity and prioritization matrix"`
 
 ## Chunk 14 - Política de branches, commits, issues e PRs
