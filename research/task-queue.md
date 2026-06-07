@@ -204,20 +204,20 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 15 - Checklists principais
 
 - **Arquivo principal esperado:** `checklists/index.md`
-- **Status:** pendente
+- **Status:** concluído em 2026-06-07
 - **Critérios de aceite:**
-  - [ ] Criar o índice e os 15 checklists listados no prompt.
-  - [ ] Usar caixas de seleção Markdown com itens aplicáveis a SaaS real.
-  - [ ] Definir objetivo, momento de uso, revisor e evidências em cada checklist.
-  - [ ] Diferenciar itens obrigatórios, desejáveis e futuros.
-  - [ ] Definir critérios de aprovação e reprovação em cada arquivo.
-  - [ ] Registrar fontes em `research/sources/chunk-15.md` e atualizar o progresso.
+  - [x] Criar o índice e os 15 checklists listados no prompt.
+  - [x] Usar caixas de seleção Markdown com itens aplicáveis a SaaS real.
+  - [x] Definir objetivo, momento de uso, revisor e evidências em cada checklist.
+  - [x] Diferenciar itens obrigatórios, desejáveis e futuros.
+  - [x] Definir critérios de aprovação e reprovação em cada arquivo.
+  - [x] Registrar fontes em `research/sources/chunk-15.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(checklists): add core SaaS security checklists"`
 
 ## Chunk 16 - Scripts locais de auditoria
 
 - **Arquivo principal esperado:** `scripts/README.md`
-- **Status:** concluído
+- **Status:** concluído em 2026-06-07
 - **Critérios de aceite:**
   - [x] Criar os oito scripts Bash listados no prompt.
   - [x] Usar `set -euo pipefail`, verificar dependências e falhar de forma segura.
@@ -230,14 +230,14 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 17 - Templates de documentos
 
 - **Arquivo principal esperado:** `templates/index.md`
-- **Status:** pendente
+- **Status:** concluído em 2026-06-07
 - **Critérios de aceite:**
-  - [ ] Criar o índice e os 14 templates listados no prompt.
-  - [ ] Usar Markdown ou CSV conforme o tipo de documento.
-  - [ ] Definir objetivo, momento de uso, campos obrigatórios e opcionais.
-  - [ ] Incluir exemplos claramente fictícios e sem dados pessoais ou credenciais.
-  - [ ] Incluir cuidados de segurança específicos em cada template.
-  - [ ] Registrar fontes em `research/sources/chunk-17.md` e atualizar o progresso.
+  - [x] Criar o índice e os 14 templates listados no prompt.
+  - [x] Usar Markdown ou CSV conforme o tipo de documento.
+  - [x] Definir objetivo, momento de uso, campos obrigatórios e opcionais.
+  - [x] Incluir exemplos claramente fictícios e sem dados pessoais ou credenciais.
+  - [x] Incluir cuidados de segurança específicos em cada template.
+  - [x] Registrar fontes em `research/sources/chunk-17.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(templates): add governance document templates"`
 
 ## Chunk 18 - Consolidação do README
