@@ -11,6 +11,26 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 - Manter relatórios crus em `reports/raw/`, fora do Git, e publicar somente resumos revisados em `reports/sanitized/`.
 - Não incluir segredos, credenciais, dados pessoais reais ou evidências sensíveis.
 
+## Fila corretiva pós-auditoria
+
+Esta fila deriva de `research/coverage-audit.md` e `research/codex-execution-plan.md`. Ela nao substitui a fila historica dos chunks; registra o estado dos lotes corretivos.
+
+| Ordem | Lote corretivo | Status | Observacao |
+|---:|---|---|---|
+| 1 | Lote 3 — Checklists | Concluido em 2026-06-07 | Checklists principais verificados como substantivos; `checklists/README.md`, `checklists/index.md`, `research/sources/chunk-15.md`, `research/progress.md` e esta fila foram reconciliados. |
+| 2 | Lote 1 — Estrutura inicial | Proximo lote corretivo | Reconciliar inventario, arquitetura e estado declarado somente em tarefa propria. |
+
+Pendencias do Lote 3 encerradas neste fechamento:
+
+- [x] Confirmar existencia dos checklists principais.
+- [x] Confirmar que os checklists principais nao permanecem placeholders.
+- [x] Atualizar `checklists/index.md` para refletir os checklists existentes.
+- [x] Atualizar `checklists/README.md` com visao geral, uso e limites.
+- [x] Atualizar `research/sources/chunk-15.md` com fechamento, decisoes e incertezas.
+- [x] Reconciliar `research/progress.md` e `research/task-queue.md` sem executar outro lote.
+
+O proximo trabalho nao deve alterar o Lote 3 salvo erro objetivo de link, indice ou informacao sensivel. O proximo lote corretivo e o **Lote 1 — Estrutura inicial**.
+
 ## Chunk 0 - Contexto-mestre do projeto
 
 - **Arquivo principal esperado:** sem arquivo final; contexto registrado em `research/prompts.md`
@@ -204,13 +224,15 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 15 - Checklists principais
 
 - **Arquivo principal esperado:** `checklists/index.md`
-- **Status:** concluído em 2026-06-07
+- **Status:** concluído em 2026-06-07; reconciliado no fechamento corretivo do Lote 3 em 2026-06-07
 - **Critérios de aceite:**
   - [x] Criar o índice e os 15 checklists listados no prompt.
+  - [x] Manter `checklists/owasp-top-10.md` como checklist principal adicional substantivo e referenciado.
   - [x] Usar caixas de seleção Markdown com itens aplicáveis a SaaS real.
   - [x] Definir objetivo, momento de uso, revisor e evidências em cada checklist.
   - [x] Diferenciar itens obrigatórios, desejáveis e futuros.
   - [x] Definir critérios de aprovação e reprovação em cada arquivo.
+  - [x] Atualizar `checklists/README.md` com visão geral, uso e limites.
   - [x] Registrar fontes em `research/sources/chunk-15.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(checklists): add core SaaS security checklists"`
 

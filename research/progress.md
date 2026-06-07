@@ -14,6 +14,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] README consolidado
 - [x] Auditoria de cobertura
 - [x] Repositório enviado para GitHub privado
+- [x] Fechamento corretivo do Lote 3 — Checklists concluído
 
 ## Chunks
 
@@ -180,7 +181,8 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 
 ### 2026-06-07 — Chunk 15
 
-- Substituidos os placeholders de `checklists/index.md` e dos 15 checklists definidos no prompt por conteudo pratico para fases de release, AppSec, API, LGPD, acessibilidade, Frappe/Python, cloud, pagamentos, incidentes, backup, CI/CD, terceiros e IA.
+- Substituidos os placeholders dos 15 checklists definidos no prompt por conteudo pratico para fases de release, AppSec, API, LGPD, acessibilidade, Frappe/Python, cloud, pagamentos, incidentes, backup, CI/CD, terceiros e IA.
+- Mantido `checklists/owasp-top-10.md` como checklist principal adicional, substantivo e referenciado pelo README principal.
 - Cada checklist inclui objetivo, momento de uso, revisor, evidencias, itens obrigatorios, desejaveis e de melhoria futura, criterios de aprovacao/reprovacao e cuidados com dados sensiveis.
 - Alinhados os gates a `docs/audit-trigger-matrix.md`, `docs/evidence-and-reporting-policy.md`, `docs/security-audit-baseline.md` e `risk/severity-and-prioritization.md`.
 - Registradas fontes oficiais, versoes, decisoes e limites em `research/sources/chunk-15.md`.
@@ -220,7 +222,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 
 - Criado `research/coverage-audit.md` com avaliacao honesta dos 25 pontos, classificacao Sim/Parcial/Nao, evidencias, lacunas, gravidade, correcoes, prioridades e impacto no uso.
 - Atribuidas notas aos seis criterios do prompt e criada lista de pendencias em formato de issues, separada por criticidade.
-- Confirmadas divergencias relevantes: checklists do Chunk 15 ainda sao placeholders, falta `research/sources/chunk-15.md`, dez workflows de exemplo continuam inertes e varios artefatos auxiliares/arquivos raiz nao estao prontos para uso operacional.
+- Confirmadas divergencias relevantes no estado auditado daquele momento: checklists do Chunk 15 ainda eram placeholders, faltava `research/sources/chunk-15.md`, dez workflows de exemplo continuavam inertes e varios artefatos auxiliares/arquivos raiz nao estavam prontos para uso operacional.
 - Nao foram encontrados links Markdown locais quebrados, relatorios crus rastreados ou padroes evidentes de credenciais reais na busca limitada; os oito scripts passaram em `bash -n`, sem execucao dos scanners.
 - Registradas somente fontes internas e limites em `research/sources/chunk-19.md`.
 - Nenhuma lacuna foi corrigida, nenhum documento fora de `research/` foi alterado e o Chunk 20 nao foi executado.
@@ -228,8 +230,17 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 ### 2026-06-07 — Chunk 20
 
 - Criado `research/codex-execution-plan.md` com os 11 lotes do prompt original, reorganizados em ordem prática a partir das lacunas de `research/coverage-audit.md`.
-- Priorizada a recuperação real do Chunk 15, a criação futura de `research/sources/chunk-15.md`, a reconciliação de status e a operacionalização da proteção contra segredos.
+- Priorizada, naquele momento, a recuperação real do Chunk 15, a regularização de `research/sources/chunk-15.md`, a reconciliação de status e a operacionalização da proteção contra segredos.
 - Cada lote registra objetivo, branch, issue, arquivos existentes ou **a criar**, tarefas, conteúdo, aceite, validações, riscos, cuidados com evidências, revisão humana, ordem e proibições para o agente.
 - Divididos os trabalhos futuros em PRs pequenos para políticas, workflows aplicáveis, documentos auxiliares, Frappe/Python, LGPD, acessibilidade, scripts, evidências e verificação final.
 - Registradas somente fontes internas e incertezas em `research/sources/chunk-20.md`; nenhuma lacuna foi corrigida e nenhum arquivo fora de `research/` foi alterado.
 - Nenhum outro chunk foi executado.
+
+### 2026-06-07 — Fechamento corretivo do Lote 3 — Checklists
+
+- Verificados os 15 checklists do prompt do Chunk 15 e o checklist adicional `checklists/owasp-top-10.md`.
+- Confirmado que os checklists principais existem e nao sao placeholders: todos possuem itens marcaveis, objetivo, momento de uso, revisores, evidencias, criterios de aprovacao/reprovacao ou bloqueio e cuidados contra vazamento.
+- Substituidos os placeholders remanescentes de navegacao em `checklists/index.md` e `checklists/README.md` por visao geral, uso, limites, agrupamento dos checklists e politica de evidencias.
+- Atualizado `research/sources/chunk-15.md` com verificacao realizada, decisoes do fechamento, incertezas pendentes e limites de seguranca.
+- Marcado o Lote 3 como concluido apos verificacao real; o proximo lote corretivo indicado em `research/task-queue.md` e o Lote 1 — Estrutura inicial.
+- Nenhum arquivo individual de checklist, script, workflow, template ou documento fora do escopo foi alterado.
