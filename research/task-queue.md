@@ -217,14 +217,14 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 16 - Scripts locais de auditoria
 
 - **Arquivo principal esperado:** `scripts/README.md`
-- **Status:** pendente
+- **Status:** concluído
 - **Critérios de aceite:**
-  - [ ] Criar os oito scripts Bash listados no prompt.
-  - [ ] Usar `set -euo pipefail`, verificar dependências e falhar de forma segura.
-  - [ ] Direcionar saídas cruas a `reports/raw/` e resumos revisáveis a `reports/sanitized/`.
-  - [ ] Não imprimir segredos nem enviar dados externamente sem aviso.
-  - [ ] Usar somente comandos validados e exemplos locais fictícios.
-  - [ ] Registrar fontes em `research/sources/chunk-16.md` e atualizar o progresso.
+  - [x] Criar os oito scripts Bash listados no prompt.
+  - [x] Usar `set -euo pipefail`, verificar dependências e falhar de forma segura.
+  - [x] Direcionar saídas cruas a `reports/raw/` e resumos revisáveis a `reports/sanitized/`.
+  - [x] Não imprimir segredos nem enviar dados externamente sem aviso.
+  - [x] Usar somente comandos validados e exemplos locais fictícios.
+  - [x] Registrar fontes em `research/sources/chunk-16.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "chore(audit): add local security audit scripts"`
 
 ## Chunk 17 - Templates de documentos

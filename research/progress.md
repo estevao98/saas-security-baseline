@@ -10,7 +10,7 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 14 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+Progresso: 16 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [ ] README consolidado
 - [ ] Auditoria de cobertura
 - [x] Repositório enviado para GitHub privado
@@ -32,8 +32,8 @@ Progresso: 14 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Chunk 12 — Modelo final de relatório de auditoria
 - [x] Chunk 13 — Priorização de vulnerabilidades e matriz de severidade
 - [x] Chunk 14 — Política de branches, commits, issues e PRs
-- [ ] Chunk 15 — Checklists principais
-- [ ] Chunk 16 — Scripts locais de auditoria
+- [x] Chunk 15 — Checklists principais
+- [x] Chunk 16 — Scripts locais de auditoria
 - [ ] Chunk 17 — Templates de documentos
 - [ ] Chunk 18 — Consolidação README
 - [ ] Chunk 19 — Auditoria de cobertura
@@ -177,3 +177,23 @@ Progresso: 14 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Incluídos fluxos para MVP seguro, SaaS vendável para empresas e SaaS maduro, além de branch protection e checklists antes de merge e release.
 - Registradas fontes oficiais e incertezas de plano, licença, contrato e política interna em `research/sources/chunk-14.md`.
 - Nenhum workflow, script, checklist do Chunk 15 ou template completo do Chunk 17 foi criado ou alterado; nenhum outro chunk foi executado.
+
+### 2026-06-07 — Chunk 15
+
+- Substituidos os placeholders de `checklists/index.md` e dos 15 checklists definidos no prompt por conteudo pratico para fases de release, AppSec, API, LGPD, acessibilidade, Frappe/Python, cloud, pagamentos, incidentes, backup, CI/CD, terceiros e IA.
+- Cada checklist inclui objetivo, momento de uso, revisor, evidencias, itens obrigatorios, desejaveis e de melhoria futura, criterios de aprovacao/reprovacao e cuidados com dados sensiveis.
+- Alinhados os gates a `docs/audit-trigger-matrix.md`, `docs/evidence-and-reporting-policy.md`, `docs/security-audit-baseline.md` e `risk/severity-and-prioritization.md`.
+- Registradas fontes oficiais, versoes, decisoes e limites em `research/sources/chunk-15.md`.
+- Nenhum script do Chunk 16, template completo do Chunk 17 ou workflow novo do Chunk 7 foi criado ou alterado.
+- Nenhum relatorio cru, segredo, credencial, dado pessoal real ou evidencia sensivel foi criado; nenhum outro chunk foi executado.
+
+### 2026-06-07 — Chunk 16
+
+- Substituidos os oito placeholders de `scripts/` por scripts Bash executaveis para orquestracao, Python, Node, containers/IaC, acessibilidade, API, Frappe e SBOM.
+- Todos usam `set -euo pipefail`, preflight de dependencias, validacao de listas/caminhos/URLs, diretorios com timestamp e separacao entre crus em `reports/raw/` e resumos em `reports/sanitized/`.
+- Rede exige consentimento explicito quando a ferramenta consulta registry, indice, advisory, regra ou base; imagens ZAP/produto precisam existir localmente e nenhum pull/instalacao ocorre automaticamente.
+- URLs foram limitadas a HTTP em `127.0.0.1` ou `localhost`, sem query, fragmento, credenciais, headers ou cookies; ZAP ficou restrito ao Baseline passivo.
+- O README documenta dependencias, execucao, saídas, falsos positivos/negativos, Frappe/Python, CI/CD, evidencias, interpretacao de status e relacao com risco.
+- Registradas fontes oficiais, decisoes e incertezas em `research/sources/chunk-16.md`, incluindo rede, telemetria, caches, Grype DB v5, schemas SBOM e exit codes.
+- Validada a sintaxe dos oito scripts com `bash -n`; scanners nao foram executados e nenhum relatorio cru foi criado.
+- Nenhum workflow do Chunk 7 ou template do Chunk 17 foi criado ou alterado; nenhum outro chunk foi executado.
