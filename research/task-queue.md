@@ -18,7 +18,8 @@ Esta fila deriva de `research/coverage-audit.md` e `research/codex-execution-pla
 | Ordem | Lote corretivo | Status | Observacao |
 |---:|---|---|---|
 | 1 | Lote 3 — Checklists | Concluido em 2026-06-07 | Checklists principais verificados como substantivos; `checklists/README.md`, `checklists/index.md`, `research/sources/chunk-15.md`, `research/progress.md` e esta fila foram reconciliados. |
-| 2 | Lote 1 — Estrutura inicial | Proximo lote corretivo | Reconciliar inventario, arquitetura e estado declarado somente em tarefa propria. |
+| 2 | Lote 1 — Estrutura inicial | Concluido em 2026-06-07 | Inventario, arquitetura, README, fontes e estado declarado reconciliados sem alterar scripts, workflows, templates completos ou checklists individuais. |
+| 3 | Lote 4 — Políticas | Proximo lote corretivo | Tornar `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `.gitleaks.toml`, `.secrets.baseline` e controles de segredo operacionais em tarefa propria. |
 
 Pendencias do Lote 3 encerradas neste fechamento:
 
@@ -29,7 +30,16 @@ Pendencias do Lote 3 encerradas neste fechamento:
 - [x] Atualizar `research/sources/chunk-15.md` com fechamento, decisoes e incertezas.
 - [x] Reconciliar `research/progress.md` e `research/task-queue.md` sem executar outro lote.
 
-O proximo trabalho nao deve alterar o Lote 3 salvo erro objetivo de link, indice ou informacao sensivel. O proximo lote corretivo e o **Lote 1 — Estrutura inicial**.
+Pendencias do Lote 1 encerradas nesta reconciliacao:
+
+- [x] Confirmar que o Lote 3 foi fechado antes de reconciliar estado do Chunk 15.
+- [x] Criar inventario `esperado x existente x substantivo x placeholder x planejado` em `research/repository-inventory.md`.
+- [x] Atualizar `docs/repository-architecture.md` para separar estado atual, exemplos, placeholders e pendencias.
+- [x] Atualizar `README.md` para apontar para auditoria, plano, inventario e fila corretiva existentes.
+- [x] Registrar fontes, decisoes e incertezas em `research/sources/lote-01.md`.
+- [x] Reconciliar `research/progress.md` e `research/task-queue.md` sem executar outro lote.
+
+O proximo trabalho nao deve alterar o Lote 3 salvo erro objetivo de link, indice ou informacao sensivel. O proximo lote corretivo e o **Lote 4 — Políticas**.
 
 ## Chunk 0 - Contexto-mestre do projeto
 

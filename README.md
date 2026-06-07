@@ -53,7 +53,7 @@ Adapte papeis, escopo e controles ao produto. Requisitos concretos podem variar 
 | [`privacy/`](privacy/) | Estruturas auxiliares de privacidade e LGPD. |
 | [`reports/`](reports/) | Separacao entre material cru local e resumo sanitizado. |
 | [`examples/github-workflows/`](examples/github-workflows/) | Exemplos de CI/CD que exigem adaptacao antes do uso. |
-| [`research/`](research/) | Prompts, progresso, fila e fontes da pesquisa. |
+| [`research/`](research/) | Prompts, progresso, fila, inventario, auditorias, plano corretivo e fontes da pesquisa. |
 
 A arvore completa e as regras de reutilizacao estao em [Arquitetura do repositorio](docs/repository-architecture.md).
 
@@ -215,7 +215,9 @@ Os arquivos centrais devem permanecer genericos. Preencha copias em local autori
 
 ## 25. Proximos passos, avisos e fontes
 
-O trabalho de pesquisa esta registrado em [Progresso](research/progress.md) e [Fila de tarefas](research/task-queue.md). Apos esta consolidacao, permanecem pendentes o **Chunk 19 - Auditoria de cobertura** e o **Chunk 20 - Plano para Codex/agente de codigo**; eles nao fazem parte deste README.
+O trabalho de pesquisa esta registrado em [Progresso](research/progress.md), [Fila de tarefas](research/task-queue.md), [Auditoria de cobertura](research/coverage-audit.md), [Plano para Codex/agente de codigo](research/codex-execution-plan.md) e [Inventario reconciliado](research/repository-inventory.md).
+
+Estado atual resumido: o Lote 3 - Checklists foi fechado e o Lote 1 - Estrutura inicial foi reconciliado. Permanecem pendentes os lotes corretivos de politicas, workflows, documentos auxiliares, scripts, Frappe/Python, LGPD, acessibilidade, evidencias, risco auxiliar e revisao final, conforme `research/task-queue.md`.
 
 Avisos de seguranca:
 
@@ -225,4 +227,4 @@ Avisos de seguranca:
 - trate descoberta de segredo ou incidente pelo canal restrito definido pela organizacao, nao por issue comum;
 - confirme versoes, comandos, licencas, planos, contratos e requisitos legais antes da implantacao.
 
-As referencias oficiais e suas incertezas estao na [Matriz de normas e frameworks](docs/standards-and-frameworks-matrix.md) e nos registros de [`research/sources/`](research/sources/). As fontes usadas nesta consolidacao estao em [Fontes do Chunk 18](research/sources/chunk-18.md).
+As referencias oficiais e suas incertezas estao na [Matriz de normas e frameworks](docs/standards-and-frameworks-matrix.md) e nos registros de [`research/sources/`](research/sources/). As fontes usadas nesta consolidacao inicial estao em [Fontes do Chunk 18](research/sources/chunk-18.md); a reconciliacao da estrutura inicial esta registrada em [Fontes do Lote 1](research/sources/lote-01.md).

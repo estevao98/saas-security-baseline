@@ -17,31 +17,19 @@ O nome comunica que o repositório define uma base mínima, repetível e evoluti
 - Separar orientação (`docs/`), execução (`scripts/` e workflows), evidências (`reports/`) e modelos reutilizáveis (`templates/`).
 - Manter relatórios crus em `reports/raw/`, fora do Git.
 - Versionar somente conteúdo sanitizado, revisável e sem dados sensíveis.
-- Evoluir cada área no chunk próprio; arquivos ainda não implementados devem permanecer claramente marcados como placeholders.
+- Evoluir cada área no lote ou chunk próprio; arquivos ainda não implementados devem permanecer claramente marcados como iniciais, exemplos, placeholders ou planejados.
 - Tratar checklists e políticas como baseline interno, não como prova automática de conformidade ou certificação.
 
-## Árvore-alvo
+## Árvore de referência e estado atual
 
-Os comentários `# template`, `# checklist`, `# política` e `# relatório` indicam a função principal. A árvore é o estado-alvo do template; a presença de um caminho não significa que seu conteúdo já esteja implementado.
+Os comentários indicam a função principal e o estado observado após o fechamento corretivo do Lote 3 e a reconciliação do Lote 1. A presença de um caminho não significa prontidão operacional, gate obrigatório, certificação ou validação funcional.
 
 ```text
 saas-security-baseline/
 ├── .github/
 │   └── workflows/
-│       ├── basic-pr.yml
-│       ├── security.yml
-│       ├── security-weekly.yml
-│       ├── dependency-review.yml
-│       ├── secret-scan.yml
-│       ├── codeql.yml
-│       ├── semgrep.yml
-│       ├── python-audit.yml
-│       ├── node-audit.yml
-│       ├── container-audit.yml
-│       ├── zap-baseline.yml
-│       ├── sbom.yml
-│       ├── accessibility-audit.yml
-│       └── release-checklist.yml
+│       ├── .gitkeep
+│       └── security.yml                         # workflow ativo parcial; não executa secret scan completo
 ├── accessibility/
 │   └── README.md
 ├── ai-governance/
@@ -51,14 +39,24 @@ saas-security-baseline/
 ├── business-continuity/
 │   └── README.md
 ├── checklists/
+│   ├── README.md
 │   ├── index.md
-│   ├── owasp-asvs.md                         # checklist
-│   ├── owasp-api-top-10.md                   # checklist
-│   ├── lgpd.md                               # checklist
-│   ├── accessibility-wcag-22-aa.md           # checklist
-│   ├── frappe-security.md                    # checklist
-│   ├── pre-deploy.md                         # checklist
-│   └── pre-enterprise-sale.md                # checklist
+│   ├── pre-beta.md                             # checklist substantivo
+│   ├── pre-deploy.md                           # checklist substantivo
+│   ├── pre-enterprise-sale.md                  # checklist substantivo
+│   ├── owasp-top-10.md                         # checklist substantivo adicional
+│   ├── owasp-asvs.md                         # checklist substantivo
+│   ├── owasp-api-top-10.md                   # checklist substantivo
+│   ├── lgpd.md                               # checklist substantivo
+│   ├── accessibility-wcag-22-aa.md           # checklist substantivo
+│   ├── frappe-security.md                    # checklist substantivo
+│   ├── cloud-security.md                      # checklist substantivo
+│   ├── ci-cd-security.md                      # checklist substantivo
+│   ├── payment-security.md                    # checklist substantivo
+│   ├── incident-response.md                   # checklist substantivo
+│   ├── backup-restore.md                      # checklist substantivo
+│   ├── third-party-risk.md                    # checklist substantivo
+│   └── ai-governance.md                       # checklist substantivo
 ├── compliance/
 │   └── README.md
 ├── devsecops/
@@ -69,46 +67,63 @@ saas-security-baseline/
 │   ├── standards-and-frameworks-matrix.md
 │   ├── security-audit-baseline.md             # template de relatório
 │   ├── security-roadmap.md
-│   ├── lgpd-gap-assessment.md                 # template de relatório
-│   ├── threat-model.md                        # template
+│   ├── lgpd-gap-assessment.md                 # placeholder de template de relatório
+│   ├── threat-model.md                        # placeholder de template
 │   ├── incident-response-plan.md
 │   ├── business-continuity-plan.md
-│   ├── accessibility-audit.md                 # template de relatório
-│   ├── api-security-checklist.md              # checklist
-│   ├── cloud-security-checklist.md            # checklist
-│   └── ai-governance-checklist.md             # checklist
+│   ├── accessibility-audit.md                 # placeholder de template de relatório
+│   ├── api-security-checklist.md              # placeholder de checklist
+│   ├── cloud-security-checklist.md            # placeholder de checklist
+│   └── ai-governance-checklist.md             # placeholder de checklist
 ├── examples/                                  # exemplos exclusivamente fictícios
+│   └── github-workflows/
+│       ├── codeql.yml                         # exemplo substantivo; validar plano e SHA antes de gate
+│       ├── dependency-review.yml              # exemplo substantivo; validar plano e SHA antes de gate
+│       ├── zap-baseline.yml                   # exemplo loopback alert-only; validar imagem/digest antes de uso
+│       ├── basic-pr.yml                       # placeholder de exemplo
+│       ├── security-weekly.yml                # placeholder de exemplo
+│       ├── secret-scan.yml                    # placeholder de exemplo
+│       ├── semgrep.yml                        # placeholder de exemplo
+│       ├── python-audit.yml                   # placeholder de exemplo
+│       ├── node-audit.yml                     # placeholder de exemplo
+│       ├── container-audit.yml                # placeholder de exemplo
+│       ├── sbom.yml                           # placeholder de exemplo
+│       ├── accessibility-audit.yml            # placeholder de exemplo
+│       └── release-checklist.yml              # placeholder de exemplo
 ├── incident-response/
 │   └── README.md
 ├── policies/
 │   └── README.md                              # índice de políticas
 ├── privacy/
 │   ├── README.md
-│   ├── data-map.md                            # template
-│   ├── ropa.md                                # template
-│   ├── dpia-template.md                       # template
-│   ├── legal-bases.md                         # template
-│   ├── retention-policy.md                    # política
-│   ├── third-party-processors.md              # template
-│   ├── data-subject-rights.md                 # política/processo
-│   ├── incident-personal-data.md              # política/processo
-│   └── privacy-by-design-checklist.md          # checklist
+│   ├── data-map.md                            # placeholder de template
+│   ├── ropa.md                                # placeholder de template
+│   ├── dpia-template.md                       # placeholder de template
+│   ├── legal-bases.md                         # placeholder de template
+│   ├── retention-policy.md                    # placeholder de política
+│   ├── third-party-processors.md              # placeholder de template
+│   ├── data-subject-rights.md                 # placeholder de política/processo
+│   ├── incident-personal-data.md              # placeholder de política/processo
+│   └── privacy-by-design-checklist.md          # placeholder de checklist
 ├── reports/
 │   ├── README.md
 │   ├── raw/                                   # relatórios crus; ignorado pelo Git
 │   └── sanitized/                             # relatórios revisados e sanitizados
 ├── research/
+│   ├── repository-inventory.md                # inventário reconciliado do Lote 1
 │   ├── prompts.md
 │   ├── task-queue.md
 │   ├── progress.md
-│   ├── chunks/
+│   ├── coverage-audit.md
+│   ├── codex-execution-plan.md
 │   └── sources/
 │       ├── README.md
-│       └── chunk-NN.md
+│       ├── chunk-01.md ... chunk-20.md
+│       └── lote-01.md                         # fontes internas da reconciliação do Lote 1
 ├── risk/
 │   ├── README.md
-│   ├── risk-register.csv                      # template
-│   ├── risk-matrix.md
+│   ├── risk-register.csv                      # placeholder de template
+│   ├── risk-matrix.md                         # placeholder
 │   └── severity-and-prioritization.md
 ├── scripts/
 │   ├── README.md
@@ -146,6 +161,7 @@ saas-security-baseline/
 ├── AGENTS.md
 ├── CODEOWNERS
 ├── CONTRIBUTING.md
+├── opencode.json
 ├── README.md
 └── SECURITY.md
 ```
@@ -154,7 +170,7 @@ saas-security-baseline/
 
 | Pasta | Função | Conteúdo permitido no Git | Cuidados |
 |---|---|---|---|
-| `.github/workflows/` | Orquestrar verificações automatizadas e gates de CI. | YAML revisado, sem credenciais embutidas. | Logs e artifacts podem expor dados; usar permissões mínimas e política de retenção. |
+| `.github/workflows/` | Orquestrar verificações automatizadas e gates de CI. | YAML revisado, sem credenciais embutidas. | Atualmente há apenas `security.yml` ativo, com controle parcial; novos gates dependem dos lotes corretivos e de validação. |
 | `docs/` | Documentação transversal, planos, guias e modelos de auditoria. | Baselines, sínteses e documentos sanitizados. | Não registrar achados reais sem sanitização. |
 | `checklists/` | Verificações repetíveis por domínio e etapa do produto. | Itens genéricos e evidências esperadas. | Checklist preenchido de cliente/produto pode se tornar sensível. |
 | `policies/` | Políticas internas aprovadas e seus índices. | Políticas genéricas ou aprovadas para distribuição interna. | Não confundir template com política formalmente aprovada. |
@@ -170,10 +186,10 @@ saas-security-baseline/
 | `testing/` | Estratégia de testes e critérios de qualidade. | Planos, matrizes e exemplos fictícios. | Não versionar massas de dados reais. |
 | `ai-governance/` | Riscos, uso responsável e controles para IA. | Políticas, inventários e avaliações-modelo. | Não incluir prompts, dados ou respostas confidenciais reais. |
 | `templates/` | Modelos copiáveis para cada SaaS. | Campos vazios e exemplos explicitamente fictícios. | Não preencher o template central com dados de um produto. |
-| `scripts/` | Pontos de entrada locais para auditorias. | Código revisado e sem segredos. | Saídas cruas somente em `reports/raw/`; placeholders atuais são inertes. |
+| `scripts/` | Pontos de entrada locais para auditorias defensivas. | Código revisado e sem segredos. | Os oito scripts existem e passaram por validação sintática, mas scanners, ferramentas externas, rede, flags e exit codes ainda não foram testados funcionalmente. |
 | `reports/raw/` | Saídas originais de scanners e coleta. | Nada: a pasta é ignorada, exceto estrutura local não versionada. | Pode conter segredos, caminhos, dependências e vulnerabilidades. |
 | `reports/sanitized/` | Resumos revisados para versionamento controlado. | Apenas material redigido e aprovado. | Sanitização e revisão humana são obrigatórias. |
-| `examples/` | Demonstrações de preenchimento e integração. | Dados claramente fictícios. | Não usar domínios, pessoas ou credenciais que pareçam reais. |
+| `examples/` | Demonstrações de preenchimento e integração. | Dados claramente fictícios. | Exemplos de workflows exigem adaptação, fixação de referências e validação antes de uso; dez exemplos permanecem placeholders. |
 | `research/` | Prompts, fila, progresso e fontes por chunk. | Registro metodológico e referências públicas. | Não armazenar cópias integrais de normas protegidas. |
 
 ## Arquivos principais
@@ -192,8 +208,9 @@ saas-security-baseline/
 | `docs/*-plan.md` | Plano/template | Orientar resposta a incidentes e continuidade. | Não incluir contatos, ativos ou arquitetura reais no template. |
 | `risk/risk-register.csv` | Template | Definir campos mínimos do registro de riscos. | Não no template central. |
 | `risk/risk-matrix.md` | Método | Definir probabilidade, impacto e tratamento. | Não. |
-| `scripts/*.sh` | Automação | Executar ferramentas e direcionar resultados às pastas corretas. | Nunca embutir dados reais; scripts atuais são placeholders. |
-| `.github/workflows/*.yml` | Automação | Executar checks no GitHub Actions. | Nunca embutir segredos; placeholders atuais só aceitam disparo manual. |
+| `scripts/*.sh` | Automação | Executar ferramentas e direcionar resultados às pastas corretas. | Nunca embutir dados reais; scripts existem, mas precisam de testes com fixtures antes de virar gate confiável. |
+| `.github/workflows/security.yml` | Automação | Executar controles mínimos de política do repositório. | Não executa secret scanning completo nem substitui os workflows planejados. |
+| `examples/github-workflows/*.yml` | Exemplo | Mostrar padrões possíveis de CI/CD. | Não copiar sem validar plano GitHub, permissões, logs, artifacts, referências imutáveis e stack. |
 | `reports/raw/` | Relatório/evidência | Armazenar temporariamente saída integral. | Pode conter dados reais, mas nunca deve ser versionado. |
 | `reports/sanitized/` | Relatório/evidência | Guardar síntese revisada com exposição reduzida. | Apenas o mínimo necessário, após redaction e aprovação. |
 
@@ -227,6 +244,21 @@ Quando um SaaS exigir evidências reais, elas devem permanecer em armazenamento 
 6. Manter evidências cruas fora do Git e publicar apenas resumos sanitizados.
 7. Sincronizar melhorias estruturais de volta ao template sem importar informações específicas do SaaS.
 
-## Estado da árvore no Chunk 2
+## Estado reconciliado após o Lote 1
 
-A verificação realizada neste chunk confirmou todas as pastas mínimas solicitadas e os documentos obrigatórios já presentes. Foram adicionados apenas os placeholders ausentes de configuração, scripts e workflows. O conteúdo funcional desses arquivos permanece reservado aos chunks 7 e 16.
+O inventário verificável do estado atual está em `research/repository-inventory.md`. Esta arquitetura deve ser lida junto com esse inventário quando houver dúvida entre documento canônico, índice, template, exemplo, placeholder e backlog.
+
+Estado confirmado nesta reconciliação:
+
+- O Lote 3 foi fechado antes desta atualização; os 15 checklists do prompt do Chunk 15 e o checklist adicional `checklists/owasp-top-10.md` existem e foram tratados como substantivos.
+- `research/sources/chunk-15.md` existe e registra fontes, decisões, incertezas e limites do fechamento corretivo dos checklists.
+- `README.md`, `docs/repository-architecture.md`, `research/progress.md` e `research/task-queue.md` foram reconciliados para não manter o Chunk 19, o Chunk 20 ou o Lote 1 como pendentes.
+- `research/coverage-audit.md` permanece como auditoria histórica do estado anterior e não foi reescrito nesta reconciliação.
+- Scripts, workflows, políticas raiz, documentos auxiliares, privacidade, risco e evidências mantêm as pendências dos próximos lotes corretivos quando indicado no inventário.
+
+Limites que permanecem:
+
+- Não há declaração de conformidade, certificação, ausência de vulnerabilidades, prontidão enterprise ou eficácia completa de automações.
+- Workflows de exemplo ainda não devem ser tratados como controles ativos.
+- Scripts locais ainda precisam de testes funcionais com fixtures fictícias e versões validadas.
+- Arquivos iniciais ou placeholders fora do Lote 1 foram apenas inventariados; a correção de conteúdo pertence aos lotes seguintes.
