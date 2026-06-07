@@ -10,8 +10,8 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 17 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
-- [ ] README consolidado
+Progresso: 18 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+- [x] README consolidado
 - [ ] Auditoria de cobertura
 - [x] Repositório enviado para GitHub privado
 
@@ -35,7 +35,7 @@ Progresso: 17 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Chunk 15 — Checklists principais
 - [x] Chunk 16 — Scripts locais de auditoria
 - [x] Chunk 17 — Templates de documentos
-- [ ] Chunk 18 — Consolidação README
+- [x] Chunk 18 — Consolidação README
 - [ ] Chunk 19 — Auditoria de cobertura
 - [ ] Chunk 20 — Plano para Codex/agente de código
 
@@ -206,3 +206,12 @@ Progresso: 17 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Reforçada a separação entre templates/versionáveis e registros reais confidenciais ou restritos, com evidências apenas por IDs opacos e conteúdo cru fora do Git.
 - Registradas fontes oficiais, decisões e incertezas jurídicas, contratuais, normativas, enterprise e de ferramenta em `research/sources/chunk-17.md`.
 - Nenhum script do Chunk 16, workflow do Chunk 7, checklist do Chunk 15, README do Chunk 18, auditoria do Chunk 19 ou plano do Chunk 20 foi alterado; nenhum outro chunk foi executado.
+
+### 2026-06-07 — Chunk 18
+
+- Substituido o placeholder de `README.md` por uma porta de entrada com 25 secoes para proposito, publico, escopo, maturidade, uso, auditorias, ferramentas, CI/CD, Frappe/Python, LGPD, acessibilidade, evidencias, riscos, Git, checklists e templates.
+- Mantidos os detalhes nos documentos existentes por meio de links relativos, sem duplicar normas, guias, scripts, checklists, templates ou workflows.
+- Registrado que somente `.github/workflows/security.yml` esta ativo por padrao e que os demais workflows sao exemplos que exigem adaptacao e validacao contextual.
+- Registradas fontes internas, referencias herdadas e incertezas preexistentes em `research/sources/chunk-18.md`.
+- Nenhum script do Chunk 16, template do Chunk 17, checklist do Chunk 15 ou workflow do Chunk 7 foi alterado.
+- Nenhuma auditoria de cobertura do Chunk 19 ou plano Codex do Chunk 20 foi criado; nenhum outro chunk foi executado.
