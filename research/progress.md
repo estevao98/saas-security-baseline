@@ -10,7 +10,7 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 13 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+Progresso: 14 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [ ] README consolidado
 - [ ] Auditoria de cobertura
 - [x] Repositório enviado para GitHub privado
@@ -31,7 +31,7 @@ Progresso: 13 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Chunk 11 — Relatórios, evidências e política de artifacts
 - [x] Chunk 12 — Modelo final de relatório de auditoria
 - [x] Chunk 13 — Priorização de vulnerabilidades e matriz de severidade
-- [ ] Chunk 14 — Política de branches, commits, issues e PRs
+- [x] Chunk 14 — Política de branches, commits, issues e PRs
 - [ ] Chunk 15 — Checklists principais
 - [ ] Chunk 16 — Scripts locais de auditoria
 - [ ] Chunk 17 — Templates de documentos
@@ -168,3 +168,12 @@ Progresso: 13 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Incluídos SLAs internos ajustáveis, regras de exceção/reabertura/expiração, matriz por tipo de finding, exemplos fictícios e checklists de triagem, reclassificação e fechamento.
 - Registradas fontes oficiais, decisões e incertezas em `research/sources/chunk-13.md`.
 - Nenhum workflow do Chunk 7, script do Chunk 16 ou template completo do Chunk 17 foi criado ou alterado; nenhum outro chunk foi executado.
+
+### 2026-06-07 — Chunk 14
+
+- Criado `docs/git-security-workflow.md` com estratégia trunk-based, uso condicional de `develop` e padrões seguros para feature, finding, tooling, documentação, hotfix e release.
+- Documentados os fluxos de findings, issues, riscos aceitos, falsos positivos, segredos vazados, hotfixes, releases, commits e pull requests.
+- Definidas relações por IDs opacos entre PRs, issues, findings, riscos e evidências sanitizadas, preservando relatórios crus e detalhes sensíveis fora do Git.
+- Incluídos fluxos para MVP seguro, SaaS vendável para empresas e SaaS maduro, além de branch protection e checklists antes de merge e release.
+- Registradas fontes oficiais e incertezas de plano, licença, contrato e política interna em `research/sources/chunk-14.md`.
+- Nenhum workflow, script, checklist do Chunk 15 ou template completo do Chunk 17 foi criado ou alterado; nenhum outro chunk foi executado.
