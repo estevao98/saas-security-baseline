@@ -15,6 +15,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Auditoria de cobertura
 - [x] Repositório enviado para GitHub privado
 - [x] Fechamento corretivo do Lote 3 — Checklists concluído
+- [x] Reconciliação corretiva do Lote 1 — Estrutura inicial concluída
 
 ## Chunks
 
@@ -244,3 +245,15 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Atualizado `research/sources/chunk-15.md` com verificacao realizada, decisoes do fechamento, incertezas pendentes e limites de seguranca.
 - Marcado o Lote 3 como concluido apos verificacao real; o proximo lote corretivo indicado em `research/task-queue.md` e o Lote 1 — Estrutura inicial.
 - Nenhum arquivo individual de checklist, script, workflow, template ou documento fora do escopo foi alterado.
+
+### 2026-06-07 — Reconciliação corretiva do Lote 1 — Estrutura inicial
+
+- Identificado o escopo permitido a partir de `research/task-queue.md`, `research/codex-execution-plan.md` e `research/coverage-audit.md`: `docs/repository-architecture.md`, `README.md`, `research/progress.md`, `research/task-queue.md` e artefatos auxiliares de inventário/fontes em `research/`.
+- Criado `research/repository-inventory.md` com inventário `esperado x existente x estado x próximo lote`, distinguindo implementado, implementado com ressalvas, exemplo, placeholder, planejado e não versionado.
+- Atualizado `docs/repository-architecture.md` para refletir a árvore real após o Lote 3, separar workflow ativo, exemplos de workflows, checklists substantivos, placeholders e pendências.
+- Atualizado `README.md` para apontar para `research/coverage-audit.md`, `research/codex-execution-plan.md`, `research/repository-inventory.md` e `research/sources/lote-01.md`, sem manter Chunk 19 ou Chunk 20 como pendentes.
+- Criado `research/sources/lote-01.md` com fontes internas, decisões, incertezas e limites da reconciliação; `research/sources/chunk-01.md` não foi alterado porque pertence ao Chunk 1.
+- Atualizado `research/task-queue.md` para marcar o Lote 1 como concluído e indicar o Lote 4 — Políticas como próximo lote corretivo.
+- `research/coverage-audit.md` permaneceu sem alteração por ser registro histórico do estado auditado antes dos fechamentos corretivos.
+- Não foram alterados checklists individuais, scripts, workflows, templates completos, políticas raiz, documentos auxiliares, arquivos de privacidade ou artefatos de risco fora do escopo.
+- Não foram criados dados reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, relatórios crus ou evidências sensíveis.
