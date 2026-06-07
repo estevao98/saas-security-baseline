@@ -10,7 +10,7 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 19 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [x] README consolidado
 - [x] Auditoria de cobertura
 - [x] Repositório enviado para GitHub privado
@@ -37,7 +37,7 @@ Progresso: 19 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Chunk 17 — Templates de documentos
 - [x] Chunk 18 — Consolidação README
 - [x] Chunk 19 — Auditoria de cobertura
-- [ ] Chunk 20 — Plano para Codex/agente de código
+- [x] Chunk 20 — Plano para Codex/agente de código
 
 ## Registro de execução
 
@@ -224,3 +224,12 @@ Progresso: 19 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Nao foram encontrados links Markdown locais quebrados, relatorios crus rastreados ou padroes evidentes de credenciais reais na busca limitada; os oito scripts passaram em `bash -n`, sem execucao dos scanners.
 - Registradas somente fontes internas e limites em `research/sources/chunk-19.md`.
 - Nenhuma lacuna foi corrigida, nenhum documento fora de `research/` foi alterado e o Chunk 20 nao foi executado.
+
+### 2026-06-07 — Chunk 20
+
+- Criado `research/codex-execution-plan.md` com os 11 lotes do prompt original, reorganizados em ordem prática a partir das lacunas de `research/coverage-audit.md`.
+- Priorizada a recuperação real do Chunk 15, a criação futura de `research/sources/chunk-15.md`, a reconciliação de status e a operacionalização da proteção contra segredos.
+- Cada lote registra objetivo, branch, issue, arquivos existentes ou **a criar**, tarefas, conteúdo, aceite, validações, riscos, cuidados com evidências, revisão humana, ordem e proibições para o agente.
+- Divididos os trabalhos futuros em PRs pequenos para políticas, workflows aplicáveis, documentos auxiliares, Frappe/Python, LGPD, acessibilidade, scripts, evidências e verificação final.
+- Registradas somente fontes internas e incertezas em `research/sources/chunk-20.md`; nenhuma lacuna foi corrigida e nenhum arquivo fora de `research/` foi alterado.
+- Nenhum outro chunk foi executado.

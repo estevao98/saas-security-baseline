@@ -268,12 +268,12 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 20 - Plano de execução para Codex
 
 - **Arquivo principal esperado:** `research/codex-execution-plan.md` (nome operacional derivado do objetivo do prompt)
-- **Status:** pendente
+- **Status:** concluído em 2026-06-07
 - **Critérios de aceite:**
-  - [ ] Transformar os documentos aprovados em tarefas ordenadas para implementação.
-  - [ ] Organizar o trabalho nos 11 lotes definidos no prompt.
-  - [ ] Informar branches, arquivos, conteúdo esperado, validações, riscos e revisão de PR.
-  - [ ] Dividir a execução em PRs pequenos com issues no formato solicitado.
-  - [ ] Não gerar código inseguro, segredos ou exemplos semelhantes a credenciais reais.
-  - [ ] Registrar fontes em `research/sources/chunk-20.md` e atualizar o progresso.
+  - [x] Transformar os documentos aprovados em tarefas ordenadas para implementação.
+  - [x] Organizar o trabalho nos 11 lotes definidos no prompt.
+  - [x] Informar branches, arquivos, conteúdo esperado, validações, riscos e revisão de PR.
+  - [x] Dividir a execução em PRs pequenos com issues no formato solicitado.
+  - [x] Não gerar código inseguro, segredos ou exemplos semelhantes a credenciais reais.
+  - [x] Registrar fontes em `research/sources/chunk-20.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(research): add Codex execution plan"`
