@@ -10,7 +10,7 @@
 - [x] Estrutura inicial gerada pelo Codex
 - [ ] Chunks executados parcialmente
 
-Progresso: 16 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
+Progresso: 17 de 21 chunks de execução concluídos; o Chunk 0 registra o contexto-mestre.
 - [ ] README consolidado
 - [ ] Auditoria de cobertura
 - [x] Repositório enviado para GitHub privado
@@ -34,7 +34,7 @@ Progresso: 16 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Chunk 14 — Política de branches, commits, issues e PRs
 - [x] Chunk 15 — Checklists principais
 - [x] Chunk 16 — Scripts locais de auditoria
-- [ ] Chunk 17 — Templates de documentos
+- [x] Chunk 17 — Templates de documentos
 - [ ] Chunk 18 — Consolidação README
 - [ ] Chunk 19 — Auditoria de cobertura
 - [ ] Chunk 20 — Plano para Codex/agente de código
@@ -197,3 +197,12 @@ Progresso: 16 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Registradas fontes oficiais, decisoes e incertezas em `research/sources/chunk-16.md`, incluindo rede, telemetria, caches, Grype DB v5, schemas SBOM e exit codes.
 - Validada a sintaxe dos oito scripts com `bash -n`; scanners nao foram executados e nenhum relatorio cru foi criado.
 - Nenhum workflow do Chunk 7 ou template do Chunk 17 foi criado ou alterado; nenhum outro chunk foi executado.
+
+### 2026-06-07 — Chunk 17
+
+- Substituídos os placeholders de `templates/index.md` e dos 14 templates definidos no prompt por modelos reutilizáveis de risco, findings, remediação, resumo executivo, privacidade, incidentes, continuidade, fornecedores, acessibilidade, threat modeling e IA.
+- Cada template define objetivo, momento de uso, campos obrigatórios e opcionais, exemplo claramente fictício, cuidados contra exposição, critérios mínimos de revisão e relação com documentos existentes.
+- O registro de riscos foi mantido em CSV com cabeçalho claro e uma única linha fictícia segura; os demais modelos usam Markdown pequeno, preenchível e revisável.
+- Reforçada a separação entre templates/versionáveis e registros reais confidenciais ou restritos, com evidências apenas por IDs opacos e conteúdo cru fora do Git.
+- Registradas fontes oficiais, decisões e incertezas jurídicas, contratuais, normativas, enterprise e de ferramenta em `research/sources/chunk-17.md`.
+- Nenhum script do Chunk 16, workflow do Chunk 7, checklist do Chunk 15, README do Chunk 18, auditoria do Chunk 19 ou plano do Chunk 20 foi alterado; nenhum outro chunk foi executado.
