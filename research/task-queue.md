@@ -191,14 +191,14 @@ Esta fila organiza os chunks definidos em `research/prompts.md`. Nenhum chunk fo
 ## Chunk 14 - Política de branches, commits, issues e PRs
 
 - **Arquivo principal esperado:** `docs/git-security-workflow.md`
-- **Status:** pendente
+- **Status:** concluído em 2026-06-07
 - **Critérios de aceite:**
-  - [ ] Definir estratégia de branches e quando usar cada padrão solicitado.
-  - [ ] Documentar fluxo de findings, issues, riscos aceitos, falsos positivos, hotfixes e releases.
-  - [ ] Incluir mensagens de commit e práticas que evitem vazamento de relatórios.
-  - [ ] Definir fluxos para as três fases de maturidade e branch protection.
-  - [ ] Incluir checklists antes de merge e release.
-  - [ ] Registrar fontes em `research/sources/chunk-14.md` e atualizar o progresso.
+  - [x] Definir estratégia de branches e quando usar cada padrão solicitado.
+  - [x] Documentar fluxo de findings, issues, riscos aceitos, falsos positivos, hotfixes e releases.
+  - [x] Incluir mensagens de commit e práticas que evitem vazamento de relatórios.
+  - [x] Definir fluxos para as três fases de maturidade e branch protection.
+  - [x] Incluir checklists antes de merge e release.
+  - [x] Registrar fontes em `research/sources/chunk-14.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(git): define secure collaboration workflow"`
 
 ## Chunk 15 - Checklists principais
