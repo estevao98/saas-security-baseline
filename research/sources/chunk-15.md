@@ -29,7 +29,15 @@ O quarto PR e limitado aos checklists de plataforma e DevSecOps:
 - `checklists/cloud-security.md`;
 - `checklists/ci-cd-security.md`.
 
-O pacote completo do Chunk 15 ainda nao foi reconciliado. `research/progress.md`, `research/task-queue.md`, indices, scripts, workflows, templates e demais checklists nao foram alterados nestes quatro PRs.
+O quinto PR e limitado aos checklists de operacao, terceiros, IA e pagamentos:
+
+- `checklists/payment-security.md`;
+- `checklists/incident-response.md`;
+- `checklists/backup-restore.md`;
+- `checklists/third-party-risk.md`;
+- `checklists/ai-governance.md`.
+
+O pacote completo do Chunk 15 ainda nao foi reconciliado. `research/progress.md`, `research/task-queue.md`, indices, scripts, workflows, templates e demais checklists nao foram alterados nestes cinco PRs.
 
 ## Fontes internas consultadas
 
@@ -56,6 +64,11 @@ O pacote completo do Chunk 15 ainda nao foi reconciliado. `research/progress.md`
 | `docs/accessibility-program.md` | WCAG 2.2 AA, processos completos, avaliacao manual, tecnologias assistivas, limites da automacao, evidencias e gates. |
 | `docs/frappe-python-security-audit.md` | Superficies Frappe, ERPNext e Frappe Learning; dependencia de versao; DocTypes, roles, permissions, whitelisted methods, jobs, hooks, arquivos, integracoes, logs e multi-tenant. |
 | `docs/github-actions-strategy.md` | Eventos, `permissions`, `pull_request_target`, secrets, artifacts, caches, runners, branch protection, SHA/digest e politica de falha para CI/CD. |
+| `templates/incident-report-template.md` | Campos minimos, linha do tempo, evidencias, comunicacao e cuidados de resposta a incidentes. |
+| `templates/postmortem-template.md` | Estrutura de aprendizado, acoes corretivas, owners, prazos e revisao apos incidente ou falha. |
+| `templates/backup-restore-test-template.md` | Campos minimos para teste de restore, RPO/RTO, integridade, descarte e evidencias agregadas. |
+| `templates/vendor-risk-assessment-template.md` | Avaliacao de fornecedor, contrato, dados, suboperadores, continuidade, offboarding e decisao de risco. |
+| `templates/ai-risk-assessment-template.md` | Avaliacao de finalidade, modelo, fornecedor, dados, revisao humana, riscos, controles e gatilhos de IA. |
 
 ## Fontes oficiais
 
@@ -89,6 +102,13 @@ O pacote completo do Chunk 15 ainda nao foi reconciliado. `research/progress.md`
 | [NIST Cybersecurity Framework 2.0](https://www.nist.gov/cyberframework) | Framework oficial de referencia geral; nao e checklist especifico de provedor cloud. | Organizacao de governanca, identificacao, protecao, deteccao, resposta e recuperacao para cloud. |
 | [CIS Critical Security Controls](https://www.cisecurity.org/controls) | Referencia oficial CIS; aplicabilidade depende do ambiente e do provedor. | Orientacao geral para inventario, IAM, logs, configuracao, vulnerabilidades, recuperacao e seguranca operacional. |
 | [CISA - Cloud Security](https://www.cisa.gov/topics/cloud-security) | Portal oficial CISA sobre seguranca cloud. | Apoio geral para riscos de configuracao, identidade, visibilidade, resposta e responsabilidades em cloud. |
+| [PCI Security Standards Council - PCI DSS](https://www.pcisecuritystandards.org/standards/pci-dss/) | Pagina oficial do padrao PCI DSS; escopo e validacao dependem do fluxo real de dados de cartao. | Limite do checklist de pagamentos: nao declarar conformidade PCI sem validacao formal; reduzir escopo de dados de cartao, webhooks, logs e responsabilidades. |
+| [NIST SP 800-61 Rev. 3 - Incident Response](https://csrc.nist.gov/pubs/sp/800/61/r3/final) | Publicacao final localizada nos documentos internos como referencia vigente de resposta a incidentes. | Estrutura de preparacao, deteccao, analise, contencao, erradicacao, recuperacao e melhoria. |
+| [NIST SP 800-34 Rev. 1 - Contingency Planning](https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final) | Publicacao final usada como referencia de planejamento de contingencia nos documentos internos. | Base para backup/restore, RPO/RTO, testes, manutencao e evidencia de recuperacao. |
+| [NIST SP 800-161 Rev. 1 - Cybersecurity Supply Chain Risk Management Practices](https://csrc.nist.gov/pubs/sp/800/161/r1/final) | Publicacao final sobre gestao de risco de cadeia de suprimentos cibernetica. | Apoio ao checklist de terceiros: risco de fornecedor, dependencia, controles, monitoramento e resposta. |
+| [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) | Framework oficial voluntario; a propria documentacao informa revisoes e complementos ao longo do tempo. | Base para governanca de IA, gestao de risco, monitoramento, revisao humana e limites de alegacoes. |
+| [NIST AI 600-1 - Generative AI Profile](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence) | Perfil oficial de IA generativa relacionado ao AI RMF. | Apoio a riscos de IA generativa como vazamento, alucinacao, abuso, dependencia, dados e monitoramento. |
+| [OWASP Top 10 for Large Language Model Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/) | Projeto oficial OWASP para riscos de aplicacoes com LLM; versao aplicavel deve ser confirmada antes de avaliacao formal. | Referencia de apoio para prompt injection, dados sensiveis, supply chain, abuso, agentes e saidas inseguras, sem reproduzir payloads ou bypasses. |
 
 As fontes oficiais herdadas dos demais domínios permanecem nos registros anteriores de `research/sources/`. Nenhuma referência foi convertida em obrigação universal, prova automática de segurança ou certificação.
 
@@ -145,6 +165,20 @@ As fontes oficiais herdadas dos demais domínios permanecem nos registros anteri
 - Logs, artifacts, caches, secrets, runners, permissions e branch protection foram tratados como superficies de vazamento e supply chain, nao apenas como configuracao de automacao.
 - Todos os itens permanecem desmarcados; os checklists devem ser preenchidos apenas em avaliacao autorizada e protegida.
 
+### Decisoes do quinto PR - Pagamentos, incidentes, backup/restore, terceiros e IA
+
+- O checklist de pagamentos foi tratado como controle financeiro e de AppSec, sem declarar conformidade PCI, bancaria, fiscal, contabil ou regulatoria. Escopo PCI e obrigacoes formais exigem validacao competente.
+- Pagamentos incluem gateway, webhooks, idempotencia, conciliacao, reembolso, chargeback, antifraude, logs, autorizacao e segregacao financeira como controles obrigatorios quando aplicaveis.
+- Nenhum dado real ou plausivel de cartao, Pix, banco, transacao, invoice, gateway de cliente, segredo de webhook ou credencial foi criado.
+- O checklist de incidentes separa preparacao, triagem, severidade, contencao, preservacao de evidencia, comunicacao, decisao de notificacao, recuperacao, postmortem e acoes corretivas.
+- Decisoes juridicas, regulatorias, contratuais e comunicacao externa foram marcadas como dependentes de revisao humana competente; o checklist nao automatiza notificacao.
+- O checklist de backup/restore exige escopo, RPO/RTO, criptografia, acesso, retencao, segregacao, restore testado, evidencia sanitizada e descarte da copia restaurada.
+- Backup executado nao foi tratado como prova de continuidade; continuidade so pode ser afirmada para escopo com restore testado e aprovado.
+- O checklist de terceiros usa marcadores como `[FORNECEDOR-A]`, `[CONTRATO-A]` e `[SISTEMA-A]`, cobre dados tratados, acesso, contrato, seguranca, privacidade, continuidade, suporte, localizacao, subcontratados e offboarding, sem parecer juridico definitivo.
+- O checklist de IA cobre governanca de modelo, dados de entrada, logs, retencao, avaliacao humana, alucinacao, privacidade, seguranca, fornecedores, prompt injection e uso aceitavel, sem declarar IA segura, imparcial, conforme ou livre de vazamento.
+- Prompt injection foi tratado como risco e controle, sem payloads, bypasses, prompts reais, outputs sensiveis, conversas privadas ou exemplos perigosos.
+- Todos os itens permanecem desmarcados; os checklists devem ser preenchidos apenas em avaliacao autorizada e com classificacao adequada.
+
 ## Incertezas e validações contextuais
 
 - Requisitos jurídicos, LGPD, comunicação de incidentes, papéis de tratamento, transferências e cláusulas contratuais dependem dos fatos e exigem revisão competente.
@@ -168,6 +202,13 @@ As fontes oficiais herdadas dos demais domínios permanecem nos registros anteri
 - Tecnologias assistivas, navegadores, componentes e conteudos variam. A matriz de teste deve ser escolhida pelo uso real e risco; nenhuma combinacao unica representa todas as pessoas.
 - Criterios WCAG podem exigir interpretacao especializada. Tecnicas, ACT Rules e ferramentas sao informativas ou parciais e nao substituem os criterios normativos nem julgamento humano.
 - Conteudo e customizacao de terceiros ou de tenants nao devem ser excluidos silenciosamente do processo; responsabilidade, alternativa e limites dependem do controle e do contrato aplicaveis.
+- Escopo PCI, fluxo de dados de cartao, responsabilidades do gateway, exigencias de arranjo, antifraude, chargeback, reembolso, fiscal, contabil e regulatorio dependem da arquitetura real e de validacao especializada.
+- Gateways, webhooks, eventos, retries, sandboxes, conciliacao e relatorios financeiros variam por provedor; os checklists definem criterios de revisao, nao comandos nem contratos.
+- Resposta a incidentes depende de fatos, severidade, dados envolvidos, papel controlador/operador, contrato, jurisdicao, canal, retencao e autoridade de comunicacao.
+- RPO/RTO, escopo de restore, retencao, legal hold, descarte, criptografia e imutabilidade dependem da criticidade, arquitetura, fornecedor, contrato e testes executados.
+- Risco de terceiros depende de criticidade, dados, acesso, suboperadores, regioes, plano contratado, evidencias fornecidas, contrato, suporte, continuidade e capacidade de offboarding.
+- Governanca de IA depende de finalidade, modelo, fornecedor, dados, autonomia, populacao afetada, retencao, avaliacao humana, contrato e mudancas normativas. Frameworks de IA usados como referencia nao sao certificacao.
+- Avaliacoes de IA sao probabilisticas e podem mudar com versao, prompt, contexto, dados e fornecedor; resultados agregados nao provam ausencia de alucinacao, vies, vazamento ou abuso.
 
 ## Limites de segurança observados
 
@@ -182,3 +223,8 @@ As fontes oficiais herdadas dos demais domínios permanecem nos registros anteri
 - Nao foram criados IPs internos, IDs de conta, buckets, dominios, tenants, nomes de ambientes, configuracoes cloud reais, credenciais cloud ou exemplos semelhantes a credenciais.
 - Nao foram alterados workflows, habilitados scanners, ativados gates, criados artifacts, modificados scripts ou executados comandos destrutivos.
 - Nao foram incluidos requests/responses, payloads, PoCs, logs crus, prints, relatorios sensiveis, URLs internas ou informacoes reais de cliente.
+- Nao foram criados dados de cartao, chave Pix, dado bancario, chargeback, invoice, ID real de transacao, gateway real de cliente, webhook secret, token, client secret ou credencial.
+- Nao foram criadas narrativas com vitimas, clientes, atacantes, IPs, dominios, URLs, tenants, contas ou evidencias sensiveis reais.
+- Nao foram criados dumps, backups, paths reais sensiveis, nomes reais de banco, buckets, servidores, tenants, comandos destrutivos ou declaracao de continuidade garantida.
+- Nao foram usados nomes reais de fornecedores, clientes, contratos, suboperadores ou processadores; os checklists usam marcadores ficticios.
+- Nao foram criados prompts reais de clientes, outputs sensiveis, conversas privadas, conteudo de usuario real, instrucoes ofensivas, bypasses, prompt injection exploravel ou exemplos perigosos.
