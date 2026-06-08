@@ -29,7 +29,7 @@ saas-security-baseline/
 ├── .github/
 │   └── workflows/
 │       ├── .gitkeep
-│       └── security.yml                         # workflow ativo parcial; não executa secret scan completo
+│       └── security.yml                         # workflow ativo mínimo; política e higiene documental
 ├── accessibility/
 │   └── README.md
 ├── ai-governance/
@@ -170,7 +170,7 @@ saas-security-baseline/
 
 | Pasta | Função | Conteúdo permitido no Git | Cuidados |
 |---|---|---|---|
-| `.github/workflows/` | Orquestrar verificações automatizadas e gates de CI. | YAML revisado, sem credenciais embutidas. | Atualmente há apenas `security.yml` ativo, com controle parcial; novos gates dependem dos lotes corretivos e de validação. |
+| `.github/workflows/` | Orquestrar verificações automatizadas e gates de CI. | YAML revisado, sem credenciais embutidas. | Atualmente há apenas `security.yml` ativo, com controles mínimos de política e higiene documental; novos scanners/gates dependem de validação de plano, ferramenta, SHA/digest, logs e artifacts. |
 | `docs/` | Documentação transversal, planos, guias e modelos de auditoria. | Baselines, sínteses e documentos sanitizados. | Não registrar achados reais sem sanitização. |
 | `checklists/` | Verificações repetíveis por domínio e etapa do produto. | Itens genéricos e evidências esperadas. | Checklist preenchido de cliente/produto pode se tornar sensível. |
 | `policies/` | Políticas internas aprovadas e seus índices. | Políticas genéricas ou aprovadas para distribuição interna. | Não confundir template com política formalmente aprovada. |
@@ -209,7 +209,7 @@ saas-security-baseline/
 | `risk/risk-register.csv` | Template | Definir campos mínimos do registro de riscos. | Não no template central. |
 | `risk/risk-matrix.md` | Método | Definir probabilidade, impacto e tratamento. | Não. |
 | `scripts/*.sh` | Automação | Executar ferramentas e direcionar resultados às pastas corretas. | Nunca embutir dados reais; scripts existem, mas precisam de testes com fixtures antes de virar gate confiável. |
-| `.github/workflows/security.yml` | Automação | Executar controles mínimos de política do repositório. | Não executa secret scanning completo nem substitui os workflows planejados. |
+| `.github/workflows/security.yml` | Automação | Executar controles mínimos de política do repositório, arquivos sensíveis rastreados, padrões perigosos em workflows ativos e higiene básica de Markdown. | Não executa secret scanning completo, SAST, SCA, DAST, SBOM, deploy nem substitui os workflows planejados. |
 | `examples/github-workflows/*.yml` | Exemplo | Mostrar padrões possíveis de CI/CD. | Não copiar sem validar plano GitHub, permissões, logs, artifacts, referências imutáveis e stack. |
 | `reports/raw/` | Relatório/evidência | Armazenar temporariamente saída integral. | Pode conter dados reais, mas nunca deve ser versionado. |
 | `reports/sanitized/` | Relatório/evidência | Guardar síntese revisada com exposição reduzida. | Apenas o mínimo necessário, após redaction e aprovação. |
@@ -254,13 +254,14 @@ Estado confirmado nesta reconciliação:
 - `research/sources/chunk-15.md` existe e registra fontes, decisões, incertezas e limites do fechamento corretivo dos checklists.
 - `README.md`, `docs/repository-architecture.md`, `research/progress.md` e `research/task-queue.md` foram reconciliados para não manter o Chunk 19, o Chunk 20 ou o Lote 1 como pendentes.
 - O Lote 4 foi reconciliado: `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `.gitleaks.toml`, `.secrets.baseline` e `.gitignore` deixaram de ser placeholders iniciais, com pendências contextuais registradas.
+- O Lote 6 foi reconciliado: `.github/workflows/security.yml` ficou como workflow ativo mínimo, com `permissions` somente leitura, sem artifacts, sem secrets, sem `pull_request_target` e com `actions/checkout` fixado por SHA completo.
 - `research/coverage-audit.md` permanece como auditoria histórica do estado anterior e não foi reescrito nesta reconciliação.
-- Scripts, workflows, documentos auxiliares, privacidade, risco e evidências mantêm as pendências dos próximos lotes corretivos quando indicado no inventário.
+- Scripts, exemplos de workflows, documentos auxiliares, privacidade, risco e evidências mantêm as pendências dos próximos lotes corretivos quando indicado no inventário.
 
 Limites que permanecem:
 
 - Não há declaração de conformidade, certificação, ausência de vulnerabilidades, prontidão enterprise ou eficácia completa de automações.
 - Workflows de exemplo ainda não devem ser tratados como controles ativos.
 - Scripts locais ainda precisam de testes funcionais com fixtures fictícias e versões validadas.
-- Owners reais, canal privado, validação de ferramentas de secret scanning e integração em workflow continuam pendentes.
+- Owners reais, canal privado, validação de ferramentas de secret scanning, CodeQL, Dependency Review, branch protection, rulesets e scanners especializados continuam pendentes.
 - Arquivos iniciais ou placeholders fora do Lote 1 foram apenas inventariados; a correção de conteúdo pertence aos lotes seguintes.
