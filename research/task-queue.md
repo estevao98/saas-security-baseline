@@ -21,7 +21,8 @@ Esta fila deriva de `research/coverage-audit.md` e `research/codex-execution-pla
 | 2 | Lote 1 — Estrutura inicial | Concluido em 2026-06-07 | Inventario, arquitetura, README, fontes e estado declarado reconciliados sem alterar scripts, workflows, templates completos ou checklists individuais. |
 | 3 | Lote 4 — Políticas | Concluido em 2026-06-08 com pendencias contextuais | `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `.gitleaks.toml`, `.secrets.baseline`, `.gitignore`, navegacao, fontes e estado foram reconciliados sem alterar scripts, workflows, templates completos ou checklists individuais. |
 | 4 | Lote 6 — GitHub Actions | Concluido em 2026-06-08 com pendencias contextuais | `.github/workflows/security.yml`, navegacao, inventario, fontes e estado foram reconciliados com automacao minima aplicavel, sem promover exemplos, scanners especializados, artifacts, deploy ou gates dependentes de plano GitHub. |
-| 5 | Lote 2 — Documentos base | Proximo lote corretivo | Reconciliar documentos auxiliares e fontes canonicas sem duplicacao, sem alterar scripts, workflows ou checklists individuais fora de erro objetivo. |
+| 5 | Lote 2 — Documentos base | Concluido em 2026-06-08 com pendencias por dominio | Documentos auxiliares em `docs/`, READMEs de dominio, navegacao, inventario, fontes e estado foram reconciliados como guias/indices sem alterar scripts, workflows, templates completos, checklists individuais, politicas raiz, `privacy/*.md` ou risco auxiliar. |
+| 6 | Lote 7 — Frappe/Python | Proximo lote corretivo | Fechar lacuna operacional Frappe/Python com fixture ficticia, matriz de versoes e validacoes, sem dados reais ou configuracao de site real. |
 
 Pendencias do Lote 3 encerradas neste fechamento:
 
@@ -87,7 +88,26 @@ Pendencias que permanecem fora do Lote 6:
 - [ ] Executar `actionlint` ou validador equivalente quando uma versao aprovada estiver disponivel.
 - [ ] Configurar branch protection, rulesets, owners reais e checks obrigatorios apenas no repositorio consumidor ou apos decisao humana especifica.
 
-O proximo lote corretivo e o **Lote 2 — Documentos base**.
+Pendencias do Lote 2 encerradas nesta reconciliacao:
+
+- [x] Confirmar escopo do Lote 2 em `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`.
+- [x] Substituir placeholders de `docs/README.md` e dos documentos auxiliares de incidentes, continuidade, threat model, API, cloud, IA, acessibilidade e LGPD por guias pequenos e navegaveis.
+- [x] Redirecionar documentos auxiliares para fontes canonicas, checklists e templates existentes, evitando duplicacao contraditoria.
+- [x] Reconciliar READMEs de dominio como indices de navegacao e limites de uso.
+- [x] Atualizar `README.md`, `docs/repository-architecture.md` e `research/repository-inventory.md` apenas para refletir o estado real dos documentos base.
+- [x] Registrar fontes, decisoes, incertezas e limites em `research/sources/lote-02.md`.
+- [x] Reconciliar `research/progress.md` e `research/task-queue.md` sem executar outro lote.
+
+Pendencias que permanecem fora do Lote 2:
+
+- [ ] Validar Frappe/Python com fixture ficticia, matriz de versoes e testes no Lote 7.
+- [ ] Reconciliar `privacy/*.md`, bases legais, ROPA, RIPD/DPIA, direitos, retencao, terceiros e incidentes com dados pessoais no Lote 8.
+- [ ] Operacionalizar acessibilidade com fixture, automacao/manual combinados e eventual CI no Lote 9.
+- [ ] Validar scripts, ferramentas, rede, outputs e exit codes com fixtures ficticias no Lote 5.
+- [ ] Consolidar `risk/risk-matrix.md`, `risk/risk-register.csv`, evidencias, controles preventivos e secret scanning completo no Lote 10.
+- [ ] Executar revisao final de links, placeholders, fontes, scripts, workflows e arquivos sensiveis no Lote 11.
+
+O proximo lote corretivo e o **Lote 7 — Frappe/Python**.
 
 ## Chunk 0 - Contexto-mestre do projeto
 
