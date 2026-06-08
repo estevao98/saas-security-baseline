@@ -18,6 +18,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Reconciliação corretiva do Lote 1 — Estrutura inicial concluída
 - [x] Reconciliação corretiva do Lote 4 — Políticas concluída com pendências contextuais
 - [x] Reconciliação corretiva do Lote 6 — GitHub Actions concluída com pendências contextuais
+- [x] Reconciliação corretiva do Lote 2 — Documentos base concluída com pendências por domínio
 
 ## Chunks
 
@@ -285,4 +286,15 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Validados localmente: parsing YAML com Ruby, `git diff --check` e execucao local dos scripts de politica/higiene usados no workflow. `actionlint` nao estava instalado e nao foi executado.
 - Permanecem pendentes: Gitleaks/detect-secrets operacional, Dependency Review, CodeQL, SAST/SCA/DAST/SBOM, branch protection, rulesets, owners reais, canal privado real, plano/licenca GitHub, fixtures e validacao de logs/artifacts.
 - Nao foram alterados scripts, exemplos de workflows, templates completos, checklists individuais, politicas fora de estado real, documentos auxiliares, privacidade ou risco auxiliar.
+- Nao foram criados dados reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, relatorios crus, artifacts ou evidencias sensiveis.
+
+### 2026-06-08 — Reconciliação corretiva do Lote 2 — Documentos base
+
+- Identificado o escopo permitido a partir de `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`: documentos auxiliares em `docs/`, READMEs de dominio, navegacao/estado em `README.md` e `docs/repository-architecture.md`, `research/repository-inventory.md`, `research/sources/lote-02.md`, `research/progress.md` e `research/task-queue.md`.
+- Substituidos placeholders de `docs/README.md`, `docs/incident-response-plan.md`, `docs/business-continuity-plan.md`, `docs/threat-model.md`, `docs/api-security-checklist.md`, `docs/cloud-security-checklist.md`, `docs/ai-governance-checklist.md`, `docs/accessibility-audit.md` e `docs/lgpd-gap-assessment.md` por guias pequenos, navegaveis e alinhados a fontes canonicas.
+- Reconciliados READMEs de dominio como indices e limites de uso: `accessibility/`, `ai-governance/`, `appsec/`, `business-continuity/`, `compliance/`, `devsecops/`, `incident-response/`, `policies/`, `security/`, `testing/`, `privacy/`, `risk/`, `reports/` e `templates/`.
+- Atualizados `README.md`, `docs/repository-architecture.md` e `research/repository-inventory.md` somente para refletir o estado real do Lote 2 e apontar pendencias restantes.
+- Criado `research/sources/lote-02.md` com fontes internas, decisoes, incertezas e limites. Nao foram consultadas novas fontes externas.
+- Permanecem pendentes para lotes proprios: Frappe/Python operacional no Lote 7, `privacy/*.md` no Lote 8, acessibilidade operacional no Lote 9, scripts no Lote 5, risco/evidencias no Lote 10 e revisao final no Lote 11.
+- Nao foram alterados scripts, workflows, exemplos de workflows, templates completos, checklists individuais, politicas raiz, `privacy/*.md`, `risk/risk-matrix.md` ou `risk/risk-register.csv`.
 - Nao foram criados dados reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, relatorios crus, artifacts ou evidencias sensiveis.
