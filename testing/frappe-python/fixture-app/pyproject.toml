@@ -1,0 +1,11 @@
+[project]
+name = "synthetic-frappe-audit-fixture"
+version = "0.0.0"
+description = "Fixture ficticia para triagem documental Frappe/Python, sem runtime real."
+dependencies = []
+
+[tool.synthetic_fixture]
+purpose = "documentation-only"
+no_sites_directory = true
+no_real_credentials = true
+no_real_personal_data = true

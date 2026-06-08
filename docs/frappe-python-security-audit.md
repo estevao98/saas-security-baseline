@@ -8,6 +8,13 @@ Este guia orienta revisão defensiva de aplicações baseadas em Frappe Framewor
 
 **Dependência de versão:** a documentação oficial sem versão fixa pode refletir a versão corrente. Confirme a branch/tag instalada de Frappe, ERPNext e Learning antes de concluir um achado. Em especial, a Database API documenta mudanças no Frappe v16; permissões customizadas adicionais aparecem como recurso v16; nomes de papéis, DocTypes e hooks podem mudar entre releases e custom apps.
 
+### Artefatos operacionais fictícios do Lote 7
+
+- `docs/frappe-python-version-compatibility.md`: matriz de compatibilidade e limites de versao, deixando explicito que este repositorio nao validou runtime Frappe/Python.
+- `testing/frappe-python/`: fixture documental positiva/negativa, sem `sites/`, banco, tenant, usuario, credencial, URL interna, request/response, payload ofensivo ou dado pessoal real.
+
+Use esses artefatos apenas para triagem local e revisao documental. A fixture nao substitui app real, ambiente efemero autorizado, matriz de permissoes efetivas, testes negativos de autorizacao ou validacao na versao instalada do SaaS consumidor.
+
 ## Escopo mínimo e inventário
 
 Antes da revisão, registre sem dados sensíveis:
@@ -446,4 +453,4 @@ Revisão humana, testes de autorização com usuários representativos e valida�
 
 ## Fontes
 
-As fontes oficiais, datas de acesso, decisões e incertezas deste chunk estão registradas em `research/sources/chunk-08.md`.
+As fontes oficiais, datas de acesso, decisões e incertezas deste chunk estão registradas em `research/sources/chunk-08.md`. A reconciliacao operacional do Lote 7 esta registrada em `research/sources/lote-07.md`.
