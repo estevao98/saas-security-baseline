@@ -117,7 +117,7 @@ jobs:
             echo "Write permissions are not used by the active baseline workflows."
             exit 1
           fi
-          if git grep -q -E 'actions/upload-artifact' -- "${workflow_files[@]}"; then
+          if git grep -q -E '^[[:space:]]*uses:[[:space:]]*actions/upload-artifact(@|[[:space:]#])' -- "${workflow_files[@]}"; then
             echo "Artifacts are not published by the active baseline workflows."
             exit 1
           fi
@@ -133,7 +133,7 @@ jobs:
             if [[ ! "$ref" =~ ^[0-9a-f]{40}$ ]]; then
               mutable_refs=$((mutable_refs + 1))
             fi
-          done < <(git grep -h -E 'uses:[[:space:]]*[^[:space:]]+@' -- "${workflow_files[@]}" || true)
+          done < <(git grep -h -E '^[[:space:]]*uses:[[:space:]]*[^[:space:]]+@' -- "${workflow_files[@]}" || true)
 
           if (( mutable_refs > 0 )); then
             printf 'Mutable action references detected in active workflows: %d.\n' "$mutable_refs"
