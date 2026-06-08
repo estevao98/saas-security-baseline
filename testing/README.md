@@ -16,6 +16,7 @@ Esta pasta não deve conter massa real de produção, dumps, backups, logs crus,
 | Acessibilidade | `../docs/accessibility-program.md`, `../docs/accessibility-audit.md` |
 | API | `../docs/api-security-checklist.md` |
 | Backup/restore | `../business-continuity/README.md`, `../checklists/backup-restore.md` |
+| Frappe/Python | `../docs/frappe-python-security-audit.md`, `frappe-python/README.md` |
 | Evidências | `../docs/evidence-and-reporting-policy.md` |
 | Relatório | `../docs/security-audit-baseline.md` |
 
@@ -28,5 +29,5 @@ Esta pasta não deve conter massa real de produção, dumps, backups, logs crus,
 
 ## Pendências
 
-- Fixtures fictícias e validação funcional dos scripts pertencem ao Lote 5.
+- Fixture ficticia Frappe/Python esta em `frappe-python/`; validacao funcional dos scripts pertence ao Lote 5.
 - Processo operacional de acessibilidade pertence ao Lote 9.

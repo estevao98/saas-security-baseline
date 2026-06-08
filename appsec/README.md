@@ -30,4 +30,4 @@ Esta pasta é um ponto de navegação. Não registre aqui payloads, PoCs, reques
 ## Pendências
 
 - Testes funcionais de scripts pertencem ao Lote 5.
-- Fixtures e validações específicas de Frappe/Python pertencem ao Lote 7.
+- Fixture e matriz documental de Frappe/Python estao em `../testing/frappe-python/` e `../docs/frappe-python-version-compatibility.md`; validacao funcional dos scripts permanece no Lote 5.

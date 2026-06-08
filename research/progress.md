@@ -19,6 +19,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Reconciliação corretiva do Lote 4 — Políticas concluída com pendências contextuais
 - [x] Reconciliação corretiva do Lote 6 — GitHub Actions concluída com pendências contextuais
 - [x] Reconciliação corretiva do Lote 2 — Documentos base concluída com pendências por domínio
+- [x] Reconciliação corretiva do Lote 7 — Frappe/Python concluída com pendências contextuais
 
 ## Chunks
 
@@ -298,3 +299,16 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Permanecem pendentes para lotes proprios: Frappe/Python operacional no Lote 7, `privacy/*.md` no Lote 8, acessibilidade operacional no Lote 9, scripts no Lote 5, risco/evidencias no Lote 10 e revisao final no Lote 11.
 - Nao foram alterados scripts, workflows, exemplos de workflows, templates completos, checklists individuais, politicas raiz, `privacy/*.md`, `risk/risk-matrix.md` ou `risk/risk-register.csv`.
 - Nao foram criados dados reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, relatorios crus, artifacts ou evidencias sensiveis.
+
+### 2026-06-08 — Reconciliação corretiva do Lote 7 — Frappe/Python
+
+- Identificado o escopo permitido a partir de `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`: material Frappe/Python, fixture ficticia, matriz de compatibilidade, validacoes documentais seguras e registros de estado/fonte do lote.
+- Criado `docs/frappe-python-version-compatibility.md` para separar validacao documental desta baseline de versoes reais que devem ser confirmadas no SaaS consumidor.
+- Criada fixture ficticia em `testing/frappe-python/fixture-app/`, com casos positivos e marcadores de revisao para `@frappe.whitelist`, `allow_guest=True`, `ignore_permissions=True`, `frappe.get_all`, SQL/db, hooks, jobs e permissoes.
+- A fixture nao contem `sites/`, banco, usuario real, tenant real, `site_config.json`, `.env`, logs, backups, dumps, credenciais, tokens, cookies, URLs internas, requests/responses, payloads ofensivos ou dados pessoais reais.
+- Atualizados `docs/frappe-python-security-audit.md`, `checklists/frappe-security.md`, `testing/README.md` e `appsec/README.md` somente para apontar aos novos artefatos e preservar limites de uso.
+- Criado `research/sources/lote-07.md` com fontes internas, decisoes, validacoes, incertezas e limites; nao foram consultadas novas fontes externas.
+- Validados localmente sem rede: sintaxe Bash de `scripts/run-frappe-audit.sh` e `scripts/run-python-audit.sh`, buscas internas equivalentes na fixture, ausencia de caminhos proibidos na fixture e `git diff --check`. O binario `rg` nao estava instalado no shell local.
+- Permanecem pendentes para o Lote 5: validacao funcional dos scripts, disponibilidade de `rg`, stdout/stderr, exit codes, ferramentas ausentes, paths, criacao de `reports/raw/` e resumos em `reports/sanitized/`.
+- Nao foram alterados workflows ativos, exemplos de workflows, templates completos, politicas raiz, `privacy/*.md`, `risk/risk-matrix.md`, `risk/risk-register.csv` ou scripts genericos fora do escopo.
+- Nao foram executados scanners agressivos, rede externa, servidor Frappe, migracao, banco, ambiente de producao, workflow, DAST, coleta de evidencia real ou publicacao de artifact.

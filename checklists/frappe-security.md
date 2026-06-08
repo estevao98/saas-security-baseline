@@ -25,6 +25,7 @@ Verificar riscos praticos de seguranca em SaaS baseado em Frappe, com foco em au
 ## Evidencias esperadas
 
 - [ ] Inventario sanitizado de versoes, apps, sites ou tenants, DocTypes criticos, roles, Role Profiles, User Permissions, hooks, jobs, scripts, metodos whitelisted, arquivos e integracoes.
+- [ ] Matriz de compatibilidade revisada contra `docs/frappe-python-version-compatibility.md`, com versoes reais confirmadas no SaaS consumidor antes de concluir achados dependentes de release.
 - [ ] Matriz sanitizada de papel x DocType x permissao, incluindo leitura, escrita, criacao, exclusao, submit, cancel, import, export, report, print, email, share e niveis de campo aplicaveis.
 - [ ] Casos de teste positivos e negativos por papel, usuario representativo, tenant/site, Company ou escopo de negocio aplicavel.
 - [ ] Registro de revisao de cada `@frappe.whitelist`, `allow_guest=True`, `ignore_permissions=True`, `frappe.get_all`, SQL direto, job privilegiado e hook sensivel.
@@ -77,8 +78,8 @@ Verificar riscos praticos de seguranca em SaaS baseado em Frappe, com foco em au
 
 ## Melhorias futuras
 
-- [ ] Criar fixture Frappe minima e ficticia, sem `sites/`, banco, usuario, configuracao real, logs, backups ou dados reais, para testar buscas e regras.
-- [ ] Criar matriz de versoes validadas para Frappe, ERPNext, Frappe Learning, Python, Node e ferramentas de auditoria.
+- [ ] Adaptar a fixture ficticia de `testing/frappe-python/` no SaaS consumidor apenas com dados sinteticos e sem executar site, banco ou migracao real.
+- [ ] Manter matriz de versoes do SaaS consumidor com Frappe, ERPNext, Frappe Learning, Python, Node e ferramentas de auditoria realmente instalados e validados.
 - [ ] Integrar testes de autorizacao e scanners ao CI somente apos validar permissões, logs, artifacts, rede, falsos positivos e politica de falha.
 - [ ] Implementar recertificacao periodica de papeis e permissoes por owner de negocio.
 - [ ] Avaliar segregacao mais forte, como site por tenant, quando isolamento logico por campo nao for suficiente para o risco.
