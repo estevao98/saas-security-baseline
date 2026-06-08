@@ -117,7 +117,7 @@ jobs:
             echo "Write permissions are not used by the active baseline workflows."
             exit 1
           fi
-          if git grep -q -E 'actions/upload-artifact' -- "${workflow_files[@]}"; then
+          if git grep -q -E '^[[:space:]]*uses:[[:space:]]*actions/upload-artifact(@|[[:space:]#])' -- "${workflow_files[@]}"; then
             echo "Artifacts are not published by the active baseline workflows."
             exit 1
           fi
