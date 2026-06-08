@@ -2,7 +2,7 @@
 
 Template reutilizavel para organizar auditoria, governanca, seguranca, DevSecOps, privacidade, acessibilidade, operacao e maturidade tecnica de produtos SaaS.
 
-> Este repositorio e uma baseline de trabalho. Ele não prova conformidade, nao concede certificacao e nao substitui validacao tecnica, juridica, contratual ou auditoria independente.
+> Este repositorio é uma baseline de trabalho. Ele não prova conformidade, nao concede certificacao e nao substitui validacao tecnica, juridica, contratual ou auditoria independente.
 
 ## 1. Proposito
 
