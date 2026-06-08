@@ -133,7 +133,7 @@ jobs:
             if [[ ! "$ref" =~ ^[0-9a-f]{40}$ ]]; then
               mutable_refs=$((mutable_refs + 1))
             fi
-          done < <(git grep -h -E 'uses:[[:space:]]*[^[:space:]]+@' -- "${workflow_files[@]}" || true)
+          done < <(git grep -h -E '^[[:space:]]*uses:[[:space:]]*[^[:space:]]+@' -- "${workflow_files[@]}" || true)
 
           if (( mutable_refs > 0 )); then
             printf 'Mutable action references detected in active workflows: %d.\n' "$mutable_refs"
