@@ -19,7 +19,8 @@ Esta fila deriva de `research/coverage-audit.md` e `research/codex-execution-pla
 |---:|---|---|---|
 | 1 | Lote 3 — Checklists | Concluido em 2026-06-07 | Checklists principais verificados como substantivos; `checklists/README.md`, `checklists/index.md`, `research/sources/chunk-15.md`, `research/progress.md` e esta fila foram reconciliados. |
 | 2 | Lote 1 — Estrutura inicial | Concluido em 2026-06-07 | Inventario, arquitetura, README, fontes e estado declarado reconciliados sem alterar scripts, workflows, templates completos ou checklists individuais. |
-| 3 | Lote 4 — Políticas | Proximo lote corretivo | Tornar `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `.gitleaks.toml`, `.secrets.baseline` e controles de segredo operacionais em tarefa propria. |
+| 3 | Lote 4 — Políticas | Concluido em 2026-06-08 com pendencias contextuais | `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `.gitleaks.toml`, `.secrets.baseline`, `.gitignore`, navegacao, fontes e estado foram reconciliados sem alterar scripts, workflows, templates completos ou checklists individuais. |
+| 4 | Lote 6 — GitHub Actions | Proximo lote corretivo | Implementar somente workflows aplicaveis e validados, incluindo secret scanning controlado, sem ativar gates antes de validar plano, permissões, logs, artifacts e fixtures. |
 
 Pendencias do Lote 3 encerradas neste fechamento:
 
@@ -39,7 +40,30 @@ Pendencias do Lote 1 encerradas nesta reconciliacao:
 - [x] Registrar fontes, decisoes e incertezas em `research/sources/lote-01.md`.
 - [x] Reconciliar `research/progress.md` e `research/task-queue.md` sem executar outro lote.
 
-O proximo trabalho nao deve alterar o Lote 3 salvo erro objetivo de link, indice ou informacao sensivel. O proximo lote corretivo e o **Lote 4 — Políticas**.
+O Lote 3 e o Lote 1 permanecem fechados; nao altera-los salvo erro objetivo de link, indice ou informacao sensivel.
+
+Pendencias do Lote 4 encerradas nesta reconciliacao:
+
+- [x] Substituir placeholder de `SECURITY.md` por politica de reporte, triagem, segredos, divulgacao e evidencias.
+- [x] Substituir placeholder de `CONTRIBUTING.md` por fluxo de contribuicao, PR, evidencias, fontes e revisao.
+- [x] Reconciliar `CODEOWNERS` sem inventar owners reais, mantendo exemplos comentados para o repositorio consumidor.
+- [x] Configurar `.gitleaks.toml` com extensao das regras padrao e regras minimas especificas sem allowlist ampla.
+- [x] Converter `.secrets.baseline` em baseline vazia revisavel, sem findings, hashes de segredos reais ou valores sensiveis.
+- [x] Ampliar `.gitignore` para padroes adicionais de credenciais, chaves, configuracoes locais e relatorios de scanners.
+- [x] Atualizar `README.md`, `docs/repository-architecture.md` e `research/repository-inventory.md` apenas para refletir o estado real das politicas e pendencias restantes.
+- [x] Registrar fontes, decisoes, incertezas e limites em `research/sources/lote-04.md`.
+- [x] Reconciliar `research/progress.md` e `research/task-queue.md` sem executar outro lote.
+
+Pendencias que permanecem fora do Lote 4:
+
+- [ ] Definir canal privado real de reporte no repositorio consumidor.
+- [ ] Substituir exemplos comentados de `CODEOWNERS` por usuarios ou equipes GitHub reais com permissao de escrita.
+- [ ] Validar Gitleaks e detect-secrets com versoes instaladas e stdout/stderr revisados.
+- [ ] Criar ou gerar fixture positiva/negativa de secret scanning em estrategia controlada que nao quebre scans normais do repositorio.
+- [ ] Integrar secret scanning em workflow somente no Lote 6, com permissões, logs, artifacts, plano GitHub e gate validados.
+- [ ] Reconciliar `docs/README.md`, `policies/README.md` e outros READMEs de dominio no Lote 2 ou revisao final.
+
+O proximo trabalho nao deve alterar o Lote 4 salvo erro objetivo, link quebrado ou informacao sensivel. O proximo lote corretivo e o **Lote 6 — GitHub Actions**.
 
 ## Chunk 0 - Contexto-mestre do projeto
 

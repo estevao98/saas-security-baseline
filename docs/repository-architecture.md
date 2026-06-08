@@ -155,15 +155,15 @@ saas-security-baseline/
 │   └── ai-risk-assessment-template.md
 ├── testing/
 │   └── README.md
-├── .gitleaks.toml
-├── .secrets.baseline
-├── .gitignore
+├── .gitleaks.toml                          # configuração inicial de secret scanning; exige validação local
+├── .secrets.baseline                       # baseline vazia revisável; sem findings reais
+├── .gitignore                              # controle preventivo ampliado para segredos/evidências
 ├── AGENTS.md
-├── CODEOWNERS
-├── CONTRIBUTING.md
+├── CODEOWNERS                              # template comentado; owners reais dependem do consumidor
+├── CONTRIBUTING.md                         # política de contribuição reconciliada
 ├── opencode.json
 ├── README.md
-└── SECURITY.md
+└── SECURITY.md                             # política de reporte e resposta reconciliada
 ```
 
 ## Função das pastas
@@ -197,9 +197,9 @@ saas-security-baseline/
 | Arquivo ou grupo | Tipo | Finalidade | Dados reais? |
 |---|---|---|---|
 | `README.md` | Documento de entrada | Apresentar objetivo, escopo, maturidade e navegação. | Não. |
-| `SECURITY.md` | Política/processo | Definir canal e regras para relatos de segurança. | Não registrar relatos no arquivo ou em issue pública. |
-| `CONTRIBUTING.md` | Política/processo | Definir contribuição, revisão e cuidados com evidências. | Não. |
-| `CODEOWNERS` | Governança | Atribuir revisão por área usando equipes ou usuários configurados no repositório. | Evitar dados pessoais desnecessários. |
+| `SECURITY.md` | Política/processo | Definir reporte privado, triagem, resposta a segredos, divulgação e evidências. | Não registrar relatos no arquivo ou em issue pública. Canal real depende do repositório consumidor. |
+| `CONTRIBUTING.md` | Política/processo | Definir contribuição, revisão, PRs, fontes, evidências e limites de escopo. | Não. |
+| `CODEOWNERS` | Governança | Documentar template de ownership sem inventar usuários ou equipes. | Owners reais devem ser configurados no repositório consumidor. |
 | `.gitignore` | Controle preventivo | Excluir relatórios crus, segredos locais, logs, dumps e estados de infraestrutura. | Não contém dados reais. |
 | `.gitleaks.toml` | Configuração | Customizar detecção de segredos sem permitir segredos reais. | Allowlists não devem conter credenciais. |
 | `.secrets.baseline` | Baseline técnico | Registrar fingerprints gerados por ferramenta de detecção, após revisão. | Não adicionar o valor dos segredos; o placeholder é vazio. |
@@ -253,12 +253,14 @@ Estado confirmado nesta reconciliação:
 - O Lote 3 foi fechado antes desta atualização; os 15 checklists do prompt do Chunk 15 e o checklist adicional `checklists/owasp-top-10.md` existem e foram tratados como substantivos.
 - `research/sources/chunk-15.md` existe e registra fontes, decisões, incertezas e limites do fechamento corretivo dos checklists.
 - `README.md`, `docs/repository-architecture.md`, `research/progress.md` e `research/task-queue.md` foram reconciliados para não manter o Chunk 19, o Chunk 20 ou o Lote 1 como pendentes.
+- O Lote 4 foi reconciliado: `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `.gitleaks.toml`, `.secrets.baseline` e `.gitignore` deixaram de ser placeholders iniciais, com pendências contextuais registradas.
 - `research/coverage-audit.md` permanece como auditoria histórica do estado anterior e não foi reescrito nesta reconciliação.
-- Scripts, workflows, políticas raiz, documentos auxiliares, privacidade, risco e evidências mantêm as pendências dos próximos lotes corretivos quando indicado no inventário.
+- Scripts, workflows, documentos auxiliares, privacidade, risco e evidências mantêm as pendências dos próximos lotes corretivos quando indicado no inventário.
 
 Limites que permanecem:
 
 - Não há declaração de conformidade, certificação, ausência de vulnerabilidades, prontidão enterprise ou eficácia completa de automações.
 - Workflows de exemplo ainda não devem ser tratados como controles ativos.
 - Scripts locais ainda precisam de testes funcionais com fixtures fictícias e versões validadas.
+- Owners reais, canal privado, validação de ferramentas de secret scanning e integração em workflow continuam pendentes.
 - Arquivos iniciais ou placeholders fora do Lote 1 foram apenas inventariados; a correção de conteúdo pertence aos lotes seguintes.

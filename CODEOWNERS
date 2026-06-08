@@ -1,3 +1,29 @@
-# Estrutura inicial.
-# Defina responsáveis reais durante a configuração do repositório privado.
-
+# CODEOWNERS desta baseline.
+#
+# Nenhum owner ativo e declarado aqui, porque este template nao deve inventar
+# usuarios, emails ou equipes GitHub. O repositorio consumidor deve substituir
+# os exemplos comentados abaixo por contas ou times reais com permissao de
+# escrita, conforme a documentacao do GitHub para CODEOWNERS.
+#
+# Enquanto todos os owners estiverem comentados, GitHub nao solicitara revisao
+# automaticamente por CODEOWNERS. Trate isso como pendencia de implantacao, nao
+# como controle ativo.
+#
+# Exemplos seguros para adaptar no repositorio consumidor:
+# *                                      @ORG/repo-maintainers
+# /SECURITY.md                          @ORG/security
+# /CONTRIBUTING.md                      @ORG/repo-maintainers
+# /CODEOWNERS                           @ORG/repo-admins
+# /.gitleaks.toml                       @ORG/security
+# /.secrets.baseline                    @ORG/security
+# /.gitignore                           @ORG/security @ORG/platform
+# /.github/workflows/                   @ORG/platform @ORG/security
+# /examples/github-workflows/           @ORG/platform @ORG/security
+# /scripts/                             @ORG/security @ORG/platform
+# /docs/                                @ORG/security-docs
+# /checklists/                          @ORG/security-docs
+# /templates/                           @ORG/governance
+# /risk/                                @ORG/risk
+# /privacy/                             @ORG/privacy
+# /reports/sanitized/                   @ORG/security @ORG/governance
+# /research/                            @ORG/research-maintainers

@@ -1,2 +1,17 @@
-# Placeholder seguro do Chunk 2.
-# As regras e allowlists serão definidas no chunk específico, sem segredos reais.
+title = "SaaS Security Baseline Gitleaks Configuration"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "ssb-restricted-file-path"
+description = "Flags restricted evidence, key, dump, backup and local configuration paths that should not be committed."
+path = '''(^|/)(reports/raw/|site_config\.json$|common_site_config\.json$|terraform\.tfstate(\..*)?$|.*\.tfplan$|.*\.(pem|key|p12|pfx|p8|sql|dump|bak|backup)$)'''
+tags = ["baseline", "evidence", "policy"]
+
+[[rules]]
+id = "ssb-sensitive-evidence-marker"
+description = "Flags explicit synthetic markers used to prevent sensitive evidence from being committed."
+regex = '''SSB_(SECRET|TOKEN|CREDENTIAL|COOKIE|RAW_REPORT|SENSITIVE_EVIDENCE)_DO_NOT_COMMIT'''
+keywords = ["SSB_"]
+tags = ["baseline", "synthetic", "policy"]

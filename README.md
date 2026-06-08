@@ -163,6 +163,8 @@ A [Politica de evidencias](docs/evidence-and-reporting-policy.md) define classif
 
 Segredos nunca devem ser armazenados no Git, em templates, exemplos, logs, artifacts ou relatorios sanitizados. Se uma credencial real for encontrada, interrompa a exposicao, preserve somente a evidencia minima em canal restrito, revogue ou rotacione o valor e avalie historico e uso indevido. Apagar apenas a linha do arquivo nao encerra o incidente.
 
+Use tambem [`SECURITY.md`](SECURITY.md) para reporte privado, triagem e resposta, e `.gitleaks.toml`/`.secrets.baseline` como configuracoes iniciais de apoio. Esses arquivos nao substituem canal privado real, owners, secret scanning nativo, push protection ou workflow validado.
+
 ## 19. Modelo de relatorio final
 
 Use [Modelo de relatorio final de auditoria](docs/security-audit-baseline.md) para registrar capa, escopo, metodologia, ferramentas, execucao, findings, matriz de riscos, remediacao, evidencias, limitacoes e decisao de release.
@@ -190,7 +192,7 @@ Aceite de risco deve ser formal, temporario, aprovado pela autoridade competente
 
 O [Fluxo Git seguro](docs/git-security-workflow.md) define estrategia de branches, findings, issues, falsos positivos, hotfixes, releases, commits e pull requests.
 
-Nao inclua segredo, cliente, tenant, URL privada, IP interno, evidencia crua ou vetor exploravel em nome de branch, commit, issue, PR, label ou milestone. Regras detalhadas de contribuicao estao nesse guia; [`CONTRIBUTING.md`](CONTRIBUTING.md) permanece como ponto de entrada resumido.
+Nao inclua segredo, cliente, tenant, URL privada, IP interno, evidencia crua ou vetor exploravel em nome de branch, commit, issue, PR, label ou milestone. Regras detalhadas de contribuicao estao nesse guia; [`CONTRIBUTING.md`](CONTRIBUTING.md) e [`CODEOWNERS`](CODEOWNERS) servem como ponto de entrada operacional e template de ownership para o repositorio consumidor.
 
 ### Como contribuir
 
@@ -217,7 +219,7 @@ Os arquivos centrais devem permanecer genericos. Preencha copias em local autori
 
 O trabalho de pesquisa esta registrado em [Progresso](research/progress.md), [Fila de tarefas](research/task-queue.md), [Auditoria de cobertura](research/coverage-audit.md), [Plano para Codex/agente de codigo](research/codex-execution-plan.md) e [Inventario reconciliado](research/repository-inventory.md).
 
-Estado atual resumido: o Lote 3 - Checklists foi fechado e o Lote 1 - Estrutura inicial foi reconciliado. Permanecem pendentes os lotes corretivos de politicas, workflows, documentos auxiliares, scripts, Frappe/Python, LGPD, acessibilidade, evidencias, risco auxiliar e revisao final, conforme `research/task-queue.md`.
+Estado atual resumido: o Lote 3 - Checklists foi fechado, o Lote 1 - Estrutura inicial foi reconciliado e o Lote 4 - Politicas foi reconciliado com pendencias contextuais. Permanecem pendentes os lotes corretivos de workflows, documentos auxiliares, scripts, Frappe/Python, LGPD, acessibilidade, evidencias, risco auxiliar e revisao final, conforme `research/task-queue.md`.
 
 Avisos de seguranca:
 
@@ -227,4 +229,4 @@ Avisos de seguranca:
 - trate descoberta de segredo ou incidente pelo canal restrito definido pela organizacao, nao por issue comum;
 - confirme versoes, comandos, licencas, planos, contratos e requisitos legais antes da implantacao.
 
-As referencias oficiais e suas incertezas estao na [Matriz de normas e frameworks](docs/standards-and-frameworks-matrix.md) e nos registros de [`research/sources/`](research/sources/). As fontes usadas nesta consolidacao inicial estao em [Fontes do Chunk 18](research/sources/chunk-18.md); a reconciliacao da estrutura inicial esta registrada em [Fontes do Lote 1](research/sources/lote-01.md).
+As referencias oficiais e suas incertezas estao na [Matriz de normas e frameworks](docs/standards-and-frameworks-matrix.md) e nos registros de [`research/sources/`](research/sources/). As fontes usadas nesta consolidacao inicial estao em [Fontes do Chunk 18](research/sources/chunk-18.md); a reconciliacao da estrutura inicial esta registrada em [Fontes do Lote 1](research/sources/lote-01.md); a reconciliacao de politicas esta registrada em [Fontes do Lote 4](research/sources/lote-04.md).

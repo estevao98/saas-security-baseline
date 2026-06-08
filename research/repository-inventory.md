@@ -30,7 +30,7 @@ Não foram lidos arquivos ignorados, relatórios crus, dumps, backups, configura
 
 | Área | Esperado no baseline | Existente versionado | Estado reconciliado | Próximo lote ou decisão |
 |---|---|---|---|---|
-| Raiz | README, políticas, ownership, ignore, configuração de segredos e instruções do agente. | `README.md`, `AGENTS.md`, `.gitignore`, `.gitleaks.toml`, `.secrets.baseline`, `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `opencode.json`. | Parcial. README e `.gitignore` são úteis; `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS` e `.gitleaks.toml` permanecem iniciais. | Lote 4 - Políticas. `opencode.json` é configuração do ambiente do agente e não foi alterado. |
+| Raiz | README, políticas, ownership, ignore, configuração de segredos e instruções do agente. | `README.md`, `AGENTS.md`, `.gitignore`, `.gitleaks.toml`, `.secrets.baseline`, `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `opencode.json`. | Implementado com ressalvas após o Lote 4. Políticas raiz e configuração inicial de segredos foram reconciliadas; canal privado real, owners reais, ferramentas instaladas e workflow de secret scanning continuam contextuais. | Lote 6 - GitHub Actions para integração de secret scanning. `opencode.json` é configuração do ambiente do agente e não foi alterado. |
 | Arquitetura | Documento de estrutura e navegação coerente com a árvore. | `docs/repository-architecture.md`. | Implementado com ressalvas após esta reconciliação. | Manter sincronizado nos lotes seguintes quando arquivos forem promovidos de placeholder para implementados. |
 | Documentos canônicos | Guias principais de normas, roadmap, auditorias, ferramentas, CI/CD, Frappe/Python, LGPD, acessibilidade, evidências, relatório, risco e Git. | Principais arquivos em `docs/` e `risk/severity-and-prioritization.md`. | Implementado com ressalvas. São guias e matrizes, não prova de operação. | Lotes 2, 4, 6, 7, 8, 9, 10 e 11 conforme domínio. |
 | Documentos auxiliares | Planos, modelos ou checklists auxiliares em `docs/`. | `docs/incident-response-plan.md`, `docs/business-continuity-plan.md`, `docs/threat-model.md`, `docs/api-security-checklist.md`, `docs/cloud-security-checklist.md`, `docs/ai-governance-checklist.md`, `docs/accessibility-audit.md`, `docs/lgpd-gap-assessment.md`. | Placeholder. | Lote 2; acessibilidade também depende do Lote 9; LGPD depende do Lote 8. |
@@ -53,7 +53,7 @@ Não foram lidos arquivos ignorados, relatórios crus, dumps, backups, configura
 | `README.md` ainda tratava Chunk 19 e Chunk 20 como pendentes. | Reconciliado no Lote 1. README agora aponta para inventário, auditoria, plano e fila corretiva. | Manter atualizado nos próximos lotes. |
 | `docs/repository-architecture.md` misturava árvore-alvo com implementação e dizia que scripts/workflows eram placeholders. | Reconciliado no Lote 1. Arquitetura agora separa ativo, exemplo, placeholder e pendência. | Atualizar quando lotes futuros mudarem estado real. |
 | Workflows de exemplo permanecem majoritariamente placeholders. | Confirmado. Não foi corrigido no Lote 1 por estar fora do escopo. | Lote 6. |
-| Políticas raiz e proteção contra segredos permanecem iniciais. | Confirmado. Não foi corrigido no Lote 1 por estar fora do escopo. | Lote 4. |
+| Políticas raiz e proteção contra segredos permaneciam iniciais. | Reconciliado no Lote 4 com ressalvas: políticas e configuração inicial existem, mas canal privado, owners reais, fixture controlada, validação de ferramentas e workflow permanecem pendentes. | Lote 6 para automação; repositório consumidor para owners e canal real. |
 | Documentos auxiliares, privacidade e risco auxiliar permanecem placeholders. | Confirmado. Não foi corrigido no Lote 1 por estar fora do escopo. | Lotes 2, 8, 9 e 10. |
 | Scripts existem, mas não foram exercitados funcionalmente. | Confirmado. Não foi corrigido no Lote 1 por estar fora do escopo. | Lote 5. |
 
@@ -63,17 +63,16 @@ Após esta reconciliação, a fila corretiva recomendada permanece a ordem prát
 
 | Ordem prática restante | Lote | Motivo |
 |---:|---|---|
-| 1 | Lote 4 - Políticas | Tornar segurança, contribuição, ownership e proteção contra segredos operacionais antes de ampliar CI. |
-| 2 | Lote 6 - GitHub Actions | Implementar somente automações aplicáveis e validadas. |
-| 3 | Lote 2 - Documentos base | Reconciliar documentos auxiliares e fontes canônicas sem duplicação. |
-| 4 | Lotes 7, 8 e 9 | Fechar domínios Frappe/Python, LGPD e acessibilidade conforme dependências. |
-| 5 | Lote 5 - Scripts | Validar scripts com fixtures fictícias depois das dependências documentais aplicáveis. |
-| 6 | Lote 10 - Relatórios e evidências | Reforçar controles preventivos e consolidar risco auxiliar. |
-| 7 | Lote 11 - Revisão final | Verificar inventário, links, placeholders, fontes, scripts, workflows e arquivos sensíveis. |
+| 1 | Lote 6 - GitHub Actions | Implementar somente automações aplicáveis e validadas, incluindo secret scanning controlado. |
+| 2 | Lote 2 - Documentos base | Reconciliar documentos auxiliares e fontes canônicas sem duplicação. |
+| 3 | Lotes 7, 8 e 9 | Fechar domínios Frappe/Python, LGPD e acessibilidade conforme dependências. |
+| 4 | Lote 5 - Scripts | Validar scripts com fixtures fictícias depois das dependências documentais aplicáveis. |
+| 5 | Lote 10 - Relatórios e evidências | Reforçar controles preventivos e consolidar risco auxiliar. |
+| 6 | Lote 11 - Revisão final | Verificar inventário, links, placeholders, fontes, scripts, workflows e arquivos sensíveis. |
 
 ## Limitações
 
 - Não houve validação de links externos, versões de ferramentas, planos GitHub, actions por SHA, imagens por digest, licenças, telemetria ou requisitos enterprise.
 - Não houve execução de scanners, workflows, scripts de auditoria, testes funcionais ou varredura completa de segredos.
-- Não houve alteração de scripts, workflows, checklists individuais, templates completos, documentos auxiliares ou políticas raiz.
+- Não houve alteração de scripts, workflows, checklists individuais, templates completos, documentos auxiliares, privacidade ou risco auxiliar.
 - Nenhum dado real, segredo, credencial, cookie, URL interna, tenant, relatório cru, payload, dump, backup, log ou evidência sensível foi criado.
