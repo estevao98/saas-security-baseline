@@ -17,6 +17,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Fechamento corretivo do Lote 3 — Checklists concluído
 - [x] Reconciliação corretiva do Lote 1 — Estrutura inicial concluída
 - [x] Reconciliação corretiva do Lote 4 — Políticas concluída com pendências contextuais
+- [x] Reconciliação corretiva do Lote 6 — GitHub Actions concluída com pendências contextuais
 
 ## Chunks
 
@@ -271,3 +272,17 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Nao foram alterados scripts, workflows, templates completos, checklists individuais, documentos auxiliares, privacidade ou risco auxiliar.
 - Permanecem pendentes para lote apropriado: owners reais, canal privado real, validacao com ferramentas instaladas, fixture controlada de secret scanning e integracao em workflow.
 - Nao foram criados dados reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, relatorios crus ou evidencias sensiveis.
+
+### 2026-06-08 — Reconciliação corretiva do Lote 6 — GitHub Actions
+
+- Identificado o escopo permitido a partir de `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`: `.github/workflows/*.yml`, `.github/workflows/*.yaml`, navegacao/estado em `README.md` e `docs/repository-architecture.md`, `research/repository-inventory.md`, `research/sources/lote-06.md`, `research/progress.md` e `research/task-queue.md`.
+- Confirmado que `.github/workflows/security.yml` e o unico workflow ativo por padrao; `.github/workflows/.gitkeep` e estrutural; exemplos em `examples/github-workflows/` nao foram promovidos nem alterados.
+- Reconciliado `security.yml` como automacao minima aplicavel, com `permissions: contents: read`, `concurrency`, timeouts, `actions/checkout` fixado por SHA completo, `persist-credentials: false`, sem `pull_request_target`, sem secrets, sem permissao de escrita e sem upload de artifacts.
+- Ampliados os controles do workflow ativo para bloquear arquivos sensiveis rastreados, marcadores sinteticos de conteudo sensivel, referencias mutaveis em workflows ativos, permissões perigosas, uso de secrets em workflows ativos e upload de artifacts.
+- Adicionada higiene documental minima para Markdown, verificando arquivos vazios, CRLF e marcadores de conflito sem publicar relatorios ou linhas sensiveis.
+- Atualizados `README.md`, `docs/repository-architecture.md` e `research/repository-inventory.md` somente para refletir o estado real do workflow ativo e das pendencias restantes.
+- Criado `research/sources/lote-06.md` com fontes oficiais, fontes internas, decisoes, incertezas e limites.
+- Validados localmente: parsing YAML com Ruby, `git diff --check` e execucao local dos scripts de politica/higiene usados no workflow. `actionlint` nao estava instalado e nao foi executado.
+- Permanecem pendentes: Gitleaks/detect-secrets operacional, Dependency Review, CodeQL, SAST/SCA/DAST/SBOM, branch protection, rulesets, owners reais, canal privado real, plano/licenca GitHub, fixtures e validacao de logs/artifacts.
+- Nao foram alterados scripts, exemplos de workflows, templates completos, checklists individuais, politicas fora de estado real, documentos auxiliares, privacidade ou risco auxiliar.
+- Nao foram criados dados reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, relatorios crus, artifacts ou evidencias sensiveis.

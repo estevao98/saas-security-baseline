@@ -130,7 +130,7 @@ Os scripts nao instalam dependencias, nao corrigem codigo e exigem preparacao pr
 
 A [Estrategia de GitHub Actions](docs/github-actions-strategy.md) define eventos, permissoes minimas, logs, secrets, artifacts, gates e branch protection por maturidade.
 
-Neste repositorio-base, somente [`.github/workflows/security.yml`](.github/workflows/security.yml) fica ativo por padrao. Os demais arquivos em [`examples/github-workflows/`](examples/github-workflows/) sao exemplos: copie apenas o necessario, fixe actions e imagens de forma validada e confirme stack, licenca/plano GitHub, ambientes, secrets e retencao antes de exigir checks.
+Neste repositorio-base, somente [`.github/workflows/security.yml`](.github/workflows/security.yml) fica ativo por padrao. Ele executa controles minimos de politica do repositorio e higiene documental, sem publicar artifacts, sem usar secrets e sem executar secret scanning completo. Os demais arquivos em [`examples/github-workflows/`](examples/github-workflows/) sao exemplos: copie apenas o necessario, fixe actions e imagens de forma validada e confirme stack, licenca/plano GitHub, ambientes, secrets e retencao antes de exigir checks.
 
 ## 15. Frappe, ERPNext, Frappe Learning e Python
 
@@ -219,7 +219,7 @@ Os arquivos centrais devem permanecer genericos. Preencha copias em local autori
 
 O trabalho de pesquisa esta registrado em [Progresso](research/progress.md), [Fila de tarefas](research/task-queue.md), [Auditoria de cobertura](research/coverage-audit.md), [Plano para Codex/agente de codigo](research/codex-execution-plan.md) e [Inventario reconciliado](research/repository-inventory.md).
 
-Estado atual resumido: o Lote 3 - Checklists foi fechado, o Lote 1 - Estrutura inicial foi reconciliado e o Lote 4 - Politicas foi reconciliado com pendencias contextuais. Permanecem pendentes os lotes corretivos de workflows, documentos auxiliares, scripts, Frappe/Python, LGPD, acessibilidade, evidencias, risco auxiliar e revisao final, conforme `research/task-queue.md`.
+Estado atual resumido: o Lote 3 - Checklists foi fechado, o Lote 1 - Estrutura inicial foi reconciliado, o Lote 4 - Politicas foi reconciliado com pendencias contextuais e o Lote 6 - GitHub Actions foi reconciliado com automacao minima aplicavel. Permanecem pendentes os lotes corretivos de documentos auxiliares, scripts, Frappe/Python, LGPD, acessibilidade, evidencias, risco auxiliar e revisao final, conforme `research/task-queue.md`.
 
 Avisos de seguranca:
 
@@ -229,4 +229,4 @@ Avisos de seguranca:
 - trate descoberta de segredo ou incidente pelo canal restrito definido pela organizacao, nao por issue comum;
 - confirme versoes, comandos, licencas, planos, contratos e requisitos legais antes da implantacao.
 
-As referencias oficiais e suas incertezas estao na [Matriz de normas e frameworks](docs/standards-and-frameworks-matrix.md) e nos registros de [`research/sources/`](research/sources/). As fontes usadas nesta consolidacao inicial estao em [Fontes do Chunk 18](research/sources/chunk-18.md); a reconciliacao da estrutura inicial esta registrada em [Fontes do Lote 1](research/sources/lote-01.md); a reconciliacao de politicas esta registrada em [Fontes do Lote 4](research/sources/lote-04.md).
+As referencias oficiais e suas incertezas estao na [Matriz de normas e frameworks](docs/standards-and-frameworks-matrix.md) e nos registros de [`research/sources/`](research/sources/). As fontes usadas nesta consolidacao inicial estao em [Fontes do Chunk 18](research/sources/chunk-18.md); a reconciliacao da estrutura inicial esta registrada em [Fontes do Lote 1](research/sources/lote-01.md); a reconciliacao de politicas esta registrada em [Fontes do Lote 4](research/sources/lote-04.md); a reconciliacao de GitHub Actions esta registrada em [Fontes do Lote 6](research/sources/lote-06.md).

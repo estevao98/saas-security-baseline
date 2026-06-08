@@ -9,39 +9,173 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: repository-security-controls-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
   repository-policy:
     name: repository-policy
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6, resolved 2026-06-08
         with:
           persist-credentials: false
 
-      - name: Reject tracked raw reports
-        shell: bash
+      - name: Reject tracked sensitive files
         run: |
           set -euo pipefail
-          tracked="$(git ls-files -- reports/raw '*.sarif' '*gitleaks*.json' '*semgrep*.json' '*zap*.html')"
-          if [[ -n "$tracked" ]]; then
-            printf '%s\n' "Arquivos sensiveis rastreados:" "$tracked"
+          sensitive_patterns=(
+            'reports/raw/**'
+            '*.sarif'
+            '*gitleaks*.json'
+            '*gitleaks*.sarif'
+            '*secrets*.json'
+            '*detect-secrets*.json'
+            '*semgrep*.json'
+            '*bandit*.json'
+            '*pip-audit*.json'
+            '*trivy*.json'
+            '*grype*.json'
+            '*osv*.json'
+            '*dependency-check*.json'
+            'zap-report.html'
+            'zap-report.json'
+            '.env'
+            '*.env'
+            '.env.*'
+            '*.pem'
+            '*.key'
+            '*.p8'
+            '*.p12'
+            '*.pfx'
+            'id_rsa'
+            'id_rsa.*'
+            'id_ed25519'
+            'id_ed25519.*'
+            '*.kubeconfig'
+            'kubeconfig'
+            'site_config.json'
+            'common_site_config.json'
+            'sites/*/site_config.json'
+            'terraform.tfstate'
+            'terraform.tfstate.*'
+            '*.tfplan'
+            'plan.json'
+            '*.sql'
+            '*.dump'
+            '*.bak'
+            '*.backup'
+            '*.tar'
+            '*.tar.gz'
+            '*.zip'
+            '*.7z'
+            '*.log'
+            ':(exclude).env.example'
+          )
+          mapfile -t tracked < <(git ls-files -- "${sensitive_patterns[@]}")
+          if (( ${#tracked[@]} > 0 )); then
+            printf 'Forbidden tracked files detected: %d. Paths are not printed in CI logs.\n' "${#tracked[@]}"
+            exit 1
+          fi
+
+      - name: Reject synthetic sensitive markers
+        run: |
+          set -euo pipefail
+          prefix='SSB_'
+          suffix='_DO_NOT_COMMIT'
+          marker_pattern="${prefix}(SECRET|TOKEN|CREDENTIAL|COOKIE|RAW_REPORT|SENSITIVE_EVIDENCE)${suffix}"
+          if git grep -I -q -E "$marker_pattern" -- . ':(exclude).gitleaks.toml'; then
+            echo "Synthetic sensitive marker detected. Matching lines are not printed in CI logs."
             exit 1
           fi
 
       - name: Reject dangerous workflow patterns
-        shell: bash
         run: |
           set -euo pipefail
-          if grep -R -n -E '^[[:space:]]*pull_request_target:' .github/workflows --include='*.yml'; then
-            echo "pull_request_target exige revisao de risco e nao e permitido no baseline."
+          mapfile -t workflow_files < <(git ls-files '.github/workflows/*.yml' '.github/workflows/*.yaml')
+          if (( ${#workflow_files[@]} == 0 )); then
+            echo "No active workflow files found."
             exit 1
           fi
-          if grep -R -n -E '^[[:space:]]*permissions:[[:space:]]*write-all' .github/workflows --include='*.yml'; then
-            echo "permissions: write-all nao e permitido."
+
+          if git grep -q -E '^[[:space:]]*pull_request_target:' -- "${workflow_files[@]}"; then
+            echo "pull_request_target is not allowed in this baseline workflow set."
             exit 1
           fi
-          if grep -R -n -E '^[[:space:]]*path:[[:space:]]*\.[[:space:]]*$' .github/workflows --include='*.yml'; then
-            echo "upload-artifact com path: . nao e permitido."
+          if git grep -q -E '^[[:space:]]*permissions:[[:space:]]*write-all' -- "${workflow_files[@]}"; then
+            echo "permissions: write-all is not allowed."
+            exit 1
+          fi
+          if git grep -q -E '^[[:space:]]*(actions|checks|contents|deployments|id-token|issues|packages|security-events):[[:space:]]*write' -- "${workflow_files[@]}"; then
+            echo "Write permissions are not used by the active baseline workflows."
+            exit 1
+          fi
+          if git grep -q -E 'actions/upload-artifact' -- "${workflow_files[@]}"; then
+            echo "Artifacts are not published by the active baseline workflows."
+            exit 1
+          fi
+          if git grep -q -E '\$\{\{[[:space:]]*secrets\.' -- "${workflow_files[@]}"; then
+            echo "GitHub secrets are not used by the active baseline workflows."
+            exit 1
+          fi
+
+          mutable_refs=0
+          while IFS= read -r line; do
+            ref="${line##*@}"
+            ref="${ref%%[[:space:]#]*}"
+            if [[ ! "$ref" =~ ^[0-9a-f]{40}$ ]]; then
+              mutable_refs=$((mutable_refs + 1))
+            fi
+          done < <(git grep -h -E 'uses:[[:space:]]*[^[:space:]]+@' -- "${workflow_files[@]}" || true)
+
+          if (( mutable_refs > 0 )); then
+            printf 'Mutable action references detected in active workflows: %d.\n' "$mutable_refs"
+            exit 1
+          fi
+
+  documentation-sanity:
+    name: documentation-sanity
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6, resolved 2026-06-08
+        with:
+          persist-credentials: false
+
+      - name: Validate Markdown hygiene
+        run: |
+          set -euo pipefail
+          mapfile -t markdown_files < <(git ls-files '*.md')
+          if (( ${#markdown_files[@]} == 0 )); then
+            echo "No Markdown files found."
+            exit 1
+          fi
+
+          empty_files=0
+          for file in "${markdown_files[@]}"; do
+            if [[ ! -s "$file" ]]; then
+              empty_files=$((empty_files + 1))
+            fi
+          done
+          if (( empty_files > 0 )); then
+            printf 'Empty Markdown files detected: %d. Paths are not printed in CI logs.\n' "$empty_files"
+            exit 1
+          fi
+
+          if git grep -I -q $'\r' -- "${markdown_files[@]}"; then
+            echo "CRLF line endings detected in Markdown files. Matching lines are not printed in CI logs."
+            exit 1
+          fi
+
+          if git grep -I -q -E '^(<<<<<<<|=======$|>>>>>>>)' -- "${markdown_files[@]}"; then
+            echo "Merge conflict markers detected in Markdown files. Matching lines are not printed in CI logs."
             exit 1
           fi

@@ -20,7 +20,8 @@ Esta fila deriva de `research/coverage-audit.md` e `research/codex-execution-pla
 | 1 | Lote 3 — Checklists | Concluido em 2026-06-07 | Checklists principais verificados como substantivos; `checklists/README.md`, `checklists/index.md`, `research/sources/chunk-15.md`, `research/progress.md` e esta fila foram reconciliados. |
 | 2 | Lote 1 — Estrutura inicial | Concluido em 2026-06-07 | Inventario, arquitetura, README, fontes e estado declarado reconciliados sem alterar scripts, workflows, templates completos ou checklists individuais. |
 | 3 | Lote 4 — Políticas | Concluido em 2026-06-08 com pendencias contextuais | `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `.gitleaks.toml`, `.secrets.baseline`, `.gitignore`, navegacao, fontes e estado foram reconciliados sem alterar scripts, workflows, templates completos ou checklists individuais. |
-| 4 | Lote 6 — GitHub Actions | Proximo lote corretivo | Implementar somente workflows aplicaveis e validados, incluindo secret scanning controlado, sem ativar gates antes de validar plano, permissões, logs, artifacts e fixtures. |
+| 4 | Lote 6 — GitHub Actions | Concluido em 2026-06-08 com pendencias contextuais | `.github/workflows/security.yml`, navegacao, inventario, fontes e estado foram reconciliados com automacao minima aplicavel, sem promover exemplos, scanners especializados, artifacts, deploy ou gates dependentes de plano GitHub. |
+| 5 | Lote 2 — Documentos base | Proximo lote corretivo | Reconciliar documentos auxiliares e fontes canonicas sem duplicacao, sem alterar scripts, workflows ou checklists individuais fora de erro objetivo. |
 
 Pendencias do Lote 3 encerradas neste fechamento:
 
@@ -60,10 +61,33 @@ Pendencias que permanecem fora do Lote 4:
 - [ ] Substituir exemplos comentados de `CODEOWNERS` por usuarios ou equipes GitHub reais com permissao de escrita.
 - [ ] Validar Gitleaks e detect-secrets com versoes instaladas e stdout/stderr revisados.
 - [ ] Criar ou gerar fixture positiva/negativa de secret scanning em estrategia controlada que nao quebre scans normais do repositorio.
-- [ ] Integrar secret scanning em workflow somente no Lote 6, com permissões, logs, artifacts, plano GitHub e gate validados.
+- [ ] Avaliar integracao de secret scanning em workflow somente apos validar ferramenta, logs, artifacts, plano GitHub, fixture e politica de gate; no Lote 6 permaneceu como pendencia contextual.
 - [ ] Reconciliar `docs/README.md`, `policies/README.md` e outros READMEs de dominio no Lote 2 ou revisao final.
 
-O proximo trabalho nao deve alterar o Lote 4 salvo erro objetivo, link quebrado ou informacao sensivel. O proximo lote corretivo e o **Lote 6 — GitHub Actions**.
+O proximo trabalho nao deve alterar o Lote 4 salvo erro objetivo, link quebrado ou informacao sensivel.
+
+Pendencias do Lote 6 encerradas nesta reconciliacao:
+
+- [x] Inventariar `.github/workflows/` e confirmar que somente `security.yml` esta ativo por padrao.
+- [x] Separar workflow ativo minimo, exemplos de workflows e controles que nao devem virar gate ainda.
+- [x] Reconciliar `security.yml` com `permissions: contents: read`, sem `pull_request_target`, sem secrets, sem artifacts e sem permissao de escrita.
+- [x] Fixar `actions/checkout` por SHA completo no workflow ativo.
+- [x] Ampliar controles aplicaveis contra arquivos sensiveis rastreados, marcadores sinteticos e padroes perigosos em workflows ativos.
+- [x] Adicionar higiene documental minima para Markdown sem depender de ferramenta externa, artifact ou secret.
+- [x] Atualizar `README.md`, `docs/repository-architecture.md` e `research/repository-inventory.md` apenas para refletir o estado real dos workflows.
+- [x] Registrar fontes, decisoes, incertezas e limites em `research/sources/lote-06.md`.
+- [x] Reconciliar `research/progress.md` e `research/task-queue.md` sem executar outro lote.
+
+Pendencias que permanecem fora do Lote 6:
+
+- [ ] Confirmar plano/licenca GitHub antes de habilitar Dependency Review, CodeQL/code scanning, secret scanning nativo, rulesets, branch protection avancada, environments ou merge queue.
+- [ ] Validar Gitleaks e detect-secrets com versoes instaladas, fixture controlada, stdout/stderr revisados e estrategia que nao publique valores ou relatorios crus.
+- [ ] Fixar por SHA completo as actions e por digest as imagens de qualquer workflow especializado antes de usa-lo como gate material.
+- [ ] Promover exemplos de `examples/github-workflows/` somente em tarefa propria, por stack/fase, com owner, plano, logs, artifacts e politica de falha revisados.
+- [ ] Executar `actionlint` ou validador equivalente quando uma versao aprovada estiver disponivel.
+- [ ] Configurar branch protection, rulesets, owners reais e checks obrigatorios apenas no repositorio consumidor ou apos decisao humana especifica.
+
+O proximo lote corretivo e o **Lote 2 — Documentos base**.
 
 ## Chunk 0 - Contexto-mestre do projeto
 
