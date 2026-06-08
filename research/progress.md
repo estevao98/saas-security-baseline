@@ -16,6 +16,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Repositório enviado para GitHub privado
 - [x] Fechamento corretivo do Lote 3 — Checklists concluído
 - [x] Reconciliação corretiva do Lote 1 — Estrutura inicial concluída
+- [x] Reconciliação corretiva do Lote 4 — Políticas concluída com pendências contextuais
 
 ## Chunks
 
@@ -257,3 +258,16 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - `research/coverage-audit.md` permaneceu sem alteração por ser registro histórico do estado auditado antes dos fechamentos corretivos.
 - Não foram alterados checklists individuais, scripts, workflows, templates completos, políticas raiz, documentos auxiliares, arquivos de privacidade ou artefatos de risco fora do escopo.
 - Não foram criados dados reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, relatórios crus ou evidências sensíveis.
+
+### 2026-06-08 — Reconciliação corretiva do Lote 4 — Políticas
+
+- Identificado o escopo permitido a partir de `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`: `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `.gitleaks.toml`, `.secrets.baseline`, `.gitignore`, navegacao/estado em `README.md`, `docs/repository-architecture.md`, `research/repository-inventory.md`, `research/sources/lote-04.md`, `research/progress.md` e `research/task-queue.md`.
+- Substituidos os placeholders de `SECURITY.md` e `CONTRIBUTING.md` por politicas operacionais para reporte privado, triagem, segredos expostos, evidencias, contribuicao, PRs, revisao e limites de escopo.
+- Reescrito `CODEOWNERS` como template seguro com exemplos comentados, sem inventar usuarios, emails ou equipes GitHub.
+- Atualizados `.gitleaks.toml` e `.secrets.baseline` para configuracao inicial de secret scanning sem segredos reais, sem findings e sem allowlist ampla.
+- Ampliado `.gitignore` para padroes adicionais de chaves, configuracoes locais, credenciais e relatorios de scanners.
+- Atualizados `README.md`, `docs/repository-architecture.md` e `research/repository-inventory.md` somente para refletir o estado real do Lote 4 e apontar pendencias restantes.
+- Criado `research/sources/lote-04.md` com fontes oficiais, fontes internas, decisoes, incertezas e limites.
+- Nao foram alterados scripts, workflows, templates completos, checklists individuais, documentos auxiliares, privacidade ou risco auxiliar.
+- Permanecem pendentes para lote apropriado: owners reais, canal privado real, validacao com ferramentas instaladas, fixture controlada de secret scanning e integracao em workflow.
+- Nao foram criados dados reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, relatorios crus ou evidencias sensiveis.

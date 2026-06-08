@@ -3,11 +3,27 @@
 *.env
 .env.*
 !.env.example
+.envrc
+.npmrc
+.pypirc
+.netrc
+*.pem
+*.key
+*.p8
+*.p12
+*.pfx
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+*.kubeconfig
+kubeconfig
 
 # Raw security reports / sensitive artifacts
 reports/raw/
 *.sarif
 *gitleaks*.json
+*gitleaks*.sarif
 *secrets*.json
 *detect-secrets*.json
 *semgrep*.json
@@ -15,6 +31,8 @@ reports/raw/
 *pip-audit*.json
 *trivy*.json
 *grype*.json
+*osv*.json
+*dependency-check*.json
 zap-report.html
 zap-report.json
 
