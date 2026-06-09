@@ -20,6 +20,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Reconciliação corretiva do Lote 6 — GitHub Actions concluída com pendências contextuais
 - [x] Reconciliação corretiva do Lote 2 — Documentos base concluída com pendências por domínio
 - [x] Reconciliação corretiva do Lote 7 — Frappe/Python concluída com pendências contextuais
+- [x] Reconciliação corretiva do Lote 8 — LGPD concluída com pendências jurídicas/contextuais
 
 ## Chunks
 
@@ -312,3 +313,15 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Permanecem pendentes para o Lote 5: validacao funcional dos scripts, disponibilidade de `rg`, stdout/stderr, exit codes, ferramentas ausentes, paths, criacao de `reports/raw/` e resumos em `reports/sanitized/`.
 - Nao foram alterados workflows ativos, exemplos de workflows, templates completos, politicas raiz, `privacy/*.md`, `risk/risk-matrix.md`, `risk/risk-register.csv` ou scripts genericos fora do escopo.
 - Nao foram executados scanners agressivos, rede externa, servidor Frappe, migracao, banco, ambiente de producao, workflow, DAST, coleta de evidencia real ou publicacao de artifact.
+
+### 2026-06-09 — Reconciliação corretiva do Lote 8 — LGPD
+
+- Identificado o escopo permitido a partir de `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`: `privacy/*.md` e registros de estado/fonte do lote.
+- Reconciliado `privacy/README.md` como indice operacional de privacidade/LGPD, mantendo `docs/lgpd-privacy-program.md` como fonte canonica e templates completos em `templates/`.
+- Substituidos placeholders de `privacy/data-map.md`, `privacy/ropa.md`, `privacy/legal-bases.md`, `privacy/dpia-template.md`, `privacy/data-subject-rights.md`, `privacy/retention-policy.md`, `privacy/third-party-processors.md`, `privacy/incident-personal-data.md` e `privacy/privacy-by-design-checklist.md` por guias operacionais pequenos.
+- Cobertos mapa de dados, ROPA, RIPD/DPIA, bases legais como triagem, direitos dos titulares, retencao e descarte, terceiros/suboperadores, transferencia internacional, incidentes com dados pessoais, evidencias sanitizadas e limites de validacao juridica.
+- Criado `research/sources/lote-08.md` com fontes internas, decisoes, incertezas e limites; nao foram consultadas novas fontes externas.
+- Atualizados `research/task-queue.md`, `research/progress.md` e `research/repository-inventory.md` para refletir o fechamento real do Lote 8.
+- Permanecem pendentes no SaaS consumidor: validacao juridica de papeis, bases legais, RIPD, retencao, transferencias, contratos, direitos e comunicacao de incidentes; registros reais devem ficar em sistema restrito.
+- Nao foram alterados scripts, workflows, exemplos de workflows, templates completos, checklists individuais, politicas raiz, documentos auxiliares fora de `privacy/` ou artefatos de risco.
+- Nao foram criados dados pessoais reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, requests/responses, relatorios crus, artifacts, comunicacoes reais ou evidencias sensiveis.
