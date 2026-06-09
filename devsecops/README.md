@@ -27,6 +27,5 @@ Não use esta pasta para logs de pipeline, artifacts crus, tokens, secrets, rela
 
 ## Pendências
 
-- Lote 5 para validar scripts com fixtures fictícias.
-- Lote 10 para reforçar controles de evidências e risco auxiliar.
-- Repositório consumidor para branch protection, owners reais, secrets, plano GitHub e gates obrigatórios.
+- Scripts foram validados no Lote 5 com stubs e fixtures ficticias; controles de evidencias e risco auxiliar foram reconciliados no Lote 10.
+- Repositorio consumidor para branch protection, owners reais, secrets, plano GitHub, versoes de ferramentas, logs, artifacts e gates obrigatorios.

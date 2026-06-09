@@ -23,6 +23,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Reconciliação corretiva do Lote 8 — LGPD concluída com pendências jurídicas/contextuais
 - [x] Reconciliação corretiva do Lote 9 — Acessibilidade concluída com pendências contextuais
 - [x] Reconciliação corretiva do Lote 10 — Relatórios e evidências concluída com pendências contextuais
+- [x] Revisão final do Lote 11 concluída com pendências contextuais do SaaS consumidor
 
 ## Chunks
 
@@ -299,7 +300,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Reconciliados READMEs de dominio como indices e limites de uso: `accessibility/`, `ai-governance/`, `appsec/`, `business-continuity/`, `compliance/`, `devsecops/`, `incident-response/`, `policies/`, `security/`, `testing/`, `privacy/`, `risk/`, `reports/` e `templates/`.
 - Atualizados `README.md`, `docs/repository-architecture.md` e `research/repository-inventory.md` somente para refletir o estado real do Lote 2 e apontar pendencias restantes.
 - Criado `research/sources/lote-02.md` com fontes internas, decisoes, incertezas e limites. Nao foram consultadas novas fontes externas.
-- Permanecem pendentes para lotes proprios: Frappe/Python operacional no Lote 7, `privacy/*.md` no Lote 8, acessibilidade operacional no Lote 9, scripts no Lote 5, risco/evidencias no Lote 10 e revisao final no Lote 11.
+- Naquele momento, permaneciam pendentes para lotes proprios: Frappe/Python operacional no Lote 7, `privacy/*.md` no Lote 8, acessibilidade operacional no Lote 9, scripts no Lote 5, risco/evidencias no Lote 10 e revisao final no Lote 11.
 - Nao foram alterados scripts, workflows, exemplos de workflows, templates completos, checklists individuais, politicas raiz, `privacy/*.md`, `risk/risk-matrix.md` ou `risk/risk-register.csv`.
 - Nao foram criados dados reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, relatorios crus, artifacts ou evidencias sensiveis.
 
@@ -364,4 +365,15 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Nao foram alterados `.gitignore`, workflows ativos, exemplos de workflows, scripts, templates completos, checklists individuais, politicas raiz ou documentos canonicos fora de risco/relatorios.
 - Nao foram executados scanners reais, scans contra alvo real, workflows, upload, publicacao de artifact, coleta de evidencia real ou criacao de relatorio cru.
 - Permanecem pendentes para o SaaS consumidor ou tarefa propria: armazenamento restrito real, owners, apetite de risco, retencao, descarte, cadeia de custodia, versoes e comportamento de Gitleaks/detect-secrets, fixture controlada e eventual gate revisado.
+- Nao foram criados dados reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, requests/responses, screenshots, videos, DOM real, relatorios crus, artifacts ou evidencias sensiveis.
+
+### 2026-06-09 — Revisão final do Lote 11
+
+- Confirmado em `research/task-queue.md` que o proximo lote corretivo era o Lote 11 — Revisao final.
+- Revisados links locais Markdown, placeholders vencidos, declaracoes fortes, inventario, fontes, estado dos lotes, workflow ativo, scripts e arquivos sensiveis rastreados.
+- Corrigidas referencias vencidas em `README.md`, `docs/repository-architecture.md`, `docs/api-security-checklist.md`, `docs/cloud-security-checklist.md`, `appsec/README.md`, `business-continuity/README.md`, `devsecops/README.md`, `reports/README.md`, `risk/risk-matrix.md`, `security/README.md`, `testing/README.md`, `research/task-queue.md` e `research/repository-inventory.md`.
+- Criado `research/sources/lote-11.md` com fontes internas, validacoes, decisoes, pendencias contextuais e limites.
+- Validados localmente: links Markdown locais sem quebra, ausencia de arquivos sensiveis proibidos em `git ls-files`, `reports/raw/` ignorado, sintaxe Bash dos scripts, smoke tests seguros dos wrappers, parsing YAML do workflow ativo e `git diff --check`.
+- Nao foram alterados workflows ativos, scripts, templates completos ou checklists individuais; nao foram executados scanners reais, rede externa, alvos reais, workflows remotos, upload, artifact ou relatorio cru.
+- Permanecem pendentes para o SaaS consumidor ou tarefa propria: owners/canal real, plano GitHub, branch protection/rulesets, ferramentas reais e versoes, validacao juridica LGPD, armazenamento restrito de evidencias, testes reais autorizados e eventual promocao de workflows/gates especializados.
 - Nao foram criados dados reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, requests/responses, screenshots, videos, DOM real, relatorios crus, artifacts ou evidencias sensiveis.

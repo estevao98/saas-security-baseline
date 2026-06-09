@@ -61,4 +61,4 @@ Artifacts de CI devem ser evitados para evidência sensível. Quando forem indis
 ## Pendências
 
 - Confirmar no SaaS consumidor armazenamento restrito, owners, retenção, descarte, cadeia de custódia e revisão de artifacts.
-- Executar revisão final de links, placeholders, fontes e arquivos sensíveis no Lote 11.
+- Manter revisão periódica de links, placeholders, fontes e arquivos sensíveis antes de promover mudanças relevantes.
