@@ -13,7 +13,7 @@ Esta pasta não deve conter massa real de produção, dumps, backups, logs crus,
 | Tipos de auditoria e teste | `../docs/audit-types.md` |
 | Gatilhos | `../docs/audit-trigger-matrix.md` |
 | Scripts locais | `../scripts/README.md` |
-| Acessibilidade | `../docs/accessibility-program.md`, `../docs/accessibility-audit.md` |
+| Acessibilidade | `../docs/accessibility-program.md`, `../docs/accessibility-audit.md`, `accessibility/README.md` |
 | API | `../docs/api-security-checklist.md` |
 | Backup/restore | `../business-continuity/README.md`, `../checklists/backup-restore.md` |
 | Frappe/Python | `../docs/frappe-python-security-audit.md`, `frappe-python/README.md` |
@@ -30,4 +30,5 @@ Esta pasta não deve conter massa real de produção, dumps, backups, logs crus,
 ## Pendências
 
 - Fixture ficticia Frappe/Python esta em `frappe-python/`; validacao funcional dos scripts pertence ao Lote 5.
-- Processo operacional de acessibilidade pertence ao Lote 9.
+- Fixture ficticia de acessibilidade esta em `accessibility/`; validacao funcional dos scripts pertence ao Lote 5.
+- CI alert-only de acessibilidade permanece pendente em tarefa propria, sem alterar workflow ativo por padrao.
