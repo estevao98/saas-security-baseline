@@ -66,6 +66,16 @@ Flags, formatos, exit codes, telemetria, bases e requisitos de runtime mudam ent
 | `ALERTA_OU_FALHA` | Pode ser finding, threshold, erro tecnico, schema invalido, cache ausente ou indisponibilidade local. O cru precisa ser revisado. |
 | Falha de preflight | Dependencia, entrada ou consentimento ausente. A verificacao nao foi executada e nao pode ser marcada como aprovada. |
 
+## Exit codes e preflight
+
+| Exit code | Uso local |
+|---:|---|
+| `0` | O script concluiu as ferramentas selecionadas sem erro tecnico reportado pelo comando. Ainda exige triagem humana. |
+| `1` | Uma ferramenta executada retornou achado, threshold, alerta ou falha tecnica capturada em `reports/raw/`. Nao tratar como resultado limpo. |
+| `2` | Preflight falhou antes da auditoria: dependencia ausente, valor nao permitido, alvo fora do repositorio, URL nao loopback, imagem ausente, schema inexistente ou consentimento de rede ausente. |
+
+Falha de preflight nao deve criar scan parcial nem ser registrada como aprovacao. Os scripts imprimem somente mensagem curta em `stderr`; detalhes de ferramenta ficam em arquivos crus locais quando a ferramenta chegou a executar.
+
 Falsos positivos devem registrar ferramenta/regra/versao, justificativa, escopo, revisor, validade e gatilho de reabertura. Falsos negativos permanecem possiveis; combine automacao com revisao de arquitetura, autorizacao, isolamento multi-tenant, fluxos de negocio, privacidade e testes manuais.
 
 Use `risk/severity-and-prioritization.md` para separar severidade tecnica, prioridade, alcance, explorabilidade, impacto, SLA e gate. Nao bloqueie release apenas por score bruto; tambem nao reduza finding sem evidencia.
@@ -103,3 +113,13 @@ Antes de commitar um resumo:
 - [ ] Confirmar que `reports/raw/` e formatos crus nao estao staged.
 
 Os resumos gerados automaticamente sao pontos de partida revisaveis, nao evidencia aprovada nem relatorio final.
+
+## Validacao local segura dos wrappers
+
+O Lote 5 inclui uma suite de smoke tests que copia os scripts para um diretorio temporario, cria fixtures sinteticas e usa stubs locais de ferramentas. Ela valida sintaxe Bash, preflight, paths, exit codes e criacao de `reports/raw/` e `reports/sanitized/` sem rede externa real, sem alvo real, sem instalar ferramentas e sem gerar relatorio cru versionado.
+
+```bash
+./tests/scripts/run-script-smoke-tests.sh
+```
+
+Esses testes verificam o comportamento dos wrappers, nao a eficacia dos scanners. ShellCheck, versoes reais de ferramentas, stdout/stderr completos, telemetria, caches e falsos positivos ainda precisam ser validados no SaaS consumidor antes de qualquer gate.

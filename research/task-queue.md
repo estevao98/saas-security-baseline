@@ -25,6 +25,7 @@ Esta fila deriva de `research/coverage-audit.md` e `research/codex-execution-pla
 | 6 | Lote 7 — Frappe/Python | Concluido em 2026-06-08 com pendencias contextuais | Criadas matriz de compatibilidade, fixture ficticia positiva/negativa e validacoes locais seguras documentadas com `rg`; a conferencia local usou busca interna equivalente porque `rg` nao estava instalado. |
 | 7 | Lote 8 — LGPD | Concluido em 2026-06-09 com pendencias juridicas/contextuais | `privacy/*.md`, navegacao, inventario, fontes e estado foram reconciliados como artefatos operacionais reutilizaveis, sem dados pessoais reais, sem escolher base legal e sem alterar scripts, workflows, templates completos, politicas raiz ou checklists individuais. |
 | 8 | Lote 9 — Acessibilidade | Concluido em 2026-06-09 com pendencias contextuais | `docs/accessibility-audit.md`, `accessibility/README.md`, `testing/accessibility/`, navegacao, inventario, fontes e estado foram reconciliados com avaliacao automatizada/manual combinada, fixture ficticia e revisao humana obrigatoria, sem alterar workflows, scripts, templates completos ou politicas raiz. |
+| 9 | Lote 5 — Scripts | Concluido em 2026-06-09 com pendencias contextuais | `scripts/*.sh`, `scripts/README.md`, suite local em `tests/scripts/`, inventario, fontes e estado foram reconciliados com smoke tests temporarios e stubs, sem rede externa real, sem scan de alvo real, sem instalacao automatica, sem workflows e sem relatorios crus versionados. |
 
 Pendencias do Lote 3 encerradas neste fechamento:
 
@@ -102,10 +103,10 @@ Pendencias do Lote 2 encerradas nesta reconciliacao:
 
 Pendencias que permanecem fora do Lote 2:
 
-- [x] Validar Frappe/Python com fixture ficticia, matriz de versoes e testes documentais no Lote 7; validacao funcional de scripts permanece no Lote 5.
+- [x] Validar Frappe/Python com fixture ficticia, matriz de versoes e testes documentais no Lote 7; validacao funcional de scripts foi reconciliada no Lote 5.
 - [x] Reconciliar `privacy/*.md`, bases legais, ROPA, RIPD/DPIA, direitos, retencao, terceiros e incidentes com dados pessoais no Lote 8.
-- [ ] Operacionalizar acessibilidade com fixture, automacao/manual combinados e eventual CI no Lote 9.
-- [ ] Validar scripts, ferramentas, rede, outputs e exit codes com fixtures ficticias no Lote 5.
+- [x] Operacionalizar acessibilidade com fixture e automacao/manual combinados no Lote 9; eventual CI permanece em tarefa propria.
+- [x] Validar scripts, ferramentas, rede, outputs e exit codes com fixtures ficticias no Lote 5.
 - [ ] Consolidar `risk/risk-matrix.md`, `risk/risk-register.csv`, evidencias, controles preventivos e secret scanning completo no Lote 10.
 - [ ] Executar revisao final de links, placeholders, fontes, scripts, workflows e arquivos sensiveis no Lote 11.
 
@@ -121,12 +122,12 @@ Pendencias do Lote 7 encerradas nesta reconciliacao:
 
 Pendencias que permanecem fora do Lote 7:
 
-- [ ] Validar funcionalmente `scripts/run-frappe-audit.sh`, `scripts/run-python-audit.sh` e wrappers com ferramentas ausentes, stdout/stderr, exit codes, paths, criacao de `reports/raw/` e resumos em `reports/sanitized/` no Lote 5.
+- [x] Validar funcionalmente `scripts/run-frappe-audit.sh`, `scripts/run-python-audit.sh` e wrappers com ferramentas ausentes, stdout/stderr, exit codes, paths, criacao de `reports/raw/` e resumos em `reports/sanitized/` no Lote 5.
 - [ ] Confirmar versoes reais de Frappe, ERPNext, Frappe Learning, Python, Node, apps instalados e ferramentas no SaaS consumidor.
 - [ ] Validar permissões efetivas, Custom DocPerm, User Permissions, Role Profiles, Server Scripts, Client Scripts, Property Setters e customizacoes por site em ambiente autorizado.
 - [ ] Integrar Semgrep, Bandit, Ruff, pip-audit, secret scanning ou CI somente apos versoes, logs, artifacts, rede, falsos positivos e politica de falha serem aprovados.
 - [x] Reconciliar LGPD operacional no Lote 8.
-- [ ] Reconciliar acessibilidade operacional no Lote 9, scripts no Lote 5, evidencias/risco no Lote 10 e revisao final no Lote 11.
+- [x] Reconciliar acessibilidade operacional no Lote 9 e scripts no Lote 5; evidencias/risco permanecem no Lote 10 e revisao final no Lote 11.
 
 Pendencias do Lote 8 encerradas nesta reconciliacao:
 
@@ -144,7 +145,7 @@ Pendencias que permanecem fora do Lote 8:
 - [ ] Validar juridicamente papeis controlador/operador, bases legais, RIPD, retencao, transferencias internacionais, contratos, direitos e comunicacao de incidentes no SaaS consumidor.
 - [ ] Preencher registros reais de mapa, ROPA, RIPD/DPIA, fornecedores, direitos e incidentes somente em sistema restrito do produto, nunca neste baseline.
 - [ ] Revalidar texto consolidado e regulamentos vigentes da ANPD antes de caso real, comunicacao externa ou auditoria formal.
-- [x] Operacionalizar acessibilidade no Lote 9; scripts permanecem no Lote 5, evidencias/risco no Lote 10 e revisao final no Lote 11.
+- [x] Operacionalizar acessibilidade no Lote 9 e scripts no Lote 5; evidencias/risco permanecem no Lote 10 e revisao final no Lote 11.
 
 Pendencias do Lote 9 encerradas nesta reconciliacao:
 
@@ -159,14 +160,35 @@ Pendencias do Lote 9 encerradas nesta reconciliacao:
 
 Pendencias que permanecem fora do Lote 9:
 
-- [ ] Validar funcionalmente `scripts/run-accessibility-audit.sh` e wrappers com ferramentas instaladas, stdout/stderr, exit codes, paths, criacao de `reports/raw/` e resumos em `reports/sanitized/` no Lote 5.
+- [x] Validar funcionalmente `scripts/run-accessibility-audit.sh` e wrappers com ferramentas instaladas, stdout/stderr, exit codes, paths, criacao de `reports/raw/` e resumos em `reports/sanitized/` no Lote 5.
 - [ ] Promover workflow de acessibilidade somente em tarefa propria, inicialmente `alert-only`, sem publicar DOM, screenshots, videos ou relatorios crus, apos validar versoes, logs, artifacts, permissoes e politica de falha.
 - [ ] Confirmar versoes reais de axe, Lighthouse, Pa11y, Chrome/Chromium, navegador, sistema e tecnologias assistivas no SaaS consumidor.
 - [ ] Definir matriz real de tecnologias assistivas, usuarios, fluxos criticos, obrigacoes contratuais/normativas e eventual declaracao publica com revisao especializada.
 - [ ] Executar testes com pessoas, quando aplicavel, somente com consentimento, protocolo, privacidade, acessibilidade e armazenamento restrito fora deste baseline.
-- [ ] Scripts permanecem no Lote 5, evidencias/risco no Lote 10 e revisao final no Lote 11.
+- [x] Scripts foram reconciliados no Lote 5; evidencias/risco permanecem no Lote 10 e revisao final no Lote 11.
 
-O proximo lote corretivo e o **Lote 5 — Scripts**.
+Pendencias do Lote 5 encerradas nesta reconciliacao:
+
+- [x] Confirmar escopo permitido em `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`.
+- [x] Revisar os oito scripts locais e `scripts/README.md` contra preflight, paths, mensagens, limites e politica de evidencias.
+- [x] Criar suite local segura em `tests/scripts/run-script-smoke-tests.sh` com stubs e diretorio temporario.
+- [x] Validar sintaxe Bash dos scripts versionados.
+- [x] Validar falha segura para ferramenta ausente, URL externa e consentimento de rede ausente.
+- [x] Validar execucao controlada de Python, Frappe, acessibilidade, API, Node, container/IaC, SBOM e orquestrador de secrets sem rede externa real.
+- [x] Confirmar criacao temporaria de `reports/raw/` e `reports/sanitized/` sem versionar relatorio cru.
+- [x] Registrar fontes, decisoes, validacoes, incertezas e limites em `research/sources/lote-05.md`.
+- [x] Reconciliar `research/progress.md`, `research/task-queue.md` e `research/repository-inventory.md` sem executar outro lote.
+
+Pendencias que permanecem fora do Lote 5:
+
+- [ ] Executar ShellCheck quando uma versao aprovada estiver instalada; neste ambiente a ferramenta nao estava disponivel.
+- [ ] Validar versoes reais, checksums/provenance, licencas, telemetria, caches, bases, stdout/stderr completos e falsos positivos de cada ferramenta no SaaS consumidor.
+- [ ] Executar scanners reais somente em clone/ambiente autorizado, sem dados reais e com rede explicitamente aprovada quando aplicavel.
+- [ ] Integrar scripts a workflows ou gates somente apos politica de falha, logs, artifacts, permissoes, versoes e owners serem aprovados.
+- [ ] Consolidar controles preventivos de evidencias, risco auxiliar e secret scanning completo no Lote 10.
+- [ ] Executar revisao final de inventario, links, placeholders, fontes, scripts, workflows e arquivos sensiveis no Lote 11.
+
+O proximo lote corretivo e o **Lote 10 — Relatórios e evidências**.
 
 ## Chunk 0 - Contexto-mestre do projeto
 

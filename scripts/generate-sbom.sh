@@ -28,5 +28,9 @@ rc=0
 syft "$SBOM_TARGET" -o "cyclonedx-json=$RAW_DIR/sbom.cdx.json" -o "spdx-json=$RAW_DIR/sbom.spdx.json" >"$RAW_DIR/syft.log" 2>&1 || rc=$?
 status="SUCESSO"; ((rc==0)) || status="ALERTA_OU_FALHA (exit $rc)"
 printf '# Resumo sanitizado - SBOM\n\n- Execucao UTC: `%s`\n- Gerador: `Syft`\n- Tipo de alvo: `%s`\n- Status: **%s**\n- Crus locais: `%s` e `%s`\n\n## Limites e proximos passos\n\n- O SBOM e inventario, nao prova ausencia de vulnerabilidades, licencas compativeis ou integridade.\n- Revise componentes internos, paths, fornecedores e metadados antes de compartilhar.\n- Valide o schema CycloneDX/SPDX exigido pelo consumidor e associe o SBOM ao digest/release correto.\n' "$RUN_ID" "$SBOM_KIND" "$status" "${RAW_DIR#$ROOT_DIR/}/sbom.cdx.json" "${RAW_DIR#$ROOT_DIR/}/sbom.spdx.json" > "$SUMMARY"
-printf 'SBOM gerado. Revise %s e mantenha os documentos completos fora do Git.\n' "${SUMMARY#$ROOT_DIR/}"
+if ((rc==0)); then
+  printf 'SBOM gerado. Revise %s e mantenha os documentos completos fora do Git.\n' "${SUMMARY#$ROOT_DIR/}"
+else
+  printf 'Geracao de SBOM retornou alerta/falha. Revise %s e os crus locais antes de qualquer uso.\n' "${SUMMARY#$ROOT_DIR/}"
+fi
 exit "$rc"

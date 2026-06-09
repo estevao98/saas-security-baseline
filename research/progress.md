@@ -339,3 +339,15 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Permanecem pendentes: validacao funcional dos scripts no Lote 5, CI alert-only em tarefa propria, versoes reais das ferramentas e matriz real de tecnologias assistivas no SaaS consumidor.
 - Nao foram alterados workflows ativos, exemplos de workflows, scripts, templates completos, politicas raiz, checklists individuais, documentos fora do dominio de acessibilidade ou artefatos de risco.
 - Nao foram criados dados reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, requests/responses, prints, videos, relatorios crus, artifacts, sessoes reais ou evidencias sensiveis.
+
+### 2026-06-09 — Reconciliação corretiva do Lote 5 — Scripts
+
+- Identificado o escopo permitido a partir de `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`: `scripts/*.sh`, `scripts/README.md`, testes seguros em `tests/scripts/` e registros de estado/fonte do lote.
+- Criada suite local `tests/scripts/run-script-smoke-tests.sh`, que copia os scripts para diretorio temporario, usa stubs de ferramentas e fixtures ficticias, e valida wrappers sem rede externa real, alvo real, instalacao automatica ou relatorio cru versionado.
+- Reconciliado `scripts/README.md` com exit codes, preflight, uso da suite local e limites de interpretacao.
+- Ajustados `scripts/run-frappe-audit.sh` e `scripts/generate-sbom.sh` de forma minima para saida explicita e mensagem coerente em alerta/falha de SBOM.
+- Validados localmente: `bash -n scripts/*.sh tests/scripts/run-script-smoke-tests.sh`, `./tests/scripts/run-script-smoke-tests.sh`, `git diff --check` e `git status --ignored --short reports/raw reports/sanitized`.
+- A suite cobriu preflight de URL externa bloqueada, consentimento de rede ausente em Node, ferramenta `rg` ausente, execucao controlada de Python, Frappe, acessibilidade, API, Node, container/IaC, SBOM e orquestrador de secrets, alem da criacao temporaria de `reports/raw/` e `reports/sanitized/`.
+- ShellCheck nao estava disponivel no ambiente e nao foi executado; versoes reais, telemetria, stdout/stderr completos, caches, falsos positivos e comportamento das ferramentas reais permanecem pendentes para o SaaS consumidor.
+- Nao foram alterados workflows ativos, exemplos de workflows, politicas raiz, templates completos, checklists individuais, documentos auxiliares fora de scripts, privacidade, risco auxiliar ou relatorios versionados.
+- Nao foram executados scanners reais, rede externa, DAST contra alvo real, upload, deploy, publicacao de artifact, instalacao de ferramenta, coleta de evidencia real ou criacao de relatorio cru versionado.
