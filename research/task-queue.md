@@ -23,7 +23,8 @@ Esta fila deriva de `research/coverage-audit.md` e `research/codex-execution-pla
 | 4 | Lote 6 — GitHub Actions | Concluido em 2026-06-08 com pendencias contextuais | `.github/workflows/security.yml`, navegacao, inventario, fontes e estado foram reconciliados com automacao minima aplicavel, sem promover exemplos, scanners especializados, artifacts, deploy ou gates dependentes de plano GitHub. |
 | 5 | Lote 2 — Documentos base | Concluido em 2026-06-08 com pendencias por dominio | Documentos auxiliares em `docs/`, READMEs de dominio, navegacao, inventario, fontes e estado foram reconciliados como guias/indices sem alterar scripts, workflows, templates completos, checklists individuais, politicas raiz, `privacy/*.md` ou risco auxiliar. |
 | 6 | Lote 7 — Frappe/Python | Concluido em 2026-06-08 com pendencias contextuais | Criadas matriz de compatibilidade, fixture ficticia positiva/negativa e validacoes locais seguras documentadas com `rg`; a conferencia local usou busca interna equivalente porque `rg` nao estava instalado. |
-| 7 | Lote 8 — LGPD | Proximo lote corretivo | Reconciliar artefatos operacionais de privacidade/LGPD sem dados pessoais reais e com validacao juridica explicita. |
+| 7 | Lote 8 — LGPD | Concluido em 2026-06-09 com pendencias juridicas/contextuais | `privacy/*.md`, navegacao, inventario, fontes e estado foram reconciliados como artefatos operacionais reutilizaveis, sem dados pessoais reais, sem escolher base legal e sem alterar scripts, workflows, templates completos, politicas raiz ou checklists individuais. |
+| 8 | Lote 9 — Acessibilidade | Proximo lote corretivo | Operacionalizar acessibilidade sem declarar conformidade automatica e preservando avaliacao manual obrigatoria. |
 
 Pendencias do Lote 3 encerradas neste fechamento:
 
@@ -102,7 +103,7 @@ Pendencias do Lote 2 encerradas nesta reconciliacao:
 Pendencias que permanecem fora do Lote 2:
 
 - [x] Validar Frappe/Python com fixture ficticia, matriz de versoes e testes documentais no Lote 7; validacao funcional de scripts permanece no Lote 5.
-- [ ] Reconciliar `privacy/*.md`, bases legais, ROPA, RIPD/DPIA, direitos, retencao, terceiros e incidentes com dados pessoais no Lote 8.
+- [x] Reconciliar `privacy/*.md`, bases legais, ROPA, RIPD/DPIA, direitos, retencao, terceiros e incidentes com dados pessoais no Lote 8.
 - [ ] Operacionalizar acessibilidade com fixture, automacao/manual combinados e eventual CI no Lote 9.
 - [ ] Validar scripts, ferramentas, rede, outputs e exit codes com fixtures ficticias no Lote 5.
 - [ ] Consolidar `risk/risk-matrix.md`, `risk/risk-register.csv`, evidencias, controles preventivos e secret scanning completo no Lote 10.
@@ -124,9 +125,28 @@ Pendencias que permanecem fora do Lote 7:
 - [ ] Confirmar versoes reais de Frappe, ERPNext, Frappe Learning, Python, Node, apps instalados e ferramentas no SaaS consumidor.
 - [ ] Validar permissões efetivas, Custom DocPerm, User Permissions, Role Profiles, Server Scripts, Client Scripts, Property Setters e customizacoes por site em ambiente autorizado.
 - [ ] Integrar Semgrep, Bandit, Ruff, pip-audit, secret scanning ou CI somente apos versoes, logs, artifacts, rede, falsos positivos e politica de falha serem aprovados.
-- [ ] Reconciliar LGPD operacional no Lote 8, acessibilidade operacional no Lote 9, scripts no Lote 5, evidencias/risco no Lote 10 e revisao final no Lote 11.
+- [x] Reconciliar LGPD operacional no Lote 8.
+- [ ] Reconciliar acessibilidade operacional no Lote 9, scripts no Lote 5, evidencias/risco no Lote 10 e revisao final no Lote 11.
 
-O proximo lote corretivo e o **Lote 8 — LGPD**.
+Pendencias do Lote 8 encerradas nesta reconciliacao:
+
+- [x] Confirmar escopo permitido em `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`.
+- [x] Reconciliar `privacy/README.md` como indice operacional de privacidade/LGPD.
+- [x] Substituir placeholders de `privacy/data-map.md`, `privacy/ropa.md`, `privacy/legal-bases.md`, `privacy/dpia-template.md`, `privacy/data-subject-rights.md`, `privacy/retention-policy.md`, `privacy/third-party-processors.md`, `privacy/incident-personal-data.md` e `privacy/privacy-by-design-checklist.md` por guias operacionais pequenos.
+- [x] Apontar para `docs/lgpd-privacy-program.md`, `docs/evidence-and-reporting-policy.md`, `docs/lgpd-gap-assessment.md`, checklists e templates existentes sem duplicar modelos completos.
+- [x] Preservar bases legais como triagem e registrar validacao juridica/Privacidade como dependencia humana.
+- [x] Registrar limites para dados pessoais, evidencias, terceiros, transferencia internacional, incidentes, ROPA e RIPD/DPIA.
+- [x] Criar `research/sources/lote-08.md` com fontes internas, decisoes, incertezas e limites.
+- [x] Reconciliar `research/progress.md`, `research/task-queue.md` e `research/repository-inventory.md` sem executar outro lote.
+
+Pendencias que permanecem fora do Lote 8:
+
+- [ ] Validar juridicamente papeis controlador/operador, bases legais, RIPD, retencao, transferencias internacionais, contratos, direitos e comunicacao de incidentes no SaaS consumidor.
+- [ ] Preencher registros reais de mapa, ROPA, RIPD/DPIA, fornecedores, direitos e incidentes somente em sistema restrito do produto, nunca neste baseline.
+- [ ] Revalidar texto consolidado e regulamentos vigentes da ANPD antes de caso real, comunicacao externa ou auditoria formal.
+- [ ] Operacionalizar acessibilidade no Lote 9, scripts no Lote 5, evidencias/risco no Lote 10 e revisao final no Lote 11.
+
+O proximo lote corretivo e o **Lote 9 — Acessibilidade**.
 
 ## Chunk 0 - Contexto-mestre do projeto
 
