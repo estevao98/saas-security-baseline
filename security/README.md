@@ -29,4 +29,4 @@ Esta pasta não deve receber findings exploráveis, segredos, logs crus, relató
 
 ## Pendências
 
-- Secret scanning completo, branch protection, owners reais e scanners especializados dependem dos lotes posteriores ou do repositório consumidor.
+- Secret scanning completo, branch protection, owners reais, versoes de ferramentas e scanners especializados dependem do repositorio consumidor ou de tarefa propria aprovada.

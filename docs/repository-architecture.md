@@ -22,7 +22,7 @@ O nome comunica que o repositório define uma base mínima, repetível e evoluti
 
 ## Árvore de referência e estado atual
 
-Os comentários indicam a função principal e o estado observado após os fechamentos corretivos dos Lotes 1, 2, 3, 4 e 6. A presença de um caminho não significa prontidão operacional, gate obrigatório, certificação ou validação funcional.
+Os comentários indicam a função principal e o estado observado após os fechamentos corretivos dos Lotes 1 a 11. A presença de um caminho não significa prontidão operacional, gate obrigatório, certificação ou validação funcional em um SaaS consumidor.
 
 ```text
 saas-security-baseline/
@@ -67,11 +67,11 @@ saas-security-baseline/
 │   ├── standards-and-frameworks-matrix.md
 │   ├── security-audit-baseline.md             # template de relatório
 │   ├── security-roadmap.md
-│   ├── lgpd-gap-assessment.md                 # guia auxiliar; Lote 8 operacionaliza privacy/
+│   ├── lgpd-gap-assessment.md                 # guia auxiliar de LGPD
 │   ├── threat-model.md                        # guia auxiliar para threat modeling sanitizado
 │   ├── incident-response-plan.md              # guia auxiliar de resposta a incidentes
 │   ├── business-continuity-plan.md            # guia auxiliar de continuidade
-│   ├── accessibility-audit.md                 # guia auxiliar; Lote 9 operacionaliza processo
+│   ├── accessibility-audit.md                 # roteiro operacional de acessibilidade
 │   ├── api-security-checklist.md              # guia auxiliar; checklist canônico em checklists/
 │   ├── cloud-security-checklist.md            # guia auxiliar; checklist canônico em checklists/
 │   └── ai-governance-checklist.md             # guia auxiliar; checklist canônico em checklists/
@@ -95,16 +95,16 @@ saas-security-baseline/
 ├── policies/
 │   └── README.md                              # índice de políticas
 ├── privacy/
-│   ├── README.md                            # índice de domínio; privacy/*.md ficam para Lote 8
-│   ├── data-map.md                            # placeholder de template
-│   ├── ropa.md                                # placeholder de template
-│   ├── dpia-template.md                       # placeholder de template
-│   ├── legal-bases.md                         # placeholder de template
-│   ├── retention-policy.md                    # placeholder de política
-│   ├── third-party-processors.md              # placeholder de template
-│   ├── data-subject-rights.md                 # placeholder de política/processo
-│   ├── incident-personal-data.md              # placeholder de política/processo
-│   └── privacy-by-design-checklist.md          # placeholder de checklist
+│   ├── README.md                            # índice operacional de privacidade
+│   ├── data-map.md                            # roteiro operacional auxiliar
+│   ├── ropa.md                                # roteiro operacional auxiliar
+│   ├── dpia-template.md                       # guia de uso do template RIPD/DPIA
+│   ├── legal-bases.md                         # triagem de hipóteses legais candidatas
+│   ├── retention-policy.md                    # guia de retenção e descarte
+│   ├── third-party-processors.md              # registro sanitizado auxiliar
+│   ├── data-subject-rights.md                 # procedimento mínimo de direitos
+│   ├── incident-personal-data.md              # playbook mínimo de incidentes com dados pessoais
+│   └── privacy-by-design-checklist.md          # checklist operacional auxiliar
 ├── reports/
 │   ├── README.md                            # índice de evidências reconciliado
 │   ├── raw/                                   # relatórios crus; ignorado pelo Git
@@ -122,11 +122,17 @@ saas-security-baseline/
 │       ├── lote-01.md                         # fontes internas da reconciliação do Lote 1
 │       ├── lote-02.md                         # fontes internas da reconciliação do Lote 2
 │       ├── lote-04.md                         # fontes da reconciliação do Lote 4
-│       └── lote-06.md                         # fontes da reconciliação do Lote 6
+│       ├── lote-05.md                         # fontes da reconciliação do Lote 5
+│       ├── lote-06.md                         # fontes da reconciliação do Lote 6
+│       ├── lote-07.md                         # fontes da reconciliação do Lote 7
+│       ├── lote-08.md                         # fontes da reconciliação do Lote 8
+│       ├── lote-09.md                         # fontes da reconciliação do Lote 9
+│       ├── lote-10.md                         # fontes da reconciliação do Lote 10
+│       └── lote-11.md                         # fontes da revisão final
 ├── risk/
 │   ├── README.md                              # índice de risco reconciliado
-│   ├── risk-register.csv                      # placeholder de template
-│   ├── risk-matrix.md                         # placeholder
+│   ├── risk-register.csv                      # registro auxiliar fictício/estrutural
+│   ├── risk-matrix.md                         # matriz auxiliar reconciliada
 │   └── severity-and-prioritization.md
 ├── scripts/
 │   ├── README.md
@@ -158,7 +164,9 @@ saas-security-baseline/
 │   ├── accessibility-finding-template.md
 │   └── ai-risk-assessment-template.md
 ├── testing/
-│   └── README.md                              # índice de domínio reconciliado
+│   ├── README.md                              # índice de domínio reconciliado
+│   ├── accessibility/                         # fixture fictícia de acessibilidade
+│   └── frappe-python/                         # fixture fictícia Frappe/Python
 ├── .gitleaks.toml                          # configuração inicial de secret scanning; exige validação local
 ├── .secrets.baseline                       # baseline vazia revisável; sem findings reais
 ├── .gitignore                              # controle preventivo ampliado para segredos/evidências
@@ -178,9 +186,9 @@ saas-security-baseline/
 | `docs/` | Documentação transversal, planos, guias e modelos de auditoria. | Baselines, sínteses e documentos sanitizados. | Documentos auxiliares do Lote 2 são guias/índices e apontam para fontes canônicas; não registrar achados reais sem sanitização. |
 | `checklists/` | Verificações repetíveis por domínio e etapa do produto. | Itens genéricos e evidências esperadas. | Checklist preenchido de cliente/produto pode se tornar sensível. |
 | `policies/` | Políticas internas aprovadas e seus índices. | Políticas genéricas ou aprovadas para distribuição interna. | Não confundir template com política formalmente aprovada. |
-| `risk/` | Método de avaliação, matriz, severidade e modelo de registro. | Estruturas e exemplos fictícios. | `severity-and-prioritization.md` é canônico; `risk-matrix.md` e `risk-register.csv` ficam para o Lote 10. |
+| `risk/` | Método de avaliação, matriz, severidade e modelo de registro. | Estruturas e exemplos fictícios. | `severity-and-prioritization.md` é canônico; `risk-matrix.md` e `risk-register.csv` são auxiliares e não substituem sistema restrito de risco. |
 | `compliance/` | Mapeamentos de obrigações e controles. | Matrizes e interpretações práticas. | Requer validação jurídica quando tratar obrigações legais. |
-| `privacy/` | Governança LGPD, inventários e processos de titulares. | Modelos vazios ou exemplos fictícios. | O README foi reconciliado no Lote 2; `privacy/*.md` fica para Lote 8. Nunca incluir dados pessoais reais. |
+| `privacy/` | Governança LGPD, inventários e processos de titulares. | Guias operacionais, modelos vazios ou exemplos fictícios. | `privacy/*.md` foi reconciliado no Lote 8 como material auxiliar; registros reais, pedidos, contratos e incidentes ficam fora do Git. |
 | `security/` | Controles gerais de segurança e orientações operacionais. | Padrões e procedimentos genéricos. | Evitar detalhes exploráveis de ambientes reais. |
 | `appsec/` | Práticas de segurança no ciclo de desenvolvimento. | Padrões de revisão, modelagem e testes. | Resultados crus devem ir para `reports/raw/`. |
 | `devsecops/` | Integração de segurança em build, CI/CD e dependências. | Estratégias, configurações e regras revisadas. | Não embutir tokens, endpoints internos ou variáveis reais. |
@@ -190,9 +198,9 @@ saas-security-baseline/
 | `testing/` | Estratégia de testes e critérios de qualidade. | Planos, matrizes e exemplos fictícios. | Não versionar massas de dados reais. |
 | `ai-governance/` | Riscos, uso responsável e controles para IA. | Políticas, inventários e avaliações-modelo. | Não incluir prompts, dados ou respostas confidenciais reais. |
 | `templates/` | Modelos copiáveis para cada SaaS. | Campos vazios e exemplos explicitamente fictícios. | Não preencher o template central com dados de um produto. |
-| `scripts/` | Pontos de entrada locais para auditorias defensivas. | Código revisado e sem segredos. | Os oito scripts existem e passaram por validação sintática, mas scanners, ferramentas externas, rede, flags e exit codes ainda não foram testados funcionalmente. |
+| `scripts/` | Pontos de entrada locais para auditorias defensivas. | Código revisado e sem segredos. | Os wrappers foram exercitados no Lote 5 com stubs e fixtures temporárias; ferramentas reais, versões, telemetria, caches e falsos positivos continuam contextuais. |
 | `reports/raw/` | Saídas originais de scanners e coleta. | Nada: a pasta é ignorada, exceto estrutura local não versionada. | Pode conter segredos, caminhos, dependências e vulnerabilidades. |
-| `reports/sanitized/` | Resumos revisados para versionamento controlado. | Apenas material redigido e aprovado. | Sanitização e revisão humana são obrigatórias; controles preventivos adicionais ficam para Lote 10. |
+| `reports/sanitized/` | Resumos revisados para versionamento controlado. | Apenas material redigido e aprovado. | Sanitização e revisão humana são obrigatórias; registros reais e evidências integrais ficam em armazenamento restrito. |
 | `examples/` | Demonstrações de preenchimento e integração. | Dados claramente fictícios. | Exemplos de workflows exigem adaptação, fixação de referências e validação antes de uso; dez exemplos permanecem placeholders. |
 | `research/` | Prompts, fila, progresso e fontes por chunk. | Registro metodológico e referências públicas. | Não armazenar cópias integrais de normas protegidas. |
 
@@ -244,7 +252,7 @@ Quando um SaaS exigir evidências reais, elas devem permanecer em armazenamento 
 2. Definir responsáveis no `CODEOWNERS` e adaptar `README.md`, escopo técnico e fases de maturidade.
 3. Selecionar checklists aplicáveis à stack e marcar itens não aplicáveis com justificativa.
 4. Copiar templates para uma área controlada do projeto antes de preenchê-los; não alterar os modelos centrais com dados reais.
-5. Habilitar scripts e workflows gradualmente nos chunks próprios, validando versões, comandos, permissões e política de artifacts.
+5. Habilitar scripts e workflows gradualmente em tarefa própria, validando versões, comandos, permissões e política de artifacts.
 6. Manter evidências cruas fora do Git e publicar apenas resumos sanitizados.
 7. Sincronizar melhorias estruturais de volta ao template sem importar informações específicas do SaaS.
 
@@ -259,14 +267,20 @@ Estado confirmado nesta reconciliação:
 - `README.md`, `docs/repository-architecture.md`, `research/progress.md` e `research/task-queue.md` foram reconciliados para não manter o Chunk 19, o Chunk 20 ou o Lote 1 como pendentes.
 - O Lote 2 foi reconciliado: documentos auxiliares em `docs/` e READMEs de domínio deixaram de ser placeholders vencidos e passaram a funcionar como guias ou índices para fontes canônicas, checklists, templates e pendências.
 - O Lote 4 foi reconciliado: `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `.gitleaks.toml`, `.secrets.baseline` e `.gitignore` deixaram de ser placeholders iniciais, com pendências contextuais registradas.
+- O Lote 5 foi reconciliado: os scripts locais foram validados com smoke tests, stubs e fixtures temporárias, sem rede externa real, sem alvo real e sem relatório cru versionado.
 - O Lote 6 foi reconciliado: `.github/workflows/security.yml` ficou como workflow ativo mínimo, com `permissions` somente leitura, sem artifacts, sem secrets, sem `pull_request_target` e com `actions/checkout` fixado por SHA completo.
+- O Lote 7 foi reconciliado: Frappe/Python recebeu matriz de compatibilidade e fixture fictícia para triagem documental segura.
+- O Lote 8 foi reconciliado: `privacy/*.md` passou a conter guias operacionais auxiliares, sem registros reais nem decisão automática de base legal.
+- O Lote 9 foi reconciliado: acessibilidade recebeu roteiro operacional e fixture fictícia em `testing/accessibility/`, mantendo revisão humana obrigatória.
+- O Lote 10 foi reconciliado: risco auxiliar e `reports/README.md` foram alinhados à política de evidências, sem criar evidência real ou relatório cru.
+- O Lote 11 executou revisão final de links locais, placeholders vencidos, inventário, fontes, scripts, workflows e arquivos sensíveis rastreados.
 - `research/coverage-audit.md` permanece como auditoria histórica do estado anterior e não foi reescrito nesta reconciliação.
-- Scripts, exemplos de workflows, privacidade operacional, risco auxiliar e evidências mantêm as pendências dos próximos lotes corretivos quando indicado no inventário.
+- Pendências restantes são contextuais do SaaS consumidor ou de tarefa própria, não lotes corretivos pendentes deste baseline.
 
 Limites que permanecem:
 
 - Não há declaração de conformidade, certificação, ausência de vulnerabilidades, prontidão enterprise ou eficácia completa de automações.
 - Workflows de exemplo ainda não devem ser tratados como controles ativos.
-- Scripts locais ainda precisam de testes funcionais com fixtures fictícias e versões validadas.
-- Owners reais, canal privado, validação de ferramentas de secret scanning, CodeQL, Dependency Review, branch protection, rulesets e scanners especializados continuam pendentes.
-- Arquivos iniciais ou placeholders fora dos lotes já reconciliados foram apenas inventariados; a correção de conteúdo pertence aos lotes seguintes.
+- Ferramentas reais, telemetria, caches, stdout/stderr completos, falsos positivos e versões validadas continuam dependentes do SaaS consumidor.
+- Owners reais, canal privado, validação de ferramentas de secret scanning, CodeQL, Dependency Review, branch protection, rulesets e scanners especializados continuam pendentes do consumidor ou de tarefa própria aprovada.
+- Workflows de exemplo que permanecem placeholders são intencionais e não devem ser promovidos sem validação contextual.

@@ -45,5 +45,5 @@ Use este arquivo para localizar fontes internas, decidir evidências e registrar
 
 ## Pendências Contextuais
 
-- Testes funcionais de scripts de API pertencem ao Lote 5.
+- Scripts foram validados no Lote 5 com stubs e fixtures temporarias; testes reais de API dependem de ambiente autorizado do SaaS consumidor.
 - Promover teste de API em CI/CD exige validação de workflow, ambiente efêmero, logs, artifacts e plano GitHub.

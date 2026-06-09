@@ -45,5 +45,5 @@ Este arquivo não define configuração universal para AWS, Azure, Google Cloud 
 
 ## Pendências Contextuais
 
-- Scans IaC/cloud e fixtures de scripts pertencem ao Lote 5 ou ao repositório consumidor.
+- Scripts foram validados no Lote 5 com stubs e fixtures temporarias; scans IaC/cloud reais dependem do repositorio consumidor e de ambiente autorizado.
 - Gates CI/CD cloud dependem de stack, conta, plano, permissões, logs e artifacts validados.

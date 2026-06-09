@@ -113,4 +113,4 @@ Secret scanning é controle preventivo e investigativo, não prova de ausência 
 - Definir sistema restrito para registro real de riscos e evidências.
 - Validar versões e comportamento de scanners antes de qualquer gate.
 - Confirmar plano GitHub, recursos nativos de secret scanning, push protection, code scanning e política de artifacts.
-- Executar revisão final de links, placeholders, fontes e arquivos sensíveis no Lote 11.
+- Manter revisão periódica de links, placeholders, fontes e arquivos sensíveis antes de promover mudanças relevantes.

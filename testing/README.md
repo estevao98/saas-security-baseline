@@ -29,6 +29,6 @@ Esta pasta não deve conter massa real de produção, dumps, backups, logs crus,
 
 ## Pendências
 
-- Fixture ficticia Frappe/Python esta em `frappe-python/`; validacao funcional dos scripts pertence ao Lote 5.
-- Fixture ficticia de acessibilidade esta em `accessibility/`; validacao funcional dos scripts pertence ao Lote 5.
+- Fixture ficticia Frappe/Python esta em `frappe-python/`; scripts foram validados no Lote 5 com stubs e workspace temporario.
+- Fixture ficticia de acessibilidade esta em `accessibility/`; ferramentas reais e tecnologias assistivas dependem do SaaS consumidor.
 - CI alert-only de acessibilidade permanece pendente em tarefa propria, sem alterar workflow ativo por padrao.

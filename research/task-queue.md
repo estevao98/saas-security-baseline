@@ -27,6 +27,7 @@ Esta fila deriva de `research/coverage-audit.md` e `research/codex-execution-pla
 | 8 | Lote 9 — Acessibilidade | Concluido em 2026-06-09 com pendencias contextuais | `docs/accessibility-audit.md`, `accessibility/README.md`, `testing/accessibility/`, navegacao, inventario, fontes e estado foram reconciliados com avaliacao automatizada/manual combinada, fixture ficticia e revisao humana obrigatoria, sem alterar workflows, scripts, templates completos ou politicas raiz. |
 | 9 | Lote 5 — Scripts | Concluido em 2026-06-09 com pendencias contextuais | `scripts/*.sh`, `scripts/README.md`, suite local em `tests/scripts/`, inventario, fontes e estado foram reconciliados com smoke tests temporarios e stubs, sem rede externa real, sem scan de alvo real, sem instalacao automatica, sem workflows e sem relatorios crus versionados. |
 | 10 | Lote 10 — Relatórios e evidências | Concluido em 2026-06-09 com pendencias contextuais | `risk/risk-matrix.md`, `risk/risk-register.csv`, `risk/README.md`, `reports/README.md`, inventario, fontes e estado foram reconciliados sem criar evidencia real, sem relatorio cru, sem scanner real, sem alterar workflows, scripts, templates completos, politicas raiz ou checklists individuais. |
+| 11 | Lote 11 — Revisão final | Concluido em 2026-06-09 com pendencias contextuais do SaaS consumidor | Links locais, placeholders vencidos, inventario, fontes, scripts, workflow ativo e arquivos sensiveis rastreados foram revisados; corrigidas referencias de estado vencidas sem criar scanner, workflow, template, checklist, evidencia real ou relatorio cru. |
 
 Pendencias do Lote 3 encerradas neste fechamento:
 
@@ -109,7 +110,7 @@ Pendencias que permanecem fora do Lote 2:
 - [x] Operacionalizar acessibilidade com fixture e automacao/manual combinados no Lote 9; eventual CI permanece em tarefa propria.
 - [x] Validar scripts, ferramentas, rede, outputs e exit codes com fixtures ficticias no Lote 5.
 - [x] Consolidar `risk/risk-matrix.md`, `risk/risk-register.csv`, evidencias, controles preventivos e limites de secret scanning no Lote 10, sem alterar workflows ativos.
-- [ ] Executar revisao final de links, placeholders, fontes, scripts, workflows e arquivos sensiveis no Lote 11.
+- [x] Executar revisao final de links, placeholders, fontes, scripts, workflows e arquivos sensiveis no Lote 11.
 
 Pendencias do Lote 7 encerradas nesta reconciliacao:
 
@@ -128,7 +129,7 @@ Pendencias que permanecem fora do Lote 7:
 - [ ] Validar permissões efetivas, Custom DocPerm, User Permissions, Role Profiles, Server Scripts, Client Scripts, Property Setters e customizacoes por site em ambiente autorizado.
 - [ ] Integrar Semgrep, Bandit, Ruff, pip-audit, secret scanning ou CI somente apos versoes, logs, artifacts, rede, falsos positivos e politica de falha serem aprovados.
 - [x] Reconciliar LGPD operacional no Lote 8.
-- [x] Reconciliar acessibilidade operacional no Lote 9 e scripts no Lote 5; evidencias/risco permanecem no Lote 10 e revisao final no Lote 11.
+- [x] Reconciliar acessibilidade operacional no Lote 9, scripts no Lote 5, evidencias/risco no Lote 10 e revisao final no Lote 11.
 
 Pendencias do Lote 8 encerradas nesta reconciliacao:
 
@@ -146,7 +147,7 @@ Pendencias que permanecem fora do Lote 8:
 - [ ] Validar juridicamente papeis controlador/operador, bases legais, RIPD, retencao, transferencias internacionais, contratos, direitos e comunicacao de incidentes no SaaS consumidor.
 - [ ] Preencher registros reais de mapa, ROPA, RIPD/DPIA, fornecedores, direitos e incidentes somente em sistema restrito do produto, nunca neste baseline.
 - [ ] Revalidar texto consolidado e regulamentos vigentes da ANPD antes de caso real, comunicacao externa ou auditoria formal.
-- [x] Operacionalizar acessibilidade no Lote 9 e scripts no Lote 5; evidencias/risco permanecem no Lote 10 e revisao final no Lote 11.
+- [x] Operacionalizar acessibilidade no Lote 9, scripts no Lote 5, evidencias/risco no Lote 10 e revisao final no Lote 11.
 
 Pendencias do Lote 9 encerradas nesta reconciliacao:
 
@@ -166,7 +167,7 @@ Pendencias que permanecem fora do Lote 9:
 - [ ] Confirmar versoes reais de axe, Lighthouse, Pa11y, Chrome/Chromium, navegador, sistema e tecnologias assistivas no SaaS consumidor.
 - [ ] Definir matriz real de tecnologias assistivas, usuarios, fluxos criticos, obrigacoes contratuais/normativas e eventual declaracao publica com revisao especializada.
 - [ ] Executar testes com pessoas, quando aplicavel, somente com consentimento, protocolo, privacidade, acessibilidade e armazenamento restrito fora deste baseline.
-- [x] Scripts foram reconciliados no Lote 5; evidencias/risco permanecem no Lote 10 e revisao final no Lote 11.
+- [x] Scripts foram reconciliados no Lote 5; evidencias/risco no Lote 10 e revisao final no Lote 11 tambem foram executados.
 
 Pendencias do Lote 5 encerradas nesta reconciliacao:
 
@@ -187,7 +188,7 @@ Pendencias que permanecem fora do Lote 5:
 - [ ] Executar scanners reais somente em clone/ambiente autorizado, sem dados reais e com rede explicitamente aprovada quando aplicavel.
 - [ ] Integrar scripts a workflows ou gates somente apos politica de falha, logs, artifacts, permissoes, versoes e owners serem aprovados.
 - [x] Consolidar controles preventivos de evidencias, risco auxiliar e limites de secret scanning no Lote 10, sem executar scanners reais.
-- [ ] Executar revisao final de inventario, links, placeholders, fontes, scripts, workflows e arquivos sensiveis no Lote 11.
+- [x] Executar revisao final de inventario, links, placeholders, fontes, scripts, workflows e arquivos sensiveis no Lote 11.
 
 Pendencias do Lote 10 encerradas nesta reconciliacao:
 
@@ -206,9 +207,28 @@ Pendencias que permanecem fora do Lote 10:
 - [ ] Validar Gitleaks, detect-secrets e secret scanning nativo com versoes instaladas, regras, flags, redaction, stdout/stderr, exit codes, falso positivo e politica de falha.
 - [ ] Criar ou gerar fixture positiva/negativa de secret scanning somente em estrategia controlada que nao quebre scans normais e nao use formato parecido com segredo real.
 - [ ] Avaliar controles preventivos adicionais em workflow somente em tarefa propria, com logs, artifacts, permissoes, plano GitHub, retencao e gate aprovados.
-- [ ] Executar revisao final de inventario, links, placeholders, fontes, scripts, workflows e arquivos sensiveis no Lote 11.
+- [x] Executar revisao final de inventario, links, placeholders, fontes, scripts, workflows e arquivos sensiveis no Lote 11.
 
-O proximo lote corretivo e o **Lote 11 — Revisão final**.
+Pendencias do Lote 11 encerradas nesta revisao:
+
+- [x] Confirmar que o proximo lote corretivo era o Lote 11 — Revisao final.
+- [x] Revisar links locais Markdown principais e indices de navegacao.
+- [x] Revisar placeholders vencidos e preservar placeholders intencionais de exemplos, templates e campos preenchiveis.
+- [x] Revisar declaracoes fortes para manter negacoes de conformidade, certificacao, ausencia de vulnerabilidades, ausencia de secrets e prontidao enterprise.
+- [x] Confirmar que `reports/raw/` esta ignorado e que nao ha padroes sensiveis proibidos rastreados por `git ls-files`.
+- [x] Validar sintaxe Bash dos scripts, smoke tests seguros dos wrappers e parsing YAML do workflow ativo.
+- [x] Atualizar `README.md`, `docs/repository-architecture.md`, READMEs de dominio afetados, `research/progress.md`, `research/task-queue.md`, `research/repository-inventory.md` e `research/sources/lote-11.md`.
+
+Pendencias que permanecem fora do Lote 11:
+
+- [ ] Definir canal privado real, owners reais, branch protection, rulesets, plano/licenca GitHub, environments, merge queue e checks obrigatorios no SaaS consumidor.
+- [ ] Validar ferramentas reais, versoes, checksums/provenance, telemetria, caches, stdout/stderr completos, falsos positivos, regras e politica de falha antes de qualquer gate.
+- [ ] Validar juridicamente LGPD, bases legais, papeis, RIPD/DPIA, retencao, transferencias, contratos, direitos e comunicacao de incidentes no SaaS consumidor.
+- [ ] Definir armazenamento restrito real para evidencias, registros reais de risco, retencao, descarte e cadeia de custodia no SaaS consumidor.
+- [ ] Executar testes reais autorizados de Frappe/Python, acessibilidade, APIs, DAST, SAST, SCA, containers, IaC e SBOM somente em ambiente aprovado, sem dados reais no Git.
+- [ ] Promover workflows ou scanners especializados somente em tarefa propria, com logs, artifacts, permissoes, referencias imutaveis, owners e politica de gate aprovados.
+
+Todos os lotes corretivos 1 a 11 foram executados dentro dos limites declarados. Nao ha proximo lote corretivo nesta fila.
 
 ## Chunk 0 - Contexto-mestre do projeto
 

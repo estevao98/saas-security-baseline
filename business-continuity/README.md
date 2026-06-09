@@ -26,5 +26,5 @@ Não versionar backups, dumps, planos com topologia sensível, evidências de re
 
 ## Pendências
 
-- O plano real depende do SaaS consumidor.
-- Validação funcional de scripts, backups e evidências pertence aos lotes posteriores.
+- O plano real, BIA, RTO/RPO, owners, fornecedores, exercicios e evidencias dependem do SaaS consumidor.
+- Validacao de backups/restores reais e armazenamento de evidencias deve ocorrer em ambiente autorizado fora deste baseline.
