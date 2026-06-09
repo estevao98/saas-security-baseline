@@ -21,6 +21,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Reconciliação corretiva do Lote 2 — Documentos base concluída com pendências por domínio
 - [x] Reconciliação corretiva do Lote 7 — Frappe/Python concluída com pendências contextuais
 - [x] Reconciliação corretiva do Lote 8 — LGPD concluída com pendências jurídicas/contextuais
+- [x] Reconciliação corretiva do Lote 9 — Acessibilidade concluída com pendências contextuais
 
 ## Chunks
 
@@ -325,3 +326,16 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Permanecem pendentes no SaaS consumidor: validacao juridica de papeis, bases legais, RIPD, retencao, transferencias, contratos, direitos e comunicacao de incidentes; registros reais devem ficar em sistema restrito.
 - Nao foram alterados scripts, workflows, exemplos de workflows, templates completos, checklists individuais, politicas raiz, documentos auxiliares fora de `privacy/` ou artefatos de risco.
 - Nao foram criados dados pessoais reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, requests/responses, relatorios crus, artifacts, comunicacoes reais ou evidencias sensiveis.
+
+### 2026-06-09 — Reconciliação corretiva do Lote 9 — Acessibilidade
+
+- Identificado o escopo permitido a partir de `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`: `docs/accessibility-audit.md`, `accessibility/README.md`, fixture ficticia em `testing/accessibility/` e registros de estado/fonte do lote.
+- Reconciliado `docs/accessibility-audit.md` como roteiro operacional para avaliacao combinada com axe, Lighthouse, Pa11y, teclado, foco visivel, semantica HTML, contraste, formularios, mensagens de erro, conteudo dinamico, leitores de tela e fluxo critico de SaaS.
+- Reconciliado `accessibility/README.md` como indice operacional para programa, checklist, auditoria, fixture, evidencias, script local e limites de uso.
+- Criada fixture estatica ficticia em `testing/accessibility/`, com README, HTML e CSS, contendo casos positivos e barreiras ficticias controladas para calibrar automacao e revisao manual.
+- Atualizado `testing/README.md` apenas para apontar para a fixture de acessibilidade e preservar a validacao funcional de scripts como pendencia do Lote 5.
+- Criado `research/sources/lote-09.md` com fontes internas, decisoes, validacoes, incertezas e limites; nao foram consultadas novas fontes externas.
+- Atualizados `research/task-queue.md`, `research/progress.md` e `research/repository-inventory.md` para refletir o fechamento real do Lote 9.
+- Permanecem pendentes: validacao funcional dos scripts no Lote 5, CI alert-only em tarefa propria, versoes reais das ferramentas e matriz real de tecnologias assistivas no SaaS consumidor.
+- Nao foram alterados workflows ativos, exemplos de workflows, scripts, templates completos, politicas raiz, checklists individuais, documentos fora do dominio de acessibilidade ou artefatos de risco.
+- Nao foram criados dados reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, requests/responses, prints, videos, relatorios crus, artifacts, sessoes reais ou evidencias sensiveis.

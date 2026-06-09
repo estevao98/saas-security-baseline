@@ -24,7 +24,7 @@ Esta fila deriva de `research/coverage-audit.md` e `research/codex-execution-pla
 | 5 | Lote 2 — Documentos base | Concluido em 2026-06-08 com pendencias por dominio | Documentos auxiliares em `docs/`, READMEs de dominio, navegacao, inventario, fontes e estado foram reconciliados como guias/indices sem alterar scripts, workflows, templates completos, checklists individuais, politicas raiz, `privacy/*.md` ou risco auxiliar. |
 | 6 | Lote 7 — Frappe/Python | Concluido em 2026-06-08 com pendencias contextuais | Criadas matriz de compatibilidade, fixture ficticia positiva/negativa e validacoes locais seguras documentadas com `rg`; a conferencia local usou busca interna equivalente porque `rg` nao estava instalado. |
 | 7 | Lote 8 — LGPD | Concluido em 2026-06-09 com pendencias juridicas/contextuais | `privacy/*.md`, navegacao, inventario, fontes e estado foram reconciliados como artefatos operacionais reutilizaveis, sem dados pessoais reais, sem escolher base legal e sem alterar scripts, workflows, templates completos, politicas raiz ou checklists individuais. |
-| 8 | Lote 9 — Acessibilidade | Proximo lote corretivo | Operacionalizar acessibilidade sem declarar conformidade automatica e preservando avaliacao manual obrigatoria. |
+| 8 | Lote 9 — Acessibilidade | Concluido em 2026-06-09 com pendencias contextuais | `docs/accessibility-audit.md`, `accessibility/README.md`, `testing/accessibility/`, navegacao, inventario, fontes e estado foram reconciliados com avaliacao automatizada/manual combinada, fixture ficticia e revisao humana obrigatoria, sem alterar workflows, scripts, templates completos ou politicas raiz. |
 
 Pendencias do Lote 3 encerradas neste fechamento:
 
@@ -144,9 +144,29 @@ Pendencias que permanecem fora do Lote 8:
 - [ ] Validar juridicamente papeis controlador/operador, bases legais, RIPD, retencao, transferencias internacionais, contratos, direitos e comunicacao de incidentes no SaaS consumidor.
 - [ ] Preencher registros reais de mapa, ROPA, RIPD/DPIA, fornecedores, direitos e incidentes somente em sistema restrito do produto, nunca neste baseline.
 - [ ] Revalidar texto consolidado e regulamentos vigentes da ANPD antes de caso real, comunicacao externa ou auditoria formal.
-- [ ] Operacionalizar acessibilidade no Lote 9, scripts no Lote 5, evidencias/risco no Lote 10 e revisao final no Lote 11.
+- [x] Operacionalizar acessibilidade no Lote 9; scripts permanecem no Lote 5, evidencias/risco no Lote 10 e revisao final no Lote 11.
 
-O proximo lote corretivo e o **Lote 9 — Acessibilidade**.
+Pendencias do Lote 9 encerradas nesta reconciliacao:
+
+- [x] Confirmar escopo permitido em `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`.
+- [x] Reconciliar `docs/accessibility-audit.md` como roteiro operacional de avaliacao combinada, sem duplicar template completo.
+- [x] Reconciliar `accessibility/README.md` como indice operacional para programa, checklist, auditoria, fixture, evidencias e limites.
+- [x] Criar fixture ficticia estatica em `testing/accessibility/` para calibrar axe, Lighthouse, Pa11y, teclado, foco, semantica, contraste, formularios, mensagens de erro, conteudo dinamico, leitores de tela e fluxo critico.
+- [x] Atualizar `testing/README.md` com navegacao minima para a fixture de acessibilidade.
+- [x] Registrar limites: automacao nao prova conformidade WCAG/ABNT, ausencia de barreiras ou aprovacao de release; revisao humana competente e obrigatoria.
+- [x] Criar `research/sources/lote-09.md` com fontes internas, decisoes, validacoes, incertezas e limites.
+- [x] Reconciliar `research/progress.md`, `research/task-queue.md` e `research/repository-inventory.md` sem executar outro lote.
+
+Pendencias que permanecem fora do Lote 9:
+
+- [ ] Validar funcionalmente `scripts/run-accessibility-audit.sh` e wrappers com ferramentas instaladas, stdout/stderr, exit codes, paths, criacao de `reports/raw/` e resumos em `reports/sanitized/` no Lote 5.
+- [ ] Promover workflow de acessibilidade somente em tarefa propria, inicialmente `alert-only`, sem publicar DOM, screenshots, videos ou relatorios crus, apos validar versoes, logs, artifacts, permissoes e politica de falha.
+- [ ] Confirmar versoes reais de axe, Lighthouse, Pa11y, Chrome/Chromium, navegador, sistema e tecnologias assistivas no SaaS consumidor.
+- [ ] Definir matriz real de tecnologias assistivas, usuarios, fluxos criticos, obrigacoes contratuais/normativas e eventual declaracao publica com revisao especializada.
+- [ ] Executar testes com pessoas, quando aplicavel, somente com consentimento, protocolo, privacidade, acessibilidade e armazenamento restrito fora deste baseline.
+- [ ] Scripts permanecem no Lote 5, evidencias/risco no Lote 10 e revisao final no Lote 11.
+
+O proximo lote corretivo e o **Lote 5 — Scripts**.
 
 ## Chunk 0 - Contexto-mestre do projeto
 

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fixture ficticia de acessibilidade SaaS</title>
+  <link rel="stylesheet" href="fixture-styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteudo principal</a>
+
+  <header class="site-header">
+    <div class="brand" aria-label="Produto ficticio de auditoria">SaaS Ficticio A11Y</div>
+    <nav aria-label="Navegacao principal">
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#formulario">Formulario</a></li>
+        <li><a href="#barreiras">Barreiras ficticias</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal" tabindex="-1">
+    <section class="hero" aria-labelledby="titulo-principal">
+      <p class="eyebrow">Fixture local sem dados reais</p>
+      <h1 id="titulo-principal">Fluxo critico ficticio de SaaS para avaliacao de acessibilidade</h1>
+      <p>Use esta pagina para combinar automacao e revisao manual. Ela nao declara conformidade WCAG nem ausencia de barreiras.</p>
+      <a class="button" href="#formulario">Iniciar fluxo ficticio</a>
+    </section>
+
+    <section id="dashboard" class="panel" aria-labelledby="dashboard-title">
+      <h2 id="dashboard-title">Dashboard ficticio</h2>
+      <p id="dashboard-summary">Resumo textual equivalente ao cartao visual: 3 tarefas sinteticas pendentes, 1 alerta ficticio e nenhum dado real.</p>
+      <div class="cards" aria-describedby="dashboard-summary">
+        <article class="card">
+          <h3>Tarefas pendentes</h3>
+          <p class="metric">3</p>
+        </article>
+        <article class="card">
+          <h3>Alertas ficticios</h3>
+          <p class="metric">1</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="formulario" class="panel" aria-labelledby="form-title">
+      <h2 id="form-title">Formulario ficticio de configuracao</h2>
+      <p id="form-help">Preencha somente valores sinteticos. O botao de erro demonstra mensagem dinamica para revisao manual.</p>
+
+      <form aria-describedby="form-help" novalidate>
+        <div class="field">
+          <label for="workspace-name">Nome do workspace ficticio</label>
+          <input id="workspace-name" name="workspace-name" autocomplete="organization" aria-describedby="workspace-hint" value="Workspace Exemplo">
+          <p id="workspace-hint" class="hint">Use marcador generico, sem cliente real.</p>
+        </div>
+
+        <fieldset>
+          <legend>Preferencia de notificacao ficticia</legend>
+          <div class="choice">
+            <input id="notify-email" type="checkbox" name="notify" checked>
+            <label for="notify-email">Enviar resumo sintetico por canal interno ficticio</label>
+          </div>
+        </fieldset>
+
+        <div id="dynamic-status" class="status" role="status" aria-live="polite">Nenhum erro ficticio registrado.</div>
+
+        <button class="button" type="button" id="show-error">Simular erro acessivel</button>
+        <button class="button secondary" type="button" id="open-dialog">Abrir modal ficticio</button>
+      </form>
+    </section>
+
+    <section id="barreiras" class="panel warning" aria-labelledby="barriers-title">
+      <h2 id="barriers-title">Barreiras ficticias para triagem</h2>
+      <p>Os exemplos abaixo sao intencionalmente problematicos para calibrar ferramentas e revisao humana.</p>
+
+      <ul class="barrier-list">
+        <li><a href="#barreiras">Clique aqui</a> <span class="tag">A11Y-FIXTURE-001: texto de link generico</span></li>
+        <li><button class="icon-only" type="button"></button> <span class="tag">A11Y-FIXTURE-002: botao sem nome acessivel</span></li>
+        <li>
+          <span class="fake-label">Codigo ficticio sem label programatico</span>
+          <input class="unlabeled" name="synthetic-code" placeholder="ABC-123">
+          <span class="tag">A11Y-FIXTURE-003: placeholder nao substitui label</span>
+        </li>
+        <li><span class="low-contrast">Texto propositalmente com baixo contraste para medicao.</span> <span class="tag">A11Y-FIXTURE-004</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <div class="dialog-backdrop" id="dialog-backdrop" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-desc">
+      <h2 id="dialog-title">Modal ficticio</h2>
+      <p id="dialog-desc">Confirme se o foco entra no modal e retorna ao botao acionador ao fechar.</p>
+      <button class="button" type="button" id="close-dialog">Fechar modal</button>
+    </div>
+  </div>
+
+  <script>
+    const statusRegion = document.getElementById('dynamic-status');
+    const showError = document.getElementById('show-error');
+    const openDialog = document.getElementById('open-dialog');
+    const closeDialog = document.getElementById('close-dialog');
+    const backdrop = document.getElementById('dialog-backdrop');
+
+    showError.addEventListener('click', () => {
+      statusRegion.textContent = 'Erro ficticio: revise o nome do workspace sintetico antes de continuar.';
+      statusRegion.classList.add('status-error');
+    });
+
+    openDialog.addEventListener('click', () => {
+      backdrop.hidden = false;
+      closeDialog.focus();
+    });
+
+    closeDialog.addEventListener('click', () => {
+      backdrop.hidden = true;
+      openDialog.focus();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !backdrop.hidden) {
+        backdrop.hidden = true;
+        openDialog.focus();
+      }
+    });
+  </script>
+</body>
+</html>
