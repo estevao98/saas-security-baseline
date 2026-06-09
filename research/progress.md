@@ -22,6 +22,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Reconciliação corretiva do Lote 7 — Frappe/Python concluída com pendências contextuais
 - [x] Reconciliação corretiva do Lote 8 — LGPD concluída com pendências jurídicas/contextuais
 - [x] Reconciliação corretiva do Lote 9 — Acessibilidade concluída com pendências contextuais
+- [x] Reconciliação corretiva do Lote 10 — Relatórios e evidências concluída com pendências contextuais
 
 ## Chunks
 
@@ -351,3 +352,16 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - ShellCheck nao estava disponivel no ambiente e nao foi executado; versoes reais, telemetria, stdout/stderr completos, caches, falsos positivos e comportamento das ferramentas reais permanecem pendentes para o SaaS consumidor.
 - Nao foram alterados workflows ativos, exemplos de workflows, politicas raiz, templates completos, checklists individuais, documentos auxiliares fora de scripts, privacidade, risco auxiliar ou relatorios versionados.
 - Nao foram executados scanners reais, rede externa, DAST contra alvo real, upload, deploy, publicacao de artifact, instalacao de ferramenta, coleta de evidencia real ou criacao de relatorio cru versionado.
+
+### 2026-06-09 — Reconciliação corretiva do Lote 10 — Relatórios e evidências
+
+- Identificado o escopo permitido a partir de `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`: `risk/risk-matrix.md`, `risk/risk-register.csv`, `risk/README.md`, `reports/README.md` e registros de estado/fonte do lote.
+- Substituido o placeholder de `risk/risk-matrix.md` por matriz auxiliar de riscos alinhada a severidade, prioridade, impacto, probabilidade, evidencia, owner, status, decisao, risco residual e pendencias contextuais.
+- Substituido o placeholder de `risk/risk-register.csv` por schema seguro com uma linha claramente ficticia, sem dados reais e sem evidencia crua.
+- Atualizados `risk/README.md` e `reports/README.md` para reforcar limites de registro real, `reports/raw/`, `reports/sanitized/`, redaction, artifacts de CI, formatos proibidos e secret scanning.
+- Criado `research/sources/lote-10.md` com fontes internas, decisoes, validacoes, incertezas e limites; nao foram consultadas novas fontes externas.
+- Atualizados `research/task-queue.md`, `research/progress.md` e `research/repository-inventory.md` para refletir o fechamento real do Lote 10.
+- Nao foram alterados `.gitignore`, workflows ativos, exemplos de workflows, scripts, templates completos, checklists individuais, politicas raiz ou documentos canonicos fora de risco/relatorios.
+- Nao foram executados scanners reais, scans contra alvo real, workflows, upload, publicacao de artifact, coleta de evidencia real ou criacao de relatorio cru.
+- Permanecem pendentes para o SaaS consumidor ou tarefa propria: armazenamento restrito real, owners, apetite de risco, retencao, descarte, cadeia de custodia, versoes e comportamento de Gitleaks/detect-secrets, fixture controlada e eventual gate revisado.
+- Nao foram criados dados reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, requests/responses, screenshots, videos, DOM real, relatorios crus, artifacts ou evidencias sensiveis.
