@@ -26,6 +26,7 @@ Esta fila deriva de `research/coverage-audit.md` e `research/codex-execution-pla
 | 7 | Lote 8 — LGPD | Concluido em 2026-06-09 com pendencias juridicas/contextuais | `privacy/*.md`, navegacao, inventario, fontes e estado foram reconciliados como artefatos operacionais reutilizaveis, sem dados pessoais reais, sem escolher base legal e sem alterar scripts, workflows, templates completos, politicas raiz ou checklists individuais. |
 | 8 | Lote 9 — Acessibilidade | Concluido em 2026-06-09 com pendencias contextuais | `docs/accessibility-audit.md`, `accessibility/README.md`, `testing/accessibility/`, navegacao, inventario, fontes e estado foram reconciliados com avaliacao automatizada/manual combinada, fixture ficticia e revisao humana obrigatoria, sem alterar workflows, scripts, templates completos ou politicas raiz. |
 | 9 | Lote 5 — Scripts | Concluido em 2026-06-09 com pendencias contextuais | `scripts/*.sh`, `scripts/README.md`, suite local em `tests/scripts/`, inventario, fontes e estado foram reconciliados com smoke tests temporarios e stubs, sem rede externa real, sem scan de alvo real, sem instalacao automatica, sem workflows e sem relatorios crus versionados. |
+| 10 | Lote 10 — Relatórios e evidências | Concluido em 2026-06-09 com pendencias contextuais | `risk/risk-matrix.md`, `risk/risk-register.csv`, `risk/README.md`, `reports/README.md`, inventario, fontes e estado foram reconciliados sem criar evidencia real, sem relatorio cru, sem scanner real, sem alterar workflows, scripts, templates completos, politicas raiz ou checklists individuais. |
 
 Pendencias do Lote 3 encerradas neste fechamento:
 
@@ -107,7 +108,7 @@ Pendencias que permanecem fora do Lote 2:
 - [x] Reconciliar `privacy/*.md`, bases legais, ROPA, RIPD/DPIA, direitos, retencao, terceiros e incidentes com dados pessoais no Lote 8.
 - [x] Operacionalizar acessibilidade com fixture e automacao/manual combinados no Lote 9; eventual CI permanece em tarefa propria.
 - [x] Validar scripts, ferramentas, rede, outputs e exit codes com fixtures ficticias no Lote 5.
-- [ ] Consolidar `risk/risk-matrix.md`, `risk/risk-register.csv`, evidencias, controles preventivos e secret scanning completo no Lote 10.
+- [x] Consolidar `risk/risk-matrix.md`, `risk/risk-register.csv`, evidencias, controles preventivos e limites de secret scanning no Lote 10, sem alterar workflows ativos.
 - [ ] Executar revisao final de links, placeholders, fontes, scripts, workflows e arquivos sensiveis no Lote 11.
 
 Pendencias do Lote 7 encerradas nesta reconciliacao:
@@ -185,10 +186,29 @@ Pendencias que permanecem fora do Lote 5:
 - [ ] Validar versoes reais, checksums/provenance, licencas, telemetria, caches, bases, stdout/stderr completos e falsos positivos de cada ferramenta no SaaS consumidor.
 - [ ] Executar scanners reais somente em clone/ambiente autorizado, sem dados reais e com rede explicitamente aprovada quando aplicavel.
 - [ ] Integrar scripts a workflows ou gates somente apos politica de falha, logs, artifacts, permissoes, versoes e owners serem aprovados.
-- [ ] Consolidar controles preventivos de evidencias, risco auxiliar e secret scanning completo no Lote 10.
+- [x] Consolidar controles preventivos de evidencias, risco auxiliar e limites de secret scanning no Lote 10, sem executar scanners reais.
 - [ ] Executar revisao final de inventario, links, placeholders, fontes, scripts, workflows e arquivos sensiveis no Lote 11.
 
-O proximo lote corretivo e o **Lote 10 — Relatórios e evidências**.
+Pendencias do Lote 10 encerradas nesta reconciliacao:
+
+- [x] Confirmar escopo permitido em `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`.
+- [x] Reconciliar `risk/risk-matrix.md` como matriz auxiliar, sem criar fonte concorrente da severidade canonica.
+- [x] Reconciliar `risk/risk-register.csv` como registro auxiliar seguro, com schema e exemplo ficticio sem dados reais.
+- [x] Reconciliar `risk/README.md` para navegacao minima, fonte canonica e limites de registro real.
+- [x] Reconciliar `reports/README.md` para reforcar `reports/raw/`, `reports/sanitized/`, redaction, artifacts, retencao/descarte contextual e secret scanning.
+- [x] Registrar fontes, decisoes, validacoes, incertezas e limites em `research/sources/lote-10.md`.
+- [x] Reconciliar `research/progress.md`, `research/task-queue.md` e `research/repository-inventory.md` sem executar outro lote.
+
+Pendencias que permanecem fora do Lote 10:
+
+- [ ] Definir armazenamento restrito real para evidencias, registros reais de risco, retencao, descarte e cadeia de custodia no SaaS consumidor.
+- [ ] Definir owners reais, apetite de risco, autoridade de aceite, prazos e sistema de tracking no SaaS consumidor.
+- [ ] Validar Gitleaks, detect-secrets e secret scanning nativo com versoes instaladas, regras, flags, redaction, stdout/stderr, exit codes, falso positivo e politica de falha.
+- [ ] Criar ou gerar fixture positiva/negativa de secret scanning somente em estrategia controlada que nao quebre scans normais e nao use formato parecido com segredo real.
+- [ ] Avaliar controles preventivos adicionais em workflow somente em tarefa propria, com logs, artifacts, permissoes, plano GitHub, retencao e gate aprovados.
+- [ ] Executar revisao final de inventario, links, placeholders, fontes, scripts, workflows e arquivos sensiveis no Lote 11.
+
+O proximo lote corretivo e o **Lote 11 — Revisão final**.
 
 ## Chunk 0 - Contexto-mestre do projeto
 

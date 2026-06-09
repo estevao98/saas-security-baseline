@@ -1,3 +1,2 @@
-titulo,objetivo,status
-Registro de Riscos,Servir como documento base para o registro de riscos,Placeholder a preencher no Chunk 2
-
+risk_id,title_safe,source,finding_id,severity,priority,impact,probability,evidence_ref,owner,status,decision,due_or_review,risk_residual,context_pending,notes
+RISK-EXAMPLE-001,Cenario ficticio de autorizacao em fluxo critico,Exemplo ficticio,FIND-EXAMPLE-001,Alto,P1,Material,Possivel,EV-SAN-EXAMPLE-001,Papel responsavel,Monitorado,Tratar,AAAA-MM-DD,Medio apos controle ficticio,Validar owner e ambiente no SaaS consumidor,Exemplo sem dados reais e sem evidencia crua
