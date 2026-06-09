@@ -38,3 +38,4 @@ scan auth-and-session 'frappe\.session|set_user\(|LoginManager|auth_hooks'
 
 printf '\n## Limites e proximos passos\n\n- Cada ocorrencia e apenas pista; wrappers seguros, constantes e controles anteriores podem gerar falso positivo.\n- `rg` nao entende fluxo de dados, roles, DocPerm, User Permission, hooks, tenant ou transacoes.\n- Revise autorizacao server-side, isolamento multi-tenant, SQL parametrizado, arquivos, jobs, integracoes e pagamentos.\n- Para SAST/SCA Python, execute `scripts/run-python-audit.sh` separadamente.\n' >> "$SUMMARY"
 printf 'Triagem Frappe concluida. Revise %s sem copiar trechos crus para Git.\n' "${SUMMARY#$ROOT_DIR/}"
+exit 0
