@@ -1,232 +1,307 @@
 # SaaS Security Baseline
 
-Template reutilizavel para organizar auditoria, governanca, seguranca, DevSecOps, privacidade, acessibilidade, operacao e maturidade tecnica de produtos SaaS.
+<p align="center">
+  <strong>Baseline reutilizável para segurança, governança, privacidade, acessibilidade, evidências e maturidade técnica de produtos SaaS.</strong>
+</p>
 
-> Este repositorio é uma baseline de trabalho. Ele não prova conformidade, nao concede certificacao e nao substitui validacao tecnica, juridica, contratual ou auditoria independente.
+<p align="center">
+  <a href=".github/workflows/security.yml"><img alt="Repository Security Controls" src="https://img.shields.io/badge/security-controls-0f172a"></a>
+  <a href="docs/security-roadmap.md"><img alt="Maturity roadmap" src="https://img.shields.io/badge/maturity-MVP%20%7C%20Enterprise%20%7C%20Mature-2563eb"></a>
+  <a href="docs/evidence-and-reporting-policy.md"><img alt="Evidence policy" src="https://img.shields.io/badge/evidence-sanitized%20only-7c3aed"></a>
+  <a href="research/task-queue.md"><img alt="Corrective lots" src="https://img.shields.io/badge/corrective%20lots-1--11%20done-16a34a"></a>
+</p>
 
-## 1. Proposito
+---
 
-Transformar referencias de seguranca e governanca em um fluxo pratico: definir escopo, escolher controles, executar auditorias autorizadas, classificar riscos, proteger evidencias, acompanhar remediacao e decidir sobre releases.
+## Visão geral
 
-O ponto de partida para entender a organizacao e [Arquitetura do repositorio](docs/repository-architecture.md).
+Este repositório transforma referências de segurança e governança em um fluxo prático para SaaS:
 
-## 2. Para quem e este repositorio
+1. definir escopo, stack, owners e maturidade;
+2. selecionar controles, checklists e auditorias aplicáveis;
+3. executar verificações locais autorizadas;
+4. proteger evidências e relatórios;
+5. classificar riscos, findings e exceções;
+6. acompanhar remediação, reteste e decisão de release.
 
-- equipes de engenharia, produto, plataforma, seguranca e DevSecOps;
-- responsaveis por privacidade, LGPD, acessibilidade, risco e compliance;
-- liderancas preparando um MVP, uma venda enterprise ou uma operacao madura;
-- auditores e revisores de SaaS em Python, Frappe, ERPNext, Frappe Learning, JavaScript, TypeScript, SQL, containers, APIs, cloud, autenticacao, pagamentos e integracoes.
+> **Importante:** esta baseline não é certificação, parecer jurídico, pentest ofensivo, prova de conformidade ou garantia de ausência de vulnerabilidades. Ela organiza o trabalho; a validação real depende do SaaS consumidor, do contexto técnico, jurídico, contratual e operacional.
 
-Adapte papeis, escopo e controles ao produto. Requisitos concretos podem variar por legislacao, contrato, setor, cliente, arquitetura, plano GitHub e maturidade.
+---
 
-## 3. O que este repositorio cobre
+## Navegação rápida
 
-- roadmap de seguranca por maturidade;
-- normas, leis, frameworks e referencias tecnicas;
-- tipos e gatilhos de auditoria;
-- seguranca de aplicacao, APIs, dependencias, containers, IaC e supply chain;
-- GitHub Actions, CI/CD, branches, commits, issues e pull requests;
-- Frappe, ERPNext, Frappe Learning e Python;
-- LGPD, privacidade e terceiros;
-- acessibilidade para SaaS web;
-- evidencias, relatorios, severidade, riscos e aceite formal;
-- scripts locais, checklists e templates reutilizaveis.
-
-## 4. O que este repositorio não e
-
-- um selo de seguranca, conformidade ou acessibilidade;
-- uma certificacao ISO, ABNT ou de qualquer outro organismo;
-- parecer juridico, decisao automatica de base legal ou garantia de atendimento contratual;
-- pentest ofensivo, autorizacao para testar terceiros ou conjunto de payloads exploraveis;
-- substituto para threat modeling, revisao humana, testes manuais, resposta a incidentes ou gestao de risco;
-- repositorio para evidencias reais sensiveis, logs crus, dumps, backups, credenciais ou dados pessoais.
-
-## 5. Estrutura do repositorio
-
-| Area | Uso principal |
+| Preciso de... | Comece por aqui |
 |---|---|
-| [`docs/`](docs/) | Guias, matrizes, programas e modelos transversais. |
-| [`checklists/`](checklists/) | Verificacoes por dominio e momento do produto. |
-| [`scripts/`](scripts/) | Auditorias locais defensivas e geracao de SBOM. |
-| [`templates/`](templates/) | Modelos reutilizaveis, vazios ou ficticios. |
-| [`risk/`](risk/) | Severidade, prioridade, tratamento e registro de riscos. |
-| [`privacy/`](privacy/) | Estruturas auxiliares de privacidade e LGPD. |
-| [`reports/`](reports/) | Separacao entre material cru local e resumo sanitizado. |
-| [`examples/github-workflows/`](examples/github-workflows/) | Exemplos de CI/CD que exigem adaptacao antes do uso. |
-| [`research/`](research/) | Prompts, progresso, fila, inventario, auditorias, plano corretivo e fontes da pesquisa. |
+| Entender a estrutura do repositório | [`docs/repository-architecture.md`](docs/repository-architecture.md) |
+| Definir fase de maturidade | [`docs/security-roadmap.md`](docs/security-roadmap.md) |
+| Escolher quando auditar | [`docs/audit-trigger-matrix.md`](docs/audit-trigger-matrix.md) |
+| Ver ferramentas e limitações | [`docs/security-tools-catalog.md`](docs/security-tools-catalog.md) |
+| Rodar scripts locais | [`scripts/README.md`](scripts/README.md) |
+| Classificar severidade, risco e SLA | [`risk/severity-and-prioritization.md`](risk/severity-and-prioritization.md) |
+| Proteger evidências e relatórios | [`docs/evidence-and-reporting-policy.md`](docs/evidence-and-reporting-policy.md) |
+| Preparar relatório final | [`docs/security-audit-baseline.md`](docs/security-audit-baseline.md) |
+| Usar checklists | [`checklists/`](checklists/) |
+| Copiar templates | [`templates/`](templates/) |
+| Ver histórico da pesquisa | [`research/`](research/) |
 
-A arvore completa e as regras de reutilizacao estao em [Arquitetura do repositorio](docs/repository-architecture.md).
+---
 
-## 6. Como usar em um SaaS novo
+## O que este baseline cobre
 
-1. Crie um repositorio privado a partir desta baseline, sem importar evidencias de outro produto.
-2. Defina escopo, stack, ambientes, owners e revisores; configure responsaveis reais no [`CODEOWNERS`](CODEOWNERS).
-3. Escolha a fase inicial no [Roadmap de seguranca](docs/security-roadmap.md).
-4. Selecione checklists aplicaveis e justifique itens nao aplicaveis.
-5. Copie os templates necessarios para um sistema de trabalho com classificacao e acesso adequados.
-6. Valide ferramentas, versoes, rede, telemetria, permissoes e saidas antes de executar scripts ou habilitar CI.
-7. Mantenha relatorios crus fora do Git e publique somente resumos sanitizados revisados.
+| Domínio | Conteúdo principal |
+|---|---|
+| **AppSec** | OWASP, autenticação, autorização, APIs, lógica de negócio, revisão manual e gates. |
+| **DevSecOps** | GitHub Actions, branches, commits, PRs, permissões mínimas, artifacts e higiene de repositório. |
+| **Supply chain** | Dependências, SCA, SBOM, containers, IaC, versões, telemetria e registros externos. |
+| **Frappe/Python** | DocTypes, roles, permissões, hooks, jobs, whitelisted methods, SQL/ORM, arquivos e isolamento. |
+| **Privacidade/LGPD** | Bases legais, ROPA, RIPD/DPIA, direitos dos titulares, terceiros, retenção e incidentes. |
+| **Acessibilidade** | WCAG 2.2, avaliação manual, automação parcial, fluxos críticos e evidências. |
+| **Risco e evidências** | Severidade, prioridade, aceite, exceção, redaction, armazenamento restrito e relatórios sanitizados. |
+| **Operação** | Backups, incidentes, continuidade, fornecedores, releases e acompanhamento de remediação. |
 
-## 7. Como usar em um SaaS existente
+---
 
-1. Inventarie arquitetura, dados, tenants, dependencias, integracoes, releases e controles existentes.
-2. Use a [Matriz de gatilhos](docs/audit-trigger-matrix.md) para priorizar auditorias pelo risco e pelos eventos recentes.
-3. Execute uma baseline autorizada sem dados de producao e sem carregar segredos no workspace.
-4. Registre findings com IDs opacos, classifique contexto e impacto e defina owner, SLA, gate e reteste.
-5. Transforme lacunas recorrentes em controles de CI/CD, politicas e revisoes periodicas.
-6. Reavalie a maturidade e avance pelo roadmap somente quando os criterios da fase estiverem sustentaveis.
+## Estrutura do repositório
 
-## 8. Fluxo recomendado por maturidade
+```txt
+.
+├── .github/workflows/              # Workflow ativo mínimo de higiene e política
+├── accessibility/                  # Índice e materiais de acessibilidade
+├── appsec/                         # Segurança de aplicação
+├── business-continuity/            # Continuidade, backup e recuperação
+├── checklists/                     # Checklists por domínio, fase e decisão
+├── compliance/                     # Normas, frameworks e obrigações por contexto
+├── devsecops/                      # CI/CD, supply chain e segurança de entrega
+├── docs/                           # Guias, programas, matrizes e modelos centrais
+├── examples/github-workflows/       # Exemplos não ativos de workflows
+├── incident-response/              # Resposta a incidentes e postmortem
+├── privacy/                        # LGPD, dados pessoais e terceiros
+├── reports/                        # Separação entre raw local e sanitized revisado
+├── research/                       # Planejamento, fontes, progresso e inventário
+├── risk/                           # Severidade, priorização e risco auxiliar
+├── scripts/                        # Wrappers locais defensivos
+├── security/                       # Índices e políticas de segurança
+├── templates/                      # Modelos reutilizáveis, fictícios ou preenchíveis
+└── testing/                        # Fixtures fictícias e validações locais
+```
 
-| Fase | Resultado esperado | Prioridades |
-|---|---|---|
-| **MVP seguro** | Reduzir riscos obvios antes de beta e producao. | Segredos, autenticacao, autorizacao, dependencias, backups, logs, privacidade basica, acessibilidade de fluxos criticos e gates minimos. |
-| **SaaS vendavel para empresas** | Produzir governanca e evidencias consistentes para operacao e clientes. | CI/CD estavel, SAST/SCA, imagem, SBOM, terceiros, incidentes, continuidade, LGPD, acessibilidade e controles de release. |
-| **SaaS maduro** | Operar controles continuos, mensuraveis e auditaveis. | Gestao de risco integrada, supply chain, segregacao, monitoramento, exercicios, metricas, auditoria independente e certificacao quando houver objetivo formal. |
+A explicação detalhada da arquitetura está em [`docs/repository-architecture.md`](docs/repository-architecture.md).
 
-Consulte os criterios, bloqueios e planos de **30, 60, 90 e 180 dias** em [Roadmap de seguranca](docs/security-roadmap.md).
+---
 
-## 9. Normas, leis, frameworks e referencias
+## Como aplicar em um SaaS novo
 
-A [Matriz de normas e frameworks](docs/standards-and-frameworks-matrix.md) organiza referencias como LGPD e ANPD, OWASP, NIST, CISA, CIS, W3C/WAI, ISO e ABNT por objetivo e aplicacao.
-
-Use a matriz como orientacao de escopo, nao como declaracao automatica de obrigatoriedade. Edicao aplicavel, equivalencia ABNT, certificacao, requisito enterprise e obrigacao juridica devem ser confirmados no contexto do SaaS.
-
-## 10. Tipos de auditoria
-
-O catalogo em [Tipos de auditoria](docs/audit-types.md) cobre revisao manual, SAST, DAST, SCA, secrets, IaC, containers, dependencias, APIs, threat modeling, privacidade, LGPD, acessibilidade, autenticacao, autorizacao, logs, backups, incidentes, CI/CD, cloud, pagamentos, terceiros e IA.
-
-Nenhuma ferramenta isolada comprova ausencia de vulnerabilidades. Combine automacao, revisao humana, testes de negocio e validacao de arquitetura.
-
-## 11. Quando rodar auditorias
-
-Use a [Matriz de gatilhos de auditoria](docs/audit-trigger-matrix.md) para decidir verificacoes em PRs, releases, mudancas de arquitetura, incidentes, novas integracoes, onboarding enterprise e ciclos periodicos.
-
-Um gate obrigatorio que nao executou, falhou tecnicamente ou nao gerou evidencia nao deve ser tratado como aprovado.
-
-## 12. Ferramentas e scripts
-
-O [Catalogo de ferramentas](docs/security-tools-catalog.md) descreve finalidade, limites, falsos positivos, saidas e uso em gates. Os oito pontos de entrada locais estao documentados em [Scripts locais de auditoria](scripts/README.md).
-
-### Como rodar auditoria local
-
-Exemplo inicial restrito ao secret scanning local:
+1. Crie um repositório privado a partir desta baseline.
+2. Defina produto, stack, ambientes, owners, revisores e fase de maturidade.
+3. Configure responsáveis reais no [`CODEOWNERS`](CODEOWNERS).
+4. Escolha os checklists aplicáveis e registre itens não aplicáveis.
+5. Copie templates para um sistema de trabalho adequado, não para dados reais dentro desta baseline.
+6. Valide ferramentas, versões, rede, telemetria, permissões e saídas antes de rodar scripts.
+7. Mantenha evidências cruas fora do Git e publique somente resumos sanitizados revisados.
 
 ```bash
+# exemplo mínimo: auditoria local restrita a secrets
 AUDIT_COMPONENTS=secrets ./scripts/run-security-audit.sh
 ```
 
-Os scripts nao instalam dependencias, nao corrigem codigo e exigem preparacao previa. Operacoes que consultam registries, indices, regras ou bases externas dependem de consentimento explicito e avaliacao de exposicao.
+---
 
-## 13. Como interpretar relatorios
+## Como aplicar em um SaaS existente
 
-- conclusao da ferramenta nao significa conformidade ou ausencia de falhas;
-- diferencie finding confirmado, falso positivo, erro tecnico e verificacao nao executada;
-- valide alcance, exposicao, explorabilidade, tenant, dados, fluxo de negocio e controles compensatorios;
-- use [Severidade e priorizacao](risk/severity-and-prioritization.md) para definir prioridade, SLA, gate e reteste;
-- use o [Modelo de relatorio final](docs/security-audit-baseline.md) para consolidar escopo, metodologia, achados, riscos e decisao Go/No-Go.
+1. Inventarie arquitetura, dados, tenants, dependências, integrações e releases.
+2. Use a [`Matriz de gatilhos`](docs/audit-trigger-matrix.md) para priorizar auditorias.
+3. Execute verificações somente em ambiente autorizado, sem dados reais e sem segredos no workspace.
+4. Registre findings com IDs opacos, impacto, owner, SLA, gate e critério de reteste.
+5. Transforme lacunas recorrentes em controles de CI/CD, políticas e revisões periódicas.
+6. Avance a maturidade somente quando os critérios estiverem sustentáveis.
 
-## 14. GitHub Actions e CI/CD
+---
 
-A [Estrategia de GitHub Actions](docs/github-actions-strategy.md) define eventos, permissoes minimas, logs, secrets, artifacts, gates e branch protection por maturidade.
+## Maturidade recomendada
 
-Neste repositorio-base, somente [`.github/workflows/security.yml`](.github/workflows/security.yml) fica ativo por padrao. Ele executa controles minimos de politica do repositorio e higiene documental, sem publicar artifacts, sem usar secrets e sem executar secret scanning completo. Os demais arquivos em [`examples/github-workflows/`](examples/github-workflows/) sao exemplos: copie apenas o necessario, fixe actions e imagens de forma validada e confirme stack, licenca/plano GitHub, ambientes, secrets e retencao antes de exigir checks.
+| Fase | Objetivo | Prioridades |
+|---|---|---|
+| **MVP seguro** | Reduzir riscos óbvios antes de beta e produção. | Segredos, autenticação, autorização, dependências, backups, logs, privacidade básica, acessibilidade de fluxos críticos e gates mínimos. |
+| **SaaS vendável para empresas** | Produzir governança e evidências consistentes. | CI/CD estável, SAST/SCA, SBOM, terceiros, incidentes, continuidade, LGPD, acessibilidade e controles de release. |
+| **SaaS maduro** | Operar controles contínuos, mensuráveis e auditáveis. | Gestão de risco integrada, supply chain, segregação, monitoramento, exercícios, métricas, auditoria independente e certificação quando houver objetivo formal. |
 
-## 15. Frappe, ERPNext, Frappe Learning e Python
+Planos de **30, 60, 90 e 180 dias**: [`docs/security-roadmap.md`](docs/security-roadmap.md).
 
-O guia [Auditoria Frappe e Python](docs/frappe-python-security-audit.md) orienta revisao de DocTypes, papeis, permissoes, metodos whitelisted, APIs, jobs, hooks, SQL/ORM, arquivos, integracoes, pagamentos e isolamento entre sites.
+---
 
-Execute [`run-frappe-audit.sh`](scripts/run-frappe-audit.sh) e [`run-python-audit.sh`](scripts/run-python-audit.sh) apenas em clone autorizado, sem `sites/`, backups, logs ou configuracoes reais. Confirme as versoes instaladas: APIs, hooks e permissoes podem variar entre releases do ecossistema Frappe.
+## Fluxo de trabalho sugerido
 
-## 16. LGPD e privacidade
+```mermaid
+flowchart LR
+  A[Escopo e fase] --> B[Checklist aplicável]
+  B --> C[Auditoria autorizada]
+  C --> D[Evidência protegida]
+  D --> E[Finding sanitizado]
+  E --> F[Risco, SLA e owner]
+  F --> G[Remediação]
+  G --> H[Reteste]
+  H --> I[Go / No-Go]
+```
 
-O [Programa de LGPD e privacidade](docs/lgpd-privacy-program.md) cobre ciclo de vida de dados, papeis, bases legais, direitos dos titulares, terceiros, incidentes e privacy by design.
+Se o GitHub não renderizar Mermaid no contexto usado, consulte o mesmo fluxo em forma textual nos documentos de `docs/`, `risk/` e `reports/`.
 
-Use os modelos de mapa de dados, ROPA e RIPD/DPIA pelo [Indice de templates](templates/index.md). A base legal, necessidade de RIPD, comunicacao de incidente, retencao e papeis de controlador/operador dependem dos fatos e exigem validacao juridica quando aplicavel.
+---
 
-## 17. Acessibilidade
+## Scripts locais
 
-O [Programa de acessibilidade](docs/accessibility-program.md) organiza WCAG 2.2, avaliacao manual, automacao, fluxos criticos, evidencias e gates de release.
+Os scripts são wrappers defensivos. Eles não instalam ferramentas, não corrigem código, não devem rodar contra produção e separam saída crua de resumo sanitizado.
 
-Pa11y, Lighthouse, axe e ferramentas similares detectam apenas parte das barreiras. Conformidade e impacto funcional exigem revisao manual, tecnologias assistivas e avaliador competente; aplicabilidade normativa e contratual deve ser confirmada.
+| Script | Uso |
+|---|---|
+| [`run-security-audit.sh`](scripts/run-security-audit.sh) | Orquestra verificações locais selecionadas. |
+| [`run-python-audit.sh`](scripts/run-python-audit.sh) | Bandit, Semgrep local e pip-audit com consentimento de rede. |
+| [`run-frappe-audit.sh`](scripts/run-frappe-audit.sh) | Triagem local de padrões Frappe/Python. |
+| [`run-node-audit.sh`](scripts/run-node-audit.sh) | Auditoria Node/npm/pnpm com consentimento explícito. |
+| [`run-accessibility-audit.sh`](scripts/run-accessibility-audit.sh) | Pa11y/Lighthouse em URL loopback. |
+| [`run-api-audit.sh`](scripts/run-api-audit.sh) | Schemathesis/ZAP em alvo local autorizado. |
+| [`run-container-audit.sh`](scripts/run-container-audit.sh) | Trivy, Grype e Checkov conforme escopo. |
+| [`generate-sbom.sh`](scripts/generate-sbom.sh) | SBOM CycloneDX/SPDX com Syft. |
 
-## 18. Evidencias, relatorios e artifacts
+Leia antes de executar: [`scripts/README.md`](scripts/README.md).
 
-A [Politica de evidencias](docs/evidence-and-reporting-policy.md) define classificacao, redaction, acesso, retencao, descarte e compartilhamento.
+---
 
-- `reports/raw/`: saidas integrais locais; permanece no `.gitignore` e nunca deve ser versionada.
-- `reports/sanitized/`: somente resumos minimizados, redigidos e revisados por pessoa competente.
-- GitHub issues, PRs e logs: apenas contexto seguro e IDs opacos, sem detalhes exploraveis.
-- Artifacts de CI: publicar somente quando indispensavel, com arquivos enumerados, acesso restrito e retencao aprovada.
+## CI/CD e GitHub Actions
 
-### Politica de segredos
+O workflow ativo padrão é [`security.yml`](.github/workflows/security.yml). Ele valida higiene documental e regras mínimas de segurança do repositório:
 
-Segredos nunca devem ser armazenados no Git, em templates, exemplos, logs, artifacts ou relatorios sanitizados. Se uma credencial real for encontrada, interrompa a exposicao, preserve somente a evidencia minima em canal restrito, revogue ou rotacione o valor e avalie historico e uso indevido. Apagar apenas a linha do arquivo nao encerra o incidente.
+- `permissions: contents: read`;
+- sem `pull_request_target`;
+- sem secrets;
+- sem upload de artifacts;
+- sem scanners pesados ou dependentes de plano;
+- sem declarar ausência de vulnerabilidades.
 
-Use tambem [`SECURITY.md`](SECURITY.md) para reporte privado, triagem e resposta, e `.gitleaks.toml`/`.secrets.baseline` como configuracoes iniciais de apoio. Esses arquivos nao substituem canal privado real, owners, secret scanning nativo, push protection ou workflow validado.
+Os arquivos em [`examples/github-workflows/`](examples/github-workflows/) são exemplos não ativos. Antes de promover qualquer um para `.github/workflows/`, valide stack, plano GitHub, permissões, SHA/digest, logs, artifacts, retenção e política de falha.
 
-## 19. Modelo de relatorio final
+---
 
-Use [Modelo de relatorio final de auditoria](docs/security-audit-baseline.md) para registrar capa, escopo, metodologia, ferramentas, execucao, findings, matriz de riscos, remediacao, evidencias, limitacoes e decisao de release.
+## Evidências, relatórios e segredos
 
-Uma copia preenchida pode se tornar confidencial ou restrita. Nao versione anexos crus nem transforme o modelo central em relatorio de um cliente ou ambiente real.
+A regra central é simples:
 
-## 20. Severidade, priorizacao e riscos
+> Git não é cofre de evidência sensível.
 
-[Severidade e priorizacao](risk/severity-and-prioritization.md) separa severidade tecnica, prioridade operacional, SLA, tratamento e gate. CVSS, CISA KEV, SSVC, EPSS e categorias OWASP apoiam a decisao, mas nao substituem contexto de negocio.
+| Local | Política |
+|---|---|
+| `reports/raw/` | Saídas integrais locais. Fora do Git por padrão. |
+| `reports/sanitized/` | Apenas sínteses minimizadas, redigidas e revisadas. |
+| Issues e PRs | Contexto seguro, IDs opacos e sem detalhe explorável. |
+| Artifacts de CI | Evitar; usar somente quando indispensável, enumerado e com retenção curta. |
 
-Riscos criticos, segredos ativos, quebra multi-tenant, incidente em curso e outros cenarios materiais podem bloquear release. Esforco de correcao nao reduz severidade.
+Se um segredo real for encontrado, não preserve o valor em Git. Revogue/rotacione, registre apenas o mínimo necessário em canal restrito e avalie exposição histórica. Apagar a linha não encerra o incidente.
 
-## 21. Findings e aceite de risco
+Política completa: [`docs/evidence-and-reporting-policy.md`](docs/evidence-and-reporting-policy.md).
 
-Para abrir um finding:
+---
 
-1. confirme aplicabilidade e remova detalhes sensiveis;
-2. use titulo abstrato, ID opaco, impacto, escopo generalizado, owner e criterio de aceite;
-3. mantenha evidencia original em armazenamento restrito;
-4. vincule remediacao e reteste sem copiar payloads, logs ou requests/responses.
+## Checklists principais
 
-Aceite de risco deve ser formal, temporario, aprovado pela autoridade competente e conter justificativa, risco residual, controles, monitoramento, expiracao e gatilhos de reavaliacao. Consulte [Fluxo Git seguro](docs/git-security-workflow.md) e [Severidade e priorizacao](risk/severity-and-prioritization.md).
+| Grupo | Checklists |
+|---|---|
+| Release | [`pre-beta`](checklists/pre-beta.md), [`pre-deploy`](checklists/pre-deploy.md), [`pre-enterprise-sale`](checklists/pre-enterprise-sale.md) |
+| AppSec | [`OWASP Top 10`](checklists/owasp-top-10.md), [`OWASP ASVS`](checklists/owasp-asvs.md), [`OWASP API Top 10`](checklists/owasp-api-top-10.md) |
+| Plataforma | [`Frappe`](checklists/frappe-security.md), [`cloud`](checklists/cloud-security.md), [`CI/CD`](checklists/ci-cd-security.md), [`pagamentos`](checklists/payment-security.md) |
+| Governança | [`LGPD`](checklists/lgpd.md), [`acessibilidade`](checklists/accessibility-wcag-22-aa.md), [`terceiros`](checklists/third-party-risk.md), [`incidentes`](checklists/incident-response.md), [`backup`](checklists/backup-restore.md), [`IA`](checklists/ai-governance.md) |
 
-## 22. Branches, commits, issues e PRs
+Checklist preenchido pode revelar arquitetura, lacunas e dados operacionais. Trate conforme a política de evidências.
 
-O [Fluxo Git seguro](docs/git-security-workflow.md) define estrategia de branches, findings, issues, falsos positivos, hotfixes, releases, commits e pull requests.
+---
 
-Nao inclua segredo, cliente, tenant, URL privada, IP interno, evidencia crua ou vetor exploravel em nome de branch, commit, issue, PR, label ou milestone. Regras detalhadas de contribuicao estao nesse guia; [`CONTRIBUTING.md`](CONTRIBUTING.md) e [`CODEOWNERS`](CODEOWNERS) servem como ponto de entrada operacional e template de ownership para o repositorio consumidor.
+## Templates
 
-### Como contribuir
+O índice de templates reúne modelos de:
 
-Use mudancas pequenas, revisaveis e vinculadas a um objetivo. Confirme o escopo, atualize documentacao e testes aplicaveis, execute os checks autorizados e revise o diff contra exposicao de dados antes do commit. Mudancas em controles, gates, risco, privacidade ou acessibilidade devem receber revisao do owner competente.
+- finding;
+- remediação;
+- risco;
+- resumo executivo;
+- mapa de dados;
+- ROPA;
+- RIPD/DPIA;
+- incidentes;
+- postmortem;
+- fornecedores;
+- acessibilidade;
+- threat modeling;
+- governança de IA.
 
-## 23. Checklists
+Consulte [`templates/index.md`](templates/index.md). Preencha cópias em local autorizado e com classificação adequada.
 
-Use os checklists conforme stack, fase e evento. Os principais grupos sao:
+---
 
-- release: [pre-beta](checklists/pre-beta.md), [pre-deploy](checklists/pre-deploy.md) e [pre-enterprise-sale](checklists/pre-enterprise-sale.md);
-- AppSec: [OWASP Top 10](checklists/owasp-top-10.md), [OWASP ASVS](checklists/owasp-asvs.md) e [OWASP API Top 10](checklists/owasp-api-top-10.md);
-- produto e plataforma: [Frappe](checklists/frappe-security.md), [cloud](checklists/cloud-security.md), [CI/CD](checklists/ci-cd-security.md) e [pagamentos](checklists/payment-security.md);
-- governanca: [LGPD](checklists/lgpd.md), [acessibilidade](checklists/accessibility-wcag-22-aa.md), [terceiros](checklists/third-party-risk.md), [incidentes](checklists/incident-response.md), [backup](checklists/backup-restore.md) e [IA](checklists/ai-governance.md).
+## Estado do baseline
 
-Checklist preenchido pode revelar arquitetura, lacunas e dados operacionais; trate-o conforme a politica de evidencias.
+A fila corretiva do repositório foi concluída:
 
-## 24. Templates
+| Lote | Status |
+|---|---|
+| Lote 1 — Estrutura inicial | Concluído |
+| Lote 2 — Documentos base | Concluído |
+| Lote 3 — Checklists | Concluído |
+| Lote 4 — Políticas | Concluído |
+| Lote 5 — Scripts | Concluído |
+| Lote 6 — GitHub Actions | Concluído |
+| Lote 7 — Frappe/Python | Concluído |
+| Lote 8 — LGPD | Concluído |
+| Lote 9 — Acessibilidade | Concluído |
+| Lote 10 — Relatórios e evidências | Concluído |
+| Lote 11 — Revisão final | Concluído |
 
-O [Indice de templates](templates/index.md) reune modelos de finding, remediacao, risco, resumo executivo, dados, ROPA, RIPD/DPIA, incidentes, postmortem, backup, fornecedores, acessibilidade, threat modeling e IA.
+Detalhes: [`research/task-queue.md`](research/task-queue.md), [`research/progress.md`](research/progress.md) e [`research/repository-inventory.md`](research/repository-inventory.md).
 
-Os arquivos centrais devem permanecer genericos. Preencha copias em local autorizado e aplique classificacao, controle de acesso e revisao antes de qualquer versionamento.
+Pendências restantes são contextuais do SaaS consumidor: owners reais, canal privado, plano GitHub, versões de ferramentas, validação jurídica, armazenamento restrito, testes reais autorizados e promoção de gates especializados.
 
-## 25. Proximos passos, avisos e fontes
+---
 
-O trabalho de pesquisa esta registrado em [Progresso](research/progress.md), [Fila de tarefas](research/task-queue.md), [Auditoria de cobertura](research/coverage-audit.md), [Plano para Codex/agente de codigo](research/codex-execution-plan.md) e [Inventario reconciliado](research/repository-inventory.md).
+## O que não fazer
 
-Estado atual resumido: os Lotes 1 a 10 foram reconciliados dentro dos limites registrados em `research/task-queue.md`, e o Lote 11 executou revisao final de consistencia, links locais, placeholders vencidos, estado declarado e arquivos sensiveis rastreados. Permanecem pendencias contextuais do SaaS consumidor, como owners reais, canal privado, plano GitHub, versoes de ferramentas, validacao juridica, armazenamento restrito de evidencias, testes reais autorizados e promocao de gates/workflows especializados.
+- Não commitar tokens, cookies, senhas, chaves privadas, `.env`, dumps, backups ou `site_config.json`.
+- Não versionar logs crus, relatórios integrais, screenshots sem redaction, requests/responses ou DOM real.
+- Não executar scanners contra produção, terceiros ou alvos sem autorização explícita.
+- Não tratar resultado limpo de scanner como prova de segurança.
+- Não habilitar workflows especializados sem validar permissões, artifacts, retenção, logs, plano GitHub e política de falha.
+- Não preencher templates centrais com dados de cliente, tenant, fornecedor ou ambiente real.
 
-Avisos de seguranca:
+---
 
-- nunca adicione segredos, tokens, credenciais, cookies, dados pessoais reais ou exemplos que se parecam com credenciais;
-- nao versione logs, dumps, backups, `site_config.json`, `terraform.tfstate`, screenshots sem redaction ou relatorios crus;
-- nao execute scans contra producao, terceiros ou alvos sem autorizacao explicita;
-- trate descoberta de segredo ou incidente pelo canal restrito definido pela organizacao, nao por issue comum;
-- confirme versoes, comandos, licencas, planos, contratos e requisitos legais antes da implantacao.
+## Contribuição
 
-As referencias oficiais e suas incertezas estao na [Matriz de normas e frameworks](docs/standards-and-frameworks-matrix.md) e nos registros de [`research/sources/`](research/sources/). As fontes usadas nesta consolidacao inicial estao em [Fontes do Chunk 18](research/sources/chunk-18.md). As reconciliacoes corretivas estao registradas em [Lote 1](research/sources/lote-01.md), [Lote 2](research/sources/lote-02.md), [Lote 4](research/sources/lote-04.md), [Lote 5](research/sources/lote-05.md), [Lote 6](research/sources/lote-06.md), [Lote 7](research/sources/lote-07.md), [Lote 8](research/sources/lote-08.md), [Lote 9](research/sources/lote-09.md), [Lote 10](research/sources/lote-10.md) e [Lote 11](research/sources/lote-11.md).
+Mudanças devem ser pequenas, revisáveis e vinculadas a um objetivo claro.
+
+Antes de abrir PR:
+
+1. confirme o escopo;
+2. preserve links internos;
+3. não adicione evidência sensível;
+4. rode checks aplicáveis;
+5. revise o diff contra segredos e dados reais;
+6. peça revisão do owner competente quando envolver risco, privacidade, acessibilidade, CI/CD ou política.
+
+Guia operacional: [`CONTRIBUTING.md`](CONTRIBUTING.md). Reporte privado: [`SECURITY.md`](SECURITY.md).
+
+---
+
+## Fontes e rastreabilidade
+
+A pesquisa, decisões e reconciliações estão registradas em:
+
+- [`research/sources/`](research/sources/);
+- [`research/coverage-audit.md`](research/coverage-audit.md);
+- [`research/codex-execution-plan.md`](research/codex-execution-plan.md);
+- [`research/task-queue.md`](research/task-queue.md);
+- [`research/progress.md`](research/progress.md);
+- [`research/repository-inventory.md`](research/repository-inventory.md).
+
+As fontes oficiais e incertezas estão organizadas em [`docs/standards-and-frameworks-matrix.md`](docs/standards-and-frameworks-matrix.md).
+
+---
+
+## Licença e uso
+
+Este repositório é uma baseline de trabalho. Antes de reutilizar em outro produto ou organização, revise permissões, contratos, classificação das informações e requisitos legais aplicáveis.
