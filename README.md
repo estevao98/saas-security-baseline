@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/saas-security-baseline-cover.png" alt="Baseline de Segurança para SaaS" width="100%" />
+</p>
+
 # SaaS Security Baseline
 
 <p align="center">
