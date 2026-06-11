@@ -21,7 +21,7 @@ O Chunk 12 consolida em um template preenchivel as decisoes ja aprovadas nos chu
 | `docs/audit-trigger-matrix.md` | Gatilhos, reviewers, frequencia e decisao Go/No-Go. |
 | `docs/security-tools-catalog.md` | Campos de ferramenta, versao, execucao, saida e limitacoes. |
 | `docs/github-actions-strategy.md` | CI/CD, permissions, logs, artifacts e gates. |
-| `docs/frappe-python-security-audit.md` | Secao Frappe/Python, multi-tenant e protecao de evidencias. |
+| `docs/security-tools-catalog.md` | Backend/Python, multi-tenant e protecao de evidencias. |
 | `docs/lgpd-privacy-program.md` | Privacidade, validacao juridica, incidentes e dados pessoais. |
 | `docs/accessibility-program.md` | Metodologia, gates, limitacoes e evidencias de acessibilidade. |
 | `docs/evidence-and-reporting-policy.md` | Classificacao, redaction, anexos, retencao e cadeia de custodia. |

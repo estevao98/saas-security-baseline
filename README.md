@@ -57,7 +57,7 @@ Este repositório transforma referências de segurança e governança em um flux
 | **AppSec** | OWASP, autenticação, autorização, APIs, lógica de negócio, revisão manual e gates. |
 | **DevSecOps** | GitHub Actions, branches, commits, PRs, permissões mínimas, artifacts e higiene de repositório. |
 | **Supply chain** | Dependências, SCA, SBOM, containers, IaC, versões, telemetria e registros externos. |
-| **Frappe/Python** | DocTypes, roles, permissões, hooks, jobs, whitelisted methods, SQL/ORM, arquivos e isolamento. |
+| **Backend e Python** | Aplicações Python web, APIs, autorização server-side, jobs, SQL/ORM, arquivos e isolamento multi-tenant. |
 | **Privacidade/LGPD** | Bases legais, ROPA, RIPD/DPIA, direitos dos titulares, terceiros, retenção e incidentes. |
 | **Acessibilidade** | WCAG 2.2, avaliação manual, automação parcial, fluxos críticos e evidências. |
 | **Risco e evidências** | Severidade, prioridade, aceite, exceção, redaction, armazenamento restrito e relatórios sanitizados. |
@@ -159,7 +159,6 @@ Os scripts são wrappers defensivos. Eles não instalam ferramentas, não corrig
 |---|---|
 | [`run-security-audit.sh`](scripts/run-security-audit.sh) | Orquestra verificações locais selecionadas. |
 | [`run-python-audit.sh`](scripts/run-python-audit.sh) | Bandit, Semgrep local e pip-audit com consentimento de rede. |
-| [`run-frappe-audit.sh`](scripts/run-frappe-audit.sh) | Triagem local de padrões Frappe/Python. |
 | [`run-node-audit.sh`](scripts/run-node-audit.sh) | Auditoria Node/npm/pnpm com consentimento explícito. |
 | [`run-accessibility-audit.sh`](scripts/run-accessibility-audit.sh) | Pa11y/Lighthouse em URL loopback. |
 | [`run-api-audit.sh`](scripts/run-api-audit.sh) | Schemathesis/ZAP em alvo local autorizado. |
@@ -210,7 +209,7 @@ Política completa: [`docs/evidence-and-reporting-policy.md`](docs/evidence-and-
 |---|---|
 | Release | [`pre-beta`](checklists/pre-beta.md), [`pre-deploy`](checklists/pre-deploy.md), [`pre-enterprise-sale`](checklists/pre-enterprise-sale.md) |
 | AppSec | [`OWASP Top 10`](checklists/owasp-top-10.md), [`OWASP ASVS`](checklists/owasp-asvs.md), [`OWASP API Top 10`](checklists/owasp-api-top-10.md) |
-| Plataforma | [`Frappe`](checklists/frappe-security.md), [`cloud`](checklists/cloud-security.md), [`CI/CD`](checklists/ci-cd-security.md), [`pagamentos`](checklists/payment-security.md) |
+| Plataforma | [`cloud`](checklists/cloud-security.md), [`CI/CD`](checklists/ci-cd-security.md), [`pagamentos`](checklists/payment-security.md) |
 | Governança | [`LGPD`](checklists/lgpd.md), [`acessibilidade`](checklists/accessibility-wcag-22-aa.md), [`terceiros`](checklists/third-party-risk.md), [`incidentes`](checklists/incident-response.md), [`backup`](checklists/backup-restore.md), [`IA`](checklists/ai-governance.md) |
 
 Checklist preenchido pode revelar arquitetura, lacunas e dados operacionais. Trate conforme a política de evidências.
@@ -251,7 +250,7 @@ A fila corretiva do repositório foi concluída:
 | Lote 4 — Políticas | Concluído |
 | Lote 5 — Scripts | Concluído |
 | Lote 6 — GitHub Actions | Concluído |
-| Lote 7 — Frappe/Python | Concluído |
+| Lote 7 — Backend/Python | Concluído |
 | Lote 8 — LGPD | Concluído |
 | Lote 9 — Acessibilidade | Concluído |
 | Lote 10 — Relatórios e evidências | Concluído |

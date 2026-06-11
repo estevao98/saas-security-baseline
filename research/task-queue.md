@@ -22,7 +22,7 @@ Esta fila deriva de `research/coverage-audit.md` e `research/codex-execution-pla
 | 3 | Lote 4 — Políticas | Concluido em 2026-06-08 com pendencias contextuais | `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `.gitleaks.toml`, `.secrets.baseline`, `.gitignore`, navegacao, fontes e estado foram reconciliados sem alterar scripts, workflows, templates completos ou checklists individuais. |
 | 4 | Lote 6 — GitHub Actions | Concluido em 2026-06-08 com pendencias contextuais | `.github/workflows/security.yml`, navegacao, inventario, fontes e estado foram reconciliados com automacao minima aplicavel, sem promover exemplos, scanners especializados, artifacts, deploy ou gates dependentes de plano GitHub. |
 | 5 | Lote 2 — Documentos base | Concluido em 2026-06-08 com pendencias por dominio | Documentos auxiliares em `docs/`, READMEs de dominio, navegacao, inventario, fontes e estado foram reconciliados como guias/indices sem alterar scripts, workflows, templates completos, checklists individuais, politicas raiz, `privacy/*.md` ou risco auxiliar. |
-| 6 | Lote 7 — Frappe/Python | Concluido em 2026-06-08 com pendencias contextuais | Criadas matriz de compatibilidade, fixture ficticia positiva/negativa e validacoes locais seguras documentadas com `rg`; a conferencia local usou busca interna equivalente porque `rg` nao estava instalado. |
+| 6 | Lote 7 — Backend/Python | Concluido em 2026-06-08 com pendencias contextuais | Criadas validacoes locais seguras para autorizacao server-side, jobs, APIs, ORM/SQL e permissoes; a conferencia local usou busca interna equivalente. |
 | 7 | Lote 8 — LGPD | Concluido em 2026-06-09 com pendencias juridicas/contextuais | `privacy/*.md`, navegacao, inventario, fontes e estado foram reconciliados como artefatos operacionais reutilizaveis, sem dados pessoais reais, sem escolher base legal e sem alterar scripts, workflows, templates completos, politicas raiz ou checklists individuais. |
 | 8 | Lote 9 — Acessibilidade | Concluido em 2026-06-09 com pendencias contextuais | `docs/accessibility-audit.md`, `accessibility/README.md`, `testing/accessibility/`, navegacao, inventario, fontes e estado foram reconciliados com avaliacao automatizada/manual combinada, fixture ficticia e revisao humana obrigatoria, sem alterar workflows, scripts, templates completos ou politicas raiz. |
 | 9 | Lote 5 — Scripts | Concluido em 2026-06-09 com pendencias contextuais | `scripts/*.sh`, `scripts/README.md`, suite local em `tests/scripts/`, inventario, fontes e estado foram reconciliados com smoke tests temporarios e stubs, sem rede externa real, sem scan de alvo real, sem instalacao automatica, sem workflows e sem relatorios crus versionados. |
@@ -105,7 +105,7 @@ Pendencias do Lote 2 encerradas nesta reconciliacao:
 
 Pendencias que permanecem fora do Lote 2:
 
-- [x] Validar Frappe/Python com fixture ficticia, matriz de versoes e testes documentais no Lote 7; validacao funcional de scripts foi reconciliada no Lote 5.
+- [x] Validar backend/Python com fixture ficticia, matriz de versoes e testes documentais no Lote 7; validacao funcional de scripts foi reconciliada no Lote 5.
 - [x] Reconciliar `privacy/*.md`, bases legais, ROPA, RIPD/DPIA, direitos, retencao, terceiros e incidentes com dados pessoais no Lote 8.
 - [x] Operacionalizar acessibilidade com fixture e automacao/manual combinados no Lote 9; eventual CI permanece em tarefa propria.
 - [x] Validar scripts, ferramentas, rede, outputs e exit codes com fixtures ficticias no Lote 5.
@@ -115,17 +115,17 @@ Pendencias que permanecem fora do Lote 2:
 Pendencias do Lote 7 encerradas nesta reconciliacao:
 
 - [x] Confirmar escopo do Lote 7 em `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`.
-- [x] Criar matriz de compatibilidade em `docs/frappe-python-version-compatibility.md`, sem fixar versoes reais do consumidor.
-- [x] Criar fixture Frappe/Python ficticia positiva/negativa em `testing/frappe-python/`, sem `sites/`, banco, usuario, tenant, credencial, token, URL interna, request/response, payload ofensivo ou dado pessoal real.
+- [x] Criar matriz de compatibilidade para backend/Python, sem fixar versoes reais do consumidor.
+- [x] Criar fixture backend/Python ficticia positiva/negativa, sem banco, usuario, tenant, credencial, token, URL interna, request/response, payload ofensivo ou dado pessoal real.
 - [x] Documentar validacoes locais seguras com `rg`, sem rede externa e sem scanner agressivo; conferencia local feita por busca interna equivalente porque `rg` nao estava instalado.
-- [x] Alinhar guia, checklist Frappe e indices de dominio aplicaveis aos novos artefatos.
+- [x] Alinhar guia, checklists e indices de dominio aplicaveis aos novos artefatos.
 - [x] Registrar fontes, decisoes, incertezas e limites em `research/sources/lote-07.md`.
 - [x] Reconciliar `research/progress.md`, `research/task-queue.md` e `research/repository-inventory.md` sem executar outro lote.
 
 Pendencias que permanecem fora do Lote 7:
 
-- [x] Validar funcionalmente `scripts/run-frappe-audit.sh`, `scripts/run-python-audit.sh` e wrappers com ferramentas ausentes, stdout/stderr, exit codes, paths, criacao de `reports/raw/` e resumos em `reports/sanitized/` no Lote 5.
-- [ ] Confirmar versoes reais de Frappe, ERPNext, Frappe Learning, Python, Node, apps instalados e ferramentas no SaaS consumidor.
+- [x] Validar funcionalmente `scripts/run-python-audit.sh` e wrappers com ferramentas ausentes, stdout/stderr, exit codes, paths, criacao de `reports/raw/` e resumos em `reports/sanitized/` no Lote 5.
+- [ ] Confirmar versoes reais de Python, Node, apps instalados e ferramentas no SaaS consumidor.
 - [ ] Validar permissões efetivas, Custom DocPerm, User Permissions, Role Profiles, Server Scripts, Client Scripts, Property Setters e customizacoes por site em ambiente autorizado.
 - [ ] Integrar Semgrep, Bandit, Ruff, pip-audit, secret scanning ou CI somente apos versoes, logs, artifacts, rede, falsos positivos e politica de falha serem aprovados.
 - [x] Reconciliar LGPD operacional no Lote 8.
@@ -176,7 +176,7 @@ Pendencias do Lote 5 encerradas nesta reconciliacao:
 - [x] Criar suite local segura em `tests/scripts/run-script-smoke-tests.sh` com stubs e diretorio temporario.
 - [x] Validar sintaxe Bash dos scripts versionados.
 - [x] Validar falha segura para ferramenta ausente, URL externa e consentimento de rede ausente.
-- [x] Validar execucao controlada de Python, Frappe, acessibilidade, API, Node, container/IaC, SBOM e orquestrador de secrets sem rede externa real.
+- [x] Validar execucao controlada de Python, acessibilidade, API, Node, container/IaC, SBOM e orquestrador de secrets sem rede externa real.
 - [x] Confirmar criacao temporaria de `reports/raw/` e `reports/sanitized/` sem versionar relatorio cru.
 - [x] Registrar fontes, decisoes, validacoes, incertezas e limites em `research/sources/lote-05.md`.
 - [x] Reconciliar `research/progress.md`, `research/task-queue.md` e `research/repository-inventory.md` sem executar outro lote.
@@ -225,7 +225,7 @@ Pendencias que permanecem fora do Lote 11:
 - [ ] Validar ferramentas reais, versoes, checksums/provenance, telemetria, caches, stdout/stderr completos, falsos positivos, regras e politica de falha antes de qualquer gate.
 - [ ] Validar juridicamente LGPD, bases legais, papeis, RIPD/DPIA, retencao, transferencias, contratos, direitos e comunicacao de incidentes no SaaS consumidor.
 - [ ] Definir armazenamento restrito real para evidencias, registros reais de risco, retencao, descarte e cadeia de custodia no SaaS consumidor.
-- [ ] Executar testes reais autorizados de Frappe/Python, acessibilidade, APIs, DAST, SAST, SCA, containers, IaC e SBOM somente em ambiente aprovado, sem dados reais no Git.
+- [ ] Executar testes reais autorizados de backend/Python, acessibilidade, APIs, DAST, SAST, SCA, containers, IaC e SBOM somente em ambiente aprovado, sem dados reais no Git.
 - [ ] Promover workflows ou scanners especializados somente em tarefa propria, com logs, artifacts, permissoes, referencias imutaveis, owners e politica de gate aprovados.
 
 Todos os lotes corretivos 1 a 11 foram executados dentro dos limites declarados. Nao ha proximo lote corretivo nesta fila.
@@ -330,18 +330,18 @@ Todos os lotes corretivos 1 a 11 foram executados dentro dos limites declarados.
   - [x] Registrar fontes em `research/sources/chunk-07.md` e atualizar o progresso.
 - **Comando de commit sugerido:** `git commit -m "docs(ci): define GitHub Actions strategy"`
 
-## Chunk 8 - Frappe, ERPNext, Frappe LMS e Python
+## Chunk 8 - Backend Python e aplicações web
 
-- **Arquivo principal esperado:** `docs/frappe-python-security-audit.md`
+- **Arquivo principal esperado:** `docs/security-tools-catalog.md`
 - **Status:** concluído em 2026-06-06
 - **Critérios de aceite:**
-  - [x] Cobrir todos os padrões, permissões, integrações e fluxos Frappe listados.
+  - [x] Cobrir padrões, permissões, integrações e fluxos backend listados.
   - [x] Incluir checklist manual, comandos `rg`, padrões suspeitos e falsos positivos.
   - [x] Incluir regras Semgrep simples somente quando tecnicamente válidas.
   - [x] Definir riscos críticos, evidências, bloqueios de release e adaptação multi-tenant.
-  - [x] Sinalizar dependências de versão e não inventar APIs do Frappe.
+  - [x] Sinalizar dependências de versão e não inventar APIs da stack.
   - [x] Registrar fontes em `research/sources/chunk-08.md` e atualizar o progresso.
-- **Comando de commit sugerido:** `git commit -m "docs(frappe): add Python security audit guide"`
+- **Comando de commit sugerido:** `git commit -m "docs(backend): add Python security audit guidance"`
 
 ## Chunk 9 - LGPD e privacidade para SaaS
 

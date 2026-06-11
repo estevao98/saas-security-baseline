@@ -73,7 +73,7 @@ Quando um finding precisar ser citado em PR:
 
 `CODEOWNERS` nesta baseline não inventa usuários ou equipes. O repositório consumidor deve substituir os placeholders comentados por owners reais com permissão de escrita e configurar branch protection ou rulesets quando aplicável.
 
-Mudanças em segurança, privacidade, LGPD, acessibilidade, risco, CI/CD, incidentes, continuidade, Frappe/Python, pagamentos ou IA exigem revisor competente no domínio.
+Mudanças em segurança, privacidade, LGPD, acessibilidade, risco, CI/CD, incidentes, continuidade, backend Python, pagamentos ou IA exigem revisor competente no domínio.
 
 ## Validações
 

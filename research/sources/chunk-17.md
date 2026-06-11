@@ -20,7 +20,7 @@ Foram priorizadas fontes oficiais e os documentos já aprovados do repositório.
 | `docs/audit-types.md` e `docs/audit-trigger-matrix.md` | Momento de uso, revisores e gates. |
 | `docs/security-tools-catalog.md` e `scripts/README.md` | Limites de ferramentas, falsos positivos e saídas sensíveis. |
 | `docs/github-actions-strategy.md` | Logs, artifacts, gates e relatórios de CI/CD. |
-| `docs/frappe-python-security-audit.md` | Riscos de aplicação, autorização, tenant e evidências. |
+| `docs/security-tools-catalog.md` | Riscos de aplicação, autorização, tenant e evidências. |
 | `docs/lgpd-privacy-program.md` | Mapa de dados, ROPA, RIPD, fornecedores e incidentes pessoais. |
 | `docs/accessibility-program.md` | Avaliação, impacto funcional, revisão manual e WCAG. |
 | `docs/evidence-and-reporting-policy.md` | Classificação, redaction, armazenamento, retenção e compartilhamento. |

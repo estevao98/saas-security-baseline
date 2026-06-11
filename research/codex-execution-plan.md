@@ -32,7 +32,7 @@ Os números dos lotes preservam o Chunk 20 original. A ordem prática é determi
 | 3 | 4 — Políticas | Torna segredos, contribuição e ownership operacionais. |
 | 4 | 6 — GitHub Actions | Implementa somente automações aplicáveis e já apoiadas por política. |
 | 5 | 2 — Documentos base | Resolve placeholders e fontes canônicas sem duplicação. |
-| 6 | 7 — Frappe/Python | Fecha a lacuna operacional de stack com fixture fictícia. |
+| 6 | 7 — Backend/Python | Fecha a lacuna operacional de backend com validações locais seguras. |
 | 7 | 8 — LGPD | Converte o programa em artefatos mínimos, com revisão jurídica explícita. |
 | 8 | 9 — Acessibilidade | Converte o programa em processo automatizado e manual. |
 | 9 | 5 — Scripts | Valida os pontos de entrada depois de definir fixtures e controles. |
@@ -180,7 +180,7 @@ Corrigir de fato o Chunk 15, criar sua rastreabilidade e só então reconciliar 
 
 - [ ] Nenhum checklist permanece placeholder.
 - [ ] Todos possuem itens marcáveis, owner/revisor, evidência, gate e não aplicabilidade justificável.
-- [ ] OWASP, Frappe, LGPD e acessibilidade preservam versões e limites das fontes canônicas.
+- [ ] OWASP, backend Python, LGPD e acessibilidade preservam versões e limites das fontes canônicas.
 - [ ] `research/sources/chunk-15.md` existe e não inventa fontes.
 - [ ] Progresso e fila refletem a entrega real.
 
@@ -192,17 +192,17 @@ Corrigir de fato o Chunk 15, criar sua rastreabilidade e só então reconciliar 
 
 **Cuidados:** evidências apenas por IDs opacos; resultados reais ficam em sistema restrito; checklists preenchidos de clientes não devem ser versionados nesta baseline.
 
-**Reviewer sugerido:** Segurança/AppSec; adicionar Privacidade, Acessibilidade, Frappe, Operações e Jurídico conforme o checklist.
+**Reviewer sugerido:** Segurança/AppSec; adicionar Privacidade, Acessibilidade, Backend, Operações e Jurídico conforme o checklist.
 
 **Labels sugeridas:** `documentation`, `security`, `priority:high`, `release-blocker`, `research`.
 
 **Prioridade:** máxima do plano. **Dependências:** nenhuma além dos documentos canônicos existentes. **Tamanho estimado do PR:** S; agrupar no máximo 2 a 4 checklists do mesmo domínio.
 
-**Issues/PRs sugeridos:** PR 3.1 gates de release; 3.2 OWASP/API; 3.3 LGPD/acessibilidade; 3.4 Frappe/cloud/CI; 3.5 operação/terceiros/IA/pagamentos; 3.6 índice, fontes e status.
+**Issues/PRs sugeridos:** PR 3.1 gates de release; 3.2 OWASP/API; 3.3 LGPD/acessibilidade; 3.4 backend/cloud/CI; 3.5 operação/terceiros/IA/pagamentos; 3.6 índice, fontes e status.
 
 **Ordem no lote:** confirmar escopo, criar fonte em paralelo ao conteúdo, implementar por domínio, revisar índice, reconciliar status.
 
-**Dependências de revisão humana:** interpretação jurídica LGPD, avaliação WCAG manual, versão Frappe, requisitos de pagamento e exigências enterprise.
+**Dependências de revisão humana:** interpretação jurídica LGPD, avaliação WCAG manual, arquitetura backend, requisitos de pagamento e exigências enterprise.
 
 **O agente NÃO deve:** apenas trocar o texto do placeholder, marcar itens como atendidos, inventar obrigação/certificação, criar checklists preenchidos ou atualizar status antes do aceite.
 
@@ -298,9 +298,9 @@ Validar os oito scripts existentes com fixtures fictícias, falha segura e matri
 
 **Labels sugeridas:** `testing`, `scripts`, `security`, `priority:medium`.
 
-**Prioridade:** média. **Dependências:** política do Lote 4 e fixtures de Frappe/acessibilidade dos Lotes 7/9 quando aplicáveis. **Tamanho estimado do PR:** S por família de scripts.
+**Prioridade:** média. **Dependências:** política do Lote 4 e fixtures de backend/acessibilidade dos Lotes 7/9 quando aplicáveis. **Tamanho estimado do PR:** S por família de scripts.
 
-**Issues/PRs sugeridos:** orquestrador/segredos; Python/Node; containers/SBOM; API/acessibilidade; Frappe.
+**Issues/PRs sugeridos:** orquestrador/segredos; Python/Node; containers/SBOM; API/acessibilidade; backend.
 
 **Ordem no lote:** preflight comum, scripts sem rede, scripts com rede simulada, integrações especializadas.
 
@@ -359,56 +359,55 @@ Implementar somente workflows aplicáveis, um controle por PR, com referências 
 
 **O agente NÃO deve:** ativar todos os exemplos, usar tags mutáveis em gate, executar código de fork com segredo, publicar cru ou presumir recurso enterprise.
 
-## Lote 7 — Frappe/Python
+## Lote 7 — Backend/Python
 
 ### Objetivo
 
-Fechar a lacuna operacional Frappe/Python com checklist, fixture fictícia e matriz de versões suportadas/validadas.
+Fechar a lacuna operacional de backend/Python com revisão de autorização server-side, APIs, jobs, ORM/SQL, arquivos e isolamento multi-tenant.
 
 ### Branch sugerida
 
-`test/frappe-python-baseline`
+`test/backend-python-baseline`
 
-### Issue: Validar baseline Frappe/Python em fixture fictícia
+### Issue: Validar baseline backend/Python em fixture fictícia
 
-**Contexto:** o guia e scripts existem, mas o checklist é placeholder e não houve teste em app Frappe fictício; comportamento depende de versão.
+**Contexto:** o guia e scripts existem, mas faltam validações locais seguras para padrões comuns de backend Python; comportamento depende da stack e versão adotadas.
 
-**Arquivos afetados:** `checklists/frappe-security.md`, `scripts/run-frappe-audit.sh`, `scripts/run-python-audit.sh`; fixture Frappe mínima **a criar**; matriz de versões **a criar**; fontes do domínio se atualizadas.
+**Arquivos afetados:** `scripts/run-python-audit.sh`, `scripts/README.md`, `testing/README.md`; fixture backend mínima **a criar**, se necessária; matriz de versões **a criar** em local aprovado, se necessária; fontes do domínio se atualizadas.
 
 **Tarefas:**
 
-- [ ] Concluir checklist no Lote 3.
-- [ ] Criar app/fixture mínima sem `sites/`, banco, config, usuário ou dado real.
+- [ ] Criar fixture mínima somente se ela for usada por teste existente, sem banco, config, usuário ou dado real.
 - [ ] Cobrir padrões seguros e marcadores sintéticos de triagem sem PoC explorável.
 - [ ] Testar exclusões, paths, resultados e falsos positivos dos scripts.
-- [ ] Registrar versão Frappe/Python testada e diferenças não validadas.
-- [ ] Documentar revisão manual de permissões, tenant, jobs, hooks e integrações.
+- [ ] Registrar versão Python e ferramentas testadas.
+- [ ] Documentar revisão manual de autorização server-side, tenant, jobs, APIs, ORM/SQL e integrações.
 
 **Conteúdo esperado:** demonstração segura de funcionamento da triagem; não uma aplicação vulnerável nem prova de cobertura completa.
 
 **Critérios de aceite:** fixture não contém configuração real; scripts detectam marcadores esperados; achados exigem revisão manual; versões e limites estão explícitos.
 
-**Validações locais:** `bash -n`; testes da fixture; buscas `rg`; testes Python aplicáveis; verificação de ausência de `sites/`, logs e backups.
+**Validações locais:** `bash -n`; testes da fixture quando existir; testes Python aplicáveis; verificação de ausência de logs, backups, dumps e configuração real.
 
-**Validações de segurança:** revisar `allow_guest`, `ignore_permissions`, SQL, arquivos e tenant apenas em código sintético; impedir execução de servidor externo ou acesso a instância real.
+**Validações de segurança:** revisar autorização, SQL/ORM, arquivos e tenant apenas em código sintético; impedir execução de servidor externo ou acesso a ambiente real.
 
-**Riscos:** fixture ensinar padrão perigoso, versão divergir, falso positivo ou inclusão acidental de `site_config.json`.
+**Riscos:** fixture ensinar padrão perigoso, versão divergir, falso positivo ou inclusão acidental de configuração real.
 
 **Cuidados:** usar nomes fictícios e código não operacionalizável; nenhum token, webhook, pagamento ou dado real.
 
-**Reviewer sugerido:** mantenedor Frappe/Python e AppSec.
+**Reviewer sugerido:** mantenedor backend/Python e AppSec.
 
-**Labels sugeridas:** `frappe`, `python`, `testing`, `security`, `priority:high`.
+**Labels sugeridas:** `python`, `backend`, `testing`, `security`, `priority:high`.
 
 **Prioridade:** alta. **Dependências:** Lotes 3 e 5. **Tamanho estimado do PR:** M, podendo separar fixture e integração.
 
-**Issues/PRs sugeridos:** fixture/matriz; testes dos scripts; ajustes documentais após validação.
+**Issues/PRs sugeridos:** fixture/matriz quando aplicável; testes dos scripts; ajustes documentais após validação.
 
 **Ordem no lote:** versão alvo, fixture, testes, revisão manual, documentação.
 
 **Dependências de revisão humana:** versão suportada, semântica de permissões e arquitetura multi-tenant do consumidor.
 
-**O agente NÃO deve:** baixar site real, criar usuário/credencial, conectar a banco, executar migração em ambiente existente ou afirmar segurança do framework.
+**O agente NÃO deve:** baixar aplicação real, criar usuário/credencial, conectar a banco, executar migração em ambiente existente ou afirmar segurança da stack.
 
 ## Lote 8 — LGPD
 
@@ -601,7 +600,7 @@ Executar verificação final reproduzível de inventário, links, placeholders, 
 
 **Cuidados:** somente contagens, caminhos públicos e IDs; evidência integral permanece local/restrita.
 
-**Reviewer sugerido:** mantenedor, Segurança, DevSecOps e representantes de Privacidade/Acessibilidade/Frappe conforme resultados.
+**Reviewer sugerido:** mantenedor, Segurança, DevSecOps e representantes de Privacidade/Acessibilidade/Backend conforme resultados.
 
 **Labels sugeridas:** `quality`, `security`, `documentation`, `priority:high`.
 

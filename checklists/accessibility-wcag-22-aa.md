@@ -19,7 +19,7 @@ Itens nao aplicaveis precisam de justificativa por criterio, pagina ou processo.
 
 - **Responsavel primario:** especialista ou pessoa competente em acessibilidade digital.
 - **Revisores tecnicos:** Design/UX, Frontend, Conteudo e QA.
-- **Revisores conforme o fluxo:** Produto, Backend/Frappe, Seguranca, Privacidade, Suporte e owner do fornecedor.
+- **Revisores conforme o fluxo:** Produto, Backend, Seguranca, Privacidade, Suporte e owner do fornecedor.
 - **Aprovacao de release:** owner de Produto e responsavel pelo release, com Acessibilidade para barreiras materiais.
 
 Quem implementou o componente nao deve ser seu unico avaliador em fluxo critico. Testes com pessoas com deficiencia complementam, mas nao substituem, a avaliacao tecnica completa.

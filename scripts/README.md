@@ -2,7 +2,7 @@
 
 ## Objetivo e limites
 
-Estes scripts padronizam verificacoes locais de segurança, qualidade, dependencias, segredos, containers, IaC, acessibilidade, APIs, Frappe e SBOM. Eles nao corrigem codigo, nao instalam ferramentas, nao aceitam producao por padrao e nao substituem revisao humana.
+Estes scripts padronizam verificacoes locais de segurança, qualidade, dependencias, segredos, containers, IaC, acessibilidade, APIs, backend Python e SBOM. Eles nao corrigem codigo, nao instalam ferramentas, nao aceitam producao por padrao e nao substituem revisao humana.
 
 Relatorios integrais podem conter codigo, paths, dependencias, URLs, DOM, requests, responses ou outros dados sensiveis. Todo cru vai para `reports/raw/`, que permanece fora do Git. `reports/sanitized/` recebe apenas resumos operacionais sem detalhes de findings; antes de versionar, uma pessoa deve aplicar redaction, minimizacao e revisao independente conforme `docs/evidence-and-reporting-policy.md`.
 
@@ -26,14 +26,13 @@ Os scripts usam Bash, `set -euo pipefail`, validacao de entrada e preflight de d
 | `run-container-audit.sh` | `CONTAINER_TOOLS=trivy,checkov ./scripts/run-container-audit.sh` | Trivy e Checkov; Grype opcional | relatórios Trivy, Grype e Checkov |
 | `run-accessibility-audit.sh` | `TARGET_URL=http://127.0.0.1:3000 ./scripts/run-accessibility-audit.sh` | Pa11y, Lighthouse, Chrome/Chromium compativel | `pa11y.json`, `lighthouse.json` |
 | `run-api-audit.sh` | `API_SCHEMA=./openapi.yaml TARGET_URL=http://127.0.0.1:8000 ./scripts/run-api-audit.sh` | Schemathesis; Docker/ZAP opcional | log/JUnit Schemathesis e relatórios ZAP |
-| `run-frappe-audit.sh` | `FRAPPE_TARGET=. ./scripts/run-frappe-audit.sh` | ripgrep (`rg`) | arquivos de triagem por categoria |
 | `generate-sbom.sh` | `SBOM_KIND=directory SBOM_TARGET=. ./scripts/generate-sbom.sh` | Syft | CycloneDX JSON e SPDX JSON |
 
 Os nomes possuem timestamp UTC para evitar sobrescrita. Nenhum script apaga resultados anteriores.
 
 ## Configuracoes relevantes
 
-- `AUDIT_COMPONENTS`: lista entre `secrets,python,node,container,accessibility,api,frappe,sbom`. O padrao e somente `secrets`.
+- `AUDIT_COMPONENTS`: lista entre `secrets,python,node,container,accessibility,api,sbom`. O padrao e somente `secrets`.
 - `SECRET_TOOLS`: `gitleaks,detect-secrets` por padrao. detect-secrets usa `--no-verify` para impedir validacao externa.
 - `PYTHON_TOOLS`: `bandit` por padrao. Para pip-audit, use `ALLOW_NETWORK=1`. Para Semgrep, defina `SEMGREP_CONFIG` como arquivo local; `auto` exige consentimento de rede e usa `--metrics off`.
 - `NODE_TOOLS`: `auto`, `npm`, `pnpm` e/ou `osv-scanner`. Todos exigem `ALLOW_NETWORK=1`, pois podem enviar metadados de dependencias a registry/advisory service.
@@ -47,7 +46,7 @@ Variaveis que selecionam ferramentas aceitam apenas os nomes documentados. Nao p
 
 ## Comandos incluidos e incertezas
 
-Os scripts incluem Bandit, pip-audit, Semgrep, Gitleaks, detect-secrets, npm audit, pnpm audit, OSV-Scanner, Trivy, Grype, Syft/CycloneDX, Checkov, Pa11y, Lighthouse, ZAP Baseline, Schemathesis e verificacoes Frappe com `rg`.
+Os scripts incluem Bandit, pip-audit, Semgrep, Gitleaks, detect-secrets, npm audit, pnpm audit, OSV-Scanner, Trivy, Grype, Syft/CycloneDX, Checkov, Pa11y, Lighthouse, ZAP Baseline e Schemathesis.
 
 Flags, formatos, exit codes, telemetria, bases e requisitos de runtime mudam entre versoes. Antes de promover qualquer comando a gate, fixe uma versao, execute `--help`, valide em projeto ficticio e compare com a documentacao oficial registrada em `research/sources/chunk-16.md`. Em especial:
 
@@ -80,11 +79,11 @@ Falsos positivos devem registrar ferramenta/regra/versao, justificativa, escopo,
 
 Use `risk/severity-and-prioritization.md` para separar severidade tecnica, prioridade, alcance, explorabilidade, impacto, SLA e gate. Nao bloqueie release apenas por score bruto; tambem nao reduza finding sem evidencia.
 
-## Frappe e Python
+## Backend Python
 
-Em app Frappe, execute `run-frappe-audit.sh` no diretorio do app e `run-python-audit.sh` no mesmo clone. Exclua `sites/`, logs, backups e configuracoes reais. Revise `@frappe.whitelist`, `allow_guest`, DocPerm/User Permission, `ignore_permissions`, SQL direto, jobs, hooks, arquivos, autenticacao, webhooks, pagamentos e isolamento entre tenants conforme `docs/frappe-python-security-audit.md`.
+Em aplicacoes Python web, execute `run-python-audit.sh` no clone autorizado. Exclua configuracoes locais, logs, backups, dumps e arquivos reais de ambiente. Combine SAST/SCA com revisao manual de autorizacao server-side, ORM/SQL, jobs, tarefas agendadas, arquivos, autenticacao, webhooks, pagamentos, integracoes e isolamento entre tenants.
 
-As buscas `rg` sao triagem sintatica. Uma ocorrencia pode ser legitima; uma ausencia nao prova que permissao, tenant ou regra de negocio estejam corretos.
+Os resultados automatizados sao triagem sintatica e de dependencias. Uma ocorrencia pode ser legitima; uma ausencia nao prova que permissao, tenant ou regra de negocio estejam corretos.
 
 ## Uso em CI/CD
 

@@ -42,14 +42,19 @@ run_expect() {
 }
 
 mkdir -p -- "$WORK_DIR/scripts" "$WORK_DIR/reports/sanitized" "$STUB_DIR" "$EMPTY_BIN" \
-  "$WORK_DIR/testing/frappe-python" "$WORK_DIR/testing/accessibility" "$WORK_DIR/tests/scripts/fixtures/api" \
+  "$WORK_DIR/testing/accessibility" "$WORK_DIR/tests/scripts/fixtures/api" \
+  "$WORK_DIR/tests/scripts/fixtures/python" \
   "$WORK_DIR/tests/scripts/fixtures/node"
 
 cp "$ROOT_DIR"/scripts/*.sh "$WORK_DIR/scripts/"
 chmod +x "$WORK_DIR"/scripts/*.sh
-cp -R "$ROOT_DIR/testing/frappe-python/fixture-app" "$WORK_DIR/testing/frappe-python/fixture-app"
 cp "$ROOT_DIR/testing/accessibility/fixture-saas-flow.html" "$WORK_DIR/testing/accessibility/fixture-saas-flow.html"
 cp "$ROOT_DIR/testing/accessibility/fixture-styles.css" "$WORK_DIR/testing/accessibility/fixture-styles.css"
+
+cat >"$WORK_DIR/tests/scripts/fixtures/python/app.py" <<'EOF'
+def handler(value):
+    return {"ok": bool(value)}
+EOF
 
 cat >"$WORK_DIR/tests/scripts/fixtures/api/openapi.yaml" <<'EOF'
 openapi: 3.0.3
@@ -183,13 +188,6 @@ printf 'schemathesis stub completed\n'
 exit 0
 EOF
 
-cat >"$STUB_DIR/rg" <<'EOF'
-#!/usr/bin/env bash
-set -euo pipefail
-printf 'fixture.py:1:marcador sintetico para triagem\n'
-exit 0
-EOF
-
 cat >"$STUB_DIR/syft" <<'EOF'
 #!/usr/bin/env bash
 set -euo pipefail
@@ -212,26 +210,19 @@ log 'ok - bash -n'
 run_expect 2 'preflight URL externa bloqueada' env PATH="$PATH_WITH_STUBS" TARGET_URL='https://example.invalid' ACCESSIBILITY_TOOLS=pa11y bash "$WORK_DIR/scripts/run-accessibility-audit.sh"
 run_expect 2 'preflight rede Node sem consentimento' env PATH="$PATH_WITH_STUBS" NODE_TARGET="$WORK_DIR/tests/scripts/fixtures/node" NODE_TOOLS=npm bash "$WORK_DIR/scripts/run-node-audit.sh"
 
-if command -v rg >/dev/null 2>&1; then
-  log 'skip - preflight de rg ausente: rg existe no PATH atual'
-else
-  run_expect 2 'preflight ferramenta rg ausente' env PATH="$PATH" FRAPPE_TARGET="$WORK_DIR/testing/frappe-python/fixture-app" bash "$WORK_DIR/scripts/run-frappe-audit.sh"
-fi
-
-run_expect 0 'python com stub bandit' env PATH="$PATH_WITH_STUBS" PYTHON_TARGET="$WORK_DIR/testing/frappe-python/fixture-app" PYTHON_TOOLS=bandit bash "$WORK_DIR/scripts/run-python-audit.sh"
-run_expect 0 'frappe com stub rg' env PATH="$PATH_WITH_STUBS" FRAPPE_TARGET="$WORK_DIR/testing/frappe-python/fixture-app" bash "$WORK_DIR/scripts/run-frappe-audit.sh"
+run_expect 0 'python com stub bandit' env PATH="$PATH_WITH_STUBS" PYTHON_TARGET="$WORK_DIR/tests/scripts/fixtures/python" PYTHON_TOOLS=bandit bash "$WORK_DIR/scripts/run-python-audit.sh"
 run_expect 0 'acessibilidade com fixture loopback stub' env PATH="$PATH_WITH_STUBS" TARGET_URL='http://127.0.0.1:3000/fixture-saas-flow.html' ACCESSIBILITY_TOOLS=pa11y,lighthouse bash "$WORK_DIR/scripts/run-accessibility-audit.sh"
 run_expect 0 'api com schema ficticio e stub' env PATH="$PATH_WITH_STUBS" API_SCHEMA="$WORK_DIR/tests/scripts/fixtures/api/openapi.yaml" TARGET_URL='http://127.0.0.1:8000/health' API_TOOLS=schemathesis bash "$WORK_DIR/scripts/run-api-audit.sh"
 run_expect 0 'node com lockfile ficticio e stub' env PATH="$PATH_WITH_STUBS" ALLOW_NETWORK=1 NODE_TARGET="$WORK_DIR/tests/scripts/fixtures/node" NODE_TOOLS=npm bash "$WORK_DIR/scripts/run-node-audit.sh"
-run_expect 0 'container iac com stubs locais' env PATH="$PATH_WITH_STUBS" CONTAINER_TARGET="$WORK_DIR/testing/frappe-python/fixture-app" CONTAINER_TOOLS=trivy,checkov bash "$WORK_DIR/scripts/run-container-audit.sh"
-run_expect 0 'sbom com stub syft' env PATH="$PATH_WITH_STUBS" SBOM_KIND=directory SBOM_TARGET="$WORK_DIR/testing/frappe-python/fixture-app" bash "$WORK_DIR/scripts/generate-sbom.sh"
+run_expect 0 'container iac com stubs locais' env PATH="$PATH_WITH_STUBS" CONTAINER_TARGET="$WORK_DIR/tests/scripts/fixtures/python" CONTAINER_TOOLS=trivy,checkov bash "$WORK_DIR/scripts/run-container-audit.sh"
+run_expect 0 'sbom com stub syft' env PATH="$PATH_WITH_STUBS" SBOM_KIND=directory SBOM_TARGET="$WORK_DIR/tests/scripts/fixtures/python" bash "$WORK_DIR/scripts/generate-sbom.sh"
 run_expect 0 'orquestrador secrets com stubs' env PATH="$PATH_WITH_STUBS" AUDIT_COMPONENTS=secrets SECRET_TOOLS=gitleaks,detect-secrets bash "$WORK_DIR/scripts/run-security-audit.sh"
 
 shopt -s nullglob
 raw_dirs=("$WORK_DIR"/reports/raw/*)
 summary_files=("$WORK_DIR"/reports/sanitized/*.md)
-(( ${#raw_dirs[@]} >= 8 )) || fail "diretorios crus temporarios insuficientes: ${#raw_dirs[@]}"
-(( ${#summary_files[@]} >= 8 )) || fail "resumos sanitizados temporarios insuficientes: ${#summary_files[@]}"
+(( ${#raw_dirs[@]} >= 7 )) || fail "diretorios crus temporarios insuficientes: ${#raw_dirs[@]}"
+(( ${#summary_files[@]} >= 7 )) || fail "resumos sanitizados temporarios insuficientes: ${#summary_files[@]}"
 
 log "ok - reports/raw temporario: ${#raw_dirs[@]} diretorios"
 log "ok - reports/sanitized temporario: ${#summary_files[@]} resumos"

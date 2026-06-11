@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Guiar a criação de um threat model sanitizado para mudanças de arquitetura, fluxos críticos, integrações, dados pessoais, APIs, pagamentos, Frappe/Python, cloud e IA.
+Guiar a criação de um threat model sanitizado para mudanças de arquitetura, fluxos críticos, integrações, dados pessoais, APIs, pagamentos, backend Python, cloud e IA.
 
 Este arquivo não deve conter diagrama real detalhado, topologia interna, hostname, IP, tenant, segredo, request/response, payload ou instrução explorável. Modelos completos podem ser confidenciais e devem ficar em repositório restrito quando necessário.
 
@@ -12,7 +12,7 @@ Este arquivo não deve conter diagrama real detalhado, topologia interna, hostna
 |---|---|
 | Tipo e frequência de threat modeling | [Tipos de auditoria](audit-types.md) |
 | Gatilhos por cenário | [Matriz de gatilhos](audit-trigger-matrix.md) |
-| Requisitos AppSec e Frappe/Python | [Auditoria Frappe e Python](frappe-python-security-audit.md), `checklists/owasp-asvs.md` |
+| Requisitos AppSec e backend | `checklists/owasp-asvs.md`, [Checklist de segurança de API](api-security-checklist.md) |
 | Privacidade e dados pessoais | [Programa LGPD](lgpd-privacy-program.md) |
 | Evidências e redaction | [Política de evidências](evidence-and-reporting-policy.md) |
 | Template reutilizável | `templates/threat-model-template.md` |

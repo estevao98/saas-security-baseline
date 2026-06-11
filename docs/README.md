@@ -15,7 +15,7 @@ Os documentos desta pasta são referências de baseline. Eles não declaram conf
 | Decidir tipo e momento de auditoria | [Tipos de auditoria](audit-types.md) | [Matriz de gatilhos](audit-trigger-matrix.md) |
 | Selecionar ferramentas | [Catálogo de ferramentas](security-tools-catalog.md) | `scripts/README.md` |
 | Planejar CI/CD | [Estratégia GitHub Actions](github-actions-strategy.md) | `examples/github-workflows/`, `.github/workflows/security.yml` |
-| Auditar Frappe/Python | [Auditoria Frappe e Python](frappe-python-security-audit.md) | `checklists/frappe-security.md` |
+| Auditar backend Python | [Catálogo de ferramentas](security-tools-catalog.md) | `scripts/README.md`, `checklists/owasp-asvs.md` |
 | Operar LGPD e privacidade | [Programa LGPD](lgpd-privacy-program.md) | [Gap assessment LGPD](lgpd-gap-assessment.md), `privacy/`, `checklists/lgpd.md` |
 | Operar acessibilidade | [Programa de acessibilidade](accessibility-program.md) | [Auditoria de acessibilidade](accessibility-audit.md), `checklists/accessibility-wcag-22-aa.md` |
 | Proteger evidências | [Política de evidências](evidence-and-reporting-policy.md) | `reports/README.md`, `reports/sanitized/` |

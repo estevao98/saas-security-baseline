@@ -32,7 +32,7 @@ O lote consolidou artefatos auxiliares de risco, navegacao de `reports/`, limite
 | `research/sources/lote-04.md` | Politicas raiz e configuracao inicial de secret scanning. |
 | `research/sources/lote-05.md` | Scripts, smoke tests, stubs e criacao temporaria de reports. |
 | `research/sources/lote-06.md` | Workflow ativo minimo e pendencia de secret scanning completo. |
-| `research/sources/lote-07.md`, `research/sources/lote-08.md`, `research/sources/lote-09.md` | Limites de Frappe/Python, LGPD e acessibilidade sobre evidencias e risco. |
+| `research/sources/lote-08.md`, `research/sources/lote-09.md` | Limites de backend/Python, LGPD e acessibilidade sobre evidencias e risco. |
 | `docs/evidence-and-reporting-policy.md` | Fonte canonica de classificacao, `reports/raw/`, `reports/sanitized/`, redaction, retencao e artifacts. |
 | `docs/security-audit-baseline.md` | Campos de relatorio, riscos, evidencias, anexos, limitacoes e decisao. |
 | `docs/audit-trigger-matrix.md` | Gatilhos, evidencias minimas, Go/No-Go e bloqueios. |

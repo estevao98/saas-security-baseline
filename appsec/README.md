@@ -16,7 +16,7 @@ Esta pasta é um ponto de navegação. Não registre aqui payloads, PoCs, reques
 | Segurança de API | `../docs/api-security-checklist.md`, `../checklists/owasp-api-top-10.md` |
 | ASVS e Top 10 | `../checklists/owasp-asvs.md`, `../checklists/owasp-top-10.md` |
 | Threat modeling | `../docs/threat-model.md`, `../templates/threat-model-template.md` |
-| Frappe/Python | `../docs/frappe-python-security-audit.md`, `../checklists/frappe-security.md` |
+| Backend Python | `../scripts/run-python-audit.sh`, `../docs/security-tools-catalog.md` |
 | Findings e relatórios | `../templates/security-finding-template.md`, `../docs/security-audit-baseline.md` |
 
 ## Fluxo Recomendado
@@ -30,4 +30,4 @@ Esta pasta é um ponto de navegação. Não registre aqui payloads, PoCs, reques
 ## Pendências
 
 - Scripts foram validados no Lote 5 com stubs e fixtures temporarias; ferramentas reais, versoes, telemetria e falsos positivos dependem do SaaS consumidor.
-- Fixture e matriz documental de Frappe/Python estao em `../testing/frappe-python/` e `../docs/frappe-python-version-compatibility.md`.
+- Revisoes de autorizacao server-side, ORM/SQL, jobs, arquivos, APIs e isolamento multi-tenant dependem da arquitetura do SaaS consumidor.

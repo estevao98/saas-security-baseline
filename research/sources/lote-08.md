@@ -27,7 +27,7 @@ O lote reconciliou `privacy/*.md` como artefatos operacionais pequenos e reutili
 | `research/sources/chunk-12.md` | Modelo de relatorio e limites de LGPD, evidencias e validacao juridica. |
 | `research/sources/chunk-15.md` | Checklist LGPD e decisoes de nao escolher base legal nem declarar conformidade. |
 | `research/sources/chunk-17.md` | Templates de mapa, ROPA, RIPD/DPIA, fornecedor e incidentes. |
-| `research/sources/lote-01.md`, `research/sources/lote-02.md`, `research/sources/lote-04.md`, `research/sources/lote-06.md`, `research/sources/lote-07.md` | Estado anterior de estrutura, documentos, politicas, workflows e Frappe/Python. |
+| `research/sources/lote-01.md`, `research/sources/lote-02.md`, `research/sources/lote-04.md`, `research/sources/lote-06.md` | Estado anterior de estrutura, documentos, politicas, workflows e backend/Python. |
 | `docs/lgpd-privacy-program.md` | Fonte canonica para ciclo de vida, papeis, bases, direitos, terceiros, incidentes e privacy by design. |
 | `docs/lgpd-gap-assessment.md` | Guia auxiliar de gap assessment e pendencia do Lote 8. |
 | `docs/evidence-and-reporting-policy.md` | Classificacao, redaction, `reports/raw/`, `reports/sanitized/`, incidentes e dados pessoais. |

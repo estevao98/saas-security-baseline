@@ -32,7 +32,6 @@ Marcar um checklist não declara conformidade formal, certificação, acessibili
 | [OWASP Top 10](owasp-top-10.md) | Em triagem de riscos recorrentes de aplicação web. | Taxonomia OWASP Top 10:2025 e encaminhamento para controles verificáveis. |
 | [OWASP ASVS](owasp-asvs.md) | Ao selecionar requisitos técnicos verificáveis. | ASVS 5.0.0, nível, escopo, matriz requisito a requisito e evidência. |
 | [OWASP API Top 10](owasp-api-top-10.md) | Em desenho, mudança ou revisão de APIs. | Autorização, autenticação, objetos, propriedades, recursos, inventário e integrações. |
-| [Segurança Frappe](frappe-security.md) | Em SaaS com Frappe, ERPNext ou Frappe Learning. | DocTypes, roles, permissions, métodos whitelisted, jobs, hooks, arquivos e tenants. |
 | [Pagamentos](payment-security.md) | Antes de aceitar pagamentos ou alterar fluxo financeiro. | Gateway, webhooks, idempotência, conciliação, reembolso, logs e escopo PCI contextual. |
 
 ## Checklists de plataforma e operação

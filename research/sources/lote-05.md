@@ -24,13 +24,12 @@ O lote validou e reconciliou wrappers locais de auditoria com fixtures ficticias
 | `research/repository-inventory.md` | Classificacao dos scripts antes do Lote 5. |
 | `research/sources/chunk-16.md` | Fontes oficiais e decisoes originais dos scripts. |
 | `research/sources/chunk-19.md` | Auditoria de cobertura e limites das validacoes anteriores. |
-| `research/sources/lote-02.md`, `research/sources/lote-07.md`, `research/sources/lote-08.md`, `research/sources/lote-09.md` | Estado anterior de documentos, Frappe/Python, LGPD e acessibilidade. |
+| `research/sources/lote-02.md`, `research/sources/lote-08.md`, `research/sources/lote-09.md` | Estado anterior de documentos, backend/Python, LGPD e acessibilidade. |
 | `docs/security-tools-catalog.md` | Comandos, riscos de relatorios, preflight e limites por ferramenta. |
 | `docs/evidence-and-reporting-policy.md` | Politica de `reports/raw/`, `reports/sanitized/`, redaction e artifacts. |
 | `docs/github-actions-strategy.md` | Limites de CI/CD, logs, artifacts, secrets e gates; workflows nao foram alterados. |
-| `docs/frappe-python-security-audit.md` | Fixture e limites de triagem Frappe/Python. |
 | `docs/accessibility-audit.md` | Fixture e limites de automacao/manual de acessibilidade. |
-| `testing/frappe-python/` | Fixture ficticia usada como alvo local dos stubs de Python/Frappe. |
+| `docs/security-tools-catalog.md` | Limites de triagem backend/Python e ferramentas. |
 | `testing/accessibility/` | Fixture ficticia usada para URL loopback controlada nos testes de acessibilidade. |
 | `scripts/*.sh` e `scripts/README.md` | Artefatos reconciliados e validados. |
 | `reports/README.md` | Confirmacao da separacao entre cru local e resumo sanitizado. |
@@ -44,7 +43,6 @@ Nao foram consultadas novas fontes externas neste lote. A reconciliacao usou as 
 | Arquivo | Decisao |
 |---|---|
 | `scripts/README.md` | Adicionada documentacao de exit codes, preflight e suite local segura dos wrappers. |
-| `scripts/run-frappe-audit.sh` | Adicionado `exit 0` explicito apos conclusao da triagem. |
 | `scripts/generate-sbom.sh` | Ajustada mensagem final para distinguir sucesso de alerta/falha quando Syft retorna exit code diferente de zero. |
 | `tests/scripts/run-script-smoke-tests.sh` | Criada suite de smoke tests com workspace temporario, stubs locais e fixtures ficticias. |
 | `research/progress.md`, `research/task-queue.md`, `research/repository-inventory.md` | Atualizados para refletir o fechamento real do Lote 5. |
@@ -67,9 +65,8 @@ Nao foram consultadas novas fontes externas neste lote. A reconciliacao usou as 
 | `./tests/scripts/run-script-smoke-tests.sh` | Executado sem erro, com stubs e diretorio temporario. |
 | Preflight de URL externa em acessibilidade | Bloqueado com exit code `2`. |
 | Preflight de Node sem `ALLOW_NETWORK=1` | Bloqueado com exit code `2`. |
-| Preflight de `rg` ausente | Bloqueado com exit code `2` neste ambiente. |
-| Execucao controlada de Python, Frappe, acessibilidade, API, Node, container/IaC, SBOM e secrets | Concluida com exit code `0` usando stubs. |
-| Criacao de `reports/raw/` e `reports/sanitized/` | Confirmada apenas no workspace temporario da suite: 8 diretorios crus e 8 resumos. |
+| Execucao controlada de Python, acessibilidade, API, Node, container/IaC, SBOM e secrets | Concluida com exit code `0` usando stubs. |
+| Criacao de `reports/raw/` e `reports/sanitized/` | Confirmada apenas no workspace temporario da suite. |
 | `git diff --check` | Executado sem erro. |
 | `git status --ignored --short reports/raw reports/sanitized` | Confirmou `reports/raw/` ignorado. |
 
@@ -91,5 +88,5 @@ Nao foram consultadas novas fontes externas neste lote. A reconciliacao usou as 
 ## Limites de seguranca
 
 - Nao foram criados dados pessoais reais, dados de cliente, titulares, alunos, tenants, URLs internas, logs crus versionados, dumps, backups, payloads, PoCs, requests/responses, tokens, cookies, credenciais ou exemplos semelhantes a credenciais.
-- Nao foram executados scanners reais, DAST real, rede externa, workflow, deploy, upload, publicacao de artifact, instalacao automatica, pull de imagem, servidor Frappe, migracao, banco ou coleta de evidencia real.
+- Nao foram executados scanners reais, DAST real, rede externa, workflow, deploy, upload, publicacao de artifact, instalacao automatica, pull de imagem, servidor real, migracao, banco ou coleta de evidencia real.
 - Nao ha declaracao de ausencia de vulnerabilidades, conformidade, certificacao, acessibilidade integral, cobertura completa, aprovacao de release ou prontidao enterprise.

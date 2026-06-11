@@ -20,7 +20,7 @@ Foram priorizadas documentacoes oficiais dos projetos e os comandos ja validados
 | `docs/evidence-and-reporting-policy.md` | Classificacao, redaction, retencao, descarte e revisao de relatorios. |
 | `docs/security-audit-baseline.md` | Registro de ferramentas, evidencias, limitacoes e declaracao final. |
 | `risk/severity-and-prioritization.md` | Interpretacao de severidade, prioridade, SLA, excecoes e bloqueios. |
-| `docs/frappe-python-security-audit.md` | Padroes `rg`, riscos Frappe/Python e limites da analise automatizada. |
+| `docs/security-tools-catalog.md` | Riscos backend/Python e limites da analise automatizada. |
 | `docs/accessibility-program.md` | Uso seguro de Pa11y/Lighthouse e necessidade de avaliacao humana. |
 | `docs/git-security-workflow.md` | Proibicao de evidencias cruas em commits, PRs e issues. |
 

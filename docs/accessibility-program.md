@@ -76,7 +76,7 @@ Evitar que pessoas com deficiência sejam impedidas de perceber conteúdo, opera
 - páginas responsivas, web apps e experiência móvel aplicável;
 - design system, conteúdo, documentos e mídia produzidos pelo produto;
 - autenticação, pagamentos e componentes de terceiros integrados ao fluxo;
-- conteúdo configurável por tenant e, quando aplicável, conteúdo de cursos no Frappe Learning/LMS.
+- conteúdo configurável por tenant e, quando aplicável, conteúdo de plataformas educacionais SaaS.
 
 ### Responsabilidades
 
@@ -86,7 +86,7 @@ Evitar que pessoas com deficiência sejam impedidas de perceber conteúdo, opera
 | Design/UX | Projetar estados, contraste, foco, ordem, conteúdo, zoom e variantes acessíveis. |
 | Design system | Manter componentes semânticos, tokens e testes reutilizáveis; documentar uso e limites. |
 | Frontend | Usar HTML nativo primeiro; implementar teclado, foco, nomes, estados e anúncios. |
-| Backend/Frappe | Preservar erros compreensíveis, ordem de processo, alternativas e dados necessários ao frontend acessível. |
+| Backend | Preservar erros compreensíveis, ordem de processo, alternativas e dados necessários ao frontend acessível. |
 | Conteúdo | Usar linguagem simples, headings, links claros, alternativas textuais, legendas e documentos acessíveis. |
 | QA | Combinar automação, inspeção, teclado, leitor de tela, zoom/reflow e regressão por fluxo. |
 | Segurança/Privacidade | Evitar que controles antifraude, evidências e telemetria criem barreiras ou exponham dados. |
@@ -317,13 +317,13 @@ Centralizar tokens de contraste, foco, espaçamento e estados. Cada componente d
 
 Executar axe, Pa11y ou Lighthouse em aplicação efêmera e URLs controladas, conforme `docs/github-actions-strategy.md`. Não aceitar URL arbitrária em input, não publicar relatório cru por padrão e não bloquear por score agregado. O workflow orientativo completo permanece no escopo documental do Chunk 7; este chunk não cria workflow.
 
-### Frappe e Frappe Learning/LMS
+### Plataformas educacionais SaaS
 
-- Validar templates, Desk/portal expostos ao usuário, web forms, dialogs, reports, grids e componentes customizados da versão adotada.
-- Não presumir que componente padrão do framework garante conformidade no tema, conteúdo ou composição customizada.
-- Em LMS, verificar player, legendas, transcrições, navegação de aulas, progresso, avaliações, certificados e anexos.
+- Validar portal, formulários, dialogs, relatórios, tabelas e componentes customizados da versão adotada.
+- Não presumir que componente padrão da stack garante conformidade no tema, conteúdo ou composição customizada.
+- Em plataformas educacionais, verificar player, legendas, transcrições, navegação de aulas, progresso, avaliações, certificados e anexos.
 - Conteúdo criado por instrutor/tenant requer orientações, campos para alternativas, validação e tratamento de exceções.
-- Atualizações do framework podem alterar DOM, foco ou ARIA; repetir regressão após upgrade.
+- Atualizações da stack podem alterar DOM, foco ou ARIA; repetir regressão após upgrade.
 
 ### SaaS multi-tenant
 

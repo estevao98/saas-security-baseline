@@ -58,7 +58,7 @@ Nao foram consultadas novas fontes externas neste lote. A revisao final usou fon
 - Validar ferramentas reais, versoes, checksums/provenance, telemetria, caches, stdout/stderr completos, falsos positivos, regras e politica de falha.
 - Validar juridicamente LGPD, bases legais, papeis, RIPD/DPIA, retencao, transferencias, contratos, direitos e comunicacao de incidentes.
 - Definir armazenamento restrito real para evidencias, registros reais de risco, retencao, descarte e cadeia de custodia.
-- Executar testes reais autorizados de Frappe/Python, acessibilidade, APIs, DAST, SAST, SCA, containers, IaC e SBOM somente em ambiente aprovado.
+- Executar testes reais autorizados de backend/Python, acessibilidade, APIs, DAST, SAST, SCA, containers, IaC e SBOM somente em ambiente aprovado.
 - Promover workflows ou scanners especializados somente em tarefa propria, com logs, artifacts, permissoes, referencias imutaveis, owners e politica de gate aprovados.
 
 ## Limites de seguranca
