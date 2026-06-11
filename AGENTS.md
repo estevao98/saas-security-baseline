@@ -6,7 +6,7 @@ Você está trabalhando no repositório privado `saas-security-baseline`.
 
 Criar um template reutilizável para auditoria, governança, segurança, DevSecOps, LGPD, OWASP, acessibilidade, operação e maturidade técnica para SaaS.
 
-Este repositório deve servir como base para SaaS em Python, Frappe, ERPNext, Frappe LMS, JavaScript, TypeScript, SQL, Docker, CI/CD, APIs, autenticação, pagamentos, integrações externas e cloud.
+Este repositório deve servir como base para SaaS em Python, JavaScript, TypeScript, SQL, Docker, CI/CD, APIs, autenticação, pagamentos, integrações externas e cloud.
 
 ## Regras obrigatórias
 
@@ -39,7 +39,7 @@ Este repositório deve servir como base para SaaS em Python, Frappe, ERPNext, Fr
 - CIS
 - GitHub Docs
 - Documentação oficial das ferramentas
-- Documentação oficial do Frappe
+- Documentação oficial das stacks e serviços adotados pelo SaaS consumidor
 
 ## Estilo dos documentos
 

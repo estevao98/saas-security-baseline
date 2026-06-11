@@ -40,7 +40,7 @@ Não foram consultadas novas fontes externas. Não houve revalidação de normas
 - Workflows de exemplo continuam dependentes de validação de plano GitHub, permissões, referências imutáveis, logs, artifacts, rede e stack.
 - Scripts locais continuam dependentes de testes com fixtures fictícias, versões aprovadas e validação de saída segura.
 - Políticas raiz, CODEOWNERS e configuração de secret scanning ainda dependem de owners reais, canal privado, regras revisadas e decisão do mantenedor.
-- LGPD, acessibilidade, Frappe/Python, pagamentos, continuidade, IA e requisitos enterprise continuam contextuais e exigem revisão competente quando aplicável.
+- LGPD, acessibilidade, backend/Python, pagamentos, continuidade, IA e requisitos enterprise continuam contextuais e exigem revisão competente quando aplicável.
 
 ## Limites de segurança
 

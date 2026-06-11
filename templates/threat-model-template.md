@@ -39,4 +39,4 @@ STRIDE, abuse cases seguros, attack trees sanitizadas, requisitos ASVS, privacid
 
 ## Relação com o repositório
 
-Alimenta `templates/risk-register-template.csv`, `templates/security-finding-template.md` e `templates/remediation-plan-template.md`; relaciona-se a `docs/audit-types.md`, `docs/audit-trigger-matrix.md` e `docs/frappe-python-security-audit.md`.
+Alimenta `templates/risk-register-template.csv`, `templates/security-finding-template.md` e `templates/remediation-plan-template.md`; relaciona-se a `docs/audit-types.md`, `docs/audit-trigger-matrix.md` e `docs/api-security-checklist.md`.

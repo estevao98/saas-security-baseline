@@ -25,7 +25,7 @@ Nao houve nova consulta externa neste chunk. As fontes oficiais de cada tema, as
 | `docs/audit-trigger-matrix.md` | Eventos, frequencias, revisores e decisoes Go/No-Go. |
 | `docs/security-tools-catalog.md` | Categorias de ferramentas, limites, saidas e politica de gates. |
 | `docs/github-actions-strategy.md` | Workflows, CI/CD, permissoes, artifacts, secrets e branch protection. |
-| `docs/frappe-python-security-audit.md` | Estrategia para Frappe, ERPNext, Frappe Learning e Python. |
+| `docs/security-tools-catalog.md` | Estrategia para backend Python e aplicações web. |
 | `docs/lgpd-privacy-program.md` | Programa de LGPD, privacidade, terceiros e validacao juridica. |
 | `docs/accessibility-program.md` | WCAG, avaliacao manual, automacao, evidencias e gates. |
 | `docs/evidence-and-reporting-policy.md` | Classificacao, redaction, Git, artifacts, retencao e descarte. |
@@ -38,7 +38,7 @@ Nao houve nova consulta externa neste chunk. As fontes oficiais de cada tema, as
 
 ## Fontes oficiais herdadas
 
-O README aponta para documentos cujas pesquisas priorizaram fontes oficiais de OWASP, OWASP Cheat Sheet Series, ISO, Catalogo ABNT, ANPD, W3C/WAI, NIST, CISA, CIS, GitHub Docs, documentacao oficial das ferramentas e documentacao oficial do Frappe.
+O README aponta para documentos cujas pesquisas priorizaram fontes oficiais de OWASP, OWASP Cheat Sheet Series, ISO, Catalogo ABNT, ANPD, W3C/WAI, NIST, CISA, CIS, GitHub Docs, documentacao oficial das ferramentas e documentacao oficial das stacks adotadas pelo SaaS consumidor.
 
 Para URLs, edicoes, datas de acesso e decisoes tecnicas, consultar os registros existentes em `research/sources/chunk-01.md` a `research/sources/chunk-14.md`, `research/sources/chunk-16.md` e `research/sources/chunk-17.md`, conforme o tema.
 

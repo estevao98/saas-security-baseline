@@ -2,7 +2,7 @@
 
 ## Objetivo e aplicacao
 
-Este documento define um metodo interno, pratico e revisavel para classificar, priorizar, tratar e retestar achados em SaaS. Aplica-se a aplicacao, API, Frappe/Python, dependencias, containers, infraestrutura como codigo, CI/CD, privacidade, acessibilidade, incidentes e fornecedores.
+Este documento define um metodo interno, pratico e revisavel para classificar, priorizar, tratar e retestar achados em SaaS. Aplica-se a aplicacao, API, backend Python, dependencias, containers, infraestrutura como codigo, CI/CD, privacidade, acessibilidade, incidentes e fornecedores.
 
 As categorias e prazos abaixo sao **baseline interno**, nao formula universal, obrigacao regulatoria ou substituto de contrato. Contexto do produto, legislacao, compromisso com clientes, ferramenta, apetite de risco e capacidade operacional podem exigir decisao mais restritiva.
 
@@ -300,7 +300,7 @@ Critico requer aprovacao executiva e de Seguranca, alem dos dominios afetados, e
 | Containers | Imagem/digest implantado, pacote alcancavel, usuario, capacidade, base e runtime. | Critico/alto alcancavel ou configuracao privilegiada material bloqueia. |
 | IaC | Estado real, exposicao, identidade, rede, armazenamento, criptografia e blast radius. | Exposicao publica/material ou privilegio excessivo critico bloqueia. |
 | GitHub Actions | Fonte nao confiavel, permissions, secrets, actions, runner, artifact e branch gate. | Exposicao de segredo ou execucao privilegiada nao confiavel bloqueia. |
-| Frappe/Python | Guest, permissoes, `ignore_permissions`, SQL, sites/tenants, jobs, arquivos e hooks. | Auth bypass, injecao, dado privado ou quebra de tenant bloqueia. |
+| Backend Python | Autorizacao server-side, SQL/ORM, jobs, arquivos, integracoes e isolamento multi-tenant. | Auth bypass, injecao, dado privado ou quebra de tenant bloqueia. |
 | LGPD | Categoria/volume, titulares, finalidade, base, direitos, terceiros, retencao e risco/dano. | Tratamento material sem controle/avaliacao aplicavel ou incidente ativo bloqueia. |
 | Acessibilidade | Tarefa, criterio aplicavel, usuarios afetados, tecnologia assistiva e alternativa. | Barreira em fluxo critico sem alternativa equivalente bloqueia. |
 | Incidentes | Exploracao, persistencia, escopo, contencao, dados, tenants e servico. | Incidente ativo relacionado ao release bloqueia ate decisao do comando do incidente. |

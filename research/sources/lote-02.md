@@ -48,7 +48,7 @@ Quando os guias apontam para LGPD, ANPD, OWASP, W3C/WAI, ISO, ABNT, GitHub Actio
 
 ## Incertezas e pendências
 
-- Frappe/Python operacional, fixture e matriz de versões permanecem no Lote 7.
+- Backend/Python operacional, fixture e matriz de versões permanecem no Lote 7.
 - Artefatos `privacy/*.md`, decisões jurídicas, bases legais, RIPD/DPIA, direitos de titulares e transferências permanecem no Lote 8.
 - Processo operacional de acessibilidade, fixture, automação/manual combinados e eventual CI permanecem no Lote 9.
 - Validação funcional de scripts, ferramentas, rede, stdout/stderr e fixtures permanece no Lote 5.

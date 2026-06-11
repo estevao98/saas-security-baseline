@@ -25,7 +25,6 @@ O terceiro PR e limitado aos checklists de privacidade e acessibilidade:
 
 O quarto PR e limitado aos checklists de plataforma e DevSecOps:
 
-- `checklists/frappe-security.md`;
 - `checklists/cloud-security.md`;
 - `checklists/ci-cd-security.md`.
 
@@ -60,7 +59,7 @@ O pacote completo do Chunk 15 foi reconciliado no fechamento corretivo do Lote 3
 
 - A conclusao do Lote 3 nao corrige divergencias de inventario, arquitetura, documentos auxiliares, politicas, workflows, scripts, templates ou automacoes fora do escopo deste fechamento.
 - O proximo lote corretivo indicado permanece o **Lote 1 - Estrutura inicial**, conforme a ordem de `research/codex-execution-plan.md`, para reconciliar inventario e estado declarado do repositorio.
-- Avaliacoes juridicas, contratuais, enterprise, de acessibilidade, Frappe, cloud, ferramentas, versoes e certificacoes continuam contextuais e pendentes quando aplicaveis.
+- Avaliacoes juridicas, contratuais, enterprise, de acessibilidade, backend, cloud, ferramentas, versoes e certificacoes continuam contextuais e pendentes quando aplicaveis.
 - Nenhum checklist preenchido de produto real foi criado; material real deve permanecer em local autorizado e classificado.
 
 ## Fontes internas consultadas
@@ -86,7 +85,7 @@ O pacote completo do Chunk 15 foi reconciliado no fechamento corretivo do Lote 3
 | `checklists/index.md` | Contexto do conjunto de checklists; atualizado somente no fechamento corretivo do Lote 3. |
 | `docs/lgpd-privacy-program.md` | Ciclo de vida, papeis, bases legais, direitos, fornecedores, RIPD, incidentes, privacy by design e limites de orientacao juridica. |
 | `docs/accessibility-program.md` | WCAG 2.2 AA, processos completos, avaliacao manual, tecnologias assistivas, limites da automacao, evidencias e gates. |
-| `docs/frappe-python-security-audit.md` | Superficies Frappe, ERPNext e Frappe Learning; dependencia de versao; DocTypes, roles, permissions, whitelisted methods, jobs, hooks, arquivos, integracoes, logs e multi-tenant. |
+| `docs/security-tools-catalog.md` | Superficies backend/Python; dependencia de versao; APIs, roles, permissions, jobs, hooks, arquivos, integracoes, logs e multi-tenant. |
 | `docs/github-actions-strategy.md` | Eventos, `permissions`, `pull_request_target`, secrets, artifacts, caches, runners, branch protection, SHA/digest e politica de falha para CI/CD. |
 | `templates/incident-report-template.md` | Campos minimos, linha do tempo, evidencias, comunicacao e cuidados de resposta a incidentes. |
 | `templates/postmortem-template.md` | Estrutura de aprendizado, acoes corretivas, owners, prazos e revisao apos incidente ou falha. |
@@ -114,11 +113,9 @@ O pacote completo do Chunk 15 foi reconciliado no fechamento corretivo do Lote 3
 | [W3C WAI - Evaluating Web Accessibility](https://www.w3.org/WAI/test-evaluate/) | Orientacao oficial consultada em 7 de junho de 2026. | Ferramenta isolada nao determina atendimento ao padrao; avaliacao humana competente e necessaria. |
 | [W3C - Understanding ACT Rules](https://www.w3.org/WAI/WCAG22/Understanding/understanding-act-rules) | Documento informativo oficial. | Testes automaticos sao verificacoes parciais; passar uma regra nao demonstra satisfacao integral do criterio relacionado. |
 | [W3C - How to refer to WCAG 2.2](https://www.w3.org/WAI/WCAG22/Understanding/refer-to-wcag) | Orientacao oficial consultada em 7 de junho de 2026. | Nivel AA implica todos os criterios A e AA aplicaveis; subconjunto prioritario nao deve ser chamado de conformidade AA. |
-| [Frappe Framework Documentation](https://docs.frappe.io/framework) | Documentacao oficial sem versao fixa unica neste registro; validar contra a versao instalada. | Base para tratar Frappe, ERPNext e Frappe Learning como dependentes de versao e arquitetura. |
-| [Frappe Framework - Database API](https://docs.frappe.io/framework/user/en/api/database) | Documentacao oficial consultada nos chunks anteriores; comportamento pode variar por release. | Uso cauteloso de `get_list`, `get_all`, `frappe.db.sql` e operacoes que podem contornar partes do ORM ou permissoes. |
-| [Frappe Framework - Hooks](https://docs.frappe.io/framework/user/en/python-api/hooks) | Documentacao oficial consultada nos chunks anteriores. | Revisao de `hooks.py`, eventos, overrides, autenticacao, permissoes e scheduler. |
-| [Frappe Framework - REST API](https://docs.frappe.io/framework/user/en/api/rest) | Documentacao oficial consultada nos chunks anteriores. | Revisao de CRUD REST, metodos e comportamento HTTP sem assumir que UI bloqueia chamadas. |
-| [Frappe Framework - Background Jobs](https://docs.frappe.io/framework/user/en/api/background_jobs) | Documentacao oficial consultada nos chunks anteriores. | Revisao de jobs, filas, parametros, retry e contexto de execucao. |
+| [Python documentation](https://docs.python.org/3/) | Documentacao oficial do runtime e biblioteca padrao. | Validar comportamento por versao instalada. |
+| [OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/) | Referencia oficial de requisitos verificaveis. | Revisao de autenticacao, autorizacao, APIs, validacao, arquivos, logs e configuracao. |
+| [OWASP API Security Top 10](https://owasp.org/www-project-api-security/) | Referencia oficial de riscos de APIs. | Revisao de objetos, propriedades, recursos, inventario, consumo e integracoes. |
 | [GitHub Docs - Security hardening for GitHub Actions](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions) | Documentacao oficial do GitHub; recursos variam por plano, repositorio e configuracao. | Cuidados com `pull_request_target`, codigo nao confiavel, secrets, permissões, logs e actions de terceiros. |
 | [GitHub Docs - Automatic token authentication](https://docs.github.com/en/actions/security-guides/automatic-token-authentication) | Documentacao oficial do GitHub. | Uso de `GITHUB_TOKEN` e principio de menor privilegio via `permissions`. |
 | [GitHub Docs - Using secrets in GitHub Actions](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) | Documentacao oficial do GitHub. | Tratamento de secrets, escopo, ausencia em contextos nao confiaveis e risco de logs. |
@@ -175,11 +172,11 @@ As fontes oficiais herdadas dos demais domínios permanecem nos registros anteri
 - Evidencias de acessibilidade receberam protecao especifica porque prints, voz, relatos e tecnologia assistiva podem identificar pessoas ou revelar informacao sensivel.
 - Todos os itens permanecem desmarcados. A conclusao permitida e apenas `aprovado para o escopo avaliado`, nunca conformidade automatica com LGPD ou WCAG.
 
-### Decisoes do quarto PR - Frappe, Cloud e CI/CD
+### Decisoes do quarto PR - Backend, Cloud e CI/CD
 
-- O checklist Frappe foi tratado como revisao manual obrigatoria e dependente de versao. Ele nao presume APIs, hooks, roles, permissões ou comportamento alem do que precisa ser validado na release instalada.
-- Frappe, ERPNext e Frappe Learning foram separados por superficie, mas sem criar dados reais, `site_config.json`, backups, dumps, logs ou fixtures operacionais neste PR.
-- DocTypes, roles, permissions, whitelisted methods, jobs, hooks, arquivos, integracoes e isolamento multi-tenant foram definidos como revisoes obrigatorias porque scanners nao validam regra de negocio ou autorizacao Frappe sozinhos.
+- Backend Python foi tratado como revisao manual obrigatoria e dependente de versao. Ele nao presume APIs, hooks, roles, permissoes ou comportamento alem do que precisa ser validado na stack instalada.
+- Aplicações web, plataformas educacionais SaaS e módulos financeiros foram separados por superficie, sem criar dados reais, configuracoes sensiveis, backups, dumps, logs ou fixtures operacionais neste PR.
+- Roles, permissions, endpoints, jobs, hooks, arquivos, integracoes e isolamento multi-tenant foram definidos como revisoes obrigatorias porque scanners nao validam regra de negocio ou autorizacao server-side sozinhos.
 - O checklist cloud permaneceu agnostico de provedor. Ele cobre IAM, rede, secrets, storage, logs, backups, exposicao publica, custo, regiao, criptografia e acesso administrativo sem inventar conta, bucket, dominio, tenant, ambiente ou comando destrutivo.
 - O checklist cloud evita assumir que um benchmark, CSPM ou scanner prova seguranca; resultado tecnico exige escopo, triagem, owner, excecao e reteste.
 - O checklist CI/CD foi escrito como revisao documental e operacional. Ele nao altera workflows, nao habilita scanner, nao cria gate e nao declara pipeline seguro sem validacao.
@@ -210,7 +207,7 @@ As fontes oficiais herdadas dos demais domínios permanecem nos registros anteri
 - Acessibilidade exige avaliação humana; automação isolada não comprova conformidade.
 - Ferramentas, versões, comandos, ambientes, retenção, frequência e thresholds devem ser definidos e validados no produto consumidor.
 - Recursos de GitHub, cloud, CI/CD, assinatura, proveniência e segregação dependem do plano, arquitetura e configuração adotados.
-- Frappe, ERPNext e Frappe Learning variam por versao, apps instalados, customizacoes por site e arquitetura multi-tenant. Uma nova release exige validar documentacao oficial e comportamento local.
+- Backend Python varia por versao, bibliotecas, apps instalados, customizacoes e arquitetura multi-tenant. Uma nova release exige validar documentacao oficial e comportamento local.
 - Cloud depende de provedor, servicos, regioes, contrato, modelo de responsabilidade compartilhada, plano de suporte, regulacao, arquitetura e dados processados. Este PR nao define benchmark unico nem comando universal.
 - Recursos de IAM, logs, secrets, chaves, backups, retencao, CSPM, OIDC, runners, environments, rulesets, code scanning e secret scanning variam por provedor, plano, licenca e configuracao.
 - Fixar actions por SHA e imagens por digest exige processo de validacao e atualizacao. Este PR define criterio de revisao, nao seleciona versoes ou digests.
@@ -243,7 +240,7 @@ As fontes oficiais herdadas dos demais domínios permanecem nos registros anteri
 - Não foram executados DAST, fuzzing ou procedimentos ofensivos.
 - Nao foram selecionadas bases legais, emitidos pareceres juridicos ou feitas declaracoes de conformidade LGPD/WCAG.
 - Nao foram executados testes de acessibilidade, coletados relatos de usuarios ou gerados prints, videos e relatorios de ferramentas.
-- Nao foram criados `site_config.json`, `common_site_config.json`, sites Frappe, bancos, usuarios, cursos, clientes, tenants, logs, backups, dumps ou fixtures reais.
+- Nao foram criados arquivos de configuracao reais, bancos, usuarios, cursos, clientes, tenants, logs, backups, dumps ou fixtures reais.
 - Nao foram criados IPs internos, IDs de conta, buckets, dominios, tenants, nomes de ambientes, configuracoes cloud reais, credenciais cloud ou exemplos semelhantes a credenciais.
 - Nao foram alterados workflows, habilitados scanners, ativados gates, criados artifacts, modificados scripts ou executados comandos destrutivos.
 - Nao foram incluidos requests/responses, payloads, PoCs, logs crus, prints, relatorios sensiveis, URLs internas ou informacoes reais de cliente.

@@ -25,7 +25,7 @@ O repositório deve servir como base de:
 Contexto técnico:
 
 - Desenvolvo SaaS, aplicações web, APIs e sistemas.
-- Posso usar Python, Frappe, ERPNext, Frappe LMS, JavaScript, TypeScript, SQL, Docker, CI/CD, integrações WhatsApp/API, autenticação, pagamentos e cloud.
+- Posso usar Python, JavaScript, TypeScript, SQL, Docker, CI/CD, integrações WhatsApp/API, autenticação, pagamentos e cloud.
 - O repositório será privado.
 - O repositório não deve conter segredos, tokens, credenciais, dados pessoais reais ou relatórios sensíveis sem revisão.
 - Quero separar a maturidade em três fases:
@@ -216,7 +216,6 @@ Inclua estes arquivos na árvore:
 - checklists/owasp-api-top-10.md
 - checklists/lgpd.md
 - checklists/accessibility-wcag-22-aa.md
-- checklists/frappe-security.md
 - checklists/pre-deploy.md
 - checklists/pre-enterprise-sale.md
 - scripts/run-security-audit.sh
@@ -602,32 +601,30 @@ Inclua uma seção final chamada:
 
 Use Markdown.
 Não use segredos reais nos exemplos.
-Chunk 8 — Frappe, ERPNext, Frappe LMS e Python
+Chunk 8 — Backend Python e aplicações web
 
 Arquivo sugerido:
 
-docs/frappe-python-security-audit.md
+docs/security-tools-catalog.md
 
 Prompt:
 
-Com base no contexto-mestre, gere o arquivo `docs/frappe-python-security-audit.md`.
+Com base no contexto-mestre, complemente a orientação de backend Python nos documentos aplicáveis.
 
-Objetivo: criar uma seção específica para auditoria de segurança em aplicações feitas com Frappe, ERPNext, Frappe LMS e Python.
+Objetivo: criar uma seção específica para auditoria de segurança em aplicações web, APIs e serviços backend em Python.
 
 Pesquise e proponha checks para:
 
-- `@frappe.whitelist`
-- `allow_guest=True`
-- `ignore_permissions=True`
-- `frappe.db.sql`
-- permissões de DocTypes
-- roles e role profiles
 - endpoints públicos
+- autorização server-side
+- controles de acesso por objeto
+- ORM/SQL e queries diretas
+- papéis, perfis e permissões
 - upload de arquivos
-- `hooks.py`
-- scheduled jobs
-- server scripts
-- client scripts
+- hooks/eventos da aplicação
+- scheduled jobs e filas
+- tarefas administrativas
+- código client-side que influencia autorização
 - logs com dados pessoais
 - webhooks
 - integrações externas
@@ -636,7 +633,7 @@ Pesquise e proponha checks para:
 - rate limiting
 - CSRF
 - permissões por tenant, se aplicável
-- permissões em LMS: cursos, aulas, matrículas, alunos, instrutores e relatórios
+- plataformas educacionais SaaS: cursos, aulas, matrículas, alunos, instrutores e relatórios
 - integrações com WhatsApp/API
 - integrações com pagamento
 
@@ -648,15 +645,15 @@ Entregue:
 4. Exemplos de falso positivo.
 5. Regras Semgrep simples, quando possível.
 6. Recomendações para revisão manual.
-7. Riscos críticos específicos de Frappe.
+7. Riscos críticos específicos de backend Python.
 8. Evidências a guardar.
 9. O que bloquearia release.
 10. Como adaptar para multi-tenant.
 
 Inclua comandos prontos, por exemplo usando `rg`.
 
-Não invente APIs do Frappe. Quando algo depender da versão do Frappe, diga para validar na documentação oficial.
-Cite documentação oficial do Frappe e fontes OWASP relevantes.
+Não invente APIs da stack. Quando algo depender de versão, diga para validar na documentação oficial.
+Cite documentação oficial das ferramentas adotadas e fontes OWASP relevantes.
 Chunk 9 — LGPD e privacidade para SaaS
 
 Arquivo sugerido:
@@ -1078,14 +1075,13 @@ Gere os seguintes checklists em Markdown:
 5. `checklists/owasp-api-top-10.md`
 6. `checklists/lgpd.md`
 7. `checklists/accessibility-wcag-22-aa.md`
-8. `checklists/frappe-security.md`
-9. `checklists/cloud-security.md`
-10. `checklists/payment-security.md`
-11. `checklists/incident-response.md`
-12. `checklists/backup-restore.md`
-13. `checklists/ci-cd-security.md`
-14. `checklists/third-party-risk.md`
-15. `checklists/ai-governance.md`
+8. `checklists/cloud-security.md`
+9. `checklists/payment-security.md`
+10. `checklists/incident-response.md`
+11. `checklists/backup-restore.md`
+12. `checklists/ci-cd-security.md`
+13. `checklists/third-party-risk.md`
+14. `checklists/ai-governance.md`
 
 Para cada checklist, entregue:
 
@@ -1131,7 +1127,6 @@ Gere o conteúdo dos seguintes scripts:
 - `scripts/run-container-audit.sh`
 - `scripts/run-accessibility-audit.sh`
 - `scripts/run-api-audit.sh`
-- `scripts/run-frappe-audit.sh`
 - `scripts/generate-sbom.sh`
 
 Cada script deve:
@@ -1166,7 +1161,7 @@ Inclua comandos para:
 - Lighthouse, quando aplicável.
 - OWASP ZAP baseline, quando aplicável.
 - Schemathesis, quando aplicável.
-- Checks específicos para Frappe com `rg`.
+- Checks específicos de backend Python com SAST e revisão manual.
 
 Quando um comando depender da instalação da ferramenta, inclua comentário informando para validar na documentação oficial.
 
@@ -1249,7 +1244,7 @@ Estrutura obrigatória do README:
 14. Checklists principais.
 15. Documentos de LGPD.
 16. Documentos de acessibilidade.
-17. Estratégia para Frappe/Python.
+17. Estratégia para backend/Python.
 18. Roadmap 30/60/90/180 dias.
 19. Como abrir findings.
 20. Como aceitar riscos.
@@ -1284,7 +1279,7 @@ Avalie os seguintes pontos:
 9. Ferramentas recomendadas.
 10. Workflows GitHub Actions sugeridos.
 11. Comandos de auditoria local.
-12. Estratégia para Frappe/Python.
+12. Estratégia para backend/Python.
 13. Política de relatórios e evidências.
 14. Priorização de riscos.
 15. Plano de implantação em 30, 60, 90 e 180 dias.
@@ -1295,7 +1290,7 @@ Avalie os seguintes pontos:
 20. Branches, commits, PRs e issues.
 21. Normas ISO/ABNT.
 22. OWASP.
-23. Frappe/ERPNext/Frappe LMS.
+23. Backend Python e aplicações web.
 24. Ferramentas open source.
 25. Políticas contra vazamento de segredo.
 
@@ -1348,7 +1343,7 @@ Organize em lotes:
 - Lote 4: políticas.
 - Lote 5: scripts.
 - Lote 6: GitHub Actions.
-- Lote 7: Frappe/Python.
+- Lote 7: Backend/Python.
 - Lote 8: LGPD.
 - Lote 9: acessibilidade.
 - Lote 10: relatórios e evidências.
@@ -1393,7 +1388,7 @@ Eu rodaria nesta ordem:
 5  - Auditorias por cenário
 6  - Ferramentas
 7  - GitHub Actions
-8  - Frappe/Python
+8  - Backend/Python
 9  - LGPD
 10 - Acessibilidade
 11 - Relatórios e evidências

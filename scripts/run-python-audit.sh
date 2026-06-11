@@ -51,6 +51,6 @@ if selected semgrep; then
   if [[ "$SEMGREP_CONFIG" == "auto" ]]; then run_capture semgrep "$RAW_DIR/semgrep.log" semgrep scan --metrics off --config auto --json --json-output "$RAW_DIR/semgrep.json" "$TARGET" || overall=1
   else run_capture semgrep "$RAW_DIR/semgrep.log" semgrep scan --metrics off --config "$SEMGREP_CONFIG" --json --json-output "$RAW_DIR/semgrep.json" "$TARGET" || overall=1; fi
 fi
-printf '\n## Limites e proximos passos\n\n- Achados podem ser falsos positivos e nao provam explorabilidade.\n- Revise o relatorio cru localmente, classifique pelo contexto e publique apenas uma sintese redigida.\n- Ausencia de achados nao substitui revisao manual, testes de autorizacao ou avaliacao Frappe.\n' >> "$SUMMARY"
+printf '\n## Limites e proximos passos\n\n- Achados podem ser falsos positivos e nao provam explorabilidade.\n- Revise o relatorio cru localmente, classifique pelo contexto e publique apenas uma sintese redigida.\n- Ausencia de achados nao substitui revisao manual, testes de autorizacao, isolamento multi-tenant ou logica de negocio.\n' >> "$SUMMARY"
 printf 'Auditoria Python concluida. Revise %s e os arquivos em %s.\n' "${SUMMARY#$ROOT_DIR/}" "${RAW_DIR#$ROOT_DIR/}"
 exit "$overall"

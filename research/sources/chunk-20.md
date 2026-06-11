@@ -14,7 +14,7 @@ O Chunk 20 é um plano de execução derivado do estado interno do repositório.
 | `research/task-queue.md` e `research/progress.md` | Estado declarado e divergências a reconciliar. |
 | `research/sources/chunk-19.md` | Métodos, evidências internas e limites da auditoria de cobertura. |
 | `README.md`, `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS` | Promessas públicas e estado dos controles raiz. |
-| Documentos principais em `docs/` solicitados no Chunk 20 | Fontes canônicas para roadmap, auditorias, ferramentas, CI/CD, Frappe, LGPD, acessibilidade, evidências e Git. |
+| Documentos principais em `docs/` solicitados no Chunk 20 | Fontes canônicas para roadmap, auditorias, ferramentas, CI/CD, backend, LGPD, acessibilidade, evidências e Git. |
 | `risk/severity-and-prioritization.md` | Priorização, gates, risco, findings e revisão humana. |
 | Todos os arquivos `checklists/*.md` | Confirmação de que o Chunk 15 permanece placeholder no estado auditado. |
 | `scripts/README.md` e todos os `scripts/*.sh` | Estado dos scripts, limites e necessidade de testes com fixtures. |
@@ -36,5 +36,5 @@ O Chunk 20 é um plano de execução derivado do estado interno do repositório.
 - Plano GitHub, licenças, runners, branch protection e recursos enterprise dependem do repositório consumidor.
 - LGPD, contratos, comunicação de incidentes, retenção e papéis exigem validação jurídica/contextual.
 - WCAG e acessibilidade exigem avaliação humana; automação não comprova conformidade.
-- Frappe/Python depende das versões e da arquitetura do produto consumidor.
+- Backend/Python depende das versões e da arquitetura do produto consumidor.
 - O plano não declara conformidade, certificação, eficácia integral dos controles ou ausência de vulnerabilidades.

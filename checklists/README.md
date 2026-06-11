@@ -13,7 +13,7 @@ Use o [índice de checklists](index.md) para escolher o arquivo aplicável por f
 Grupos principais:
 
 - release e decisão: [pré-beta](pre-beta.md), [pré-deploy](pre-deploy.md), [pré-venda empresarial](pre-enterprise-sale.md);
-- AppSec e aplicação: [OWASP Top 10](owasp-top-10.md), [OWASP ASVS](owasp-asvs.md), [OWASP API Top 10](owasp-api-top-10.md), [Frappe](frappe-security.md), [pagamentos](payment-security.md);
+- AppSec e aplicação: [OWASP Top 10](owasp-top-10.md), [OWASP ASVS](owasp-asvs.md), [OWASP API Top 10](owasp-api-top-10.md), [pagamentos](payment-security.md);
 - plataforma e operação: [cloud](cloud-security.md), [CI/CD](ci-cd-security.md), [incidentes](incident-response.md), [backup e restauração](backup-restore.md);
 - governança: [LGPD](lgpd.md), [acessibilidade WCAG 2.2 AA](accessibility-wcag-22-aa.md), [terceiros](third-party-risk.md), [IA](ai-governance.md).
 

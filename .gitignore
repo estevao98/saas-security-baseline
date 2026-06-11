@@ -42,7 +42,7 @@ terraform.tfstate.*
 *.tfplan
 plan.json
 
-# Frappe / ERPNext sensitive configs
+# Application sensitive configs
 site_config.json
 common_site_config.json
 sites/*/site_config.json

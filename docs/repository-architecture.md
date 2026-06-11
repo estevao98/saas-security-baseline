@@ -49,7 +49,6 @@ saas-security-baseline/
 │   ├── owasp-api-top-10.md                   # checklist substantivo
 │   ├── lgpd.md                               # checklist substantivo
 │   ├── accessibility-wcag-22-aa.md           # checklist substantivo
-│   ├── frappe-security.md                    # checklist substantivo
 │   ├── cloud-security.md                      # checklist substantivo
 │   ├── ci-cd-security.md                      # checklist substantivo
 │   ├── payment-security.md                    # checklist substantivo
@@ -124,7 +123,6 @@ saas-security-baseline/
 │       ├── lote-04.md                         # fontes da reconciliação do Lote 4
 │       ├── lote-05.md                         # fontes da reconciliação do Lote 5
 │       ├── lote-06.md                         # fontes da reconciliação do Lote 6
-│       ├── lote-07.md                         # fontes da reconciliação do Lote 7
 │       ├── lote-08.md                         # fontes da reconciliação do Lote 8
 │       ├── lote-09.md                         # fontes da reconciliação do Lote 9
 │       ├── lote-10.md                         # fontes da reconciliação do Lote 10
@@ -142,7 +140,6 @@ saas-security-baseline/
 │   ├── run-container-audit.sh
 │   ├── run-accessibility-audit.sh
 │   ├── run-api-audit.sh
-│   ├── run-frappe-audit.sh
 │   └── generate-sbom.sh
 ├── security/
 │   └── README.md                              # índice de domínio reconciliado
@@ -165,8 +162,7 @@ saas-security-baseline/
 │   └── ai-risk-assessment-template.md
 ├── testing/
 │   ├── README.md                              # índice de domínio reconciliado
-│   ├── accessibility/                         # fixture fictícia de acessibilidade
-│   └── frappe-python/                         # fixture fictícia Frappe/Python
+│   └── accessibility/                         # fixture fictícia de acessibilidade
 ├── .gitleaks.toml                          # configuração inicial de secret scanning; exige validação local
 ├── .secrets.baseline                       # baseline vazia revisável; sem findings reais
 ├── .gitignore                              # controle preventivo ampliado para segredos/evidências
@@ -269,7 +265,7 @@ Estado confirmado nesta reconciliação:
 - O Lote 4 foi reconciliado: `SECURITY.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `.gitleaks.toml`, `.secrets.baseline` e `.gitignore` deixaram de ser placeholders iniciais, com pendências contextuais registradas.
 - O Lote 5 foi reconciliado: os scripts locais foram validados com smoke tests, stubs e fixtures temporárias, sem rede externa real, sem alvo real e sem relatório cru versionado.
 - O Lote 6 foi reconciliado: `.github/workflows/security.yml` ficou como workflow ativo mínimo, com `permissions` somente leitura, sem artifacts, sem secrets, sem `pull_request_target` e com `actions/checkout` fixado por SHA completo.
-- O Lote 7 foi reconciliado: Frappe/Python recebeu matriz de compatibilidade e fixture fictícia para triagem documental segura.
+- O Lote 7 foi reconciliado: segurança backend e Python recebeu validações locais de autorização, jobs, APIs e permissões server-side.
 - O Lote 8 foi reconciliado: `privacy/*.md` passou a conter guias operacionais auxiliares, sem registros reais nem decisão automática de base legal.
 - O Lote 9 foi reconciliado: acessibilidade recebeu roteiro operacional e fixture fictícia em `testing/accessibility/`, mantendo revisão humana obrigatória.
 - O Lote 10 foi reconciliado: risco auxiliar e `reports/README.md` foram alinhados à política de evidências, sem criar evidência real ou relatório cru.

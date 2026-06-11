@@ -16,7 +16,7 @@ Esta pasta não deve conter massa real de produção, dumps, backups, logs crus,
 | Acessibilidade | `../docs/accessibility-program.md`, `../docs/accessibility-audit.md`, `accessibility/README.md` |
 | API | `../docs/api-security-checklist.md` |
 | Backup/restore | `../business-continuity/README.md`, `../checklists/backup-restore.md` |
-| Frappe/Python | `../docs/frappe-python-security-audit.md`, `frappe-python/README.md` |
+| Backend Python | `../scripts/run-python-audit.sh`, `../docs/security-tools-catalog.md` |
 | Evidências | `../docs/evidence-and-reporting-policy.md` |
 | Relatório | `../docs/security-audit-baseline.md` |
 
@@ -29,6 +29,6 @@ Esta pasta não deve conter massa real de produção, dumps, backups, logs crus,
 
 ## Pendências
 
-- Fixture ficticia Frappe/Python esta em `frappe-python/`; scripts foram validados no Lote 5 com stubs e workspace temporario.
+- Scripts foram validados no Lote 5 com stubs e workspace temporario; fixtures adicionais devem ser pequenas, ficticias e neutras quando necessárias.
 - Fixture ficticia de acessibilidade esta em `accessibility/`; ferramentas reais e tecnologias assistivas dependem do SaaS consumidor.
 - CI alert-only de acessibilidade permanece pendente em tarefa propria, sem alterar workflow ativo por padrao.

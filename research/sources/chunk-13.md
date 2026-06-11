@@ -21,7 +21,7 @@ Foram priorizadas fontes primárias de CISA, FIRST, CERT/CC, OWASP e NIST. O doc
 | `docs/audit-trigger-matrix.md` | Gatilhos, revisores e decisões Go/No-Go. |
 | `docs/security-tools-catalog.md` | Scanners, limites, formatos e triagem. |
 | `docs/github-actions-strategy.md` | Gates de CI/CD por severidade, exceções e artifacts. |
-| `docs/frappe-python-security-audit.md` | Autorização, SQL, Guest, sites/tenants, secrets e bloqueios Frappe. |
+| `docs/security-tools-catalog.md` | Autorização, SQL/ORM, APIs, tenants, secrets e bloqueios de backend. |
 | `docs/lgpd-privacy-program.md` | Risco aos titulares, incidentes, validação jurídica e gates de privacidade. |
 | `docs/accessibility-program.md` | Barreiras críticas, alternativas, backlog, SLA orientativo e reteste. |
 | `docs/evidence-and-reporting-policy.md` | Sanitização, issues, evidências, risco aceito, reteste e reabertura. |

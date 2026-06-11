@@ -14,7 +14,7 @@ Esta revisao nao executou scanners, nao validou requisitos de cliente, contrato,
 
 ## Resultado executivo
 
-O repositorio tem uma base documental forte em matrizes, roadmap, ferramentas, Frappe/Python, LGPD, acessibilidade, evidencias, risco, Git, scripts e templates. A estrutura e util como referencia e ponto de partida controlado.
+O repositorio tem uma base documental forte em matrizes, roadmap, ferramentas, backend/Python, LGPD, acessibilidade, evidencias, risco, Git, scripts e templates. A estrutura e util como referencia e ponto de partida controlado.
 
 Entretanto, o estado declarado nao corresponde integralmente ao estado real. A maior divergencia e o Chunk 15: `research/progress.md` e `research/task-queue.md` afirmam que o indice e os checklists foram preenchidos, mas todos os arquivos `checklists/*.md` continuam com 7 ou 8 linhas de placeholder. `research/sources/chunk-15.md` tambem nao existe.
 
@@ -37,7 +37,7 @@ Nao foram encontrados links Markdown locais quebrados, relatorios crus rastreado
 | 9 | Ferramentas recomendadas | Sim | `docs/security-tools-catalog.md`; `research/sources/chunk-06.md` | Versoes, licencas, telemetria, bases e suporte devem ser revalidados no projeto consumidor. | Media | Criar matriz de adocao por stack e validacoes de versao no Chunk 20. | Media | Nao. |
 | 10 | Workflows GitHub Actions sugeridos | Parcial | `docs/github-actions-strategy.md`; `.github/workflows/security.yml`; 13 exemplos em `examples/github-workflows/` | Dez exemplos continuam placeholders. Apenas tres exemplos sao substantivos e somente um workflow esta ativo. Actions e imagem usam tags mutaveis nos exemplos/controle ativo, apesar da recomendacao de fixacao antes de gate. | Alta | Implementar e testar somente os workflows aplicaveis, fixar referencias imutaveis e manter dependencias de plano/licenca explicitas. | Alta | Sim para afirmar CI/CD de seguranca completo; nao para uso documental. |
 | 11 | Comandos de auditoria local | Sim | `scripts/README.md`; oito `scripts/*.sh`; `research/sources/chunk-16.md` | Apenas sintaxe foi validada; ferramentas, flags, exit codes, rede e saidas nao foram exercitados neste repositorio. | Media | Criar testes com fixtures ficticias, lint shell e matriz de versoes antes de promover a gates. | Media | Nao para consulta; sim para confiar em execucao nao testada. |
-| 12 | Estrategia para Frappe/Python | Parcial | `docs/frappe-python-security-audit.md`; `scripts/run-frappe-audit.sh`; `scripts/run-python-audit.sh` | `checklists/frappe-security.md` e placeholder; comportamento depende da versao instalada e nao houve teste em app ficticio. | Alta | Implementar checklist e validar scripts/guia em fixture Frappe sem dados reais. | Alta | Bloqueia auditoria Frappe completa. |
+| 12 | Estrategia para backend/Python | Parcial | `docs/security-tools-catalog.md`; `scripts/run-python-audit.sh` | Comportamento depende da stack, versao instalada e revisao manual de autorizacao server-side. | Alta | Validar scripts e controles de backend com fixture ficticia, sem dados reais. | Alta | Bloqueia auditoria backend completa. |
 | 13 | Politica de relatorios e evidencias | Sim | `docs/evidence-and-reporting-policy.md`; `.gitignore`; `reports/README.md` | Nao ha teste automatizado completo de todos os formatos proibidos; o workflow cobre apenas parte dos padroes. | Media | Expandir verificacoes preventivas e documentar armazenamento restrito fora do Git. | Media | Nao, desde que a politica seja seguida manualmente. |
 | 14 | Priorizacao de riscos | Sim | `risk/severity-and-prioritization.md`; templates de risco e remediacao | `risk/risk-matrix.md` e `risk/risk-register.csv` continuam placeholders, criando duas fontes de risco incompletas. | Media | Consolidar ou preencher os artefatos auxiliares e definir uma fonte canonica. | Media | Nao para usar a matriz principal. |
 | 15 | Plano de implantacao em 30, 60, 90 e 180 dias | Sim | `docs/security-roadmap.md` | O plano nao esta convertido em backlog executavel e depende de checklists/workflows ausentes. | Media | Converter marcos em issues ordenadas no Chunk 20. | Media | Nao para planejamento. |
@@ -48,7 +48,7 @@ Nao foram encontrados links Markdown locais quebrados, relatorios crus rastreado
 | 20 | Branches, commits, PRs e issues | Parcial | `docs/git-security-workflow.md`; `README.md` | `CONTRIBUTING.md` e `CODEOWNERS` continuam iniciais; responsaveis reais e protecoes dependem do repositorio/planos. | Alta | Consolidar `CONTRIBUTING.md`, configurar owners reais e criar checklist de implantacao de branch protection. | Alta | Nao para orientacao; sim para governanca efetiva. |
 | 21 | Normas ISO/ABNT | Sim | `docs/standards-and-frameworks-matrix.md`; `docs/security-roadmap.md`; fontes do Chunk 1 | Algumas equivalencias/edicoes ABNT nao foram confirmadas e estao corretamente marcadas como incerteza. | Baixa | Confirmar no catalogo oficial quando houver uso formal, contratual ou certificacao. | Baixa | Nao. |
 | 22 | OWASP | Parcial | Matriz, catalogo, guias e fontes cobrem Top 10, API Top 10, ASVS, SAMM, Cheat Sheets, ZAP e Dependency-Check | Os tres checklists OWASP sao placeholders; nao ha evidencia de mapeamento operacional executavel. | Alta | Implementar checklists versionados e manter versoes/mapeamentos explicitamente registrados. | Alta | Sim para uso operacional por checklist. |
-| 23 | Frappe/ERPNext/Frappe LMS | Parcial | `docs/frappe-python-security-audit.md`; script Frappe; fontes do Chunk 8 | Checklist ausente em conteudo, nenhuma fixture/teste e dependencia forte de versao. | Alta | Criar fixture ficticia e checklist; registrar matriz de versoes suportadas/validadas. | Alta | Sim para afirmar cobertura completa. |
+| 23 | Backend Python e aplicações web | Parcial | `docs/security-tools-catalog.md`; `scripts/run-python-audit.sh`; fontes do Chunk 8 | Nenhuma fixture/teste e dependencia forte de versao e arquitetura. | Alta | Criar fixture ficticia quando necessária e registrar matriz de versoes suportadas/validadas. | Alta | Sim para afirmar cobertura completa. |
 | 24 | Ferramentas open source | Sim | `docs/security-tools-catalog.md`; scripts; fontes dos Chunks 6 e 16 | A presenca no catalogo nao garante manutencao, compatibilidade, licenca ou adequacao futura. | Media | Revalidar antes da adocao e manter uma lista minima por stack. | Media | Nao. |
 | 25 | Politicas contra vazamento de segredo | Parcial | `.gitignore`; politica de evidencias; guias; scripts; workflow de politica | `SECURITY.md` e `.gitleaks.toml` sao placeholders, `.secrets.baseline` esta vazia e o workflow ativo nao executa secret scanning. A verificacao de nomes proibidos e parcial. | Alta | Implementar politica de reporte/resposta, regras revisadas de secret scanning, teste de fixture ficticia e gate apropriado. | Alta | Sim para alegar protecao automatizada; nao para uso documental cauteloso. |
 
@@ -126,9 +126,9 @@ Nenhuma pendencia critica imediata foi confirmada no conteudo versionado. Esta c
 - **Problema:** `CONTRIBUTING.md` e `CODEOWNERS` nao implementam o processo descrito.
 - **Aceite:** contribuicao consolidada, owners reais configurados no repositorio consumidor e requisitos de branch protection documentados/testados conforme plano GitHub.
 
-#### Issue: Fechar lacunas operacionais de LGPD, acessibilidade e Frappe
+#### Issue: Fechar lacunas operacionais de LGPD, acessibilidade e backend
 
-- **Labels:** `privacy`, `accessibility`, `frappe`, `priority:high`
+- **Labels:** `privacy`, `accessibility`, `backend`, `priority:high`
 - **Problema:** guias principais existem, mas checklists e artefatos operacionais associados permanecem placeholders.
 - **Aceite:** definir fontes canonicas, remover duplicacao e implementar os artefatos minimos com revisao juridica/tecnica quando aplicavel.
 
@@ -190,10 +190,9 @@ Nenhuma pendencia critica imediata foi confirmada no conteudo versionado. Esta c
 
 1. Tratar esta auditoria como entrada obrigatoria e nao assumir que status historico significa entrega real.
 2. Colocar a recuperacao do Chunk 15, fontes e status como primeiro lote.
-3. Separar PRs por dominio: checklists; segredos/politica; CI/CD; governanca Git; LGPD; acessibilidade; Frappe; artefatos auxiliares; testes de scripts; limpeza documental.
+3. Separar PRs por dominio: checklists; segredos/politica; CI/CD; governanca Git; LGPD; acessibilidade; backend; artefatos auxiliares; testes de scripts; limpeza documental.
 4. Exigir em cada issue arquivos exatos, criterio de aceite, validacao, risco de exposicao e revisor competente.
 5. Nao habilitar workflows de scanner antes de fixar versoes/referencias, testar em fixture e revisar logs, artifacts, rede, licenca e plano GitHub.
 6. Distinguir artefato canonico de indice, template e exemplo para evitar duplicacao contraditoria.
 7. Incluir uma etapa final automatizada de inventario, links, placeholders, fontes, scripts e arquivos sensiveis.
 8. Manter validacoes juridicas, contratuais, enterprise, de ferramenta e de versao como dependencias explicitas, nunca como conclusoes automaticas.
-

@@ -20,7 +20,7 @@ Foram usadas fontes oficiais da Presidência da República e da ANPD. O document
 | `docs/audit-trigger-matrix.md` | Gatilhos de PIA/RIPD, incidentes e fornecedores. |
 | `docs/security-tools-catalog.md` | Limites de ferramentas para determinar conformidade. |
 | `docs/github-actions-strategy.md` | Proteção de logs, artifacts e relatórios crus. |
-| `docs/frappe-python-security-audit.md` | Controles Frappe, multi-tenant, logs e integrações. |
+| `docs/security-tools-catalog.md` | Controles de backend, multi-tenant, logs e integrações. |
 | `docs/repository-architecture.md` | Separação entre templates, evidências restritas, `reports/raw/` e `reports/sanitized/`. |
 
 ## Fontes oficiais

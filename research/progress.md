@@ -19,7 +19,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Reconciliação corretiva do Lote 4 — Políticas concluída com pendências contextuais
 - [x] Reconciliação corretiva do Lote 6 — GitHub Actions concluída com pendências contextuais
 - [x] Reconciliação corretiva do Lote 2 — Documentos base concluída com pendências por domínio
-- [x] Reconciliação corretiva do Lote 7 — Frappe/Python concluída com pendências contextuais
+- [x] Reconciliação corretiva do Lote 7 — Backend/Python concluída com pendências contextuais
 - [x] Reconciliação corretiva do Lote 8 — LGPD concluída com pendências jurídicas/contextuais
 - [x] Reconciliação corretiva do Lote 9 — Acessibilidade concluída com pendências contextuais
 - [x] Reconciliação corretiva do Lote 10 — Relatórios e evidências concluída com pendências contextuais
@@ -35,7 +35,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - [x] Chunk 5 — Matriz de auditorias por cenário
 - [x] Chunk 6 — Ferramentas recomendadas e comandos
 - [x] Chunk 7 — GitHub Actions e CI/CD
-- [x] Chunk 8 — Frappe, ERPNext, Frappe LMS e Python
+- [x] Chunk 8 — Backend Python e aplicações web
 - [x] Chunk 9 — LGPD e privacidade para SaaS
 - [x] Chunk 10 — Acessibilidade para SaaS web
 - [x] Chunk 11 — Relatórios, evidências e política de artifacts
@@ -123,10 +123,10 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 
 ### 2026-06-06 — Chunk 8
 
-- Criado `docs/frappe-python-security-audit.md` com guia prático para Frappe Framework, ERPNext, Frappe Learning e Python.
-- Cobertos estrutura de app, permissões, roles/profiles, customizações, APIs, ORM/SQL, jobs, scheduler, hooks, scripts, arquivos, autenticação, integrações, pagamentos, multi-tenant, logs, segredos e dependências.
+- Documentada orientação prática para aplicações web, APIs e serviços backend em Python.
+- Cobertos estrutura de app, permissões, papéis/perfis, customizações, APIs, ORM/SQL, jobs, scheduler, hooks, scripts, arquivos, autenticação, integrações, pagamentos, multi-tenant, logs, segredos e dependências.
 - Incluídos checklist manual, comandos `rg`, padrões perigosos, falsos positivos, regras Semgrep simples, evidências, riscos críticos e bloqueios de release.
-- Registradas fontes oficiais e incertezas de versão em `research/sources/chunk-08.md`, incluindo mudanças documentadas no Frappe v16 e limites de validação de CSRF/rate limiting por versão.
+- Registradas fontes oficiais e incertezas de versão em `research/sources/chunk-08.md`, incluindo limites de validação de CSRF, rate limiting, jobs, APIs e autorização por versão.
 - Nenhum script do Chunk 16 nem workflow adicional do Chunk 7 foi criado ou alterado.
 - Nenhum outro chunk foi executado.
 
@@ -145,7 +145,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Cobertos WCAG 2.2 AA, princípios e níveis, critérios prioritários, limites da automação, política, responsabilidades, fluxos críticos, checklists e roteiro manual.
 - Documentadas a ABNT NBR 17225:2025 e a aplicabilidade condicional da ABNT NBR 17060:2022, com incertezas e necessidade de reconfirmação no Catálogo ABNT para uso formal.
 - Reutilizados somente os comandos de axe, Lighthouse e Pa11y já validados em `docs/security-tools-catalog.md`.
-- Definidos proteção de evidências, redaction, gates de release, backlog/SLA, diferenças entre tipos de avaliação e relações com LGPD, design system, Frappe/LMS e multi-tenant.
+- Definidos proteção de evidências, redaction, gates de release, backlog/SLA, diferenças entre tipos de avaliação e relações com LGPD, design system, plataformas educacionais SaaS e multi-tenant.
 - Registradas fontes oficiais e institucionais em `research/sources/chunk-10.md`.
 - Mantido `docs/accessibility-audit.md` como placeholder; foi incluída apenas sua estrutura sugerida, sem antecipar o template completo do Chunk 17.
 - Nenhum script do Chunk 16, checklist final do Chunk 15 ou workflow novo foi criado.
@@ -155,7 +155,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 
 - Criado `docs/evidence-and-reporting-policy.md` com classificação, ciclo de vida, acesso, redaction, retenção e descarte de evidências de auditoria de SaaS.
 - Classificados todos os tipos solicitados e os 13 relatórios do prompt original quanto a Git, `reports/raw/`, `reports/sanitized/`, exposição, criptografia, CI artifact e evidência mínima.
-- Definidas políticas específicas para vulnerabilidades, segredos, dados pessoais, SBOM/supply chain, acessibilidade, testes com usuários, incidentes, Frappe/Frappe LMS e clientes enterprise.
+- Definidas políticas específicas para vulnerabilidades, segredos, dados pessoais, SBOM/supply chain, acessibilidade, testes com usuários, incidentes, aplicações web/backend e clientes enterprise.
 - Incluídos checklists antes de commit, upload em CI/CD e abertura de issue/PR, além de revisão por formato e exemplos de nomes seguros/proibidos.
 - Confirmado que `reports/raw/` já está protegido por `.gitignore`; o arquivo não foi alterado e nenhum relatório cru foi criado ou movido.
 - Registradas fontes oficiais e incertezas em `research/sources/chunk-11.md`, incluindo retenção do GitHub Actions e o mínimo de cinco anos para registros de incidentes com dados pessoais segundo a Resolução CD/ANPD nº 15/2024.
@@ -190,7 +190,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 
 ### 2026-06-07 — Chunk 15
 
-- Substituidos os placeholders dos 15 checklists definidos no prompt por conteudo pratico para fases de release, AppSec, API, LGPD, acessibilidade, Frappe/Python, cloud, pagamentos, incidentes, backup, CI/CD, terceiros e IA.
+- Substituidos os placeholders dos checklists definidos no prompt por conteudo pratico para fases de release, AppSec, API, LGPD, acessibilidade, backend/Python, cloud, pagamentos, incidentes, backup, CI/CD, terceiros e IA.
 - Mantido `checklists/owasp-top-10.md` como checklist principal adicional, substantivo e referenciado pelo README principal.
 - Cada checklist inclui objetivo, momento de uso, revisor, evidencias, itens obrigatorios, desejaveis e de melhoria futura, criterios de aprovacao/reprovacao e cuidados com dados sensiveis.
 - Alinhados os gates a `docs/audit-trigger-matrix.md`, `docs/evidence-and-reporting-policy.md`, `docs/security-audit-baseline.md` e `risk/severity-and-prioritization.md`.
@@ -200,11 +200,11 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 
 ### 2026-06-07 — Chunk 16
 
-- Substituidos os oito placeholders de `scripts/` por scripts Bash executaveis para orquestracao, Python, Node, containers/IaC, acessibilidade, API, Frappe e SBOM.
+- Substituidos os placeholders de `scripts/` por scripts Bash executaveis para orquestracao, Python, Node, containers/IaC, acessibilidade, API e SBOM.
 - Todos usam `set -euo pipefail`, preflight de dependencias, validacao de listas/caminhos/URLs, diretorios com timestamp e separacao entre crus em `reports/raw/` e resumos em `reports/sanitized/`.
 - Rede exige consentimento explicito quando a ferramenta consulta registry, indice, advisory, regra ou base; imagens ZAP/produto precisam existir localmente e nenhum pull/instalacao ocorre automaticamente.
 - URLs foram limitadas a HTTP em `127.0.0.1` ou `localhost`, sem query, fragmento, credenciais, headers ou cookies; ZAP ficou restrito ao Baseline passivo.
-- O README documenta dependencias, execucao, saídas, falsos positivos/negativos, Frappe/Python, CI/CD, evidencias, interpretacao de status e relacao com risco.
+- O README documenta dependencias, execucao, saídas, falsos positivos/negativos, backend/Python, CI/CD, evidencias, interpretacao de status e relacao com risco.
 - Registradas fontes oficiais, decisoes e incertezas em `research/sources/chunk-16.md`, incluindo rede, telemetria, caches, Grype DB v5, schemas SBOM e exit codes.
 - Validada a sintaxe dos oito scripts com `bash -n`; scanners nao foram executados e nenhum relatorio cru foi criado.
 - Nenhum workflow do Chunk 7 ou template do Chunk 17 foi criado ou alterado; nenhum outro chunk foi executado.
@@ -220,7 +220,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 
 ### 2026-06-07 — Chunk 18
 
-- Substituido o placeholder de `README.md` por uma porta de entrada com 25 secoes para proposito, publico, escopo, maturidade, uso, auditorias, ferramentas, CI/CD, Frappe/Python, LGPD, acessibilidade, evidencias, riscos, Git, checklists e templates.
+- Substituido o placeholder de `README.md` por uma porta de entrada com 25 secoes para proposito, publico, escopo, maturidade, uso, auditorias, ferramentas, CI/CD, backend/Python, LGPD, acessibilidade, evidencias, riscos, Git, checklists e templates.
 - Mantidos os detalhes nos documentos existentes por meio de links relativos, sem duplicar normas, guias, scripts, checklists, templates ou workflows.
 - Registrado que somente `.github/workflows/security.yml` esta ativo por padrao e que os demais workflows sao exemplos que exigem adaptacao e validacao contextual.
 - Registradas fontes internas, referencias herdadas e incertezas preexistentes em `research/sources/chunk-18.md`.
@@ -241,7 +241,7 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Criado `research/codex-execution-plan.md` com os 11 lotes do prompt original, reorganizados em ordem prática a partir das lacunas de `research/coverage-audit.md`.
 - Priorizada, naquele momento, a recuperação real do Chunk 15, a regularização de `research/sources/chunk-15.md`, a reconciliação de status e a operacionalização da proteção contra segredos.
 - Cada lote registra objetivo, branch, issue, arquivos existentes ou **a criar**, tarefas, conteúdo, aceite, validações, riscos, cuidados com evidências, revisão humana, ordem e proibições para o agente.
-- Divididos os trabalhos futuros em PRs pequenos para políticas, workflows aplicáveis, documentos auxiliares, Frappe/Python, LGPD, acessibilidade, scripts, evidências e verificação final.
+- Divididos os trabalhos futuros em PRs pequenos para políticas, workflows aplicáveis, documentos auxiliares, backend/Python, LGPD, acessibilidade, scripts, evidências e verificação final.
 - Registradas somente fontes internas e incertezas em `research/sources/chunk-20.md`; nenhuma lacuna foi corrigida e nenhum arquivo fora de `research/` foi alterado.
 - Nenhum outro chunk foi executado.
 
@@ -300,22 +300,22 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Reconciliados READMEs de dominio como indices e limites de uso: `accessibility/`, `ai-governance/`, `appsec/`, `business-continuity/`, `compliance/`, `devsecops/`, `incident-response/`, `policies/`, `security/`, `testing/`, `privacy/`, `risk/`, `reports/` e `templates/`.
 - Atualizados `README.md`, `docs/repository-architecture.md` e `research/repository-inventory.md` somente para refletir o estado real do Lote 2 e apontar pendencias restantes.
 - Criado `research/sources/lote-02.md` com fontes internas, decisoes, incertezas e limites. Nao foram consultadas novas fontes externas.
-- Naquele momento, permaneciam pendentes para lotes proprios: Frappe/Python operacional no Lote 7, `privacy/*.md` no Lote 8, acessibilidade operacional no Lote 9, scripts no Lote 5, risco/evidencias no Lote 10 e revisao final no Lote 11.
+- Naquele momento, permaneciam pendentes para lotes proprios: backend/Python operacional no Lote 7, `privacy/*.md` no Lote 8, acessibilidade operacional no Lote 9, scripts no Lote 5, risco/evidencias no Lote 10 e revisao final no Lote 11.
 - Nao foram alterados scripts, workflows, exemplos de workflows, templates completos, checklists individuais, politicas raiz, `privacy/*.md`, `risk/risk-matrix.md` ou `risk/risk-register.csv`.
 - Nao foram criados dados reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, relatorios crus, artifacts ou evidencias sensiveis.
 
-### 2026-06-08 — Reconciliação corretiva do Lote 7 — Frappe/Python
+### 2026-06-08 — Reconciliação corretiva do Lote 7 — Backend/Python
 
-- Identificado o escopo permitido a partir de `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`: material Frappe/Python, fixture ficticia, matriz de compatibilidade, validacoes documentais seguras e registros de estado/fonte do lote.
-- Criado `docs/frappe-python-version-compatibility.md` para separar validacao documental desta baseline de versoes reais que devem ser confirmadas no SaaS consumidor.
-- Criada fixture ficticia em `testing/frappe-python/fixture-app/`, com casos positivos e marcadores de revisao para `@frappe.whitelist`, `allow_guest=True`, `ignore_permissions=True`, `frappe.get_all`, SQL/db, hooks, jobs e permissoes.
-- A fixture nao contem `sites/`, banco, usuario real, tenant real, `site_config.json`, `.env`, logs, backups, dumps, credenciais, tokens, cookies, URLs internas, requests/responses, payloads ofensivos ou dados pessoais reais.
-- Atualizados `docs/frappe-python-security-audit.md`, `checklists/frappe-security.md`, `testing/README.md` e `appsec/README.md` somente para apontar aos novos artefatos e preservar limites de uso.
+- Identificado o escopo permitido a partir de `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`: material backend/Python, fixture ficticia, matriz de compatibilidade, validacoes documentais seguras e registros de estado/fonte do lote.
+- Registrada separacao entre validacao documental desta baseline e versoes reais que devem ser confirmadas no SaaS consumidor.
+- Criada fixture ficticia com casos positivos e marcadores de revisao para autorizacao server-side, APIs, ORM/SQL, hooks, jobs e permissoes.
+- A fixture nao contem banco, usuario real, tenant real, arquivo de ambiente, logs, backups, dumps, credenciais, tokens, cookies, URLs internas, requests/responses, payloads ofensivos ou dados pessoais reais.
+- Atualizados documentos de backend, `testing/README.md` e `appsec/README.md` somente para apontar aos artefatos aplicaveis e preservar limites de uso.
 - Criado `research/sources/lote-07.md` com fontes internas, decisoes, validacoes, incertezas e limites; nao foram consultadas novas fontes externas.
-- Validados localmente sem rede: sintaxe Bash de `scripts/run-frappe-audit.sh` e `scripts/run-python-audit.sh`, buscas internas equivalentes na fixture, ausencia de caminhos proibidos na fixture e `git diff --check`. O binario `rg` nao estava instalado no shell local.
+- Validados localmente sem rede: sintaxe Bash de `scripts/run-python-audit.sh`, buscas internas equivalentes na fixture, ausencia de caminhos proibidos na fixture e `git diff --check`.
 - Permanecem pendentes para o Lote 5: validacao funcional dos scripts, disponibilidade de `rg`, stdout/stderr, exit codes, ferramentas ausentes, paths, criacao de `reports/raw/` e resumos em `reports/sanitized/`.
 - Nao foram alterados workflows ativos, exemplos de workflows, templates completos, politicas raiz, `privacy/*.md`, `risk/risk-matrix.md`, `risk/risk-register.csv` ou scripts genericos fora do escopo.
-- Nao foram executados scanners agressivos, rede externa, servidor Frappe, migracao, banco, ambiente de producao, workflow, DAST, coleta de evidencia real ou publicacao de artifact.
+- Nao foram executados scanners agressivos, rede externa, servidor real, migracao, banco, ambiente de producao, workflow, DAST, coleta de evidencia real ou publicacao de artifact.
 
 ### 2026-06-09 — Reconciliação corretiva do Lote 8 — LGPD
 
@@ -347,9 +347,9 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Identificado o escopo permitido a partir de `research/codex-execution-plan.md`, `research/task-queue.md` e `research/repository-inventory.md`: `scripts/*.sh`, `scripts/README.md`, testes seguros em `tests/scripts/` e registros de estado/fonte do lote.
 - Criada suite local `tests/scripts/run-script-smoke-tests.sh`, que copia os scripts para diretorio temporario, usa stubs de ferramentas e fixtures ficticias, e valida wrappers sem rede externa real, alvo real, instalacao automatica ou relatorio cru versionado.
 - Reconciliado `scripts/README.md` com exit codes, preflight, uso da suite local e limites de interpretacao.
-- Ajustados `scripts/run-frappe-audit.sh` e `scripts/generate-sbom.sh` de forma minima para saida explicita e mensagem coerente em alerta/falha de SBOM.
+- Ajustados `scripts/README.md` e `scripts/generate-sbom.sh` de forma minima para saida explicita e mensagem coerente em alerta/falha de SBOM.
 - Validados localmente: `bash -n scripts/*.sh tests/scripts/run-script-smoke-tests.sh`, `./tests/scripts/run-script-smoke-tests.sh`, `git diff --check` e `git status --ignored --short reports/raw reports/sanitized`.
-- A suite cobriu preflight de URL externa bloqueada, consentimento de rede ausente em Node, ferramenta `rg` ausente, execucao controlada de Python, Frappe, acessibilidade, API, Node, container/IaC, SBOM e orquestrador de secrets, alem da criacao temporaria de `reports/raw/` e `reports/sanitized/`.
+- A suite cobriu preflight de URL externa bloqueada, consentimento de rede ausente em Node, execucao controlada de Python, acessibilidade, API, Node, container/IaC, SBOM e orquestrador de secrets, alem da criacao temporaria de `reports/raw/` e `reports/sanitized/`.
 - ShellCheck nao estava disponivel no ambiente e nao foi executado; versoes reais, telemetria, stdout/stderr completos, caches, falsos positivos e comportamento das ferramentas reais permanecem pendentes para o SaaS consumidor.
 - Nao foram alterados workflows ativos, exemplos de workflows, politicas raiz, templates completos, checklists individuais, documentos auxiliares fora de scripts, privacidade, risco auxiliar ou relatorios versionados.
 - Nao foram executados scanners reais, rede externa, DAST contra alvo real, upload, deploy, publicacao de artifact, instalacao de ferramenta, coleta de evidencia real ou criacao de relatorio cru versionado.
@@ -377,3 +377,13 @@ Progresso: 20 de 21 chunks de execução concluídos; o Chunk 0 registra o conte
 - Nao foram alterados workflows ativos, scripts, templates completos ou checklists individuais; nao foram executados scanners reais, rede externa, alvos reais, workflows remotos, upload, artifact ou relatorio cru.
 - Permanecem pendentes para o SaaS consumidor ou tarefa propria: owners/canal real, plano GitHub, branch protection/rulesets, ferramentas reais e versoes, validacao juridica LGPD, armazenamento restrito de evidencias, testes reais autorizados e eventual promocao de workflows/gates especializados.
 - Nao foram criados dados reais, segredos, credenciais, cookies, URLs internas, tenants, logs crus, dumps, backups, payloads, requests/responses, screenshots, videos, DOM real, relatorios crus, artifacts ou evidencias sensiveis.
+
+### 2026-06-11 — Limpeza de termos proibidos
+
+- Continuada a partir do commit WIP existente, sem recriar o baseline e sem fazer commit.
+- Confirmada ausencia dos termos proibidos no conteudo rastreado e em caminhos rastreados por Git.
+- Confirmado que o workflow ativo nao contem mais o validador Python inline de links Markdown que falhou anteriormente por string literal mal escapada.
+- Executada validacao externa simples de links Markdown internos; todos os alvos relativos existentes foram encontrados.
+- Validados `bash -n scripts/*.sh tests/scripts/run-script-smoke-tests.sh` e `./tests/scripts/run-script-smoke-tests.sh` com sucesso.
+- Criado `research/sources/prohibited-terms-cleanup-2026-06-11.md` com fontes internas, validacoes, decisoes e limites desta limpeza.
+- Nao foram executados scanners reais, rede externa, alvos reais, workflows remotos, upload, artifact, relatorio cru ou reescrita de historico Git.

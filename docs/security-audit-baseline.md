@@ -134,7 +134,7 @@ INSTRUCOES DE USO
 | SBOM | `[SIM/NAO]` | `[RELEASE/ARTEFATO]` | `[CYCLONEDX/SPDX, SE APLICAVEL]` | `[ID]` | `[INVENTARIO NAO E ATESTADO]` |
 | Acessibilidade | `[SIM/NAO]` | `[FLUXOS E METODOS]` | `[WCAG 2.2 AA/BASELINE APLICAVEL]` | `[ID]` | `[AUTOMACAO NAO SUBSTITUI TESTE MANUAL]` |
 | LGPD/privacidade | `[SIM/NAO]` | `[FLUXOS DE DADOS]` | `[PROGRAMA INTERNO E VALIDACAO JURIDICA]` | `[ID]` | `[DEPENDENCIA DE CONTEXTO LEGAL]` |
-| Frappe/Python | `[SIM/NAO]` | `[APPS/MODULOS]` | `[GUIA INTERNO E VERSAO INSTALADA]` | `[ID]` | `[CUSTOMIZACOES E VERSAO]` |
+| Backend Python | `[SIM/NAO]` | `[APPS/MODULOS]` | `[GUIA INTERNO E VERSAO INSTALADA]` | `[ID]` | `[CUSTOMIZACOES E VERSAO]` |
 | GitHub Actions/CI/CD | `[SIM/NAO]` | `[WORKFLOWS/PERMISSOES]` | `[ESTRATEGIA INTERNA]` | `[ID]` | `[PLANO E CONFIGURACAO]` |
 | Revisao de evidencias | `[SIM/NAO]` | `[TRIAGEM/REDACAO]` | `[POLITICA DE EVIDENCIAS]` | `[ID]` | `[QUALIDADE DA COLETA]` |
 
@@ -262,7 +262,7 @@ INSTRUCOES DE USO
 | Containers | `[SIM/NAO]` | `[RESULTADO]` | `[IDS]` | `[EV-IDS]` | `[RESUMO]` |
 | IaC e cloud | `[SIM/NAO]` | `[RESULTADO]` | `[IDS]` | `[EV-IDS]` | `[RESUMO]` |
 | GitHub Actions/CI/CD | `[SIM/NAO]` | `[RESULTADO]` | `[IDS]` | `[EV-IDS]` | `[RESUMO]` |
-| Frappe/Python | `[SIM/NAO]` | `[RESULTADO]` | `[IDS]` | `[EV-IDS]` | `[RESUMO]` |
+| Backend Python | `[SIM/NAO]` | `[RESULTADO]` | `[IDS]` | `[EV-IDS]` | `[RESUMO]` |
 | LGPD/privacidade | `[SIM/NAO]` | `[RESULTADO]` | `[IDS]` | `[EV-IDS]` | `[VALIDACAO JURIDICA, SE APLICAVEL]` |
 | Acessibilidade | `[SIM/NAO]` | `[RESULTADO]` | `[IDS]` | `[EV-IDS]` | `[RESUMO]` |
 | Incidentes e resposta | `[SIM/NAO]` | `[RESULTADO]` | `[IDS]` | `[EV-IDS]` | `[RESUMO]` |
@@ -364,4 +364,3 @@ INSTRUCOES DE USO
 - [ ] Excecao ou aceite expirou, perdeu controles compensatorios ou excedeu a autoridade do aprovador.
 - [ ] Reteste obrigatorio falhou ou nao foi concluido.
 - [ ] Decisao No-Go ou equivalente foi registrada pela autoridade competente.
-

@@ -2,7 +2,7 @@
 
 ## Objetivo e escopo
 
-Esta política define como coletar, classificar, armazenar, revisar, compartilhar e descartar evidências de auditorias de SaaS. Aplica-se a pessoas, scanners, CI/CD, suporte, privacidade, acessibilidade, fornecedores, Frappe/Frappe LMS, incidentes e relatórios para clientes.
+Esta política define como coletar, classificar, armazenar, revisar, compartilhar e descartar evidências de auditorias de SaaS. Aplica-se a pessoas, scanners, CI/CD, suporte, privacidade, acessibilidade, fornecedores, aplicações web/backend, incidentes e relatórios para clientes.
 
 O princípio central é: **Git não é repositório de evidência sensível**. O Git recebe políticas, matrizes, exemplos fictícios e resumos mínimos já sanitizados. Evidência integral permanece em armazenamento restrito; quando produzida localmente neste repositório, usa `reports/raw/`, que deve continuar ignorado pelo Git.
 
@@ -332,7 +332,7 @@ Esses nomes só são seguros se o conteúdo também for sanitizado.
 
 - **LGPD:** minimização, finalidade, segurança, retenção, direitos e prestação de contas seguem `docs/lgpd-privacy-program.md`.
 - **Acessibilidade:** testes, prints, vídeos, relatos e tecnologias assistivas seguem `docs/accessibility-program.md`.
-- **Frappe/Frappe LMS:** não exportar `site_config.json`, banco, arquivos privados, DocTypes reais, logs de worker, conteúdo de curso ou dados de tenant; usar `docs/frappe-python-security-audit.md`.
+- **Aplicações web/backend:** não exportar arquivos de configuração reais, banco, arquivos privados, modelos internos, logs de worker, conteúdo restrito ou dados de tenant.
 - **GitHub Actions:** gates, permissões e workflows permanecem em `docs/github-actions-strategy.md`; esta política governa suas saídas.
 - **Scanners:** comandos e formatos permanecem em `docs/security-tools-catalog.md`; saída automatizada é hipótese até triagem humana.
 - **Auditorias:** tipo, gatilho, reviewer e Go/No-Go seguem `docs/audit-types.md` e `docs/audit-trigger-matrix.md`.

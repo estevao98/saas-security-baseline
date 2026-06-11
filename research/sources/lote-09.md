@@ -27,7 +27,7 @@ O lote operacionalizou acessibilidade para SaaS web com roteiro combinado de aut
 | `research/sources/chunk-12.md` | Modelo de relatorio, dominio de acessibilidade e limites de automacao. |
 | `research/sources/chunk-15.md` | Checklist de acessibilidade, decisoes de nao declarar conformidade e revisao humana obrigatoria. |
 | `research/sources/chunk-17.md` | Template de finding de acessibilidade e relatorio WCAG-EM como referencia estrutural. |
-| `research/sources/lote-02.md`, `research/sources/lote-07.md`, `research/sources/lote-08.md` | Estado anterior de documentos auxiliares, fixture Frappe/Python e privacidade operacional. |
+| `research/sources/lote-02.md`, `research/sources/lote-08.md` | Estado anterior de documentos auxiliares, backend/Python e privacidade operacional. |
 | `docs/accessibility-program.md` | Fonte canonica para programa, criterios, roteiro manual, ferramentas, evidencias e gates. |
 | `docs/accessibility-audit.md` | Roteiro operacional reconciliado neste lote. |
 | `docs/evidence-and-reporting-policy.md` | Protecao de relatórios crus, prints, voz, DOM, dados pessoais e resumos sanitizados. |

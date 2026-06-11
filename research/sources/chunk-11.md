@@ -20,7 +20,7 @@ Foram priorizadas fontes oficiais de OWASP, GitHub, ANPD, W3C/WAI, CycloneDX e S
 | `docs/audit-trigger-matrix.md` | Gatilhos, reviewers e decisões Go/No-Go. |
 | `docs/security-tools-catalog.md` | Ferramentas, formatos, riscos de exposição e caminhos de saída. |
 | `docs/github-actions-strategy.md` | Permissões, logs, artifacts, SARIF e retenção em CI/CD. |
-| `docs/frappe-python-security-audit.md` | Riscos de sites, configurações, logs, tenants e dados Frappe. |
+| `docs/security-tools-catalog.md` | Riscos de aplicações web/backend, configurações, logs, tenants e dados restritos. |
 | `docs/lgpd-privacy-program.md` | Minimização, retenção, titulares, fornecedores, incidentes e evidências. |
 | `docs/accessibility-program.md` | Prints, vídeos, relatos, tecnologia assistiva e testes com usuários. |
 
